@@ -1,0 +1,257 @@
+[gd_scene format=3 uid="uid://ck5usmblr0wtq"]
+
+[ext_resource type="Script" uid="uid://d24dq55ve4p6w" path="res://resources/scripts/noelle.gd" id="1_aebu5"]
+[ext_resource type="SpriteFrames" uid="uid://b45frob587b3g" path="res://resources/sprites/Player/PlayerAnimations.tres" id="2_wt6j5"]
+[ext_resource type="PackedScene" uid="uid://bjmrystoren7x" path="res://resources/scenes/objects/attack_ray_cast.tscn" id="25_7vcye"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wt6j5"]
+size = Vector2(20, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bylw6"]
+size = Vector2(9.568354, 9.066668)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1j4lw"]
+size = Vector2(7.029584, 8.48398)
+
+[sub_resource type="Animation" id="Animation_wt6j5"]
+length = 0.41
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": ["fem_unarmed_attack"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_kxsx2"]
+length = 1.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": ["fem_walk_down"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.23333333, 0.6333333, 1.0024334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": [],
+"method": &"play_footstep"
+}, {
+"args": [],
+"method": &"play_footstep"
+}, {
+"args": [],
+"method": &"play_footstep"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_8x0iq"]
+length = 1.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": ["fem_walk_side"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.23333333, 0.6333333, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": [],
+"method": &"play_footstep"
+}, {
+"args": [],
+"method": &"play_footstep"
+}, {
+"args": [],
+"method": &"play_footstep"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_rki77"]
+length = 1.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": ["fem_walk_up"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.23333333, 0.6333333, 1.0024334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": [],
+"method": &"play_footstep"
+}, {
+"args": [],
+"method": &"play_footstep"
+}, {
+"args": [],
+"method": &"play_footstep"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1j4lw"]
+_data = {
+&"fem_unarmed_attack": SubResource("Animation_wt6j5"),
+&"fem_walk_down": SubResource("Animation_kxsx2"),
+&"fem_walk_side": SubResource("Animation_8x0iq"),
+&"fem_walk_up": SubResource("Animation_rki77")
+}
+
+[node name="Susie" type="CharacterBody2D" unique_id=1626850227]
+y_sort_enabled = true
+motion_mode = 1
+platform_floor_layers = 4294967041
+script = ExtResource("1_aebu5")
+recoveryTime = null
+maxHealth = null
+health = null
+movementSpeed = null
+Damage = 20
+maxStamina = null
+Stamina = null
+inventoryContents = null
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1894482814]
+position = Vector2(0, 11)
+shape = SubResource("RectangleShape2D_wt6j5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=891970336]
+position = Vector2(-1, 14)
+sprite_frames = ExtResource("2_wt6j5")
+animation = &"PlayerRol"
+offset = Vector2(0, -14)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1372068339]
+position = Vector2(-2, 4)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1904505983]
+position = Vector2(1, 7)
+shape = SubResource("RectangleShape2D_bylw6")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="." unique_id=1116810602]
+
+[node name="rollCoolDownTimer" type="Timer" parent="." unique_id=1950842467]
+
+[node name="attackCooldownTimer" type="Timer" parent="." unique_id=359109020]
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1319756017]
+path_desired_distance = 4.0
+path_max_distance = 10.0
+debug_enabled = true
+
+[node name="AttackRayCast" parent="." unique_id=689401358 instance=ExtResource("25_7vcye")]
+collide_with_areas = true
+
+[node name="actionableFinder" type="Area2D" parent="." unique_id=43526840]
+position = Vector2(-0.99999994, 1.7881393e-07)
+scale = Vector2(4.125423, 4.125423)
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="actionableFinder" unique_id=1959479166]
+position = Vector2(0.121199794, 0.121199764)
+scale = Vector2(0.99999976, 0.99999976)
+shape = SubResource("RectangleShape2D_1j4lw")
+
+[node name="spriteAnimationPlayer" type="AnimationPlayer" parent="." unique_id=640786153]
+libraries/ = SubResource("AnimationLibrary_1j4lw")
+
+[connection signal="timeout" from="rollCoolDownTimer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="attackCooldownTimer" to="." method="_on_cool_down_timer_timeout"]

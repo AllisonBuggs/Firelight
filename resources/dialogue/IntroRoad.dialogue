@@ -1,0 +1,31 @@
+~ start
+do freezePlayer()
+do playAnimation("fade", fadeAnimationPlayer, false)
+do wait(4)
+do playSound("res://resources/sfx/REPLACEBEFORERELEASE/bunnyhop2.wav")
+do CarBump()
+do wait(1)
+Driver: Sorry abou the bumps,[wait=1.5] its a rickity car..
+do wait(4)
+Driver: You look pretty young for being bald, Dr.Wheeler
+James: It's James.
+James: I didn't have a choice, top 1% of testotrone. I've had a receeding hairline for most my life.
+Driver: Not worried it'll effect suzie?
+do playSound("res://resources/sfx/REPLACEBEFORERELEASE/suspension_jump.wav")
+do CarBump()
+do GlobalSignalBus.emit_signal("fadeMusic", true)
+do wait(0.2)
+do changeTexture(JamesForwardCutscene, "res://resources/sprites/cutscenes/jameslookupcarscene.png")
+do wait(1)
+James: My daughter. [wait=0.8] I don't think I'm comfortable with you. So lets not.
+do wait(3)
+do changeTexture(JamesForwardCutscene, "res://resources/sprites/cutscenes/jamescarscene.png")
+Driver: Okay, [wait=0.2] I understand.
+Driver: We are coming up on your destination, I'll be upfront in a couple hours, a blue car this time.
+do playSound("res://resources/sfx/REPLACEBEFORERELEASE/suspension_double_bounce.wav")
+do CarBump()
+do wait(2)
+do playAnimation("fade", fadeAnimationPlayer, true)
+do wait(2)
+do changeScene("res://resources/scenes/maps/LabExterior.tscn")
+=> END

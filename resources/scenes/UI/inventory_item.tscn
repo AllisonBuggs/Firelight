@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dn02naftqv6n2"]
+
+[ext_resource type="Script" uid="uid://d1rvamm6qm6ol" path="res://resources/scripts/classes/class_item.gd" id="1_o7n21"]
+[ext_resource type="Texture2D" uid="uid://d2kkxktmebmg7" path="res://resources/sprites/icons/Items/Crowbar.png" id="2_f8r8y"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_27ol4"]
+radius = 31.016125
+
+[node name="Inventory_Item" type="Area2D" unique_id=374339612]
+script = ExtResource("1_o7n21")
+itemName = "Crowbar"
+itemDescription = "A rusty crowbar, bash and pry"
+itemTexture = ExtResource("2_f8r8y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1151080416]
+shape = SubResource("CircleShape2D_27ol4")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2015121264]
+texture = ExtResource("2_f8r8y")

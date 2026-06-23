@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://3q3vm527u3bw"]
+
+[ext_resource type="Script" uid="uid://crx0kgch0hqdi" path="res://resources/scripts/camera.gd" id="1_56iu7"]
+[ext_resource type="AudioStream" uid="uid://hfb76mg5ev0w" path="res://resources/sfx/enter_woodendoor.wav" id="2_e0xme"]
+
+[sub_resource type="Animation" id="Animation_1k2fi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_cl5ce"]
+resource_name = "fade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.36666667, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tchc0"]
+_data = {
+&"RESET": SubResource("Animation_1k2fi"),
+&"fade": SubResource("Animation_cl5ce")
+}
+
+[node name="camera" type="Camera2D" unique_id=430412013]
+zoom = Vector2(2, 2)
+position_smoothing_enabled = true
+script = ExtResource("1_56iu7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1730563627]
+
+[node name="ColorRect" type="ColorRect" parent="Sprite2D" unique_id=1635273110]
+visible = false
+anchors_preset = -1
+anchor_left = -311.61536
+anchor_top = -329.53845
+anchor_right = 271.0769
+anchor_bottom = 231.23076
+offset_left = -195.38464
+offset_top = -118.46156
+offset_right = 226.9231
+offset_bottom = 140.76924
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D" unique_id=718643757]
+libraries/ = SubResource("AnimationLibrary_tchc0")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="." unique_id=386079503]
+stream = ExtResource("2_e0xme")

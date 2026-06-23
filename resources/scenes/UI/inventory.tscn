@@ -1,0 +1,340 @@
+[gd_scene format=3 uid="uid://ck0p7s5qyx61a"]
+
+[ext_resource type="Texture2D" uid="uid://cdes0cohj4ddd" path="res://resources/sprites/icons/plus.png" id="1_frv1h"]
+[ext_resource type="Script" uid="uid://cp2udwqj5jvoa" path="res://resources/scripts/inventoryScript.gd" id="1_jlkgn"]
+[ext_resource type="PackedScene" uid="uid://dvdo84hs3ib1f" path="res://resources/scenes/UI/popup.tscn" id="3_hjvh5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_frv1h"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jlkgn"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hjvh5"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ofpj4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5ga3e"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mbujm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cyva3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j2syo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_axk00"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cyva3"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hjvh5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j2syo"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="Inventory" type="Control" unique_id=1930745018]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 1
+script = ExtResource("1_jlkgn")
+
+[node name="stats&equipedPanel" type="Panel" parent="." unique_id=1046428258]
+process_mode = 3
+layout_mode = 0
+offset_left = 219.00002
+offset_top = 136.0
+offset_right = 919.0
+offset_bottom = 286.0
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_frv1h")
+
+[node name="MarginContainer" type="MarginContainer" parent="stats&equipedPanel" unique_id=973789700]
+process_mode = 3
+layout_mode = 0
+offset_right = 700.0
+offset_bottom = 150.0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="stats&equipedPanel/MarginContainer" unique_id=1071950051]
+process_mode = 3
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="stats&equipedPanel/MarginContainer/HBoxContainer" unique_id=331220532]
+process_mode = 3
+layout_mode = 2
+texture = ExtResource("1_frv1h")
+
+[node name="Label" type="Label" parent="stats&equipedPanel/MarginContainer/HBoxContainer/TextureRect" unique_id=132403838]
+process_mode = 3
+layout_mode = 0
+offset_left = -1.0000153
+offset_top = 39.0
+offset_right = 99.999985
+offset_bottom = 100.666664
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+text = "Health: 100%"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="stats&equipedPanel/MarginContainer/HBoxContainer" unique_id=1240808126]
+process_mode = 3
+layout_mode = 2
+texture = ExtResource("1_frv1h")
+
+[node name="Label" type="Label" parent="stats&equipedPanel/MarginContainer/HBoxContainer/TextureRect2" unique_id=486358373]
+process_mode = 3
+layout_mode = 0
+offset_left = -1.0000153
+offset_top = 39.0
+offset_right = 100.999985
+offset_bottom = 62.0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+text = "Defense:       100%"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="stats&equipedPanel/MarginContainer/HBoxContainer" unique_id=958243387]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+stretch_mode = 3
+
+[node name="weaponSlot" type="Button" parent="stats&equipedPanel/MarginContainer/HBoxContainer/AspectRatioContainer" unique_id=1259984340]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+icon_alignment = 1
+expand_icon = true
+
+[node name="AspectRatioContainer2" type="AspectRatioContainer" parent="stats&equipedPanel/MarginContainer/HBoxContainer" unique_id=304326567]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+stretch_mode = 3
+
+[node name="armorSlot" type="Button" parent="stats&equipedPanel/MarginContainer/HBoxContainer/AspectRatioContainer2" unique_id=1193205508]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+icon_alignment = 1
+expand_icon = true
+
+[node name="TextureRect3" type="TextureRect" parent="stats&equipedPanel/MarginContainer/HBoxContainer" unique_id=1280993342]
+process_mode = 3
+layout_mode = 2
+texture = ExtResource("1_frv1h")
+
+[node name="Label" type="Label" parent="stats&equipedPanel/MarginContainer/HBoxContainer/TextureRect3" unique_id=1434786603]
+process_mode = 3
+layout_mode = 0
+offset_left = -1.0000153
+offset_top = 39.0
+offset_right = 100.999985
+offset_bottom = 62.0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+text = "Attack:            1"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="holdingPanel" type="Panel" parent="." unique_id=1146068920]
+process_mode = 3
+layout_mode = 0
+offset_left = 219.0
+offset_top = 325.0
+offset_right = 919.0
+offset_bottom = 475.0
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_jlkgn")
+
+[node name="MarginContainer" type="MarginContainer" parent="holdingPanel" unique_id=2100615623]
+process_mode = 3
+layout_mode = 0
+offset_right = 700.0
+offset_bottom = 150.0
+scale = Vector2(0.99858356, 1)
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="holdingPanel/MarginContainer" unique_id=449333094]
+process_mode = 3
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="AspectRatioContainer2" type="AspectRatioContainer" parent="holdingPanel/MarginContainer/HBoxContainer" unique_id=2025293729]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+stretch_mode = 3
+
+[node name="InvSlot0" type="Button" parent="holdingPanel/MarginContainer/HBoxContainer/AspectRatioContainer2" unique_id=196239066]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+icon_alignment = 1
+expand_icon = true
+
+[node name="AspectRatioContainer3" type="AspectRatioContainer" parent="holdingPanel/MarginContainer/HBoxContainer" unique_id=1160581926]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+stretch_mode = 3
+
+[node name="InvSlot1" type="Button" parent="holdingPanel/MarginContainer/HBoxContainer/AspectRatioContainer3" unique_id=1276098365]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+icon_alignment = 1
+expand_icon = true
+
+[node name="AspectRatioContainer4" type="AspectRatioContainer" parent="holdingPanel/MarginContainer/HBoxContainer" unique_id=910404935]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+stretch_mode = 3
+
+[node name="InvSlot2" type="Button" parent="holdingPanel/MarginContainer/HBoxContainer/AspectRatioContainer4" unique_id=1496454080]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+icon_alignment = 1
+expand_icon = true
+
+[node name="AspectRatioContainer5" type="AspectRatioContainer" parent="holdingPanel/MarginContainer/HBoxContainer" unique_id=1229383]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+stretch_mode = 3
+
+[node name="InvSlot3" type="Button" parent="holdingPanel/MarginContainer/HBoxContainer/AspectRatioContainer5" unique_id=970689933]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+icon_alignment = 1
+expand_icon = true
+
+[node name="bottomPanel" type="Panel" parent="." unique_id=268879019]
+process_mode = 3
+layout_mode = 0
+offset_left = 477.0
+offset_top = 552.0
+offset_right = 716.0
+offset_bottom = 607.0
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_hjvh5")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="bottomPanel" unique_id=550991618]
+process_mode = 3
+layout_mode = 0
+offset_right = 239.0
+offset_bottom = 55.0
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="dropButton" type="Button" parent="bottomPanel/HBoxContainer" unique_id=1056691389]
+process_mode = 3
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.13509437, 0.47224236, 0.99999994, 1)
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ofpj4")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5ga3e")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_mbujm")
+text = "Drop"
+
+[node name="equipButton" type="Button" parent="bottomPanel/HBoxContainer" unique_id=2140053651]
+process_mode = 3
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.9490196, 0.54509807, 0, 1)
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxEmpty_cyva3")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_j2syo")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_axk00")
+text = "Equip"
+
+[node name="returnButton" type="Button" parent="bottomPanel/HBoxContainer" unique_id=1538576647]
+process_mode = 3
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.9490196, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_cyva3")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_hjvh5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_j2syo")
+text = "Return"
+
+[node name="inventoryLabel" type="Label" parent="." unique_id=1864929138]
+process_mode = 3
+layout_mode = 0
+offset_left = 490.0
+offset_top = 62.0
+offset_right = 630.0
+offset_bottom = 103.875
+mouse_filter = 1
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 30
+text = "Inventory"
+
+[node name="ToolTIp" parent="." unique_id=2007665472 instance=ExtResource("3_hjvh5")]
+process_mode = 3
+layout_mode = 0
+offset_left = 0.0
+offset_right = 659.0
+mouse_behavior_recursive = 1
+
+[node name="AudiinventoryAudioPlayeroStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1881893634]
+
+[connection signal="mouse_entered" from="stats&equipedPanel/MarginContainer/HBoxContainer/AspectRatioContainer/weaponSlot" to="." method="_on_weapon_slot_mouse_entered"]
+[connection signal="mouse_exited" from="stats&equipedPanel/MarginContainer/HBoxContainer/AspectRatioContainer/weaponSlot" to="." method="_on_weapon_slot_mouse_exited"]
+[connection signal="pressed" from="stats&equipedPanel/MarginContainer/HBoxContainer/AspectRatioContainer/weaponSlot" to="." method="_on_weapon_slot_pressed"]
+[connection signal="mouse_entered" from="stats&equipedPanel/MarginContainer/HBoxContainer/AspectRatioContainer2/armorSlot" to="." method="_on_armor_slot_mouse_entered"]
+[connection signal="mouse_exited" from="stats&equipedPanel/MarginContainer/HBoxContainer/AspectRatioContainer2/armorSlot" to="." method="_on_armor_slot_mouse_exited"]
+[connection signal="pressed" from="stats&equipedPanel/MarginContainer/HBoxContainer/AspectRatioContainer2/armorSlot" to="." method="_on_armor_slot_pressed"]
+[connection signal="mouse_entered" from="holdingPanel/MarginContainer/HBoxContainer/AspectRatioContainer2/InvSlot0" to="." method="_on_inv_slot_0_mouse_entered"]
+[connection signal="mouse_exited" from="holdingPanel/MarginContainer/HBoxContainer/AspectRatioContainer2/InvSlot0" to="." method="_on_inv_slot_0_mouse_exited"]
+[connection signal="pressed" from="holdingPanel/MarginContainer/HBoxContainer/AspectRatioContainer2/InvSlot0" to="." method="_on_inv_slot_0_pressed"]
+[connection signal="mouse_entered" from="holdingPanel/MarginContainer/HBoxContainer/AspectRatioContainer3/InvSlot1" to="." method="_on_inv_slot_1_mouse_entered"]
+[connection signal="mouse_exited" from="holdingPanel/MarginContainer/HBoxContainer/AspectRatioContainer3/InvSlot1" to="." method="_on_inv_slot_1_mouse_exited"]
+[connection signal="pressed" from="holdingPanel/MarginContainer/HBoxContainer/AspectRatioContainer3/InvSlot1" to="." method="_on_inv_slot_1_pressed"]
+[connection signal="mouse_entered" from="holdingPanel/MarginContainer/HBoxContainer/AspectRatioContainer4/InvSlot2" to="." method="_on_inv_slot_2_mouse_entered"]
+[connection signal="mouse_exited" from="holdingPanel/MarginContainer/HBoxContainer/AspectRatioContainer4/InvSlot2" to="." method="_on_inv_slot_2_mouse_exited"]
+[connection signal="pressed" from="holdingPanel/MarginContainer/HBoxContainer/AspectRatioContainer4/InvSlot2" to="." method="_on_inv_slot_2_pressed"]
+[connection signal="mouse_entered" from="holdingPanel/MarginContainer/HBoxContainer/AspectRatioContainer5/InvSlot3" to="." method="_on_inv_slot_3_mouse_entered"]
+[connection signal="mouse_exited" from="holdingPanel/MarginContainer/HBoxContainer/AspectRatioContainer5/InvSlot3" to="." method="_on_inv_slot_3_mouse_exited"]
+[connection signal="pressed" from="holdingPanel/MarginContainer/HBoxContainer/AspectRatioContainer5/InvSlot3" to="." method="_on_inv_slot_3_pressed"]
+[connection signal="pressed" from="bottomPanel/HBoxContainer/dropButton" to="." method="_on_drop_button_pressed"]
+[connection signal="pressed" from="bottomPanel/HBoxContainer/returnButton" to="." method="_on_return_button_pressed"]
+
+[editable path="ToolTIp"]

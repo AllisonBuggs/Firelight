@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cv11othgk3mii"
+path="res://.godot/imported/MISC_JamesWifeCloset.dialogue-de3ebc8ad805486c3b08eeb688d0ee3c.tres"
+
+[deps]
+
+source_file="res://resources/dialogue/MISC/MISC_JamesWifeCloset.dialogue"
+dest_files=["res://.godot/imported/MISC_JamesWifeCloset.dialogue-de3ebc8ad805486c3b08eeb688d0ee3c.tres"]
+
+[params]
+
+defaults=true

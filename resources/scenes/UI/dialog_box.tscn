@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://cpbagh8wa1dgu"]
+
+[ext_resource type="Script" uid="uid://du5y7p64ese1g" path="res://resources/scripts/dialog_box.gd" id="1_7ybiw"]
+[ext_resource type="Script" uid="uid://cbceqowr5ws2" path="res://resources/scripts/typeWriterEffectScript.gd" id="3_a5f43"]
+[ext_resource type="AudioStream" uid="uid://dg7hayp1quik" path="res://resources/sfx/snd_txtnoe.wav" id="4_6kvcu"]
+[ext_resource type="Texture2D" uid="uid://bipmliofrgn8d" path="res://resources/sprites/CoolestSickCats/coolcat.jpeg" id="4_aiqa7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a5f43"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+
+[sub_resource type="Animation" id="Animation_a5f43"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_7ybiw"]
+resource_name = "typewriter"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6kvcu"]
+_data = {
+&"RESET": SubResource("Animation_a5f43"),
+&"typewriter": SubResource("Animation_7ybiw")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6kvcu"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+
+[node name="DialogMenu" type="Panel" unique_id=179512286]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -510.0
+offset_top = -197.0
+offset_right = 514.0
+offset_bottom = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_a5f43")
+script = ExtResource("1_7ybiw")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1074286860]
+libraries/ = SubResource("AnimationLibrary_6kvcu")
+script = ExtResource("3_a5f43")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=322539101]
+stream = ExtResource("4_6kvcu")
+
+[node name="Panel" type="Panel" parent="." unique_id=707623142]
+layout_mode = 0
+offset_left = 814.0
+offset_top = -56.0
+offset_right = 1024.0
+offset_bottom = 4.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_6kvcu")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=1020858004]
+layout_mode = 0
+offset_right = 210.0
+offset_bottom = 57.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 10
+
+[node name="Label" type="Label" parent="Panel/MarginContainer" unique_id=579843551]
+layout_mode = 2
+text = "EXAMPLE NAME"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=861473412]
+layout_mode = 0
+offset_right = 1024.0
+offset_bottom = 174.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="dialogtext" type="RichTextLabel" parent="MarginContainer" unique_id=1620941882]
+layout_mode = 2
+text = "ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd]jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj
+ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll"
+autowrap_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2044043474]
+layout_mode = 0
+offset_top = -260.0
+offset_right = 194.0
+pivot_offset = Vector2(0, 260)
+texture = ExtResource("4_aiqa7")
+flip_h = true

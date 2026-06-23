@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://4nau8bpmjw1a"]
+
+[ext_resource type="Script" uid="uid://c4y4kpl732ygs" path="res://resources/scripts/death_screen.gd" id="1_rn0yi"]
+
+[node name="DeathScreen" type="Node2D" unique_id=1142723864]
+script = ExtResource("1_rn0yi")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1070398559]
+offset_right = 1152.0
+offset_bottom = 656.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=1092508736]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="FoldableContainer" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1799702790]
+layout_mode = 2
+text = "YOU HAVE DIED"
+
+[node name="restartButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=698541779]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "RELOAD"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/restartButton" to="." method="_on_restart_button_pressed"]

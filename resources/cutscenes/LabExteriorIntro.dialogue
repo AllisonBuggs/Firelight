@@ -1,0 +1,14 @@
+~ start
+do freezePlayer()
+do playAnimation("carleave", carAnimator, false)
+do wait(2)
+do destory(car)
+do GlobalSignalBus.emit_signal("fadeMusic", false)
+do GlobalSignalBus.emit_signal("changeMusic", "res://resources/music/UndergroundLaboratory.mp3")
+do GlobalMusicPlayer.play()
+do playAnimation("dooraproach", carAnimator, false)
+James: Okay, lets review before we go inside.
+do wait(2)
+do GlobalSignalBus.emit_signal("TriggerPopUp", "Press J To Open Your Journal", 2)
+do awaitJournalOpen()
+=> END

@@ -1,0 +1,194 @@
+[gd_scene format=3 uid="uid://cghcgag30ky56"]
+
+[ext_resource type="Script" uid="uid://bnui5gxdy7odc" path="res://resources/scripts/UI/mixing_ui.gd" id="1_il2oo"]
+[ext_resource type="Texture2D" uid="uid://bvflbug82knt6" path="res://resources/sprites/icons/Items/Empty_Flash.png" id="2_irr02"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pag12"]
+bg_color = Color(0.42164347, 0.41600096, 0.44059741, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qmjvr"]
+bg_color = Color(0.80049086, 0.8004908, 0.8004906, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tsfc2"]
+bg_color = Color(0.09239706, 0.09239707, 0.092397, 1)
+corner_radius_top_left = 19
+corner_radius_top_right = 19
+corner_radius_bottom_right = 19
+corner_radius_bottom_left = 19
+corner_detail = 20
+
+[node name="MixingUi" type="Control" unique_id=529118955]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_il2oo")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=766688833]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainPanel" type="Panel" parent="CenterContainer" unique_id=1156287032]
+custom_minimum_size = Vector2(700, 520)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pag12")
+
+[node name="ComponetsButtons" type="HBoxContainer" parent="CenterContainer/MainPanel" unique_id=1225924220]
+layout_mode = 0
+offset_left = 199.0
+offset_top = 25.0
+offset_right = 700.0
+offset_bottom = 93.0
+theme_override_constants/separation = 47
+alignment = 1
+
+[node name="MixA" type="Button" parent="CenterContainer/MainPanel/ComponetsButtons" unique_id=2005136540]
+layout_mode = 2
+text = "1
+A"
+
+[node name="MixB" type="Button" parent="CenterContainer/MainPanel/ComponetsButtons" unique_id=1439929853]
+layout_mode = 2
+text = "2
+B"
+
+[node name="MixC" type="Button" parent="CenterContainer/MainPanel/ComponetsButtons" unique_id=2035780419]
+layout_mode = 2
+text = "3
+C"
+
+[node name="DisfunctionalD" type="Button" parent="CenterContainer/MainPanel/ComponetsButtons" unique_id=1089520595]
+layout_mode = 2
+text = "4
+D"
+
+[node name="MixE" type="Button" parent="CenterContainer/MainPanel/ComponetsButtons" unique_id=1952754898]
+layout_mode = 2
+text = "5
+E"
+
+[node name="ButtomRowButtons" type="HBoxContainer" parent="CenterContainer/MainPanel" unique_id=414088792]
+layout_mode = 0
+offset_left = 199.0
+offset_top = 457.0
+offset_right = 700.0
+offset_bottom = 497.0
+alignment = 1
+
+[node name="TakeFlash" type="Button" parent="CenterContainer/MainPanel/ButtomRowButtons" unique_id=1937838057]
+layout_mode = 2
+text = "Take Flask"
+
+[node name="Dump Mixture" type="Button" parent="CenterContainer/MainPanel/ButtomRowButtons" unique_id=967882050]
+layout_mode = 2
+text = "Dump Mixture"
+
+[node name="CheetSheetPaper" type="Panel" parent="CenterContainer/MainPanel" unique_id=1452583917]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 131.0
+offset_right = 199.0
+offset_bottom = 401.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qmjvr")
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/MainPanel/CheetSheetPaper" unique_id=885507199]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/MainPanel/CheetSheetPaper/MarginContainer" unique_id=1392284190]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="CenterContainer/MainPanel/CheetSheetPaper/MarginContainer/VBoxContainer" unique_id=554951659]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "CheetSheet"
+autowrap_mode = 1
+
+[node name="Label" type="Label" parent="CenterContainer/MainPanel/CheetSheetPaper/MarginContainer/VBoxContainer" unique_id=45345915]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "
+AB = 2
+
+CB = 6
+
+DC = 12"
+autowrap_mode = 1
+
+[node name="Panel" type="Panel" parent="CenterContainer/MainPanel" unique_id=2013044398]
+layout_mode = 0
+offset_left = 238.0
+offset_top = 110.0
+offset_right = 278.0
+offset_bottom = 150.0
+scale = Vector2(10.201074, 7.8963447)
+
+[node name="Flask" type="Sprite2D" parent="CenterContainer/MainPanel" unique_id=1847397508]
+position = Vector2(441, 323)
+scale = Vector2(3.382494, 3.382494)
+texture = ExtResource("2_irr02")
+
+[node name="CenterContainer" type="CenterContainer" parent="CenterContainer/MainPanel/Flask" unique_id=1970332626]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -31.5
+offset_top = -31.5
+offset_right = -31.5
+offset_bottom = -31.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MixtureLabel" type="Label" parent="CenterContainer/MainPanel/Flask/CenterContainer" unique_id=2136336130]
+layout_mode = 2
+theme_override_font_sizes/font_size = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_tsfc2")
+horizontal_alignment = 1
+vertical_alignment = 1
+visible_characters_behavior = 4
+
+[node name="Button" type="Button" parent="CenterContainer/MainPanel" unique_id=770117440]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 15.0
+offset_right = 79.0
+offset_bottom = 53.0
+text = "Back"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=261025567]
+
+[connection signal="pressed" from="CenterContainer/MainPanel/ComponetsButtons/MixA" to="." method="_on_mix_a_pressed"]
+[connection signal="pressed" from="CenterContainer/MainPanel/ComponetsButtons/MixB" to="." method="_on_mix_b_pressed"]
+[connection signal="pressed" from="CenterContainer/MainPanel/ComponetsButtons/MixC" to="." method="_on_mix_c_pressed"]
+[connection signal="pressed" from="CenterContainer/MainPanel/ComponetsButtons/DisfunctionalD" to="." method="_on_disfunctional_d_pressed"]
+[connection signal="pressed" from="CenterContainer/MainPanel/ComponetsButtons/MixE" to="." method="_on_mix_e_pressed"]
+[connection signal="pressed" from="CenterContainer/MainPanel/ButtomRowButtons/TakeFlash" to="." method="_on_take_flash_pressed"]
+[connection signal="pressed" from="CenterContainer/MainPanel/ButtomRowButtons/Dump Mixture" to="." method="_on_dump_mixture_pressed"]
+[connection signal="pressed" from="CenterContainer/MainPanel/Button" to="." method="_on_button_pressed"]

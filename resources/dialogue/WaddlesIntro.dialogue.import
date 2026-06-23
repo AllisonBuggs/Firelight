@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cf3qfhtqahfdn"
+path="res://.godot/imported/WaddlesIntro.dialogue-6c1e618d3dc2d2f5a813d4452867bb99.tres"
+
+[deps]
+
+source_file="res://resources/dialogue/WaddlesIntro.dialogue"
+dest_files=["res://.godot/imported/WaddlesIntro.dialogue-6c1e618d3dc2d2f5a813d4452867bb99.tres"]
+
+[params]
+
+defaults=true

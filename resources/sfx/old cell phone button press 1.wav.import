@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b7mfladefjbhf"
+path="res://.godot/imported/old cell phone button press 1.wav-c43b10efa1e50cb949891b095a218612.sample"
+
+[deps]
+
+source_file="res://resources/sfx/old cell phone button press 1.wav"
+dest_files=["res://.godot/imported/old cell phone button press 1.wav-c43b10efa1e50cb949891b095a218612.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

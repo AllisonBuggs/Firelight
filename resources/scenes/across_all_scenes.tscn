@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bqbn7edl6vane"]
+
+[ext_resource type="Script" uid="uid://bnc7omf8jipyq" path="res://resources/scripts/across_all_scenes.gd" id="1_ybrst"]
+[ext_resource type="PackedScene" uid="uid://cbaxum6xw240c" path="res://resources/scenes/UI/ui_canvas_layer.tscn" id="2_ybrst"]
+[ext_resource type="AudioStream" uid="uid://bnx6dqnss7tor" path="res://resources/music/SIGNALIS - Eulenlieder [Extended] [R7csUdGAQE0].mp3" id="3_1iol0"]
+[ext_resource type="Script" uid="uid://dukw6v0aknwfl" path="res://resources/scripts/music_stream.gd" id="4_v1278"]
+
+[node name="Across All Scenes" type="Node2D" unique_id=832558015]
+script = ExtResource("1_ybrst")
+
+[node name="UiCanvasLayer" parent="." unique_id=1431050982 instance=ExtResource("2_ybrst")]
+
+[node name="MusicStream" type="AudioStreamPlayer2D" parent="." unique_id=1436991416]
+stream = ExtResource("3_1iol0")
+script = ExtResource("4_v1278")

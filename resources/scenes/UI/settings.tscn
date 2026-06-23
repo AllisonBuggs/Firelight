@@ -1,0 +1,687 @@
+[gd_scene format=3 uid="uid://gaxsfxeq5rc5"]
+
+[ext_resource type="StyleBox" uid="uid://djb24ahi6mwse" path="res://resources/styles/pause_menu.tres" id="1_a2x3x"]
+[ext_resource type="Script" uid="uid://phoywwih2ehe" path="res://resources/scripts/settings.gd" id="2_3rgop"]
+[ext_resource type="Texture2D" uid="uid://bjxss8gokqcmh" path="res://resources/sprites/icons/settingsButton.png" id="3_lqo2t"]
+
+[node name="Settings" type="Panel" unique_id=581721721]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = 62.0
+offset_right = 18.0
+offset_bottom = 84.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.77800703, 0.77800703)
+theme_override_styles/panel = ExtResource("1_a2x3x")
+script = ExtResource("2_3rgop")
+
+[node name="Tabs" type="MarginContainer" parent="." unique_id=1104959141]
+layout_mode = 0
+offset_right = 1122.0978
+offset_bottom = 695.36646
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_bottom = 620
+
+[node name="TabBar" type="TabBar" parent="Tabs" unique_id=166561866]
+layout_mode = 2
+theme_override_constants/tab_separation = 20
+theme_override_font_sizes/font_size = 30
+current_tab = 0
+tab_alignment = 1
+scrolling_enabled = false
+switch_on_drag_hover = false
+tab_count = 5
+tab_0/title = "Video"
+tab_1/title = "Gameplay"
+tab_2/title = "Audio"
+tab_3/title = "Controls"
+tab_4/title = "Accessibility"
+
+[node name="SettingsDecor" type="CenterContainer" parent="." unique_id=259475581]
+layout_mode = 0
+offset_left = 1.2853354
+offset_top = -68.12278
+offset_right = 1122.0978
+
+[node name="SettingsDecorHBox" type="HBoxContainer" parent="SettingsDecor" unique_id=684570087]
+layout_mode = 2
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="SettingsDecor/SettingsDecorHBox" unique_id=1740619098]
+layout_mode = 2
+theme_override_constants/margin_left = 0
+
+[node name="TextureRect" type="TextureRect" parent="SettingsDecor/SettingsDecorHBox/MarginContainer" unique_id=1550289192]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("3_lqo2t")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="SettingsDecor/SettingsDecorHBox" unique_id=1305630802]
+layout_mode = 2
+theme_override_font_sizes/font_size = 19
+text = "Settings"
+
+[node name="VideoItems" type="MarginContainer" parent="." unique_id=1066549035]
+layout_mode = 0
+offset_left = 1.2853354
+offset_top = 84.83213
+offset_right = 1122.2853
+offset_bottom = 691.5105
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VideoItems" unique_id=625770221]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VideoItems/VBoxContainer" unique_id=1232256758]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VideoItems/VBoxContainer/HBoxContainer" unique_id=1662644923]
+layout_mode = 2
+text = "V-Sync"
+
+[node name="CheckButton" type="CheckButton" parent="VideoItems/VBoxContainer/HBoxContainer" unique_id=1808866875]
+layout_mode = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VideoItems/VBoxContainer" unique_id=530207973]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="VideoItems/VBoxContainer/HBoxContainer3" unique_id=1584999697]
+layout_mode = 2
+text = "Language "
+
+[node name="OptionButton" type="OptionButton" parent="VideoItems/VBoxContainer/HBoxContainer3" unique_id=1662196323]
+layout_mode = 2
+selected = 0
+allow_reselect = true
+item_count = 1
+popup/item_0/text = "English"
+popup/item_0/id = 0
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="VideoItems/VBoxContainer" unique_id=292960881]
+layout_mode = 2
+
+[node name="Label4" type="Label" parent="VideoItems/VBoxContainer/HBoxContainer4" unique_id=2018022437]
+layout_mode = 2
+text = "Brightness"
+
+[node name="HSlider" type="HSlider" parent="VideoItems/VBoxContainer/HBoxContainer4" unique_id=776546339]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+step = 5.0
+value = 100.0
+rounded = true
+tick_count = 5
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="VideoItems/VBoxContainer" unique_id=382250898]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="VideoItems/VBoxContainer/HBoxContainer5" unique_id=1458029748]
+layout_mode = 2
+text = "Lock Framerate"
+
+[node name="OptionButton" type="OptionButton" parent="VideoItems/VBoxContainer/HBoxContainer5" unique_id=1537480536]
+layout_mode = 2
+selected = 0
+allow_reselect = true
+item_count = 2
+popup/item_0/text = "60"
+popup/item_0/id = 0
+popup/item_1/text = "30"
+popup/item_1/id = 1
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="VideoItems/VBoxContainer" unique_id=627580601]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="VideoItems/VBoxContainer/HBoxContainer6" unique_id=1573777352]
+layout_mode = 2
+text = "Fullscreen"
+
+[node name="checkBox" type="CheckBox" parent="VideoItems/VBoxContainer/HBoxContainer6" unique_id=1055792351]
+custom_minimum_size = Vector2(10, 13)
+layout_mode = 2
+
+[node name="GameplayItems" type="MarginContainer" parent="." unique_id=2096951908]
+visible = false
+layout_mode = 0
+offset_left = 1.2853354
+offset_top = 87.40281
+offset_right = 1122.2853
+offset_bottom = 696.28534
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameplayItems" unique_id=1893440914]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GameplayItems/VBoxContainer" unique_id=495086754]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="GameplayItems/VBoxContainer/HBoxContainer" unique_id=833471378]
+layout_mode = 2
+text = "Inverted X"
+
+[node name="CheckButton" type="CheckButton" parent="GameplayItems/VBoxContainer/HBoxContainer" unique_id=1028699195]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="GameplayItems/VBoxContainer" unique_id=615209902]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="GameplayItems/VBoxContainer/HBoxContainer2" unique_id=1999475316]
+layout_mode = 2
+text = "Inverted Y"
+
+[node name="CheckButton" type="CheckButton" parent="GameplayItems/VBoxContainer/HBoxContainer2" unique_id=106110535]
+layout_mode = 2
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="GameplayItems/VBoxContainer" unique_id=2124744428]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="GameplayItems/VBoxContainer/HBoxContainer5" unique_id=396820051]
+layout_mode = 2
+text = "Autosave Enabled"
+
+[node name="CheckButton" type="CheckButton" parent="GameplayItems/VBoxContainer/HBoxContainer5" unique_id=617041929]
+layout_mode = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="GameplayItems/VBoxContainer" unique_id=815488260]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="GameplayItems/VBoxContainer/HBoxContainer3" unique_id=1972375820]
+layout_mode = 2
+text = "AutoSave Time"
+
+[node name="CheckButton" type="OptionButton" parent="GameplayItems/VBoxContainer/HBoxContainer3" unique_id=170885429]
+layout_mode = 2
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="GameplayItems/VBoxContainer" unique_id=1237192257]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="GameplayItems/VBoxContainer/HBoxContainer4" unique_id=742311551]
+layout_mode = 2
+text = "Difficulty"
+
+[node name="CheckButton" type="OptionButton" parent="GameplayItems/VBoxContainer/HBoxContainer4" unique_id=676984138]
+layout_mode = 2
+
+[node name="AudioItems" type="MarginContainer" parent="." unique_id=1312516561]
+visible = false
+layout_mode = 0
+offset_left = 1.2853354
+offset_top = 87.40281
+offset_right = 1122.2853
+offset_bottom = 696.28534
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AudioItems" unique_id=898578882]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="AudioItems/VBoxContainer" unique_id=1921592193]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="AudioItems/VBoxContainer/HBoxContainer" unique_id=1159754105]
+layout_mode = 2
+text = "Master Volume"
+
+[node name="MasterVolumeSlider" type="HSlider" parent="AudioItems/VBoxContainer/HBoxContainer" unique_id=1884108835]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.001
+value = 1.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="AudioItems/VBoxContainer" unique_id=644957097]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="AudioItems/VBoxContainer/HBoxContainer2" unique_id=1714340090]
+layout_mode = 2
+text = "Music Volume"
+
+[node name="MusicVolumeSlider" type="HSlider" parent="AudioItems/VBoxContainer/HBoxContainer2" unique_id=457152892]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.001
+value = 1.0
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="AudioItems/VBoxContainer" unique_id=1956764268]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="AudioItems/VBoxContainer/HBoxContainer6" unique_id=1600123254]
+layout_mode = 2
+text = "Ambient Volume"
+
+[node name="AmbientVolumeSlider" type="HSlider" parent="AudioItems/VBoxContainer/HBoxContainer6" unique_id=260615594]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.001
+value = 1.0
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="AudioItems/VBoxContainer" unique_id=902532113]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="AudioItems/VBoxContainer/HBoxContainer3" unique_id=935535578]
+layout_mode = 2
+text = "SFX Volume"
+
+[node name="SFXVolumeSlider" type="HSlider" parent="AudioItems/VBoxContainer/HBoxContainer3" unique_id=529686753]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.001
+value = 1.0
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="AudioItems/VBoxContainer" unique_id=749321203]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="AudioItems/VBoxContainer/HBoxContainer4" unique_id=1307348784]
+layout_mode = 2
+text = "Dialog Volume"
+
+[node name="DialogVolumeSlider" type="HSlider" parent="AudioItems/VBoxContainer/HBoxContainer4" unique_id=725015946]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.001
+value = 1.0
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="AudioItems/VBoxContainer" unique_id=1593177700]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="AudioItems/VBoxContainer/HBoxContainer5" unique_id=508422125]
+layout_mode = 2
+text = "Captions"
+
+[node name="CheckButton" type="CheckBox" parent="AudioItems/VBoxContainer/HBoxContainer5" unique_id=1266579584]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="AccessibilityItems" type="MarginContainer" parent="." unique_id=1574222765]
+visible = false
+layout_mode = 0
+offset_left = 1.2853354
+offset_top = 87.40281
+offset_right = 1122.2853
+offset_bottom = 696.28534
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AccessibilityItems" unique_id=367674294]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="AccessibilityItems/VBoxContainer" unique_id=394813360]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="AccessibilityItems/VBoxContainer/HBoxContainer" unique_id=1531540349]
+layout_mode = 2
+text = "Color Blindness Mode"
+
+[node name="colorBlindnessButton" type="OptionButton" parent="AccessibilityItems/VBoxContainer/HBoxContainer" unique_id=910613851]
+layout_mode = 2
+size_flags_vertical = 4
+selected = 0
+item_count = 1
+popup/item_0/text = "None"
+popup/item_0/id = 0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="AccessibilityItems/VBoxContainer" unique_id=1921274973]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="AccessibilityItems/VBoxContainer/HBoxContainer2" unique_id=398850612]
+layout_mode = 2
+text = "Text Size"
+
+[node name="textSizeButton" type="OptionButton" parent="AccessibilityItems/VBoxContainer/HBoxContainer2" unique_id=655559058]
+layout_mode = 2
+size_flags_vertical = 4
+selected = 0
+item_count = 1
+popup/item_0/text = "100%"
+popup/item_0/id = 0
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="AccessibilityItems/VBoxContainer" unique_id=1540871303]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="AccessibilityItems/VBoxContainer/HBoxContainer6" unique_id=43890206]
+layout_mode = 2
+text = "Font Choice"
+
+[node name="textSizeButton" type="OptionButton" parent="AccessibilityItems/VBoxContainer/HBoxContainer6" unique_id=1174419943]
+layout_mode = 2
+size_flags_vertical = 4
+selected = 0
+item_count = 1
+popup/item_0/text = "100%"
+popup/item_0/id = 0
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="AccessibilityItems/VBoxContainer" unique_id=600637706]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="AccessibilityItems/VBoxContainer/HBoxContainer3" unique_id=1003569446]
+layout_mode = 2
+text = "Auto-Reload"
+
+[node name="autoReloadCheck" type="CheckButton" parent="AccessibilityItems/VBoxContainer/HBoxContainer3" unique_id=1134939531]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="AccessibilityItems/VBoxContainer" unique_id=1675711684]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="AccessibilityItems/VBoxContainer/HBoxContainer4" unique_id=843047045]
+layout_mode = 2
+text = "Auto-Run"
+
+[node name="autoRunCheck" type="CheckButton" parent="AccessibilityItems/VBoxContainer/HBoxContainer4" unique_id=1973408977]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="AccessibilityItems/VBoxContainer" unique_id=735368644]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="AccessibilityItems/VBoxContainer/HBoxContainer5" unique_id=1732755674]
+layout_mode = 2
+text = "Aim-Assist"
+
+[node name="autoRunCheck" type="CheckButton" parent="AccessibilityItems/VBoxContainer/HBoxContainer5" unique_id=1147772788]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="HBoxContainer7" type="HBoxContainer" parent="AccessibilityItems/VBoxContainer" unique_id=1954000965]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="AccessibilityItems/VBoxContainer/HBoxContainer7" unique_id=1563410701]
+layout_mode = 2
+text = "Auto Dialogue Advance"
+
+[node name="autoRunCheck" type="CheckButton" parent="AccessibilityItems/VBoxContainer/HBoxContainer7" unique_id=132669959]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="HBoxContainer8" type="HBoxContainer" parent="AccessibilityItems/VBoxContainer" unique_id=15225677]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="AccessibilityItems/VBoxContainer/HBoxContainer8" unique_id=1372337239]
+layout_mode = 2
+text = "Low Contrast UI Mode"
+
+[node name="autoRunCheck" type="CheckBox" parent="AccessibilityItems/VBoxContainer/HBoxContainer8" unique_id=656676835]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="ControlItems" type="MarginContainer" parent="." unique_id=1674535764]
+visible = false
+layout_mode = 0
+offset_left = 1.2853354
+offset_top = 87.40281
+offset_right = 1122.2853
+offset_bottom = 696.28534
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 0
+
+[node name="Contents" type="VBoxContainer" parent="ControlItems" unique_id=1376211549]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="AutoDetectInputButton" type="Button" parent="ControlItems/Contents" unique_id=1098416208]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Auto Detect Input Device"
+
+[node name="SelectedDevice" type="HBoxContainer" parent="ControlItems/Contents" unique_id=1840517595]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="ControlItems/Contents/SelectedDevice" unique_id=824825592]
+layout_mode = 2
+text = "Selected Device: "
+
+[node name="SelectDeviceOption" type="OptionButton" parent="ControlItems/Contents/SelectedDevice" unique_id=1401343920]
+layout_mode = 2
+selected = 0
+item_count = 2
+popup/item_0/text = "Keyboard and Mouse"
+popup/item_0/id = 0
+popup/item_1/text = "Controller"
+popup/item_1/id = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="ControlItems/Contents" unique_id=1585982369]
+layout_mode = 2
+theme_override_constants/margin_left = 640
+
+[node name="HBoxContainer4" type="VBoxContainer" parent="ControlItems/Contents/MarginContainer" unique_id=2087458496]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ControlItems/Contents/MarginContainer/HBoxContainer4" unique_id=1329554217]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+text = "Up"
+
+[node name="CenterContainer" type="AspectRatioContainer" parent="ControlItems/Contents/MarginContainer/HBoxContainer4" unique_id=1885504774]
+layout_mode = 2
+stretch_mode = 0
+
+[node name="LineEdit" type="Button" parent="ControlItems/Contents/MarginContainer/HBoxContainer4/CenterContainer" unique_id=1876937652]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "UP"
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="ControlItems/Contents" unique_id=1049461610]
+layout_mode = 2
+theme_override_constants/separation = 69
+alignment = 1
+
+[node name="HBoxContainer4" type="VBoxContainer" parent="ControlItems/Contents/HBoxContainer5" unique_id=1334786215]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ControlItems/Contents/HBoxContainer5/HBoxContainer4" unique_id=1442012755]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+text = "Roll"
+
+[node name="CenterContainer" type="AspectRatioContainer" parent="ControlItems/Contents/HBoxContainer5/HBoxContainer4" unique_id=89930979]
+layout_mode = 2
+stretch_mode = 0
+
+[node name="LineEdit" type="Button" parent="ControlItems/Contents/HBoxContainer5/HBoxContainer4/CenterContainer" unique_id=1896512023]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "CNTRL"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ControlItems/Contents/HBoxContainer5" unique_id=506930538]
+layout_mode = 2
+
+[node name="HBoxContainer8" type="VBoxContainer" parent="ControlItems/Contents/HBoxContainer5/HBoxContainer" unique_id=67878702]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ControlItems/Contents/HBoxContainer5/HBoxContainer/HBoxContainer8" unique_id=1280497066]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+text = "Attack"
+
+[node name="CenterContainer" type="AspectRatioContainer" parent="ControlItems/Contents/HBoxContainer5/HBoxContainer/HBoxContainer8" unique_id=797574744]
+layout_mode = 2
+stretch_mode = 0
+
+[node name="LineEdit" type="Button" parent="ControlItems/Contents/HBoxContainer5/HBoxContainer/HBoxContainer8/CenterContainer" unique_id=220510409]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "X"
+
+[node name="HBoxContainer5" type="VBoxContainer" parent="ControlItems/Contents/HBoxContainer5/HBoxContainer" unique_id=1507217976]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ControlItems/Contents/HBoxContainer5/HBoxContainer/HBoxContainer5" unique_id=1317764946]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+text = "Interact"
+
+[node name="CenterContainer" type="AspectRatioContainer" parent="ControlItems/Contents/HBoxContainer5/HBoxContainer/HBoxContainer5" unique_id=1086686576]
+layout_mode = 2
+stretch_mode = 0
+
+[node name="LineEdit" type="Button" parent="ControlItems/Contents/HBoxContainer5/HBoxContainer/HBoxContainer5/CenterContainer" unique_id=1809627582]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Z"
+
+[node name="HBoxContainer6" type="VBoxContainer" parent="ControlItems/Contents/HBoxContainer5/HBoxContainer" unique_id=51303199]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ControlItems/Contents/HBoxContainer5/HBoxContainer/HBoxContainer6" unique_id=1435526466]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+text = "Menu"
+
+[node name="CenterContainer" type="AspectRatioContainer" parent="ControlItems/Contents/HBoxContainer5/HBoxContainer/HBoxContainer6" unique_id=333975267]
+layout_mode = 2
+stretch_mode = 0
+
+[node name="LineEdit" type="Button" parent="ControlItems/Contents/HBoxContainer5/HBoxContainer/HBoxContainer6/CenterContainer" unique_id=56062163]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "C"
+
+[node name="HBoxContainer7" type="VBoxContainer" parent="ControlItems/Contents/HBoxContainer5/HBoxContainer" unique_id=2071967428]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ControlItems/Contents/HBoxContainer5/HBoxContainer/HBoxContainer7" unique_id=234385434]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+text = "Inventory"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="CenterContainer" type="AspectRatioContainer" parent="ControlItems/Contents/HBoxContainer5/HBoxContainer/HBoxContainer7" unique_id=1506430748]
+layout_mode = 2
+stretch_mode = 0
+
+[node name="LineEdit" type="Button" parent="ControlItems/Contents/HBoxContainer5/HBoxContainer/HBoxContainer7/CenterContainer" unique_id=207792417]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "V"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="ControlItems/Contents/HBoxContainer5" unique_id=316350976]
+layout_mode = 2
+
+[node name="HBoxContainer4" type="VBoxContainer" parent="ControlItems/Contents/HBoxContainer5/HBoxContainer2" unique_id=205964597]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ControlItems/Contents/HBoxContainer5/HBoxContainer2/HBoxContainer4" unique_id=1099231570]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+text = "Left"
+
+[node name="CenterContainer" type="AspectRatioContainer" parent="ControlItems/Contents/HBoxContainer5/HBoxContainer2/HBoxContainer4" unique_id=261701670]
+layout_mode = 2
+stretch_mode = 0
+
+[node name="LineEdit" type="Button" parent="ControlItems/Contents/HBoxContainer5/HBoxContainer2/HBoxContainer4/CenterContainer" unique_id=989276359]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "LEFT"
+
+[node name="HBoxContainer5" type="VBoxContainer" parent="ControlItems/Contents/HBoxContainer5/HBoxContainer2" unique_id=1279204116]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ControlItems/Contents/HBoxContainer5/HBoxContainer2/HBoxContainer5" unique_id=403003538]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+text = "Down"
+
+[node name="CenterContainer" type="AspectRatioContainer" parent="ControlItems/Contents/HBoxContainer5/HBoxContainer2/HBoxContainer5" unique_id=1701773349]
+layout_mode = 2
+stretch_mode = 0
+
+[node name="LineEdit" type="Button" parent="ControlItems/Contents/HBoxContainer5/HBoxContainer2/HBoxContainer5/CenterContainer" unique_id=1763542307]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "DOWN"
+
+[node name="HBoxContainer6" type="VBoxContainer" parent="ControlItems/Contents/HBoxContainer5/HBoxContainer2" unique_id=1265976150]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ControlItems/Contents/HBoxContainer5/HBoxContainer2/HBoxContainer6" unique_id=2082100966]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+text = "Right"
+
+[node name="CenterContainer" type="AspectRatioContainer" parent="ControlItems/Contents/HBoxContainer5/HBoxContainer2/HBoxContainer6" unique_id=1102832002]
+layout_mode = 2
+stretch_mode = 0
+
+[node name="LineEdit" type="Button" parent="ControlItems/Contents/HBoxContainer5/HBoxContainer2/HBoxContainer6/CenterContainer" unique_id=425895471]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "RIGHT"
+
+[node name="MonitoredLabel" type="Label" parent="ControlItems/Contents" unique_id=1038864099]
+layout_mode = 2
+text = "Input is now being monitored, press a new key to replace the old."
+horizontal_alignment = 1
+
+[node name="ReturnButton" type="Button" parent="." unique_id=2042412956]
+layout_mode = 0
+offset_left = 1197.9326
+offset_top = 10.282683
+offset_right = 1349.9326
+offset_bottom = 73.282684
+theme_override_font_sizes/font_size = 30
+text = "Return"
+
+[connection signal="tab_changed" from="Tabs/TabBar" to="." method="_on_tab_bar_tab_changed"]
+[connection signal="toggled" from="VideoItems/VBoxContainer/HBoxContainer/CheckButton" to="." method="vsync_toggle_toggled"]
+[connection signal="item_selected" from="VideoItems/VBoxContainer/HBoxContainer5/OptionButton" to="." method="LockFrameRateOptionSelected"]
+[connection signal="toggled" from="VideoItems/VBoxContainer/HBoxContainer6/checkBox" to="." method="Fullscreen_Toggled"]
+[connection signal="value_changed" from="AudioItems/VBoxContainer/HBoxContainer/MasterVolumeSlider" to="." method="_on_master_volume_slider_value_changed"]
+[connection signal="value_changed" from="AudioItems/VBoxContainer/HBoxContainer2/MusicVolumeSlider" to="." method="_on_music_volume_slider_value_changed"]
+[connection signal="value_changed" from="AudioItems/VBoxContainer/HBoxContainer6/AmbientVolumeSlider" to="." method="_on_ambient_volume_slider_value_changed"]
+[connection signal="value_changed" from="AudioItems/VBoxContainer/HBoxContainer3/SFXVolumeSlider" to="." method="_on_sfx_volume_slider_value_changed"]
+[connection signal="value_changed" from="AudioItems/VBoxContainer/HBoxContainer4/DialogVolumeSlider" to="." method="_on_dialog_volume_slider_value_changed"]
+[connection signal="pressed" from="ReturnButton" to="." method="_on_return_button_pressed"]

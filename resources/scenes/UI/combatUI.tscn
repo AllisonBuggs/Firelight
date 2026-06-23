@@ -1,0 +1,228 @@
+[gd_scene format=3 uid="uid://dwsy4f3chvuw2"]
+
+[ext_resource type="Texture2D" uid="uid://dlipilpcknq3t" path="res://resources/sprites/icons/heart.jpeg" id="1_fmubx"]
+[ext_resource type="Script" uid="uid://gpafc0e23b4u" path="res://resources/scripts/combat_ui.gd" id="1_ji0aw"]
+
+[sub_resource type="Animation" id="Animation_ul78g"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ProgressBar:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1234, 166)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ProgressBar:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(40, 290)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HealthDisplay:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-126, 45)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HealthDisplay/HealthDisplaySprite:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(29, 43)]
+}
+
+[sub_resource type="Animation" id="Animation_2kcnm"]
+resource_name = "UIExit"
+length = 1.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ProgressBar:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1085, 166), Vector2(1203, 166)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HealthDisplay:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0009999999, 1.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(58, 45), Vector2(-121, 45)]
+}
+
+[sub_resource type="Animation" id="Animation_05b4e"]
+resource_name = "UiEnter"
+length = 0.8333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ProgressBar:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1234, 166), Vector2(1085, 166)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ProgressBar:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.8),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(40, 290)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HealthDisplay/HealthDisplaySprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(29, 43)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HealthDisplay:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.0009999999, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-116, 45), Vector2(58, 45)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u1y6v"]
+_data = {
+&"RESET": SubResource("Animation_ul78g"),
+&"UIExit": SubResource("Animation_2kcnm"),
+&"UiEnter": SubResource("Animation_05b4e")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ji0aw"]
+animation = &"UIExit"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_e3exu"]
+animation = &"UiEnter"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ul78g"]
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"inCombat"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2kcnm"]
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"notInCombat"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ji0aw"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_05b4e"]
+states/UIExit/node = SubResource("AnimationNodeAnimation_ji0aw")
+states/UIExit/position = Vector2(316, -22)
+states/UiEnter/node = SubResource("AnimationNodeAnimation_e3exu")
+states/UiEnter/position = Vector2(461, 42)
+transitions = ["UIExit", "UiEnter", SubResource("AnimationNodeStateMachineTransition_ul78g"), "UiEnter", "UIExit", SubResource("AnimationNodeStateMachineTransition_2kcnm"), "Start", "UIExit", SubResource("AnimationNodeStateMachineTransition_ji0aw")]
+graph_offset = Vector2(-178, -48)
+
+[node name="CombatUi" type="Control" unique_id=341429763]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ji0aw")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=2028520820]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 82.0
+offset_top = -158.0
+offset_right = 122.0
+offset_bottom = 132.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+value = 100.0
+fill_mode = 3
+
+[node name="HealthDisplay" type="Label" parent="." unique_id=960027196]
+layout_mode = 1
+offset_left = -126.0
+offset_top = 45.0
+offset_right = -58.0
+offset_bottom = 158.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 30
+text = "HP:100"
+horizontal_alignment = 1
+autowrap_mode = 1
+
+[node name="HealthDisplaySprite" type="Sprite2D" parent="HealthDisplay" unique_id=271356503]
+z_index = -1
+position = Vector2(29, 43)
+scale = Vector2(0.7196137, 0.7196137)
+texture = ExtResource("1_fmubx")
+flip_h = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1233041742]
+libraries/ = SubResource("AnimationLibrary_u1y6v")
+
+[node name="Timer" type="Timer" parent="." unique_id=2075186610]
+
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=1487247948]
+tree_root = SubResource("AnimationNodeStateMachine_05b4e")
+anim_player = NodePath("../AnimationPlayer")
+parameters/conditions/inCombat = false
+parameters/conditions/notInCombat = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

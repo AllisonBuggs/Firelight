@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbq857wacprnk"]
+
+[ext_resource type="Script" uid="uid://dg30vqom3k700" path="res://resources/scripts/collision.gd" id="1_t441w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t441w"]
+
+[node name="Collision_6" type="StaticBody2D"]
+physics_interpolation_mode = 1
+script = ExtResource("1_t441w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_t441w")

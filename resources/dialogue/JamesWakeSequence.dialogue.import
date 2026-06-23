@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cqqss2ow8esuc"
+path="res://.godot/imported/JamesWakeSequence.dialogue-6eb9640163836c621d2cb6656e47e9b3.tres"
+
+[deps]
+
+source_file="res://resources/dialogue/JamesWakeSequence.dialogue"
+dest_files=["res://.godot/imported/JamesWakeSequence.dialogue-6eb9640163836c621d2cb6656e47e9b3.tres"]
+
+[params]
+
+defaults=true

@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://f24rr680acoe"]
+
+[ext_resource type="Script" uid="uid://b20aidoeq5wcg" path="res://resources/scripts/eye.gd" id="1_d0obx"]
+[ext_resource type="Texture2D" uid="uid://ble2hbfc8uxgi" path="res://resources/sprites/icons/empty_eye_inlight.png" id="2_y0v6g"]
+[ext_resource type="Texture2D" uid="uid://djyo6e00qaqpu" path="res://resources/sprites/icons/pupil_in_light.png" id="3_bgnka"]
+[ext_resource type="AudioStream" uid="uid://c5e6qsuuy7hf5" path="res://resources/sfx/slimeTouch.mp3" id="4_370ar"]
+[ext_resource type="Texture2D" uid="uid://8wjoe21c4n2b" path="res://resources/sprites/icons/eyelid_light1.png" id="4_d0obx"]
+[ext_resource type="Texture2D" uid="uid://c3bmyvnba4trn" path="res://resources/sprites/icons/eyelid_dark1.png" id="4_y0v6g"]
+[ext_resource type="Texture2D" uid="uid://caqu6gi66qtn6" path="res://resources/sprites/icons/eyelid_light2.png" id="5_6kegf"]
+[ext_resource type="Texture2D" uid="uid://c2fkgoy23ft18" path="res://resources/sprites/icons/eyelid_dark2.png" id="5_bgnka"]
+[ext_resource type="Texture2D" uid="uid://q8pm02aixcu" path="res://resources/sprites/icons/eyelid_light3.png" id="6_3umei"]
+[ext_resource type="Texture2D" uid="uid://cyyh5uc1kuv7c" path="res://resources/sprites/icons/eyelid_dark3.png" id="6_526vp"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y0v6g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_y0v6g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_bgnka")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_526vp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_bgnka")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_y0v6g")
+}],
+"loop": false,
+"name": &"blink",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.61,
+"texture": ExtResource("4_d0obx")
+}, {
+"duration": 0.61,
+"texture": ExtResource("5_6kegf")
+}, {
+"duration": 0.61,
+"texture": ExtResource("6_3umei")
+}, {
+"duration": 0.61,
+"texture": ExtResource("5_6kegf")
+}, {
+"duration": 0.61,
+"texture": ExtResource("4_d0obx")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Eye" type="Node2D" unique_id=1132439873]
+script = ExtResource("1_d0obx")
+
+[node name="eyeBall" type="Sprite2D" parent="." unique_id=888370667]
+texture = ExtResource("2_y0v6g")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1370359636]
+position = Vector2(-1.4249445, -4.792654)
+rotation = -0.26288852
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="Pupil" type="Sprite2D" parent="Marker2D" unique_id=1903977017]
+texture = ExtResource("3_bgnka")
+
+[node name="Eyelid" type="AnimatedSprite2D" parent="." unique_id=929887773]
+sprite_frames = SubResource("SpriteFrames_y0v6g")
+frame = 4
+frame_progress = 1.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=986805191]
+stream = ExtResource("4_370ar")
+bus = &"SFX"
+
+[node name="Button" type="Button" parent="." unique_id=1711759147]
+offset_left = -16.84329
+offset_top = -9.431205
+offset_right = 19.15671
+offset_bottom = 7.568795
+focus_mode = 0
+focus_behavior_recursive = 1
+flat = true
+
+[node name="Timer" type="Timer" parent="." unique_id=1321597743]
+autostart = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

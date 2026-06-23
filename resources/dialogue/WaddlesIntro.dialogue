@@ -1,0 +1,23 @@
+~ start
+Nathan: Good morning, you must be the Inspector, I must say you will be pleased!
+Nathan: Our doors are airtight.
+James: I'm the ethics inspector.
+Nathan: Oh... Hold on, 
+Nathan: I need you in the vistor entrance hallway.
+???: I taught Waddeles to run on peoples back, its like a six legged massage~
+Nathan: Theres a ethics inspector waiting for you in the hallway
+???: oH! Waddels I have your favorite treat for completeing our scientific experiment on animal training.
+???: Franklin, a little help? -
+Nathan: ...
+Nathan: I think its my time to clock out, I have no doubt you'll know your escort when you see him
+Nathan: This fine gentlemen here will be watching you, so I've got no worries
+Nathan: Have a good night
+
+- First one
+	Nathan: You picked the first one.
+- Second one
+	Nathan: You picked the second one.
+- Start again => start
+- End the conversation => END
+Nathan: For more information see the online documentation.
+=> END

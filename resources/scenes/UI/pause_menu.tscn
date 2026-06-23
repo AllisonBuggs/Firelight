@@ -1,0 +1,105 @@
+[gd_scene format=3 uid="uid://b2h8b7uyns1ss"]
+
+[ext_resource type="Script" uid="uid://diuyyk666ndg2" path="res://resources/scripts/pause_menu.gd" id="1_w2i2n"]
+[ext_resource type="Texture2D" uid="uid://c3640no6fc1f0" path="res://resources/sprites/icons/playButton.png" id="2_4vn16"]
+[ext_resource type="StyleBox" uid="uid://djb24ahi6mwse" path="res://resources/styles/pause_menu.tres" id="2_l0ujg"]
+[ext_resource type="Texture2D" uid="uid://b0orc3lt1eqw3" path="res://resources/sprites/icons/saveButton.png" id="3_l0ujg"]
+[ext_resource type="Texture2D" uid="uid://bjxss8gokqcmh" path="res://resources/sprites/icons/settingsButton.png" id="4_60plx"]
+[ext_resource type="StyleBox" uid="uid://drbsl78wixgpq" path="res://resources/styles/UI_Button_Highlight.tres" id="4_oikoi"]
+[ext_resource type="Texture2D" uid="uid://8jldntib8sj4" path="res://resources/sprites/icons/exitButton.png" id="5_oikoi"]
+
+[node name="PauseMenu" type="MarginContainer" unique_id=188524214]
+process_mode = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_top = 250
+theme_override_constants/margin_right = 200
+theme_override_constants/margin_bottom = 240
+script = ExtResource("1_w2i2n")
+
+[node name="Panel" type="Panel" parent="." unique_id=485188585]
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("2_l0ujg")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=895928135]
+layout_mode = 0
+offset_right = 10.0
+offset_bottom = 508.0
+scale = Vector2(0.87431514, 0.87431514)
+mouse_filter = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_bottom = 330
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/MarginContainer" unique_id=1090413388]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 98
+
+[node name="ResumeButton" type="Button" parent="Panel/MarginContainer/HBoxContainer" unique_id=944326395]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_colors/icon_hover_pressed_color = Color(0.73221797, 0, 0.18763566, 1)
+theme_override_styles/hover = ExtResource("4_oikoi")
+theme_override_styles/focus = ExtResource("4_oikoi")
+text = "Resume"
+icon = ExtResource("2_4vn16")
+flat = true
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="SavesButton" type="Button" parent="Panel/MarginContainer/HBoxContainer" unique_id=627394936]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_styles/hover = ExtResource("4_oikoi")
+theme_override_styles/focus = ExtResource("4_oikoi")
+text = "Saves"
+icon = ExtResource("3_l0ujg")
+flat = true
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="SettingsButton" type="Button" parent="Panel/MarginContainer/HBoxContainer" unique_id=538792200]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_styles/hover = ExtResource("4_oikoi")
+theme_override_styles/hover_mirrored = ExtResource("4_oikoi")
+theme_override_styles/focus = ExtResource("4_oikoi")
+text = "Settings"
+icon = ExtResource("4_60plx")
+flat = true
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="ExitButton" type="Button" parent="Panel/MarginContainer/HBoxContainer" unique_id=1661472503]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_styles/hover = ExtResource("4_oikoi")
+theme_override_styles/focus = ExtResource("4_oikoi")
+text = "Exit to Desktop"
+icon = ExtResource("5_oikoi")
+flat = true
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[connection signal="mouse_entered" from="Panel/MarginContainer/HBoxContainer/ResumeButton" to="." method="_on_resume_button_mouse_entered"]
+[connection signal="mouse_exited" from="Panel/MarginContainer/HBoxContainer/ResumeButton" to="." method="_on_resume_button_mouse_exited"]
+[connection signal="pressed" from="Panel/MarginContainer/HBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="mouse_entered" from="Panel/MarginContainer/HBoxContainer/SavesButton" to="." method="_on_saves_button_mouse_entered"]
+[connection signal="mouse_exited" from="Panel/MarginContainer/HBoxContainer/SavesButton" to="." method="_on_saves_button_mouse_exited"]
+[connection signal="pressed" from="Panel/MarginContainer/HBoxContainer/SavesButton" to="." method="_on_saves_button_pressed"]
+[connection signal="mouse_entered" from="Panel/MarginContainer/HBoxContainer/SettingsButton" to="." method="_on_settings_button_mouse_entered"]
+[connection signal="mouse_exited" from="Panel/MarginContainer/HBoxContainer/SettingsButton" to="." method="_on_settings_button_mouse_exited"]
+[connection signal="pressed" from="Panel/MarginContainer/HBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="mouse_entered" from="Panel/MarginContainer/HBoxContainer/ExitButton" to="." method="_on_exit_button_mouse_entered"]
+[connection signal="mouse_exited" from="Panel/MarginContainer/HBoxContainer/ExitButton" to="." method="_on_exit_button_mouse_exited"]
+[connection signal="pressed" from="Panel/MarginContainer/HBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

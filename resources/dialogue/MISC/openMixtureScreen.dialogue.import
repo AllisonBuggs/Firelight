@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://n8k8w8pb612c"
+path="res://.godot/imported/openMixtureScreen.dialogue-eb0b9918309b00be0a0283db6b475507.tres"
+
+[deps]
+
+source_file="res://resources/dialogue/MISC/openMixtureScreen.dialogue"
+dest_files=["res://.godot/imported/openMixtureScreen.dialogue-eb0b9918309b00be0a0283db6b475507.tres"]
+
+[params]
+
+defaults=true

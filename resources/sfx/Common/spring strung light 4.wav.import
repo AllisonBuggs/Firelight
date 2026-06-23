@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b5pwq4cksul61"
+path="res://.godot/imported/spring strung light 4.wav-e218711572cc052a6ae44650a9058378.sample"
+
+[deps]
+
+source_file="res://resources/sfx/Common/spring strung light 4.wav"
+dest_files=["res://.godot/imported/spring strung light 4.wav-e218711572cc052a6ae44650a9058378.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://cbaxum6xw240c"]
+
+[ext_resource type="Script" uid="uid://cfdg4montfh3v" path="res://resources/scripts/ui_manager.gd" id="1_0olu8"]
+[ext_resource type="PackedScene" uid="uid://d0m7qdpcqhgjg" path="res://resources/scenes/UI/save&load_menu.tscn" id="1_ji2rw"]
+[ext_resource type="PackedScene" uid="uid://gaxsfxeq5rc5" path="res://resources/scenes/UI/settings.tscn" id="3_sn0vg"]
+[ext_resource type="PackedScene" uid="uid://b2h8b7uyns1ss" path="res://resources/scenes/UI/pause_menu.tscn" id="4_wuck1"]
+[ext_resource type="PackedScene" uid="uid://ck0p7s5qyx61a" path="res://resources/scenes/UI/inventory.tscn" id="5_cbdcq"]
+[ext_resource type="PackedScene" uid="uid://dwsy4f3chvuw2" path="res://resources/scenes/UI/combatUI.tscn" id="7_sn0vg"]
+[ext_resource type="Texture2D" uid="uid://wjkic6okxpes" path="res://resources/sprites/UI/crosshair043.png" id="8_yfh2s"]
+[ext_resource type="Script" uid="uid://cgpudasvu764r" path="res://resources/scripts/crosshair.gd" id="9_htq8q"]
+[ext_resource type="PackedScene" uid="uid://cnwqtspdwtkyt" path="res://resources/scenes/UI/choicer.tscn" id="10_htq8q"]
+[ext_resource type="PackedScene" uid="uid://cayuxqn3r4jco" path="res://resources/scenes/UI/story_summary.tscn" id="11_yfh2s"]
+
+[node name="UiCanvasLayer" type="CanvasLayer" unique_id=1431050982]
+process_mode = 3
+layer = 2
+script = ExtResource("1_0olu8")
+
+[node name="CombatUi" parent="." unique_id=341429763 instance=ExtResource("7_sn0vg")]
+mouse_filter = 2
+
+[node name="PopUps" parent="." unique_id=1902225285 instance=ExtResource("10_htq8q")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 0.0
+offset_bottom = -324.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+
+[node name="saveAndLoadMenu" parent="." unique_id=186759610 instance=ExtResource("1_ji2rw")]
+visible = false
+mouse_filter = 1
+
+[node name="Settings" parent="." unique_id=581721721 instance=ExtResource("3_sn0vg")]
+visible = false
+offset_left = 68.0
+offset_top = 84.0
+offset_right = 38.0
+offset_bottom = 63.0
+mouse_filter = 1
+
+[node name="PauseMenu" parent="." unique_id=188524214 instance=ExtResource("4_wuck1")]
+visible = false
+mouse_filter = 1
+
+[node name="Inventory" parent="." unique_id=1930745018 instance=ExtResource("5_cbdcq")]
+visible = false
+
+[node name="StorySummary" parent="." unique_id=792417365 instance=ExtResource("11_yfh2s")]
+visible = false
+mouse_filter = 1
+
+[node name="crosshair" type="Sprite2D" parent="." unique_id=1397756808]
+top_level = true
+visibility_layer = 512
+z_index = 10
+z_as_relative = false
+position = Vector2(39.999996, 39.999996)
+scale = Vector2(0.57004595, 0.57004595)
+texture = ExtResource("8_yfh2s")
+script = ExtResource("9_htq8q")

@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://es8ecuycrs6a"]
+
+[ext_resource type="Script" uid="uid://rg7lw01uppno" path="res://resources/scripts/combat_zone.gd" id="1_4cxib"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_434h5"]
+
+[node name="EventCombatArea" type="Area2D" unique_id=652122980]
+script = ExtResource("1_4cxib")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=269935073]
+shape = SubResource("RectangleShape2D_434h5")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

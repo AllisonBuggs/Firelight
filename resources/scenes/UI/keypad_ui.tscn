@@ -1,0 +1,143 @@
+[gd_scene format=3 uid="uid://dr7cs5cqqh0jx"]
+
+[ext_resource type="Script" uid="uid://b0gopfkj3h1h2" path="res://resources/scripts/UI/keypad_ui.gd" id="1_d7swr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tfks5"]
+bg_color = Color(0.43296295, 0.45666987, 0.49438345, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oigj6"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="KeypadUI" type="Control" unique_id=368082087]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d7swr")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=502889951]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -18.265015
+offset_bottom = -0.16998291
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer" unique_id=213508410]
+custom_minimum_size = Vector2(150, 230)
+layout_mode = 2
+
+[node name="Keypad" type="Panel" parent="CenterContainer/MarginContainer" unique_id=5222255]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tfks5")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/MarginContainer/Keypad" unique_id=452617763]
+layout_mode = 0
+offset_right = 151.0
+offset_bottom = 195.0
+theme_override_constants/separation = 10
+alignment = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/MarginContainer/Keypad/VBoxContainer" unique_id=400402384]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 23
+theme_override_constants/margin_right = 10
+
+[node name="Screen" type="Panel" parent="CenterContainer/MarginContainer/Keypad/VBoxContainer/MarginContainer" unique_id=704237974]
+custom_minimum_size = Vector2(0, 37)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_oigj6")
+
+[node name="screenLabel" type="Label" parent="CenterContainer/MarginContainer/Keypad/VBoxContainer/MarginContainer/Screen" unique_id=1001918875]
+layout_mode = 0
+offset_right = 131.0
+offset_bottom = 37.0
+text = "11111111111111"
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/MarginContainer/Keypad/VBoxContainer" unique_id=1084216547]
+layout_mode = 2
+
+[node name="ComponetsButtons" type="HBoxContainer" parent="CenterContainer/MarginContainer/Keypad/VBoxContainer/VBoxContainer" unique_id=437869353]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="keyPad1" type="Button" parent="CenterContainer/MarginContainer/Keypad/VBoxContainer/VBoxContainer/ComponetsButtons" unique_id=216022794]
+layout_mode = 2
+text = "1
+"
+
+[node name="keyPad2" type="Button" parent="CenterContainer/MarginContainer/Keypad/VBoxContainer/VBoxContainer/ComponetsButtons" unique_id=1035935484]
+layout_mode = 2
+text = "2
+"
+
+[node name="keyPad3" type="Button" parent="CenterContainer/MarginContainer/Keypad/VBoxContainer/VBoxContainer/ComponetsButtons" unique_id=101328219]
+layout_mode = 2
+text = "3
+"
+
+[node name="ComponetsButtons2" type="HBoxContainer" parent="CenterContainer/MarginContainer/Keypad/VBoxContainer/VBoxContainer" unique_id=1547776114]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="keyPad4" type="Button" parent="CenterContainer/MarginContainer/Keypad/VBoxContainer/VBoxContainer/ComponetsButtons2" unique_id=921181253]
+layout_mode = 2
+text = "4"
+
+[node name="keyPad5" type="Button" parent="CenterContainer/MarginContainer/Keypad/VBoxContainer/VBoxContainer/ComponetsButtons2" unique_id=1726782046]
+layout_mode = 2
+text = "5"
+
+[node name="keyPad6" type="Button" parent="CenterContainer/MarginContainer/Keypad/VBoxContainer/VBoxContainer/ComponetsButtons2" unique_id=1094600510]
+layout_mode = 2
+text = "6"
+
+[node name="ComponetsButtons3" type="HBoxContainer" parent="CenterContainer/MarginContainer/Keypad/VBoxContainer/VBoxContainer" unique_id=1878219727]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="keyPad7" type="Button" parent="CenterContainer/MarginContainer/Keypad/VBoxContainer/VBoxContainer/ComponetsButtons3" unique_id=1389109914]
+layout_mode = 2
+text = "7"
+
+[node name="keyPad8" type="Button" parent="CenterContainer/MarginContainer/Keypad/VBoxContainer/VBoxContainer/ComponetsButtons3" unique_id=82549545]
+layout_mode = 2
+text = "8"
+
+[node name="keyPad9" type="Button" parent="CenterContainer/MarginContainer/Keypad/VBoxContainer/VBoxContainer/ComponetsButtons3" unique_id=822608641]
+layout_mode = 2
+text = "9"
+
+[node name="keyEnter" type="Button" parent="CenterContainer/MarginContainer/Keypad/VBoxContainer/VBoxContainer" unique_id=1027437269]
+layout_mode = 2
+text = "Enter"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1500650445]
+
+[node name="BackButton" type="Button" parent="." unique_id=1312356065]
+layout_mode = 0
+offset_left = 425.0
+offset_top = 208.0
+offset_right = 487.0
+offset_bottom = 246.0
+text = "Back"
+
+[connection signal="pressed" from="CenterContainer/MarginContainer/Keypad/VBoxContainer/VBoxContainer/ComponetsButtons/keyPad1" to="." method="_on_key_pad_1_pressed"]
+[connection signal="pressed" from="CenterContainer/MarginContainer/Keypad/VBoxContainer/VBoxContainer/ComponetsButtons/keyPad2" to="." method="_on_key_pad_2_pressed"]
+[connection signal="pressed" from="CenterContainer/MarginContainer/Keypad/VBoxContainer/VBoxContainer/ComponetsButtons/keyPad3" to="." method="_on_key_pad_3_pressed"]
+[connection signal="pressed" from="CenterContainer/MarginContainer/Keypad/VBoxContainer/VBoxContainer/ComponetsButtons2/keyPad4" to="." method="_on_key_pad_4_pressed"]
+[connection signal="pressed" from="CenterContainer/MarginContainer/Keypad/VBoxContainer/VBoxContainer/ComponetsButtons2/keyPad5" to="." method="_on_key_pad_5_pressed"]
+[connection signal="pressed" from="CenterContainer/MarginContainer/Keypad/VBoxContainer/VBoxContainer/ComponetsButtons2/keyPad6" to="." method="_on_key_pad_6_pressed"]
+[connection signal="pressed" from="CenterContainer/MarginContainer/Keypad/VBoxContainer/VBoxContainer/ComponetsButtons3/keyPad7" to="." method="_on_key_pad_7_pressed"]
+[connection signal="pressed" from="CenterContainer/MarginContainer/Keypad/VBoxContainer/VBoxContainer/ComponetsButtons3/keyPad8" to="." method="_on_key_pad_8_pressed"]
+[connection signal="pressed" from="CenterContainer/MarginContainer/Keypad/VBoxContainer/VBoxContainer/ComponetsButtons3/keyPad9" to="." method="_on_key_pad_9_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

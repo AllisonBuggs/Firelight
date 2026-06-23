@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://ciqkem08lahxa"]
+
+[ext_resource type="Script" uid="uid://b4dyixuubb633" path="res://resources/scripts/objects/actionable_give_item.gd" id="1_2chxp"]
+
+[node name="ActionableGiveItem" type="Area2D" unique_id=446424589]
+collision_layer = 16
+collision_mask = 16
+script = ExtResource("1_2chxp")

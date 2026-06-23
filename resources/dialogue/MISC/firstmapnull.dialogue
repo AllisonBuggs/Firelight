@@ -1,0 +1,3 @@
+~ start
+do player.global_position = Vector2(1063,-2545)
+=> END

@@ -1,0 +1,7 @@
+~ start
+do freezePlayer()
+do playSound("res://resources/sfx/kamranbashirb_enter_car.wav")
+do playAnimation("fade", fadeAnimationPlayer, false)
+do wait(4)
+do changeScene("res://resources/scenes/maps/IntroRoad.tscn")
+=> END

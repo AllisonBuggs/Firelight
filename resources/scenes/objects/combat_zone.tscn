@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://rhq2lpg0pb46"]
+
+[ext_resource type="Script" uid="uid://rg7lw01uppno" path="res://resources/scripts/combat_zone.gd" id="1_mup5b"]
+
+[node name="CombatZone" type="Area2D" unique_id=1495903131]
+script = ExtResource("1_mup5b")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

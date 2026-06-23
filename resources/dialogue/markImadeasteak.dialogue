@@ -1,0 +1,8 @@
+~ start
+do player.dialogStarted()
+do cai.playAnimation("mark")
+do audioStream.stream = load("res://resources/sprites/CoolestSickCats/mark.mp3")
+do audioStream.play()
+do wait(4)
+do cai.playAnimation("Cai_Idle")
+=> END

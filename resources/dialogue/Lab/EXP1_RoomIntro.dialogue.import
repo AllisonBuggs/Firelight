@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dvhtalisrxe4f"
+path="res://.godot/imported/EXP1_RoomIntro.dialogue-719309ea8a0d876b504d5c402f67f614.tres"
+
+[deps]
+
+source_file="res://resources/dialogue/Lab/EXP1_RoomIntro.dialogue"
+dest_files=["res://.godot/imported/EXP1_RoomIntro.dialogue-719309ea8a0d876b504d5c402f67f614.tres"]
+
+[params]
+
+defaults=true

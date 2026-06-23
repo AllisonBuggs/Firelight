@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cectprlqrh4bg"
+path="res://.godot/imported/LiftLockdown.dialogue-4a0c883184f0ad38786ef50e8a4a1d6b.tres"
+
+[deps]
+
+source_file="res://resources/dialogue/Lab/LiftLockdown.dialogue"
+dest_files=["res://.godot/imported/LiftLockdown.dialogue-4a0c883184f0ad38786ef50e8a4a1d6b.tres"]
+
+[params]
+
+defaults=true

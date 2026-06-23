@@ -1,0 +1,126 @@
+[gd_scene format=3 uid="uid://lbj5lximnw1v"]
+
+[ext_resource type="Script" uid="uid://5l26aukn3ogn" path="res://resources/scripts/objects/on_enter_lights.gd" id="1_ca2q1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dwgu4"]
+
+[sub_resource type="Gradient" id="Gradient_t0g18"]
+offsets = PackedFloat32Array(0.53114754, 0.95409834)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ca2q1"]
+gradient = SubResource("Gradient_t0g18")
+fill = 2
+fill_from = Vector2(0.5, 0.5)
+metadata/_snap_enabled = true
+
+[sub_resource type="Animation" id="Animation_ca2q1"]
+resource_name = "Flicker In"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PointLight2D:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.03333333, 0.4, 0.6, 0.93333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PointLight2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.06666666),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_dwgu4"]
+resource_name = "Flicker In"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PointLight2D:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.43333334, 0.6, 0.76666665, 0.93333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PointLight2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.03333333),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_pij50"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PointLight2D:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PointLight2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dwgu4"]
+_data = {
+&"Flicker In": SubResource("Animation_ca2q1"),
+&"Flicker Out": SubResource("Animation_dwgu4"),
+&"RESET": SubResource("Animation_pij50")
+}
+
+[node name="enter_lights" type="Area2D" unique_id=2008337785]
+script = ExtResource("1_ca2q1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=814679839]
+shape = SubResource("RectangleShape2D_dwgu4")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1917015548]
+visible = false
+position = Vector2(4.7683716e-07, 4.7683716e-07)
+scale = Vector2(0.3, 0.3)
+color = Color(0, 0, 0, 1)
+texture = SubResource("GradientTexture2D_ca2q1")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2048735963]
+libraries/ = SubResource("AnimationLibrary_dwgu4")
+autoplay = &"Flicker Out"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1783601934]
+bus = &"SFX"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

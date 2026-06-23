@@ -1,0 +1,167 @@
+[gd_scene format=3 uid="uid://ftwnrflx0kmt"]
+
+[ext_resource type="Texture2D" path="res://resources/sprites/Areas/holidayHouse.png" id="2_h01us"]
+[ext_resource type="PackedScene" uid="uid://chnesmup7fj8u" path="res://resources/scenes/objects/event_door.tscn" id="3_7ulve"]
+[ext_resource type="PackedScene" uid="uid://ck5usmblr0wtq" path="res://resources/scenes/players.tscn" id="4_lpai7"]
+[ext_resource type="PackedScene" uid="uid://dqmfr6jqyvhdo" path="res://resources/scenes/UI/cash_counter.tscn" id="5_jyvou"]
+[ext_resource type="PackedScene" uid="uid://d0m7qdpcqhgjg" path="res://resources/scenes/UI/save&load_menu.tscn" id="6_q0scy"]
+[ext_resource type="PackedScene" uid="uid://cpbagh8wa1dgu" path="res://resources/scenes/UI/dialog_box.tscn" id="7_r72c5"]
+[ext_resource type="PackedScene" uid="uid://gaxsfxeq5rc5" path="res://resources/scenes/UI/settings.tscn" id="8_wfk4y"]
+[ext_resource type="PackedScene" uid="uid://b2h8b7uyns1ss" path="res://resources/scenes/UI/pause_menu.tscn" id="9_8qxdd"]
+[ext_resource type="PackedScene" uid="uid://dbq857wacprnk" path="res://resources/scenes/objects/collision.tscn" id="10_7ulve"]
+
+[node name="Game" type="Node"]
+
+[node name="holidayHouse" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(560.9584, 308)
+scale = Vector2(1.7997396, 1.7997396)
+texture = ExtResource("2_h01us")
+
+[node name="Player" parent="." instance=ExtResource("4_lpai7")]
+position = Vector2(307, 296)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+limit_enabled = false
+
+[node name="Collision" parent="." instance=ExtResource("10_7ulve")]
+position = Vector2(232, 280)
+scale = Vector2(0.21451743, 5.668647)
+
+[node name="Collision13" parent="." instance=ExtResource("10_7ulve")]
+position = Vector2(313, 498)
+scale = Vector2(0.17451744, 11.708642)
+
+[node name="Collision5" parent="." instance=ExtResource("10_7ulve")]
+position = Vector2(963.00006, 279)
+scale = Vector2(0.21451743, 5.668647)
+
+[node name="Collision3" parent="." instance=ExtResource("10_7ulve")]
+position = Vector2(555.99994, 80)
+scale = Vector2(0.1745272, 42.868645)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="DollarCounter" parent="CanvasLayer" instance=ExtResource("5_jyvou")]
+offset_left = 1069.0
+offset_top = 13.0
+offset_right = 1135.0
+offset_bottom = 35.333336
+
+[node name="Save&LoadMenu" parent="CanvasLayer" instance=ExtResource("6_q0scy")]
+visible = false
+offset_left = 191.0
+offset_top = 92.0
+offset_right = 529.0
+offset_bottom = 280.0
+scale = Vector2(2.1765532, 2.1765532)
+
+[node name="DialogBox" parent="CanvasLayer" instance=ExtResource("7_r72c5")]
+visible = false
+
+[node name="Settings" parent="CanvasLayer" instance=ExtResource("8_wfk4y")]
+visible = false
+offset_left = 19.0
+offset_top = 6.0
+offset_right = -11.0
+offset_bottom = -15.0
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("9_8qxdd")]
+process_mode = 3
+visible = false
+anchor_bottom = 1.1417867
+offset_left = -496.0
+offset_top = -175.99998
+offset_right = -739.5426
+offset_bottom = -582.18695
+scale = Vector2(3.9898086, 7.4359813)
+
+[node name="Collision2" parent="." instance=ExtResource("10_7ulve")]
+position = Vector2(399, 280)
+scale = Vector2(0.27, 5.669)
+
+[node name="Collision16" parent="." instance=ExtResource("10_7ulve")]
+position = Vector2(789, 532)
+scale = Vector2(0.27, 5.669)
+
+[node name="Collision22" parent="." instance=ExtResource("10_7ulve")]
+position = Vector2(1028, 696)
+scale = Vector2(0.78999996, 5.669)
+
+[node name="Collision23" parent="." instance=ExtResource("10_7ulve")]
+position = Vector2(554, 916)
+scale = Vector2(1.31, 5.669)
+
+[node name="Collision14" parent="." instance=ExtResource("10_7ulve")]
+position = Vector2(46, 531)
+scale = Vector2(0.47, 5.669)
+
+[node name="Collision17" parent="." instance=ExtResource("10_7ulve")]
+position = Vector2(71, 698)
+scale = Vector2(1.07, 5.669)
+
+[node name="Collision15" parent="." instance=ExtResource("10_7ulve")]
+position = Vector2(540, 531)
+scale = Vector2(0.59000486, 5.669)
+
+[node name="Collision11" parent="." instance=ExtResource("10_7ulve")]
+position = Vector2(563, 412)
+scale = Vector2(1.3100024, 5.669)
+
+[node name="Collision12" parent="." instance=ExtResource("10_7ulve")]
+position = Vector2(1006.00006, 472)
+scale = Vector2(0.38999754, 17.149002)
+
+[node name="Collision6" parent="." instance=ExtResource("10_7ulve")]
+position = Vector2(669, -82)
+scale = Vector2(0.36, 5.669)
+
+[node name="Collision7" parent="." instance=ExtResource("10_7ulve")]
+position = Vector2(832, -83)
+scale = Vector2(0.12000002, 5.669)
+
+[node name="Collision8" parent="." instance=ExtResource("10_7ulve")]
+position = Vector2(875, -17.999998)
+scale = Vector2(0.12000002, 7.029)
+
+[node name="Collision9" parent="." instance=ExtResource("10_7ulve")]
+position = Vector2(1020, 345.99997)
+scale = Vector2(0.12000002, 7.029)
+
+[node name="Collision20" parent="." instance=ExtResource("10_7ulve")]
+position = Vector2(282.00003, 806)
+scale = Vector2(0.12000002, 14.509001)
+
+[node name="Collision21" parent="." instance=ExtResource("10_7ulve")]
+position = Vector2(840, 777)
+scale = Vector2(0.12000002, 20.349)
+
+[node name="Collision10" parent="." instance=ExtResource("10_7ulve")]
+position = Vector2(173, 434)
+scale = Vector2(0.12000002, 24.108997)
+
+[node name="Collision18" parent="." instance=ExtResource("10_7ulve")]
+position = Vector2(-126.000015, 597.00006)
+rotation = 0.7725469
+scale = Vector2(0.12000002, 24.108997)
+
+[node name="Collision19" parent="." instance=ExtResource("10_7ulve")]
+position = Vector2(1221.9999, 645.99994)
+rotation = 2.3506997
+scale = Vector2(0.12000002, 8.481702)
+
+[node name="Collision24" parent="." instance=ExtResource("10_7ulve")]
+position = Vector2(1103, 533)
+rotation = 2.3506997
+scale = Vector2(0.12000002, 8.481702)
+
+[node name="Collision4" parent="." instance=ExtResource("10_7ulve")]
+position = Vector2(763, 164)
+scale = Vector2(0.43, 27.428997)
+
+[node name="transitionEvent" parent="." instance=ExtResource("3_7ulve")]
+position = Vector2(309, 261.00003)
+scale = Vector2(3.0216238, 1.04313)
+mapToLoad = "noellesRoom"
+entranceUsed = "noellesDoor"
+directionEntered = "up"

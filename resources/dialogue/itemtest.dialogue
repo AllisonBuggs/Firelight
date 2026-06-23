@@ -1,0 +1,6 @@
+~ start
+do player.dialogStarted()
+You: Below your feet you spot that the tile is off, looking inside..
+You: 1 Candy was added to your inventory!
+do giveItem("candy")
+=> END

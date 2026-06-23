@@ -1,0 +1,5 @@
+~ start
+do freezePlayer()
+You: You already looked in here.
+do unfreezePlayer()
+=> END

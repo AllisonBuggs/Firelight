@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://02c46wm0rjp0"]
+
+[ext_resource type="Script" uid="uid://k53a1r6n4csx" path="res://resources/scripts/event_update_jounral.gd" id="1_4gobo"]
+
+[node name="event_updateJounral" type="Area2D" unique_id=898177417]
+collision_layer = 16
+collision_mask = 16
+script = ExtResource("1_4gobo")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

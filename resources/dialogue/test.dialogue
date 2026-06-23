@@ -1,0 +1,21 @@
+~ start
+do player.dialogStarted()
+Cai: [[Hi|Hello|Howdy]] kiddo.
+Cai: Need Something?
+- I want to go back inside!!!
+	Cai: Sure, lets head back in.
+- Where are we?
+	Cai: You picked the second one.
+- I made a new friend! 
+	Cai: oh? Who. => who
+- End the conversation => END
+=> END
+
+~ who
+
+- Never mind 
+	Cai: Oh i see => start
+- You! 
+	Cai: Aw, thats... sweet? => END
+- Natalie
+	Cai: Well im sure shes sweet => END

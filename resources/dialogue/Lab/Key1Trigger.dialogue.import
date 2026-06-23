@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://chf5bih4itm0n"
+path="res://.godot/imported/Key1Trigger.dialogue-1975da30255e438bbd1a692fab5677d7.tres"
+
+[deps]
+
+source_file="res://resources/dialogue/Lab/Key1Trigger.dialogue"
+dest_files=["res://.godot/imported/Key1Trigger.dialogue-1975da30255e438bbd1a692fab5677d7.tres"]
+
+[params]
+
+defaults=true

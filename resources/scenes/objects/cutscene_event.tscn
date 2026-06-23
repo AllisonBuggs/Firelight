@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://2u71yvf03jtv"]
+
+[ext_resource type="Script" uid="uid://biqvlo830kl5p" path="res://resources/scripts/cutscene_event.gd" id="1_3tgch"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_26hr6"]
+
+[node name="cutscene" type="Area2D" unique_id=1341049881]
+script = ExtResource("1_3tgch")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1406666274]
+shape = SubResource("RectangleShape2D_26hr6")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1701488384]
+position = Vector2(0, -19)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

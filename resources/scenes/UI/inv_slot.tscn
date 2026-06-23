@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://clngkslvlei0"]
+
+[node name="InvSlot3" type="Button" unique_id=1091748974]
+process_mode = 3
+size_flags_horizontal = 3
+icon_alignment = 1
+expand_icon = true

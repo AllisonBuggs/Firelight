@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://clps4yhftr48b"
+path="res://.godot/imported/Gaurd1Locket.dialogue-e5ea1f03d37b6f2c9603e1d4b01f8671.tres"
+
+[deps]
+
+source_file="res://resources/dialogue/Lab/Gaurd1Locket.dialogue"
+dest_files=["res://.godot/imported/Gaurd1Locket.dialogue-e5ea1f03d37b6f2c9603e1d4b01f8671.tres"]
+
+[params]
+
+defaults=true

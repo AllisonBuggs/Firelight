@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://cnwqtspdwtkyt"]
+
+[ext_resource type="Script" uid="uid://yco7u7j33hbt" path="res://resources/scripts/choicer.gd" id="1_jxogu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jxogu"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_detail = 20
+
+[sub_resource type="Animation" id="Animation_aylin"]
+resource_name = "PopUpEnter"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(805, -157), Vector2(799, 8)]
+}
+
+[sub_resource type="Animation" id="Animation_jxogu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(805, -157)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mve0p"]
+_data = {
+&"PopUpEnter": SubResource("Animation_aylin"),
+&"RESET": SubResource("Animation_jxogu")
+}
+
+[node name="PopUp" type="Control" unique_id=1902225285]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -576.0
+offset_bottom = -264.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jxogu")
+
+[node name="Panel" type="Panel" parent="." unique_id=1579126195]
+layout_mode = 0
+offset_left = 805.0
+offset_top = -157.0
+offset_right = 1253.0
+offset_bottom = 35.0
+scale = Vector2(0.76932824, 0.76932824)
+theme_override_styles/panel = SubResource("StyleBoxFlat_jxogu")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=1596796408]
+layout_mode = 0
+offset_right = 448.0
+offset_bottom = 192.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 2
+
+[node name="Text" type="Label" parent="Panel/MarginContainer" unique_id=931607443]
+layout_mode = 2
+text = "Press J To Open Your Journal"
+horizontal_alignment = 1
+autowrap_mode = 1
+
+[node name="Timer" type="Timer" parent="." unique_id=148058521]
+one_shot = true
+
+[node name="popUpAnimationPlayer" type="AnimationPlayer" parent="." unique_id=608938989]
+libraries/ = SubResource("AnimationLibrary_mve0p")
+
+[connection signal="focus_entered" from="Panel/MarginContainer/Text" to="." method="_on_option_4_focus_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

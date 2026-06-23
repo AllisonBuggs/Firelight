@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bjmrystoren7x"]
+
+[ext_resource type="Script" uid="uid://bw51mcpxumo6t" path="res://resources/scripts/hitbox_raycast.gd" id="1_bfqm6"]
+
+[node name="AttackRayCast" type="RayCast2D" unique_id=689401358]
+enabled = false
+script = ExtResource("1_bfqm6")

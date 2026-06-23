@@ -1,0 +1,233 @@
+[gd_scene format=3 uid="uid://f0vdx82q0ol8"]
+
+[ext_resource type="Script" uid="uid://gppqb4d4cb7s" path="res://resources/scripts/Maps/MAP_start_scene.gd" id="1_6eirv"]
+[ext_resource type="StyleBox" uid="uid://4khxrxa0kq1v" path="res://resources/styles/HexagonStyle.tres" id="2_bul46"]
+
+[sub_resource type="Animation" id="Animation_6eirv"]
+resource_name = "FadeIdentity"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/CenterContainer/IdentitySelection:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/CenterContainer/IdentitySelection:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.13333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/CenterContainer/NameSelection:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_bul46"]
+resource_name = "FadeName"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/CenterContainer/NameSelection:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/CenterContainer/NameSelection:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.100000024),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_sx8v3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/CenterContainer/NameSelection:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/CenterContainer/IdentitySelection:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/CenterContainer/NameSelection:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.001),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/CenterContainer/IdentitySelection:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.001),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i284h"]
+_data = {
+&"FadeIdentity": SubResource("Animation_6eirv"),
+&"FadeName": SubResource("Animation_bul46"),
+&"RESET": SubResource("Animation_sx8v3")
+}
+
+[node name="StartScene" type="Node2D" unique_id=203529283]
+script = ExtResource("1_6eirv")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=652419004]
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer" unique_id=1626537972]
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="NameSelection" type="VBoxContainer" parent="CanvasLayer/CenterContainer" unique_id=733323657]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="CanvasLayer/CenterContainer/NameSelection" unique_id=1560636902]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "Select a Name"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/CenterContainer/NameSelection" unique_id=591233756]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Button" type="Button" parent="CanvasLayer/CenterContainer/NameSelection/HBoxContainer" unique_id=324542229]
+layout_mode = 2
+theme_override_styles/normal = ExtResource("2_bul46")
+theme_override_styles/pressed = ExtResource("2_bul46")
+theme_override_styles/hover = ExtResource("2_bul46")
+theme_override_styles/focus = ExtResource("2_bul46")
+text = "Susie"
+
+[node name="Button2" type="Button" parent="CanvasLayer/CenterContainer/NameSelection/HBoxContainer" unique_id=111212881]
+layout_mode = 2
+theme_override_styles/normal = ExtResource("2_bul46")
+theme_override_styles/pressed = ExtResource("2_bul46")
+theme_override_styles/hover = ExtResource("2_bul46")
+theme_override_styles/focus = ExtResource("2_bul46")
+text = "David"
+
+[node name="Button3" type="Button" parent="CanvasLayer/CenterContainer/NameSelection/HBoxContainer" unique_id=360042982]
+layout_mode = 2
+theme_override_styles/normal = ExtResource("2_bul46")
+theme_override_styles/pressed = ExtResource("2_bul46")
+theme_override_styles/hover = ExtResource("2_bul46")
+theme_override_styles/focus = ExtResource("2_bul46")
+text = "Haven"
+
+[node name="IdentitySelection" type="VBoxContainer" parent="CanvasLayer/CenterContainer" unique_id=1446409032]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="CanvasLayer/CenterContainer/IdentitySelection" unique_id=80656631]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "Select an Identity"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/CenterContainer/IdentitySelection" unique_id=885051680]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Button" type="Button" parent="CanvasLayer/CenterContainer/IdentitySelection/HBoxContainer" unique_id=586560426]
+layout_mode = 2
+theme_override_styles/normal = ExtResource("2_bul46")
+theme_override_styles/pressed = ExtResource("2_bul46")
+theme_override_styles/hover = ExtResource("2_bul46")
+theme_override_styles/focus = ExtResource("2_bul46")
+text = "Feminine"
+
+[node name="Button2" type="Button" parent="CanvasLayer/CenterContainer/IdentitySelection/HBoxContainer" unique_id=816310376]
+layout_mode = 2
+theme_override_styles/normal = ExtResource("2_bul46")
+theme_override_styles/pressed = ExtResource("2_bul46")
+theme_override_styles/hover = ExtResource("2_bul46")
+theme_override_styles/focus = ExtResource("2_bul46")
+text = "Masculine"
+
+[node name="Button3" type="Button" parent="CanvasLayer/CenterContainer/IdentitySelection/HBoxContainer" unique_id=2090485499]
+layout_mode = 2
+theme_override_styles/normal = ExtResource("2_bul46")
+theme_override_styles/pressed = ExtResource("2_bul46")
+theme_override_styles/hover = ExtResource("2_bul46")
+theme_override_styles/focus = ExtResource("2_bul46")
+text = "Neutral"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1593025477]
+libraries/ = SubResource("AnimationLibrary_i284h")
+
+[connection signal="pressed" from="CanvasLayer/CenterContainer/NameSelection/HBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/CenterContainer/NameSelection/HBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/CenterContainer/NameSelection/HBoxContainer/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="CanvasLayer/CenterContainer/IdentitySelection/HBoxContainer/Button" to="." method="IdentitySelected"]
+[connection signal="pressed" from="CanvasLayer/CenterContainer/IdentitySelection/HBoxContainer/Button2" to="." method="IdentitySelected"]
+[connection signal="pressed" from="CanvasLayer/CenterContainer/IdentitySelection/HBoxContainer/Button3" to="." method="IdentitySelected"]
