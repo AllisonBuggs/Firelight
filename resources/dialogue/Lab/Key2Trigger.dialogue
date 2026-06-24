@@ -2,11 +2,11 @@
 do freezePlayer()
 You: Theres a key hole on this panel.
 ~ choice
-- Insert and Twist Red Key [if Player.instance.inventoryContents.has("GaurdKey1")]
+- Insert and Twist Red Key [if inventory.has("GaurdKey1")]
 	You: It slips in with a nice click, twisting and giving a confirming click.
 	do SaveLoad.SaveFileData.Key2In = true
 	do removeItem("GaurdKey2")
-- Insert and Twist Purple Key [if Player.instance.inventoryContents.has("GaurdKey2")]
+- Insert and Twist Purple Key [if inventory.has("GaurdKey2")]
 	You: The only way to make this key fit would be to crush it into the hole.
 - Leave
 if SaveLoad.SaveFileData.Key2In == true and SaveLoad.SaveFileData.Key1In == true:

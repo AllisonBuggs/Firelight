@@ -12,6 +12,7 @@ var balloon : DialogueManagerExampleBalloon = null
 
 @onready var audioStream = $AudioStreamPlayer
 @onready var player = $Player
+@onready var inventory = SaveLoad.SaveFileData.inventoryContents
 
 var itemGivenText = ""
 var currentUi = "none"
@@ -78,10 +79,10 @@ func playSound(path):
 	audioStream.play()
 
 func giveItem(itemID):
-	var itemSpace = player.inventoryContents.find("None", 0)
+	var itemSpace = SaveLoad.SaveFileData.inventoryContents.find("None", 0)
 	if itemSpace != -1:
-		player.inventoryContents.set(itemSpace, itemID)
-	print(player.inventoryContents)
+		SaveLoad.SaveFileData.inventoryContents.set(itemSpace, itemID)
+	print(SaveLoad.SaveFileData.inventoryContents)
 
 func removeItem(ItemId):
 	GlobalSignalBus.emit_signal("removeItem", ItemId)

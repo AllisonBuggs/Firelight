@@ -1,14 +1,14 @@
 ~ start
 do freezePlayer()
 You: The stairway seems to be blocked by a wall of flesh from wall to wall,[wait=0.3] it feels dry agasint your fingers.
-- Spill Orange Mixture [if Player.instance.inventoryContents.has("FleshBurningMixture") == true]
+- Spill Orange Mixture [if inventory.has("FleshBurningMixture") == true]
 	do destory(fleshWall, null)
 	do destory(meatwall_1, null)
 	do destory(meatwall_2, null)
 	do destory(fleshwall_actionable, actionables)
 	do SaveLoad.SaveFileData.burned_away_flesh = true
 	You: As the mixture ignites the flesh burns away instintaniously,[wait=0.3] the path up opened.
-- Spill Mixture [if Player.instance.inventoryContents.has("Mixture") == true]
+- Spill Mixture [if inventory.has("Mixture") == true]
 	% You: You spill it to no effect
 	% You: It bubbles softly on the flesh with no effect
 	do unfreezePlayer()

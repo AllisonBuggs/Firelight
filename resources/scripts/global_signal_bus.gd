@@ -45,11 +45,15 @@ const LabLowerFloor = preload("res://resources/scenes/maps/LabLowerFloor.tscn")
 const JamesUpstairs = preload("res://resources/scenes/maps/JamesUpstairs.tscn")
 const JamesDownstairs = preload("res://resources/scenes/maps/JamesDownStairs.tscn")
 const JamesHouseExterior = preload("res://resources/scenes/maps/JamesHouseExterior.tscn")
+const SEWERS = preload("uid://q6kqktk4v0ys")
+
 var spawnDoorTag
 
 func ChangeMap(mapName, doorName):
 	var mapToLoad
 	match mapName:
+		"Sewers":
+			mapToLoad = SEWERS
 		"LabExterior":
 			mapToLoad = LabExterior
 		"LabUpperFloor":

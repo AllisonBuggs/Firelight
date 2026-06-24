@@ -34,9 +34,9 @@ func recived_inventoryOpened():
 	updateInventory()
 
 func recived_container_data(contains):
-	if Player.instance.inventoryContents.size() < 5:
-		Player.instance.inventoryContents.insert(0, contains)
-		print("ITEM ADDED ", Player.instance.inventoryContents)
+	if SaveLoad.SaveFileData.inventoryContents.size() < 5:
+		SaveLoad.SaveFileData.inventoryContents.insert(0, contains)
+		print("ITEM ADDED ", SaveLoad.SaveFileData.inventoryContents)
 	else:
 		print("Not enough room")
 
@@ -85,10 +85,10 @@ func _on_inv_slot_3_mouse_exited() -> void:
 func updateTooltip(slotNumber):
 	if slotNumber < 0:
 		tooltipDescriptionLabel.text = "Nothing"
-	elif slotNumber >= Player.instance.inventoryContents.size():
+	elif slotNumber >= SaveLoad.SaveFileData.inventoryContents.size():
 		tooltipDescriptionLabel.text = "Nothing"
 	else:
-		match Player.instance.inventoryContents[slotNumber]:
+		match SaveLoad.SaveFileData.inventoryContents[slotNumber]:
 				"Mixture":
 					tooltipLabelText = "A bubbling mess in a flask."
 				"Crowbar":
@@ -96,28 +96,33 @@ func updateTooltip(slotNumber):
 				"None": 
 					tooltipLabelText = "Nothing"
 				"GaurdKey1": 
-					tooltipLabelText = "Its a little red key, it feels important."
+					tooltipLabelText = "Its a little purple key, it feels important."
 				"GaurdKey2": 
-					tooltipLabelText = "It's a little purple key, it feels important."
+					tooltipLabelText = "It's a little red key, it feels important."
 				"FleshBurningMixture":
 					tooltipLabelText = "Make it hurt for getting in your way, burn it away."
 		tooltipDescriptionLabel.text = tooltipLabelText
 
 func _on_inv_slot_0_pressed() -> void:
 	InvSlot0.grab_focus()
-	itemSelected = Player.instance.inventoryContents[0]
+	if SaveLoad.SaveFileData.inventoryContents.get(0) != null:
+		itemSelected = SaveLoad.SaveFileData.inventoryContents[0]
 
 func _on_inv_slot_1_pressed() -> void:
 	InvSlot1.grab_focus()
-	itemSelected = Player.instance.inventoryContents[1]
+	if SaveLoad.SaveFileData.inventoryContents.get(1) != null:
+		itemSelected = SaveLoad.SaveFileData.inventoryContents[1]
+
 
 func _on_inv_slot_2_pressed() -> void:
 	InvSlot2.grab_focus()
-	itemSelected = Player.instance.inventoryContents[2]
+	if SaveLoad.SaveFileData.inventoryContents.get(2) != null:
+		itemSelected = SaveLoad.SaveFileData.inventoryContents[2]
 
 func _on_inv_slot_3_pressed() -> void:
 	InvSlot3.grab_focus()
-	itemSelected = Player.instance.inventoryContents[3]
+	if SaveLoad.SaveFileData.inventoryContents.get(3) != null:
+		itemSelected = SaveLoad.SaveFileData.inventoryContents[3]
 
 func _on_armor_slot_pressed() -> void:
 	armorSlot.grab_focus()
@@ -127,19 +132,19 @@ func _on_weapon_slot_pressed() -> void:
 
 
 func _on_drop_button_pressed() -> void:
-	Player.instance.inventoryContents.remove_at(Player.instance.inventoryContents.find(itemSelected))
+	SaveLoad.SaveFileData.inventoryContents.remove_at(SaveLoad.SaveFileData.inventoryContents.find(itemSelected))
 	inventoryAudioPlayer.stream = load("res://resources/sfx/Common/suitcase dropped to floor 3.wav")
 	inventoryAudioPlayer.play()
 	updateInventory()
 
 
 func removeItem(itemID):
-	Player.instance.inventoryContents.erase(Player.instance.inventoryContents.find(itemID))
+	SaveLoad.SaveFileData.inventoryContents.remove_at(SaveLoad.SaveFileData.inventoryContents.find(itemID))
 	updateInventory()
 
 func updateInventory():
-	for i in Player.instance.inventoryContents.size():
-		match Player.instance.inventoryContents[i]:
+	for i in SaveLoad.SaveFileData.inventoryContents.size():
+		match SaveLoad.SaveFileData.inventoryContents[i]:
 			"Mixture":
 				item = "res://resources/sprites/icons/Items/useless_mixture2.png"
 			"FleshBurningMixture":
@@ -155,18 +160,18 @@ func updateInventory():
 			1:InvSlot1.icon = load(item)
 			2:InvSlot2.icon = load(item)
 			3:InvSlot3.icon = load(item)
-	match Player.instance.inventoryContents.size():
+	match SaveLoad.SaveFileData.inventoryContents.size():
 		0: 
-			InvSlot0.icon = load("")
-			InvSlot1.icon = load("")
-			InvSlot2.icon = load("")
-			InvSlot3.icon = load("")
+			InvSlot0.icon = null
+			InvSlot1.icon = null
+			InvSlot2.icon = null
+			InvSlot3.icon = null
 		1:
-			InvSlot1.icon = load("")
-			InvSlot2.icon = load("")
-			InvSlot3.icon = load("")
+			InvSlot1.icon = null
+			InvSlot2.icon = null
+			InvSlot3.icon = null
 		2:
-			InvSlot2.icon = load("")
-			InvSlot3.icon = load("")
+			InvSlot2.icon = null
+			InvSlot3.icon = null
 		3:
-			InvSlot3.icon = load("")
+			InvSlot3.icon = null

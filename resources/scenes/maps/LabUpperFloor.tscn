@@ -932,7 +932,7 @@ bus = &"SFX"
 
 [node name="Player" parent="." unique_id=1626850227 instance=ExtResource("10_vlfsv")]
 process_mode = 1
-position = Vector2(583, 434)
+position = Vector2(-463, -1456)
 floor_constant_speed = true
 recoveryTime = 0.4
 maxHealth = 100
@@ -940,7 +940,6 @@ health = 100
 movementSpeed = 80
 maxStamina = 100
 Stamina = 100
-inventoryContents = ["FleshBurningMixture", "GaurdKey1", "GaurdKey2"]
 
 [node name="AnimatedSprite2D" parent="Player" index="1" unique_id=891970336]
 material = ExtResource("2_igr6h")

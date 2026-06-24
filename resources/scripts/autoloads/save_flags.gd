@@ -6,6 +6,7 @@ class_name SaveDataResource
 @export var timeElapsed = 0
 @export var firstTime = true
 
+@export var inventoryContents = ["FleshBurningMixture", "GaurdKey1", "GaurdKey2"]
 @export var current_map = ""
 @export var player_position = Vector2(0,0)
 

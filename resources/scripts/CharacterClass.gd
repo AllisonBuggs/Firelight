@@ -17,7 +17,7 @@ static var instance: Character = null
 @export var Damage : int
 @export var maxStamina = 100
 @export var Stamina = 100
-@export var inventoryContents = ["FleshBurningMixture", "GaurdKey1", "GaurdKey2"]
+
 
 
 var direction : Vector2
