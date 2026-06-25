@@ -66,13 +66,13 @@ func get_TransitionData(_mapToLoad: String, _entranceUsed: String):
 	get_tree().change_scene_to_packed(currentMap)
 
 func onMapLoadSpawn():
-	GlobalSignalBus.triggerPlayerSpawn(SaveLoad.SaveFileData.player_position, "down")
+	GlobalSignalBus.triggerPlayerSpawn(SaveLoad.SaveFileData.player_position)
 
 func onMapSpawn(doorTag):
 	var doorPath = "Doors/Door_" + doorTag
 	var door = get_node(doorPath) as Door
 	print(door, doorPath)
-	GlobalSignalBus.triggerPlayerSpawn(door.Spawn.global_position, door.direction)
+	GlobalSignalBus.triggerPlayerSpawn(door.Spawn.global_position)
 
 func playSound(path):
 	audioStream.stream = load(path)

@@ -5,6 +5,14 @@ class_name SaveDataResource
 @export var completionPercent = 0
 @export var timeElapsed = 0
 @export var firstTime = true
+@export var maxHealth = 100
+@export var health = 100
+@export var movementSpeed = 80
+@export var Damage : int
+@export var maxStamina = 100
+@export var Stamina = 100
+@export var armor = "None"
+@export var equipped = "None"
 
 @export var inventoryContents = ["FleshBurningMixture", "GaurdKey1", "GaurdKey2"]
 @export var current_map = ""

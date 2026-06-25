@@ -17,8 +17,7 @@ var right_held = false
 var movementAllowed = true
 var playerState
 
-var armor = "None"
-var equipped = "None"
+
 var cooldown = false
 var canMove = true
 var timer_purpose
@@ -36,6 +35,9 @@ const directions = [
 	"Down left"
 ]
 
+func setupAttackRaycast():
+	GlobalSignalBus.emit_signal("attackRaycastInitiate", SaveLoad.SaveFileData.Damage)
+
 func _ready() -> void:
 	GlobalSignalBus.connect("changePlayerTexture", changePlayerTexture)
 	GlobalSignalBus.connect("playerEnteredCombat", enteredCombat)
@@ -44,13 +46,13 @@ func _ready() -> void:
 	GlobalSignalBus.connect("playerPositionDataRequested", playerPositionDataRequested)
 	
 	setupAttackRaycast()
-	movementSpeed = 90
+
 
 @warning_ignore("unused_parameter")
 func _physics_process(delta):
 	if canMove == true :
 		direction = Input.get_vector("MoveLeft", "MoveRight", "MoveUp", "MoveDown")
-		velocity = direction * (movementSpeed * 60) * delta
+		velocity = direction * (SaveLoad.SaveFileData.movementSpeed * 60) * delta
 		move_and_slide()
 		if velocity != Vector2(0,0):
 			detectDirection()
@@ -111,7 +113,7 @@ func _input(event: InputEvent) -> void:
 		right_held = false
 	if inCombat == true:
 		if event.is_action_released("Roll"):
-			if cooldown == false && Stamina != 0:
+			if cooldown == false && SaveLoad.SaveFileData.Stamina != 0:
 				pushCharacter("Directional", false)
 				GlobalSignalBus.emit_signal("updatePlayerStats", 0, -10)
 				audioStreamPlayer.stream = load("res://resources/sfx/dodgeroll.wav")
@@ -121,7 +123,7 @@ func _input(event: InputEvent) -> void:
 				updateRollLabel = true
 				cooldown = true
 		if event.is_action_pressed("Attack"):
-			if cooldown == false && Stamina != 0:
+			if cooldown == false && SaveLoad.SaveFileData.Stamina != 0:
 				GlobalSignalBus.emit_signal("updatePlayerStats", 0, -10)
 				playerState = "Attacking"
 				canMove = false
@@ -157,16 +159,16 @@ func _on_cool_down_timer_timeout() -> void:
 func enteredCombat(target: String, state: String):
 	if state == "None":
 		inCombat = false
-		movementSpeed = 90
+		SaveLoad.SaveFileData.movementSpeed = 90
 	else:
 		inCombat = true
-		movementSpeed = 130
+		SaveLoad.SaveFileData.movementSpeed = 130
 
 func movePlayerToDoor(Position):
 	global_position = Position
 
 @warning_ignore("unused_parameter")
-func onSpawn(playerPosition, playerDirection):
+func onSpawn(playerPosition):
 	print("player position set to " + str(playerPosition) + " on spawn")
 	global_position = playerPosition
 

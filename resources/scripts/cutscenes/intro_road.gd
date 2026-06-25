@@ -3,7 +3,7 @@ extends allMaps
 @onready var fadeAnimationPlayer = $AnimationPlayer2
 @onready var JamesForwardCutscene = $Cutscene/Camera2D/JamesForwardCutscene
 @onready var allCutsceneSprites = $Cutscene
-@onready var camera = $Cutscene/Camera2D
+
 
 func _ready() -> void:
 	GlobalSignalBus.connect("transition_data", get_TransitionData)

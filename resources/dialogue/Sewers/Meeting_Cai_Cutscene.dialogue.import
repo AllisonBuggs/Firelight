@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bi62jh307160b"
+path="res://.godot/imported/Meeting_Cai_Cutscene.dialogue-fff73c44a7b4f2b0b1cd1ebbdaf1150a.tres"
+
+[deps]
+
+source_file="res://resources/dialogue/Sewers/Meeting_Cai_Cutscene.dialogue"
+dest_files=["res://.godot/imported/Meeting_Cai_Cutscene.dialogue-fff73c44a7b4f2b0b1cd1ebbdaf1150a.tres"]
+
+[params]
+
+defaults=true

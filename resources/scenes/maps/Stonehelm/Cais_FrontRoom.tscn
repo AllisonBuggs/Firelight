@@ -1,0 +1,115 @@
+[gd_scene format=4 uid="uid://bfqicqjwlcwtb"]
+
+[ext_resource type="Script" uid="uid://d4blkpy1xbsm7" path="res://resources/scripts/Maps/Map_LabLowerFloor.gd" id="1_v5038"]
+[ext_resource type="Material" uid="uid://2secgp2ouoi8" path="res://resources/shaders/shadowafect.tres" id="2_0e2ho"]
+[ext_resource type="TileSet" uid="uid://c4mxm77yi2rpc" path="res://resources/tileset/tileset.tres" id="3_o3t4i"]
+[ext_resource type="Script" uid="uid://hraudamater6" path="res://resources/scripts/FootStepsTilemapScript.gd" id="4_hrsvu"]
+[ext_resource type="PackedScene" uid="uid://chnesmup7fj8u" path="res://resources/scenes/objects/event_door.tscn" id="5_umawh"]
+[ext_resource type="PackedScene" uid="uid://ck5usmblr0wtq" path="res://resources/scenes/players.tscn" id="6_bpu6q"]
+[ext_resource type="PackedScene" uid="uid://cbaxum6xw240c" path="res://resources/scenes/UI/ui_canvas_layer.tscn" id="7_31h60"]
+[ext_resource type="PackedScene" uid="uid://3q3vm527u3bw" path="res://resources/scenes/objects/camera.tscn" id="8_o7gla"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v5038"]
+size = Vector2(1.7062306, 71)
+
+[node name="CaiFrontRoom" type="Node2D" unique_id=825236289]
+process_mode = 3
+y_sort_enabled = true
+script = ExtResource("1_v5038")
+
+[node name="Main" type="TileMapLayer" parent="." unique_id=1594926581]
+top_level = true
+z_index = -1
+material = ExtResource("2_0e2ho")
+tile_map_data = PackedByteArray("AAD6////AAAOAAEAAAD6/wAAAAAOAAEAAAD7////AAAOAAEAAAD7/wAAAAAOAAEAAAD8////AAAOAAEAAAD8/wAAAAAOAAEAAAD9////AAAOAAEAAAD9/wAAAAAOAAEAAAD+////AAAOAAEAAAD+/wAAAAAOAAEAAAD/////AAAOAAEAAAD//wAAAAAOAAEAAAAAAP//AAAOAAEAAAAAAAAAAAAOAAEAAAABAP//AAAOAAEAAAABAAAAAAAOAAEAAAACAP//AAAOAAEAAAACAAAAAAAOAAEAAAADAP//AAAOAAEAAAADAAAAAAAOAAEAAAAEAP//AAAOAAEAAAAEAAAAAAAOAAEAAAAFAP//AAAOAAEAAAAFAAAAAAAOAAEAAAAGAP//AAAOAAEAAAAGAAAAAAAOAAEAAAAHAP//AAAOAAEAAAAHAAAAAAAOAAEAAAD6//7/AAAOAAEAAAD6/wEAAAAOAAEAAAD7//7/AAAOAAEAAAD7/wEAAAAOAAEAAAD8//7/AAAOAAEAAAD8/wEAAAAOAAEAAAD9//7/AAAOAAEAAAD9/wEAAAAOAAEAAAD+//7/AAAOAAEAAAD+/wEAAAAOAAEAAAD///7/AAAOAAEAAAD//wEAAAAOAAEAAAAAAP7/AAAOAAEAAAAAAAEAAAAOAAEAAAABAP7/AAAOAAEAAAABAAEAAAAOAAEAAAACAP7/AAAOAAEAAAACAAEAAAAOAAEAAAADAP7/AAAOAAEAAAADAAEAAAAOAAEAAAAEAP7/AAAOAAEAAAAEAAEAAAAOAAEAAAAFAP7/AAAOAAEAAAAFAAEAAAAOAAEAAAAGAP7/AAAOAAEAAAAGAAEAAAAOAAEAAAAHAP7/AAAOAAEAAAAHAAEAAAAOAAEAAAAIAP7/AAAOAAEAAAAIAP//AAAOAAEAAAAIAAAAAAAOAAEAAAAIAAEAAAAOAAEAAAD6/wIAAAAOAAEAAAD6/wMAAAAOAAEAAAD7/wIAAAAOAAEAAAD7/wMAAAAOAAEAAAD8/wIAAAAOAAEAAAD8/wMAAAAOAAEAAAD9/wIAAAAOAAEAAAD9/wMAAAAOAAEAAAD+/wIAAAAOAAEAAAD+/wMAAAAOAAEAAAD//wIAAAAOAAEAAAD//wMAAAAOAAEAAAAAAAIAAAAOAAEAAAAAAAMAAAAOAAEAAAABAAIAAAAOAAEAAAABAAMAAAAOAAEAAAACAAIAAAAOAAEAAAACAAMAAAAOAAEAAAADAAIAAAAOAAEAAAADAAMAAAAOAAEAAAAEAAIAAAAOAAEAAAAEAAMAAAAOAAEAAAAFAAIAAAAOAAEAAAAFAAMAAAAOAAEAAAAGAAIAAAAOAAEAAAAGAAMAAAAOAAEAAAAHAAIAAAAOAAEAAAAHAAMAAAAOAAEAAAAIAAIAAAAOAAEAAAAIAAMAAAAOAAEAAAAJAP7/AAAOAAEAAAAJAP//AAAOAAEAAAAJAAAAAAAOAAEAAAAJAAEAAAAOAAEAAAAJAAIAAAAOAAEAAAAJAAMAAAAOAAEAAAAKAP7/AAAOAAEAAAAKAP//AAAOAAEAAAAKAAAAAAAOAAEAAAAKAAEAAAAOAAEAAAAKAAIAAAAOAAEAAAAKAAMAAAAOAAEAAAALAP7/AAAOAAEAAAALAP//AAAOAAEAAAALAAAAAAAOAAEAAAALAAEAAAAOAAEAAAALAAIAAAAOAAEAAAALAAMAAAAOAAEAAAAKAP3/AAABAAsAABALAP3/AAAAAAsAABAIAP3/AAABAAsAABAJAP3/AAAAAAsAABD6//j/AAAAAAsAAAD7//j/AAABAAsAAAD6//n/AAABAAsAABD7//n/AAAAAAsAABD6//r/AAAAAAsAAAD7//r/AAABAAsAAAD6//v/AAABAAsAABD7//v/AAAAAAsAABD6//z/AAAAAAsAAAD7//z/AAABAAsAAAD8//j/AAAAAAsAAAD9//j/AAABAAsAAAD8//n/AAABAAsAABD9//n/AAAAAAsAABD8//r/AAAAAAsAAAD9//r/AAABAAsAAAD8//v/AAABAAsAABD9//v/AAAAAAsAABD8//z/AAAAAAsAAAD9//z/AAABAAsAAAD+//j/AAAAAAsAAAD///j/AAABAAsAAAD+//n/AAABAAsAABD///n/AAAAAAsAABD+//r/AAAAAAsAAAD///r/AAABAAsAAAD+//v/AAABAAsAABD///v/AAAAAAsAABD+//z/AAAAAAsAAAD///z/AAABAAsAAAAAAPj/AAAAAAsAAAABAPj/AAABAAsAAAAAAPn/AAABAAsAABABAPn/AAAAAAsAABAAAPr/AAAAAAsAAAABAPr/AAABAAsAAAAAAPv/AAABAAsAABABAPv/AAAAAAsAABAAAPz/AAAAAAsAAAABAPz/AAABAAsAAAACAPj/AAAAAAsAAAADAPj/AAABAAsAAAACAPn/AAABAAsAABADAPn/AAAAAAsAABACAPr/AAAAAAsAAAADAPr/AAABAAsAAAACAPv/AAABAAsAABADAPv/AAAAAAsAABACAPz/AAAAAAsAAAADAPz/AAABAAsAAAAEAPj/AAAAAAsAAAAFAPj/AAABAAsAAAAEAPn/AAABAAsAABAFAPn/AAAAAAsAABAEAPr/AAAAAAsAAAAFAPr/AAABAAsAAAAEAPv/AAABAAsAABAFAPv/AAAAAAsAABAEAPz/AAAAAAsAAAAFAPz/AAABAAsAAAAGAPj/AAAAAAsAAAAHAPj/AAABAAsAAAAGAPn/AAABAAsAABAHAPn/AAAAAAsAABAGAPr/AAAAAAsAAAAHAPr/AAABAAsAAAAGAPv/AAABAAsAABAHAPv/AAAAAAsAABAGAPz/AAAAAAsAAAAHAPz/AAABAAsAAAAIAPj/AAAAAAsAAAAJAPj/AAABAAsAAAAIAPn/AAABAAsAABAJAPn/AAAAAAsAABAIAPr/AAAAAAsAAAAJAPr/AAABAAsAAAAIAPv/AAABAAsAABAJAPv/AAAAAAsAABAIAPz/AAAAAAsAAAAJAPz/AAABAAsAAAAKAPj/AAAAAAsAAAALAPj/AAABAAsAAAAKAPn/AAABAAsAABALAPn/AAAAAAsAABAKAPr/AAAAAAsAAAALAPr/AAABAAsAAAAKAPv/AAABAAsAABALAPv/AAAAAAsAABAKAPz/AAAAAAsAAAALAPz/AAABAAsAAAAMAAAAAAALAAMAAAAMAAEAAAALAAMAAAD5//r/AAAOAAEAAAD5//v/AAAOAAEAAAAJAAQAAAAOAAEAAAAJAAUAAAAOAAEAAAAIAAUAAAAOAAEAAAAIAAYAAAAOAAEAAAAJAAYAAAAOAAEAAAAKAAUAAAAOAAEAAAAKAAYAAAAOAAEAAAD5/wIAAAAOAAEAAAD5/wEAAAAOAAEAAAA=")
+tile_set = ExtResource("3_o3t4i")
+script = ExtResource("4_hrsvu")
+
+[node name="Overlay1" type="TileMapLayer" parent="." unique_id=1416965107]
+z_index = 2
+tile_set = ExtResource("3_o3t4i")
+
+[node name="ShadowOverlay" type="TileMapLayer" parent="." unique_id=1149915466]
+modulate = Color(1, 1, 1, 0.4117647)
+top_level = true
+material = ExtResource("2_0e2ho")
+tile_set = ExtResource("3_o3t4i")
+occlusion_enabled = false
+collision_enabled = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=741284882]
+process_mode = 1
+
+[node name="Doors" type="Node2D" parent="." unique_id=859125480]
+
+[node name="Door_CFRDI" parent="Doors" unique_id=1341049881 instance=ExtResource("5_umawh")]
+position = Vector2(-208, 62)
+scale = Vector2(9.963483, 1)
+mapToLoad = "CaiHallway"
+entranceUsed = "CFRDE"
+direction = "Down"
+
+[node name="CollisionShape2D" parent="Doors/Door_CFRDI" index="0" unique_id=1406666274]
+position = Vector2(-0.90329844, 0)
+shape = SubResource("RectangleShape2D_v5038")
+
+[node name="Marker2D" parent="Doors/Door_CFRDI" index="1" unique_id=1701488384]
+position = Vector2(2.00733, 0)
+
+[node name="Door_CBKDK" parent="Doors" unique_id=1641127531 instance=ExtResource("5_umawh")]
+position = Vector2(-208, -161)
+scale = Vector2(9.963483, 1)
+mapToLoad = "CaiBedroom"
+entranceUsed = "CBKDB"
+direction = "Down"
+
+[node name="CollisionShape2D" parent="Doors/Door_CBKDK" index="0" unique_id=1406666274]
+position = Vector2(-0.90329844, 0)
+shape = SubResource("RectangleShape2D_v5038")
+
+[node name="Marker2D" parent="Doors/Door_CBKDK" index="1" unique_id=1701488384]
+position = Vector2(2.3084292, -1)
+
+[node name="Door_CFRDI3" parent="Doors" unique_id=616577811 instance=ExtResource("5_umawh")]
+position = Vector2(415, 28)
+scale = Vector2(9.963483, 1)
+mapToLoad = "CaiHallway"
+entranceUsed = "CFRDE"
+direction = "Down"
+
+[node name="CollisionShape2D" parent="Doors/Door_CFRDI3" index="0" unique_id=1406666274]
+position = Vector2(-0.90329844, 0)
+shape = SubResource("RectangleShape2D_v5038")
+
+[node name="Marker2D" parent="Doors/Door_CFRDI3" index="1" unique_id=1701488384]
+position = Vector2(-3.9142928, 3)
+
+[node name="Player" parent="." unique_id=1626850227 instance=ExtResource("6_bpu6q")]
+process_mode = 1
+z_index = 1
+position = Vector2(1, 2)
+floor_constant_speed = true
+recoveryTime = 0.4
+maxHealth = 100
+health = 100
+movementSpeed = 80
+maxStamina = 100
+Stamina = 100
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=886609456]
+
+[node name="Actionable" type="Node2D" parent="." unique_id=1200330021]
+
+[node name="Cutscenes" type="Node2D" parent="." unique_id=585520158]
+
+[node name="UiCanvasLayer" parent="." unique_id=1431050982 instance=ExtResource("7_31h60")]
+visible = false
+
+[node name="PLAYERCAMERA" parent="." unique_id=430412013 node_paths=PackedStringArray("target") instance=ExtResource("8_o7gla")]
+z_index = 6
+scale = Vector2(1.3, 1.3)
+target = NodePath("../Player")
+
+[editable path="Doors/Door_CFRDI"]
+[editable path="Doors/Door_CBKDK"]
+[editable path="Doors/Door_CFRDI3"]

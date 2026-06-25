@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ch7ytea543jfq"
+path="res://.godot/imported/Gas funace_running.wav-d4a5417953319220bbe4d5c1d4b71ac7.sample"
+
+[deps]
+
+source_file="res://resources/sfx/ambience/YourPalRob/Gas funace_running.wav"
+dest_files=["res://.godot/imported/Gas funace_running.wav-d4a5417953319220bbe4d5c1d4b71ac7.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

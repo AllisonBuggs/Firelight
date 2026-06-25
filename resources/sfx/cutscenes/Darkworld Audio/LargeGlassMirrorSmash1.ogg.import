@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://drqgcpcxx5oe7"
+path="res://.godot/imported/LargeGlassMirrorSmash1.ogg-81556b80192434ea7f86b52c87589e90.oggvorbisstr"
+
+[deps]
+
+source_file="res://resources/sfx/cutscenes/Darkworld Audio/LargeGlassMirrorSmash1.ogg"
+dest_files=["res://.godot/imported/LargeGlassMirrorSmash1.ogg-81556b80192434ea7f86b52c87589e90.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

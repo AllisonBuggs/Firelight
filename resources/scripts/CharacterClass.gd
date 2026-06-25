@@ -8,15 +8,10 @@ static var instance: Character = null
 @onready var spriteAnimationPlayer = $spriteAnimationPlayer
 @onready var audioStreamPlayer = $AudioStreamPlayer2D
 @onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
-@onready var player = Character.instance
+
 
 @export var recoveryTime = 0.4
-@export var maxHealth = 100
-@export var health = 100
-@export var movementSpeed = 80
-@export var Damage : int
-@export var maxStamina = 100
-@export var Stamina = 100
+
 
 
 
@@ -43,9 +38,6 @@ var StrafeDownAni
 var StrafeLeftAni
 var StrafeRightAni
 var UnarmedAttack
-
-func setupAttackRaycast():
-	GlobalSignalBus.emit_signal("attackRaycastInitiate", Damage)
 
 func quantizeDirection(vectorToQuantize):
 	orientationNumber = int(8.0 * (vectorToQuantize.rotated(PI/8.0).angle() + PI) / TAU)

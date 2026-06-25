@@ -37,21 +37,40 @@ signal detachPlayerCamera()
 signal reattachPlayerCamera()
 signal removeItem(ITEMID)
 
-const StoneHelm = preload("res://resources/scenes/maps/StoneHelm.tscn")
-const TestInterior = preload("res://resources/scenes/maps/TestInterior.tscn")
-const LabExterior = preload("res://resources/scenes/maps/LabExterior.tscn")
-const LabUpperFloor = preload("res://resources/scenes/maps/LabUpperFloor.tscn")
-const LabLowerFloor = preload("res://resources/scenes/maps/LabLowerFloor.tscn")
-const JamesUpstairs = preload("res://resources/scenes/maps/JamesUpstairs.tscn")
-const JamesDownstairs = preload("res://resources/scenes/maps/JamesDownStairs.tscn")
-const JamesHouseExterior = preload("res://resources/scenes/maps/JamesHouseExterior.tscn")
+# Lab
+const LabExterior = preload("uid://c21gjtfrlt5bg")
+const LabUpperFloor = preload("uid://cx8w08igip3oh")
+const LabLowerFloor = preload("uid://2x767bx1tqky")
+
 const SEWERS = preload("uid://q6kqktk4v0ys")
+
+# Stone Helm
+const HOLDING_ROOM = preload("uid://bkjfygcxvgqmh")
+
+const CAIS_BEDROOM = preload("uid://cwnbqqaadnred")
+const CAIS_FRONT_ROOM = preload("uid://bfqicqjwlcwtb")
+const CAIS_HALLWAY = preload("uid://ddip3rc4dofki")
+const CAIS_BATHROOM = preload("uid://dyl2k4jof3glf")
+const STONE_HELM = preload("uid://dcuq0tvhmqs2l")
+
 
 var spawnDoorTag
 
 func ChangeMap(mapName, doorName):
 	var mapToLoad
 	match mapName:
+		"CaiBathroom":
+			mapToLoad = CAIS_BATHROOM
+		"CaiHallway":
+			mapToLoad = CAIS_HALLWAY
+		"CaiFrontRoom":
+			mapToLoad = CAIS_FRONT_ROOM
+		"CaiBedroom":
+			mapToLoad = CAIS_BEDROOM
+		"HoldingRoom":
+			mapToLoad = HOLDING_ROOM
+		"Stonehelm":
+			mapToLoad = STONE_HELM
 		"Sewers":
 			mapToLoad = SEWERS
 		"LabExterior":
@@ -64,5 +83,5 @@ func ChangeMap(mapName, doorName):
 		spawnDoorTag = doorName
 		get_tree().change_scene_to_packed(mapToLoad)
 
-func triggerPlayerSpawn(position, direction):
-	onTriggerPlayerSpawn.emit(position, direction)
+func triggerPlayerSpawn(position):
+	onTriggerPlayerSpawn.emit(position)

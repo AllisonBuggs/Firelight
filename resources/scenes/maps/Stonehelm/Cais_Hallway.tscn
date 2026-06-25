@@ -1,0 +1,133 @@
+[gd_scene format=4 uid="uid://ddip3rc4dofki"]
+
+[ext_resource type="Script" uid="uid://d4blkpy1xbsm7" path="res://resources/scripts/Maps/Map_LabLowerFloor.gd" id="1_6upge"]
+[ext_resource type="Material" uid="uid://2secgp2ouoi8" path="res://resources/shaders/shadowafect.tres" id="2_8fuxe"]
+[ext_resource type="TileSet" uid="uid://c4mxm77yi2rpc" path="res://resources/tileset/tileset.tres" id="3_1vmq2"]
+[ext_resource type="Script" uid="uid://hraudamater6" path="res://resources/scripts/FootStepsTilemapScript.gd" id="4_hie7b"]
+[ext_resource type="PackedScene" uid="uid://chnesmup7fj8u" path="res://resources/scenes/objects/event_door.tscn" id="5_p5mjf"]
+[ext_resource type="PackedScene" uid="uid://ck5usmblr0wtq" path="res://resources/scenes/players.tscn" id="6_1m4je"]
+[ext_resource type="PackedScene" uid="uid://cbaxum6xw240c" path="res://resources/scenes/UI/ui_canvas_layer.tscn" id="7_sno5b"]
+[ext_resource type="PackedScene" uid="uid://3q3vm527u3bw" path="res://resources/scenes/objects/camera.tscn" id="8_o7esf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cydto"]
+size = Vector2(6.5238233, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_umrvh"]
+size = Vector2(1.9069633, 70)
+
+[node name="CaiHallway" type="Node2D" unique_id=825236289]
+process_mode = 3
+y_sort_enabled = true
+script = ExtResource("1_6upge")
+
+[node name="Main" type="TileMapLayer" parent="." unique_id=1594926581]
+top_level = true
+z_index = -1
+material = ExtResource("2_8fuxe")
+tile_map_data = PackedByteArray("AAD6////AAAOAAEAAAD6/wAAAAAOAAEAAAD7////AAAOAAEAAAD7/wAAAAAOAAEAAAD8////AAAOAAEAAAD8/wAAAAAOAAEAAAD9////AAAOAAEAAAD9/wAAAAAOAAEAAAD+////AAAOAAEAAAD+/wAAAAAOAAEAAAD+/wEAAAAOAAEAAAD/////AAAOAAEAAAD//wAAAAAOAAEAAAD//wEAAAAOAAEAAAAAAP//AAAOAAEAAAAAAAAAAAAOAAEAAAABAP//AAAOAAEAAAABAAAAAAAOAAEAAAACAP//AAAOAAEAAAACAAAAAAAOAAEAAAADAP//AAAOAAEAAAADAAAAAAAOAAEAAAAEAP//AAAOAAEAAAAEAAAAAAAOAAEAAAAFAP//AAAOAAEAAAAFAAAAAAAOAAEAAAAGAP//AAAOAAEAAAAGAAAAAAAOAAEAAAAHAP//AAAOAAEAAAAHAAAAAAAOAAEAAAD+//v/AAAOAAEAAAD+//z/AAAOAAEAAAD+//3/AAAOAAEAAAD+//7/AAAOAAEAAAD///v/AAAOAAEAAAD///z/AAAOAAEAAAD///3/AAAOAAEAAAD///7/AAAOAAEAAAD+/wIAAAAOAAEAAAD+/wMAAAAOAAEAAAD//wIAAAAOAAEAAAD//wMAAAAOAAEAAAA=")
+tile_set = ExtResource("3_1vmq2")
+script = ExtResource("4_hie7b")
+
+[node name="Overlay1" type="TileMapLayer" parent="." unique_id=1416965107]
+z_index = 2
+tile_set = ExtResource("3_1vmq2")
+
+[node name="ShadowOverlay" type="TileMapLayer" parent="." unique_id=1149915466]
+modulate = Color(1, 1, 1, 0.4117647)
+top_level = true
+material = ExtResource("2_8fuxe")
+tile_set = ExtResource("3_1vmq2")
+occlusion_enabled = false
+collision_enabled = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=741284882]
+process_mode = 1
+
+[node name="Doors" type="Node2D" parent="." unique_id=859125480]
+
+[node name="Door_CBDE" parent="Doors" unique_id=1341049881 instance=ExtResource("5_p5mjf")]
+position = Vector2(2, -157)
+scale = Vector2(9.963483, 1)
+mapToLoad = "CaiBedroom"
+entranceUsed = "CBDI"
+direction = "Down"
+
+[node name="CollisionShape2D" parent="Doors/Door_CBDE" index="0" unique_id=1406666274]
+position = Vector2(-3.362278, 0)
+shape = SubResource("RectangleShape2D_cydto")
+
+[node name="Marker2D" parent="Doors/Door_CBDE" index="1" unique_id=1701488384]
+position = Vector2(-3.2117286, 40)
+
+[node name="Door_CBRE" parent="Doors" unique_id=865453271 instance=ExtResource("5_p5mjf")]
+position = Vector2(1, 117)
+scale = Vector2(9.963483, 1)
+mapToLoad = "CaiBathroom"
+entranceUsed = "CBRI"
+direction = "Down"
+
+[node name="CollisionShape2D" parent="Doors/Door_CBRE" index="0" unique_id=1406666274]
+position = Vector2(-3.362278, 0)
+shape = SubResource("RectangleShape2D_cydto")
+
+[node name="Marker2D" parent="Doors/Door_CBRE" index="1" unique_id=1701488384]
+position = Vector2(-3.3120947, -34)
+
+[node name="Door_ARHI" parent="Doors" unique_id=74234126 instance=ExtResource("5_p5mjf")]
+position = Vector2(-152, 0)
+scale = Vector2(9.963483, 1)
+mapToLoad = "ApartmentRoomHallway"
+entranceUsed = "ARHE"
+direction = "Down"
+
+[node name="CollisionShape2D" parent="Doors/Door_ARHI" index="0" unique_id=1406666274]
+position = Vector2(-2.9608126, -1)
+shape = SubResource("RectangleShape2D_umrvh")
+
+[node name="Marker2D" parent="Doors/Door_ARHI" index="1" unique_id=1701488384]
+position = Vector2(-4.4703484e-07, 0)
+
+[node name="Door_CFRDE" parent="Doors" unique_id=366528993 instance=ExtResource("5_p5mjf")]
+position = Vector2(275, 1)
+scale = Vector2(9.963483, 1)
+mapToLoad = "CaiFrontRoom"
+entranceUsed = "CFRDI"
+direction = "Down"
+
+[node name="CollisionShape2D" parent="Doors/Door_CFRDE" index="0" unique_id=1406666274]
+position = Vector2(-2.9608126, -1)
+shape = SubResource("RectangleShape2D_umrvh")
+
+[node name="Marker2D" parent="Doors/Door_CFRDE" index="1" unique_id=1701488384]
+position = Vector2(-5.9216228, -2)
+
+[node name="Player" parent="." unique_id=1626850227 instance=ExtResource("6_1m4je")]
+process_mode = 1
+z_index = 1
+position = Vector2(1, 2)
+floor_constant_speed = true
+recoveryTime = 0.4
+maxHealth = 100
+health = 100
+movementSpeed = 80
+maxStamina = 100
+Stamina = 100
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=886609456]
+
+[node name="Actionable" type="Node2D" parent="." unique_id=1200330021]
+
+[node name="Cutscenes" type="Node2D" parent="." unique_id=585520158]
+
+[node name="UiCanvasLayer" parent="." unique_id=1431050982 instance=ExtResource("7_sno5b")]
+visible = false
+
+[node name="PLAYERCAMERA" parent="." unique_id=430412013 node_paths=PackedStringArray("target") instance=ExtResource("8_o7esf")]
+z_index = 6
+scale = Vector2(1.3, 1.3)
+target = NodePath("../Player")
+
+[editable path="Doors/Door_CBDE"]
+[editable path="Doors/Door_CBRE"]
+[editable path="Doors/Door_ARHI"]
+[editable path="Doors/Door_CFRDE"]
