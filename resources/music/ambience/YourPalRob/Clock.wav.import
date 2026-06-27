@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://clybvkyqlknfe"
-path="res://.godot/imported/Clock.wav-3e1a2ca69160bcc89f23e8afd63557d4.sample"
+path="res://.godot/imported/Clock.wav-5dde1b0d61affa1ea6f4287fafa452ba.sample"
 
 [deps]
 
-source_file="res://resources/sfx/ambience/YourPalRob/Clock.wav"
-dest_files=["res://.godot/imported/Clock.wav-3e1a2ca69160bcc89f23e8afd63557d4.sample"]
+source_file="res://resources/music/ambience/YourPalRob/Clock.wav"
+dest_files=["res://.godot/imported/Clock.wav-5dde1b0d61affa1ea6f4287fafa452ba.sample"]
 
 [params]
 

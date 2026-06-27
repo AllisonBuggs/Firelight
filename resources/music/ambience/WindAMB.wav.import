@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dgtrwtyd1ripv"
-path="res://.godot/imported/WindAMB.wav-30738b51d8ab3e11315d70cf6457da8b.sample"
+path="res://.godot/imported/WindAMB.wav-a2d6a3a549c7ece06b8d71f14f1d54a1.sample"
 
 [deps]
 
-source_file="res://resources/music/AMB/WindAMB.wav"
-dest_files=["res://.godot/imported/WindAMB.wav-30738b51d8ab3e11315d70cf6457da8b.sample"]
+source_file="res://resources/music/ambience/WindAMB.wav"
+dest_files=["res://.godot/imported/WindAMB.wav-a2d6a3a549c7ece06b8d71f14f1d54a1.sample"]
 
 [params]
 

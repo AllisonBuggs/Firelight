@@ -11,7 +11,6 @@ extends Area2D
 @export var TopDown : bool
 @export var lightOnlyMaterial = false
 
-
 @onready var audioPlayer = $AudioStreamPlayer2D
 @onready var doorSprite = $Node2D/Node2D
 @onready var collision = $Node2D/OpenDoor

@@ -52,6 +52,8 @@ const CAIS_FRONT_ROOM = preload("uid://bfqicqjwlcwtb")
 const CAIS_HALLWAY = preload("uid://ddip3rc4dofki")
 const CAIS_BATHROOM = preload("uid://dyl2k4jof3glf")
 const STONE_HELM = preload("uid://dcuq0tvhmqs2l")
+const CAI_APARTMENT_ENTRANCE = preload("uid://ynegjw8cighh")
+const CAI_APARTMENT_HALL = preload("uid://455bg5qysh1w")
 
 
 var spawnDoorTag
@@ -59,6 +61,12 @@ var spawnDoorTag
 func ChangeMap(mapName, doorName):
 	var mapToLoad
 	match mapName:
+		"CaiApartmentEntrance":
+			mapToLoad = CAI_APARTMENT_ENTRANCE
+		"CaiApartmentHall":
+			mapToLoad = CAI_APARTMENT_HALL
+		"":
+			mapToLoad = CAIS_BATHROOM
 		"CaiBathroom":
 			mapToLoad = CAIS_BATHROOM
 		"CaiHallway":

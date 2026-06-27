@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://ch7ytea543jfq"
-path="res://.godot/imported/Gas funace_running.wav-d4a5417953319220bbe4d5c1d4b71ac7.sample"
+path="res://.godot/imported/Gas funace_running.wav-22855ea9cff7b982750029ce174ad710.sample"
 
 [deps]
 
-source_file="res://resources/sfx/ambience/YourPalRob/Gas funace_running.wav"
-dest_files=["res://.godot/imported/Gas funace_running.wav-d4a5417953319220bbe4d5c1d4b71ac7.sample"]
+source_file="res://resources/music/ambience/YourPalRob/Gas funace_running.wav"
+dest_files=["res://.godot/imported/Gas funace_running.wav-22855ea9cff7b982750029ce174ad710.sample"]
 
 [params]
 

@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dvga0n8xsextj"
-path="res://.godot/imported/Rain_Medium_2.wav-4897938282f0eb351c929a04d477b8d4.sample"
+path="res://.godot/imported/Rain_Medium_2.wav-1a3dc7d28d2d282a5e769a7f1513f8c8.sample"
 
 [deps]
 
-source_file="res://resources/sfx/ambience/YourPalRob/Rain_Medium_2.wav"
-dest_files=["res://.godot/imported/Rain_Medium_2.wav-4897938282f0eb351c929a04d477b8d4.sample"]
+source_file="res://resources/music/ambience/YourPalRob/Rain_Medium_2.wav"
+dest_files=["res://.godot/imported/Rain_Medium_2.wav-1a3dc7d28d2d282a5e769a7f1513f8c8.sample"]
 
 [params]
 

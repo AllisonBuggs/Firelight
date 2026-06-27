@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://mo2gsq27wb4t"]
 
-[ext_resource type="AudioStream" uid="uid://dgtrwtyd1ripv" path="res://resources/music/AMB/WindAMB.wav" id="1_2k7pf"]
+[ext_resource type="AudioStream" uid="uid://dgtrwtyd1ripv" path="res://resources/music/ambience/WindAMB.wav" id="1_2k7pf"]
 
 [sub_resource type="GDScript" id="GDScript_2vj48"]
 script/source = "extends CharacterBody3D

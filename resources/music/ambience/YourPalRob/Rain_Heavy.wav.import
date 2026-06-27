@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dh4lxjsgcl8w3"
-path="res://.godot/imported/Rain_Heavy.wav-94a9907a16f832c12889a3de9d621416.sample"
+path="res://.godot/imported/Rain_Heavy.wav-05dc18c2424ebd643367fe94e95fe031.sample"
 
 [deps]
 
-source_file="res://resources/sfx/ambience/YourPalRob/Rain_Heavy.wav"
-dest_files=["res://.godot/imported/Rain_Heavy.wav-94a9907a16f832c12889a3de9d621416.sample"]
+source_file="res://resources/music/ambience/YourPalRob/Rain_Heavy.wav"
+dest_files=["res://.godot/imported/Rain_Heavy.wav-05dc18c2424ebd643367fe94e95fe031.sample"]
 
 [params]
 

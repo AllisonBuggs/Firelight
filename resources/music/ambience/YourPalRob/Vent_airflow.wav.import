@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://ccf0t11o7q8uu"
-path="res://.godot/imported/Vent_airflow.wav-221c93b5d12bd2d7278bd323ffc31fa7.sample"
+path="res://.godot/imported/Vent_airflow.wav-cac64210ea53f7123f8c8c0e10055960.sample"
 
 [deps]
 
-source_file="res://resources/sfx/ambience/YourPalRob/Vent_airflow.wav"
-dest_files=["res://.godot/imported/Vent_airflow.wav-221c93b5d12bd2d7278bd323ffc31fa7.sample"]
+source_file="res://resources/music/ambience/YourPalRob/Vent_airflow.wav"
+dest_files=["res://.godot/imported/Vent_airflow.wav-cac64210ea53f7123f8c8c0e10055960.sample"]
 
 [params]
 

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://qw4cpxe5fv4s"
+path="res://.godot/imported/Fridge compressor ambient noise.wav-fa173f9765678ca1d9b1efda79a925e1.sample"
+
+[deps]
+
+source_file="res://resources/music/ambience/YourPalRob/Fridge compressor ambient noise.wav"
+dest_files=["res://.godot/imported/Fridge compressor ambient noise.wav-fa173f9765678ca1d9b1efda79a925e1.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
