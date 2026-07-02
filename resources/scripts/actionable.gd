@@ -6,6 +6,9 @@ extends Area2D
 @export var triggerOnce : bool = true
 @export var smallText : bool = false
 
+const BALLOON = preload("uid://cn1dkki7x6vy3")
+const CUTSCENE_BALOON = preload("uid://cy757to5k3igj")
+
 func _ready() -> void:
 	if activeOnStepOn == true:
 		collision_layer = 1
@@ -15,7 +18,7 @@ func changeExpression(expressionName):
 	DialogueManager.emit_signal("changePortrait", expressionName)
 
 func action():
-	DialogueManager.show_dialogue_balloon_scene("res://resources/scenes/UI/balloon.tscn",dialogFile, dialogStart)
+	DialogueManager.show_dialogue_balloon_scene(BALLOON,dialogFile, dialogStart)
 	GlobalSignalBus.spawnDoorTag = null
 	if triggerOnce == true:
 		queue_free()
@@ -24,8 +27,8 @@ func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
 		GlobalSignalBus.spawnDoorTag = null
 		if smallText == true:
-			DialogueManager.show_dialogue_balloon_scene("res://resources/scenes/UI/Cutscene_Baloon.tscn", dialogFile, "start")
+			DialogueManager.show_dialogue_balloon_scene(CUTSCENE_BALOON, dialogFile, "start")
 		else: 
-			DialogueManager.show_dialogue_balloon_scene("res://resources/scenes/UI/balloon.tscn", dialogFile, dialogStart)
+			DialogueManager.show_dialogue_balloon_scene(BALLOON, dialogFile, dialogStart)
 		if triggerOnce == true:
 			queue_free()

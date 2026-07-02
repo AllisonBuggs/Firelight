@@ -20,6 +20,9 @@ tile_data = PackedInt32Array(0, 720896, 4, 1, 458752, 6, 2, 720896, 5, 3, 720896
 [sub_resource type="TileMapPattern" id="TileMapPattern_cr3jw"]
 tile_data = PackedInt32Array(0, 262144, 3, 65536, 262144, 3, 1, 262144, 3, 65537, 262144, 3, 131073, 262144, 3, 65538, 262144, 3, 131074, 262144, 3, 196610, 262144, 3, 262146, 720896, 3, 327682, 720896, 3, 393218, 720896, 3, 458754, 720896, 3, 524290, 720896, 3, 589826, 720896, 3, 131075, 262144, 3, 196611, 262144, 3, 262147, 720896, 3, 327683, 720896, 3, 393219, 720896, 3, 458755, 720896, 3, 524291, 720896, 3, 589827, 720896, 3)
 
+[sub_resource type="TileMapPattern" id="TileMapPattern_dg1dj"]
+tile_data = PackedInt32Array(0, 262144, 4, 65536, 262144, 4, 131072, 262144, 4, 196608, 262144, 4, 262144, 262144, 4, 327680, 262144, 4, 393216, 262144, 4, 458752, 524288, 0, 524288, 720896, 3, 589824, 720896, 3, 655360, 720896, 3, 720896, 720896, 3, 786432, 720896, 3, 851968, 720896, 3, 917504, 720896, 3, 983040, 720896, 3, 1048576, 720896, 3, 1114112, 720896, 3, 1179648, 720896, 3, 1245184, 720896, 3, 1310720, 720896, 3, 1376256, 720896, 3, 1441792, 720896, 3, 1507328, 720896, 3)
+
 [sub_resource type="TileMapPattern" id="TileMapPattern_174x8"]
 tile_data = PackedInt32Array(0, 655360, 1, 65536, 720896, 1610612738, 131072, 720896, 268435457, 1, 720896, 2, 65537, 655360, 0, 131073, 786432, 2, 2, 655360, 1342177281, 65538, 720896, 1342177282, 131074, 720896, 1)
 
@@ -139,13 +142,11 @@ texture_region_size = Vector2i(32, 32)
 6:1/0 = 0
 6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 6:2/0 = 0
-6:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 7:2/0 = 0
 7:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 7:3/0 = 0
 7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 7:1/0 = 0
-7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 7:0/0 = 0
 7:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_gr1vc")
 7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
@@ -315,11 +316,8 @@ texture_region_size = Vector2i(32, 32)
 12:9/0 = 0
 12:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -10.8334465, -16, 16, -4.4608307, 16, 16, -16, 16)
 11:9/0 = 0
-11:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -5.4167233, 16, -5.098091, 16, 16, -16, 16)
 10:9/0 = 0
-10:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -13.849123, -10.611666, -13.489406, 16, -4.4608307, 16, 16, -16, 16)
 9:9/0 = 0
-9:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -4.779461, 16, 16, -16, 16)
 8:9/0 = 0
 8:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 7:9/0 = 0
@@ -407,3 +405,4 @@ pattern_10 = SubResource("TileMapPattern_kfm6r")
 pattern_11 = SubResource("TileMapPattern_h1bbn")
 pattern_12 = SubResource("TileMapPattern_ojcq7")
 pattern_13 = SubResource("TileMapPattern_cr3jw")
+pattern_14 = SubResource("TileMapPattern_dg1dj")

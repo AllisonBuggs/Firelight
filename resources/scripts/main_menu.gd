@@ -1,7 +1,6 @@
 extends Node2D
 
 @onready var SFXStream = $UIstreamSFX
-@onready var musicPlayer = $MusicPlayer
 @onready var background = $NoelleIsTheGoat
 @onready var eyeTransition = $EyeShilloute
 @onready var eyeAnimationPlayer = $AnimationPlayer

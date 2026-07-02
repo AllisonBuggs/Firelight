@@ -18,6 +18,7 @@ script = ExtResource("1_0olu8")
 
 [node name="CombatUi" parent="." unique_id=341429763 instance=ExtResource("7_sn0vg")]
 mouse_filter = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="PopUps" parent="." unique_id=1902225285 instance=ExtResource("10_htq8q")]
 anchors_preset = 8
@@ -32,6 +33,7 @@ offset_bottom = -324.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_filter = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="saveAndLoadMenu" parent="." unique_id=186759610 instance=ExtResource("1_ji2rw")]
 visible = false
