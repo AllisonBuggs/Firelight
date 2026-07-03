@@ -1,14 +1,10 @@
 [gd_scene format=4 uid="uid://ddkw1b8834qem"]
 
-[ext_resource type="Script" uid="uid://b28ck5r2hwaog" path="res://resources/scripts/Player/climbing_player.gd" id="1_pqpkc"]
 [ext_resource type="Script" uid="uid://b3ju1eo57fodf" path="res://resources/scripts/Maps/maP_TestClimb.gd" id="1_v6m11"]
-[ext_resource type="AudioStream" uid="uid://dvga0n8xsextj" path="res://resources/music/ambience/YourPalRob/Rain_Medium_2.wav" id="3_lljnc"]
-[ext_resource type="SpriteFrames" uid="uid://b45frob587b3g" path="res://resources/sprites/Player/PlayerAnimations.tres" id="5_n80yu"]
+[ext_resource type="PackedScene" uid="uid://c1wthfwgiunit" path="res://resources/scenes/objects/Climbing_Player.tscn" id="4_v6m11"]
 [ext_resource type="AudioStream" uid="uid://sxlbn8btmgoy" path="res://resources/sfx/Common/Dragon Studios/windgust.mp3" id="5_s1afn"]
 [ext_resource type="TileSet" uid="uid://c4mxm77yi2rpc" path="res://resources/tileset/tileset.tres" id="6_s1afn"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_g2384"]
-size = Vector2(12.221851, 14.027315)
+[ext_resource type="PackedScene" uid="uid://cbaxum6xw240c" path="res://resources/scenes/UI/ui_canvas_layer.tscn" id="7_n80yu"]
 
 [node name="ClimbingTest" type="Node2D" unique_id=987015982]
 script = ExtResource("1_v6m11")
@@ -29,56 +25,9 @@ collision_enabled = false
 tile_map_data = PackedByteArray("AAAHAAoAAAAFAAEAAAAIAAoAAAAFAAEAAAAJAAoAAAAFAAEAAAADAAUAAAAFAAEAAAADAAQAAAAFAAEAAAAEAAQAAAAFAAEAAAAEAAUAAAAFAAEAAAAFAAUAAAAFAAEAAAAGAAUAAAAFAAEAAAAHAAUAAAAFAAEAAAAYAAkAAAAFAAEAAAAZAAkAAAAFAAEAAAAZAAgAAAAFAAEAAAAZAAcAAAAFAAEAAAAaAAYAAAAFAAEAAAAQAAsAAAAFAAEAAAAPAAsAAAAFAAEAAAANAAsAAAAFAAEAAAAOAAsAAAAFAAEAAAAUAAoAAAAFAAEAAAATAAoAAAAFAAEAAAAVAAoAAAAFAAEAAAAcABEAAAANAAQAAAAdABEAAAAMAAQAAAAeABEAAAAMAAQAAAAfABEAAAAMAAQAAAAgABEAAAAMAAQAAAAhABEAAAAMAAQAAAAiABEAAAANAAQAABAIABEAAAANAAQAABACABEAAAANAAQAAAANAAUAAAANAAQAAAAQAAUAAAANAAQAABAOAAUAAAAMAAQAAAAPAAUAAAAMAAQAAAAHABEAAAAMAAQAAAAGABEAAAAMAAQAAAAFABEAAAAMAAQAAAAEABEAAAAMAAQAAAADABEAAAAMAAQAAAAPABIAAAAFAAEAAAAQABIAAAAFAAEAAAARABIAAAAFAAEAAAAAABQAAAACAAAAAAABABQAAAACAAAAAAACABQAAAACAAAAAAADABQAAAACAAAAAAAEABQAAAACAAAAAAAFABQAAAACAAAAAAAGABQAAAACAAAAAAAHABQAAAACAAAAAAAIABQAAAACAAAAAAAJABQAAAACAAAAAAAKABQAAAACAAAAAAALABQAAAACAAAAAAAMABQAAAACAAAAAAANABQAAAACAAAAAAAOABQAAAACAAAAAAAPABQAAAACAAAAAAAQABQAAAACAAAAAAARABQAAAACAAAAAAASABQAAAACAAAAAAATABQAAAACAAAAAAAUABQAAAACAAAAAAAVABQAAAACAAAAAAAWABQAAAACAAAAAAAXABQAAAACAAAAAAAYABQAAAACAAAAAAAZABQAAAACAAAAAAAaABQAAAACAAAAAAAbABQAAAACAAAAAAAcABQAAAACAAAAAAAdABQAAAACAAAAAAAeABQAAAACAAAAAAAfABQAAAACAAAAAAAgABQAAAACAAAAAAAhABQAAAACAAAAAAAiABQAAAACAAAAAAAjABQAAAACAAAAAAAkAAsAAAACAAAAAAAkAAwAAAACAAAAAAAkAA0AAAACAAAAAAAkABEAAAACAAAAAAAkABAAAAACAAAAAAAkAA8AAAACAAAAAAAkAA4AAAACAAAAAAAkABIAAAACAAAAAAAkABMAAAACAAAAAAAkABQAAAACAAAAAAD//xIAAAACAAAAAAD//xQAAAACAAAAAAD//xMAAAACAAAAAAD//xEAAAACAAAAAAD//xAAAAACAAAAAAD//w8AAAACAAAAAAD//w4AAAACAAAAAAD//w0AAAACAAAAAAD//wwAAAACAAAAAAA=")
 tile_set = ExtResource("6_s1afn")
 
-[node name="player" type="CharacterBody2D" parent="." unique_id=650338607]
+[node name="player" parent="." unique_id=1155180882 instance=ExtResource("4_v6m11")]
 position = Vector2(168, 81)
-scale = Vector2(1.6616241, 1.6616241)
-script = ExtResource("1_pqpkc")
 
-[node name="player_sprite" type="AnimatedSprite2D" parent="player" unique_id=1524694733]
-sprite_frames = ExtResource("5_n80yu")
-animation = &"PlayerStand"
-frame_progress = 0.40451303
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="player" unique_id=1276780701]
-position = Vector2(-0.5091095, 8.8191185)
-shape = SubResource("RectangleShape2D_g2384")
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="player" unique_id=782217932]
-stream = ExtResource("3_lljnc")
-
-[node name="timer_label" type="Label" parent="player" unique_id=2050122209]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -20.0
-offset_top = -35.0
-offset_right = 20.0
-offset_bottom = -5.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_font_sizes/font_size = 10
-text = "1.0"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="trip_timer" type="Timer" parent="player" unique_id=312662968]
-wait_time = 6.0
-autostart = true
-
-[node name="recover_timer" type="Timer" parent="player" unique_id=424594604]
-
-[node name="ledge_grab_hit" type="RayCast2D" parent="player" unique_id=908178524]
-position = Vector2(0, 16.850983)
-target_position = Vector2(0, 15.045517)
-hit_from_inside = true
-collide_with_areas = true
-
-[node name="grapple_save_timer" type="Timer" parent="player" unique_id=867715124]
-wait_time = 0.14
+[node name="UiCanvasLayer" parent="." unique_id=1431050982 instance=ExtResource("7_n80yu")]
 
 [connection signal="timeout" from="wind_timer" to="." method="_on_wind_timer_timeout"]
-[connection signal="timeout" from="player/trip_timer" to="player" method="_on_trip_timer_timeout"]
-[connection signal="timeout" from="player/recover_timer" to="player" method="_on_recover_timer_timeout"]
-[connection signal="timeout" from="player/grapple_save_timer" to="player" method="_on_grapple_save_timer_timeout"]

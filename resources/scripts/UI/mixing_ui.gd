@@ -4,6 +4,12 @@ var currentMixture = ""
 var mixtureNumuricalResult = 1
 var NumricalMixture : Array
 
+# Sound Effects Preloaded
+const TAKE_GLASS = preload("uid://bbwe7vtk53dko")
+const POUR = preload("uid://cu84ych1a0q1l")
+const BUTTON_PRESS = preload("uid://0li40ql7r2xp")
+
+
 #Mixing Buttons
 @onready var MixA = $CenterContainer/MainPanel/ComponetsButtons/MixA
 @onready var MixB = $CenterContainer/MainPanel/ComponetsButtons/MixB
@@ -36,7 +42,7 @@ func _on_mix_c_pressed() -> void:
 	pourNoise()
 
 func _on_disfunctional_d_pressed() -> void:
-	audioPlayer.stream = load("res://resources/sfx/spring strung 12.wav")
+	audioPlayer.stream = BUTTON_PRESS
 	audioPlayer.play()
 
 func _on_mix_e_pressed() -> void:
@@ -46,7 +52,10 @@ func _on_mix_e_pressed() -> void:
 	pourNoise()
 
 func pourNoise():
-	audioPlayer.stream = load("res://resources/sfx/liquid pouring 6.wav")
+	audioPlayer.stream = BUTTON_PRESS
+	audioPlayer.play()
+	await audioPlayer.finished
+	audioPlayer.stream = POUR
 	audioPlayer.play()
 
 func _on_dump_mixture_pressed() -> void:
@@ -54,7 +63,7 @@ func _on_dump_mixture_pressed() -> void:
 	MixtureLabel.text = currentMixture
 
 func _on_take_flash_pressed() -> void:
-	audioPlayer.stream = load("res://resources/sfx/glass taken off shelf 4.wav")
+	audioPlayer.stream = TAKE_GLASS
 	audioPlayer.play()
 	hide()
 	for k in NumricalMixture:
