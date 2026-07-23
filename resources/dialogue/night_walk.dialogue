@@ -1,0 +1,13 @@
+~ start
+do player.hide()
+do player.reparent(natalie)
+do walk_to(natalie, Vector2(-5140.0,-840.0))
+do destination_reacjed()
+do walk_to(natalie, Vector2(-2880.0, -840.0))
+do destination_reacjed()
+do walk_to(natalie, Vector2(-2880.0,-1344.0))
+do destination_reacjed()
+do walk_to(natalie, Vector2(-3364.0,-1344.0))
+do destination_reacjed()
+do walk_to(natalie, Vector2(-3456.0,-1403.0))
+=> END

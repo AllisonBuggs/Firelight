@@ -6,6 +6,7 @@ var currentSong = "5PM"
 
 # All Music
 const LONESOME_WARMTH = preload("uid://bbm5qqnfo3mr")
+const NIGHT1 = preload("uid://b5yhqi2olir66")
 
 
 func _ready() -> void:
@@ -19,6 +20,9 @@ func changeMusic(songName):
 			"LONESOMEWARMTH":
 				stream = LONESOME_WARMTH
 				currentSong = "LONESOMEWARMTH"
+			"NIGHT1":
+				stream = NIGHT1
+				currentSong = "NIGHT1"
 		play()
 
 func pauseMusic(pauseMusicBool):

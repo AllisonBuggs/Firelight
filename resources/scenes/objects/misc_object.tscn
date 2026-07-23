@@ -12,7 +12,7 @@ y_sort_enabled = true
 texture_filter = 1
 script = ExtResource("1_2x46m")
 
-[node name="Node2D" type="Sprite2D" parent="." unique_id=1323008951]
+[node name="sprite" type="Sprite2D" parent="." unique_id=1323008951]
 y_sort_enabled = true
 position = Vector2(0, -6)
 texture = ExtResource("2_2x46m")

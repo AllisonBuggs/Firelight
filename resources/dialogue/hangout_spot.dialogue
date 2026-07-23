@@ -1,0 +1,12 @@
+~ start
+do player.hide()
+do wait(1)
+do cutscene_animation_player.play("standing")
+Natalie: Bamn. Nice spot right? Somebody must've known about this spot before
+Natalie: These chairs have always been here, looking out the hole. 
+Natalie: Stools mine, I have to lay down. 
+do wait(2)
+do cutscene_animation_player.play("lay")
+do wait(2)
+do cutscene_animation_player.play("checkUp")
+=> END

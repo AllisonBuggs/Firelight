@@ -1,0 +1,73 @@
+~ start
+
+do cai.movement_speed = 50.0 
+do walk_to(cai, Vector2(992.0,173.0))
+do wait(3)
+do walk_to(cai, Vector2(800.0,187.0))
+do wait(3)
+do walk_to(cai, Vector2(992.0,173.0))
+do wait(3)
+do walk_to(cai, Vector2(992.0,81.0))
+#do walk_to(cai, Vector2(11456.0,-4328.0))
+do unfreezePlayer()
+=> END
+
+do freezePlayer()
+do player.hide()
+do player.reparent(cai)
+do player.global_position = Vector2(992.0,40.0)
+do cai.change_animation("Cai_Masked_Walk_Up")
+do wait(0.1)
+do cai.pause_animation()
+Cai: Here take my hands.
+do playSound("res://resources/sfx/Common/TomMusic/Door Close 1.ogg")
+do wait(0.7)
+do changePlayerTexture("res://resources/sprites/Player/femwalk_down.png")
+do cai.change_animation("Cai_Guiding_Hands")
+do walk_to(cai, Vector2(997,100))
+do wait(1)
+Cai: Nothing feels like[wait=0.5] its stinging?
+do wait(1)
+Cai: Thats good.
+
+Cai: Do you like the rain? [wait=0.5]I do but I know not everyone does.
+- It's nice
+	do like_rain = true
+	Cai: Just wait, [wait=0.2]we can cut into the park, [wait=0.2]the smell is amazing. 
+- It's too cold
+	do like_rain = false
+	Cai: Hold still.
+	Cai: Eh? [wait=0.5]Benifits of hair so thick its like a big blanket. 
+	do cai.change_animation("Cai_Masked_Walk_Up")
+
+
+~ apartment_hall
+do freezePlayer()
+Cai: I think this is it, 
+Cai: I got the rundown a bit ago.
+Cai: It's a little barren but, [wait=0.5]it's better than my last home. 
+do unfreezePlayer()
+=> END
+~ hallway
+do freezePlayer()
+Cai: I'll show you around, like a [wait=0.2]tour. 
+Cai: To our right should be the bathrom
+Cai: And this way is our room!
+do unfreezePlayer()
+=> END
+~ room
+do freezePlayer()
+Cai: ...
+Cai: The bed is nice and big. [wait=0.5] Just dont hog the blanket eh? (Some sort of teasing look)
+Cai: I'll find some paintings okay?[wait=0.5] It'll feel homey soon enough. 
+Cai: Come on, I bet your hungry,[wait=0.5] I put some meat on the Oven before I came to pick you up. 
+do unfreezePlayer()
+=> END
+~ kitchen
+do freezePlayer()
+Cai: Oh dear. 
+Cai: I'm still adjusting![wait=0.5] I swear I can cook better than that..
+Cai: I can salvage this,[wait=0.5] it might not even taste horrible.
+Cai: I'll bring it over to the table when it's ready okay, [wait=0.5]just take a seat.
+do unfreezePlayer()
+=> END

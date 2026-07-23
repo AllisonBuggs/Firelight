@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bsamxy80nsy7k"
+path="res://.godot/imported/cai_house_tour.dialogue-cebcf65a12a000ee08779d3814b2dbbe.tres"
+
+[deps]
+
+source_file="res://resources/dialogue/cai_house_tour.dialogue"
+dest_files=["res://.godot/imported/cai_house_tour.dialogue-cebcf65a12a000ee08779d3814b2dbbe.tres"]
+
+[params]
+
+defaults=true

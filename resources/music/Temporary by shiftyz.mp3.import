@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dg2b1wd67r0m8"
+path="res://.godot/imported/Temporary by shiftyz.mp3-0522b12391a9a355710948b8e36d9f60.mp3str"
+
+[deps]
+
+source_file="res://resources/music/Temporary by shiftyz.mp3"
+dest_files=["res://.godot/imported/Temporary by shiftyz.mp3-0522b12391a9a355710948b8e36d9f60.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

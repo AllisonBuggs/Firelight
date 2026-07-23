@@ -150,3 +150,7 @@ func startCutscene(path):
 
 func transitionRoom(mapToLoad, _entranceUsed):
 	GlobalSignalBus.call_deferred("ChangeMap", mapToLoad, _entranceUsed)
+
+func walk_to(npc_reference, goal_position : Vector2):
+	npc_reference.movement_target = goal_position
+	npc_reference.set_movement_target()

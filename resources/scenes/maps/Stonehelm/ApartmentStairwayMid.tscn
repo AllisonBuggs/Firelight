@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://dchcn54dd6d6e"]
 
-[ext_resource type="Script" uid="uid://d4blkpy1xbsm7" path="res://resources/scripts/Maps/Map_LabLowerFloor.gd" id="1_26my6"]
+[ext_resource type="Script" uid="uid://bijlihp42or3o" path="res://resources/scripts/AllMaps.gd" id="1_26my6"]
 [ext_resource type="Material" uid="uid://2secgp2ouoi8" path="res://resources/shaders/shadowafect.tres" id="2_n5pkm"]
 [ext_resource type="TileSet" uid="uid://c4mxm77yi2rpc" path="res://resources/tileset/tileset.tres" id="3_5cn26"]
 [ext_resource type="Script" uid="uid://hraudamater6" path="res://resources/scripts/FootStepsTilemapScript.gd" id="4_c313n"]
@@ -15,7 +15,7 @@ size = Vector2(6.4234567, 8)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n5pkm"]
 size = Vector2(6.6241894, 11)
 
-[node name="LabLowerFloor" type="Node2D" unique_id=825236289]
+[node name="APARTMENT_STAIRWAY_MID" type="Node2D" unique_id=825236289]
 process_mode = 3
 y_sort_enabled = true
 script = ExtResource("1_26my6")
@@ -62,7 +62,6 @@ recoveryTime = 0.4
 [node name="Cutscenes" type="Node2D" parent="." unique_id=585520158]
 
 [node name="UiCanvasLayer" parent="." unique_id=1431050982 instance=ExtResource("7_yf8tj")]
-visible = false
 
 [node name="PLAYERCAMERA" parent="." unique_id=430412013 node_paths=PackedStringArray("target") instance=ExtResource("8_dla4y")]
 z_index = 6
@@ -71,31 +70,30 @@ target = NodePath("../Player")
 
 [node name="Doors" type="Node2D" parent="." unique_id=1511037898]
 
-[node name="Door_LLFUF" parent="Doors" unique_id=1341049881 instance=ExtResource("5_d3hsc")]
+[node name="Door_MSB" parent="Doors" unique_id=1341049881 instance=ExtResource("5_d3hsc")]
 position = Vector2(1, -128)
 scale = Vector2(9.963483, 1)
-mapToLoad = "LabUpperFloor"
-entranceUsed = "LFUFD"
+mapToLoad = "APARTMENT_STAIRWAY"
+entranceUsed = "BST"
 
-[node name="CollisionShape2D" parent="Doors/Door_LLFUF" index="0" unique_id=1406666274]
-position = Vector2(-0.10036651, 9)
+[node name="CollisionShape2D" parent="Doors/Door_MSB" index="0" unique_id=1406666274]
 shape = SubResource("RectangleShape2D_26my6")
 
-[node name="Marker2D" parent="Doors/Door_LLFUF" index="1" unique_id=1701488384]
-position = Vector2(0, -43)
+[node name="Marker2D" parent="Doors/Door_MSB" index="1" unique_id=1701488384]
+position = Vector2(-0.10036651, -23)
 
-[node name="Door_LLFUF2" parent="Doors" unique_id=1519140852 instance=ExtResource("5_d3hsc")]
+[node name="Door_MST" parent="Doors" unique_id=1519140852 instance=ExtResource("5_d3hsc")]
 position = Vector2(-129, 2)
 scale = Vector2(9.963483, 1)
-mapToLoad = "LabUpperFloor"
-entranceUsed = "LFUFD"
+mapToLoad = "APARTMENT_STAIRWAY_TOP"
+entranceUsed = "TSB"
 
-[node name="CollisionShape2D" parent="Doors/Door_LLFUF2" index="0" unique_id=1406666274]
+[node name="CollisionShape2D" parent="Doors/Door_MST" index="0" unique_id=1406666274]
 position = Vector2(0, 3.5)
 shape = SubResource("RectangleShape2D_n5pkm")
 
-[node name="Marker2D" parent="Doors/Door_LLFUF2" index="1" unique_id=1701488384]
+[node name="Marker2D" parent="Doors/Door_MST" index="1" unique_id=1701488384]
 position = Vector2(-0.10036707, 35)
 
-[editable path="Doors/Door_LLFUF"]
-[editable path="Doors/Door_LLFUF2"]
+[editable path="Doors/Door_MSB"]
+[editable path="Doors/Door_MST"]

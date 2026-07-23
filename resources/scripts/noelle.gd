@@ -58,30 +58,30 @@ func _physics_process(delta):
 			detectDirection()
 			match orientationNumber:
 				0:
-					spriteAnimationPlayer.play("fem_walk_side")
+					spriteAnimationPlayer.play("feral_walk_side")
 					visualSprite.flip_h = true
 					playerState = "WalkLeft"
 				1:
 					playerState = "WalkUpLeft"
-					spriteAnimationPlayer.play("fem_walk_up")
+					spriteAnimationPlayer.play("feral_walk_up")
 				2:
 					playerState = "WalkUp"
-					spriteAnimationPlayer.play("fem_walk_up")
+					spriteAnimationPlayer.play("feral_walk_up")
 				3:
-					spriteAnimationPlayer.play("fem_walk_up")
+					spriteAnimationPlayer.play("feral_walk_up")
 					playerState = "WalkUpRight"
 				4:
-					spriteAnimationPlayer.play("fem_walk_side")
+					spriteAnimationPlayer.play("feral_walk_side")
 					playerState = "WalkRight"
 					visualSprite.flip_h = false
 				5:
-					spriteAnimationPlayer.play("fem_walk_down")
+					spriteAnimationPlayer.play("feral_walk_down")
 					playerState = "WalkDownRight"
 				6:
-					spriteAnimationPlayer.play("fem_walk_down")
+					spriteAnimationPlayer.play("feral_walk_down")
 					playerState = "WalkDown"
 				7:
-					spriteAnimationPlayer.play("fem_walk_down")
+					spriteAnimationPlayer.play("feral_walk_down")
 					playerState = "WalkDownLeft"
 		else:
 			spriteAnimationPlayer.stop()

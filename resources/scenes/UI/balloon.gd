@@ -244,9 +244,13 @@ func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
 @warning_ignore("unused_parameter")
 func _on_dialogue_label_spoke(letter: String, letter_index: int, speed: float) -> void:
 	match dialogue_line.character:
+		"Natalie":
+			audio_stream_player.stream = load("res://resources/sfx/snd_txttest.wav")
+			audio_stream_player.pitch_scale = 1
+			audio_stream_player.play()
 		"Cai":if not letter in [" ", ".", ","]:
 			audio_stream_player.stream = load("res://resources/sfx/snd_txttest.wav")
-			audio_stream_player.pitch_scale = randf_range(0.9,1.3)
+			audio_stream_player.pitch_scale = 1
 			audio_stream_player.play()
 		"Queen":if not letter in [" ", ".", ","]:
 			audio_stream_player.stream = load("res://resources/sfx/voices/caitest.wav")

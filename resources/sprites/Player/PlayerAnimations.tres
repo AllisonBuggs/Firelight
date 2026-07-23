@@ -9,6 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://dif7kgo74s7vj" path="res://resources/sprites/Player/femwalk_up.png" id="4_i0o1j"]
 [ext_resource type="Texture2D" uid="uid://fv4lss6vaeyi" path="res://resources/sprites/Player/Feral_jump.png" id="8_clvee"]
 [ext_resource type="Texture2D" uid="uid://b3lk76uw5pdua" path="res://resources/sprites/Player/Feral_wall_scoot.png" id="9_de717"]
+[ext_resource type="Texture2D" uid="uid://donkh7a4ml1v7" path="res://resources/sprites/Player/Feralwalk_down.png" id="10_b6wq1"]
+[ext_resource type="Texture2D" uid="uid://cyhv2p6l2wekf" path="res://resources/sprites/Player/Feralwalk_side.png" id="11_wcvy6"]
+[ext_resource type="Texture2D" uid="uid://c3lyrxqedchlb" path="res://resources/sprites/Player/Feralwalk_up.png" id="12_hmx4t"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sxdsy"]
 atlas = ExtResource("1_5d02u")
@@ -73,6 +76,42 @@ region = Rect2(0, 0, 25, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_b6wq1"]
 atlas = ExtResource("9_de717")
 region = Rect2(25, 0, 25, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fx01p"]
+atlas = ExtResource("10_b6wq1")
+region = Rect2(0, 0, 17, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f65ma"]
+atlas = ExtResource("10_b6wq1")
+region = Rect2(17, 0, 17, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8o3kf"]
+atlas = ExtResource("10_b6wq1")
+region = Rect2(34, 0, 17, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xhl55"]
+atlas = ExtResource("11_wcvy6")
+region = Rect2(0, 0, 17, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2eq1c"]
+atlas = ExtResource("11_wcvy6")
+region = Rect2(17, 0, 17, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yaie0"]
+atlas = ExtResource("11_wcvy6")
+region = Rect2(34, 0, 17, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cghw5"]
+atlas = ExtResource("12_hmx4t")
+region = Rect2(0, 0, 17, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6qsce"]
+atlas = ExtResource("12_hmx4t")
+region = Rect2(17, 0, 17, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_erpof"]
+atlas = ExtResource("12_hmx4t")
+region = Rect2(34, 0, 17, 34)
 
 [resource]
 animations = [{
@@ -186,4 +225,55 @@ animations = [{
 "loop": 1,
 "name": &"feral_scoot",
 "speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fx01p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f65ma")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fx01p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8o3kf")
+}],
+"loop": 1,
+"name": &"feral_walk_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xhl55")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2eq1c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xhl55")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yaie0")
+}],
+"loop": 1,
+"name": &"feral_walk_side",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cghw5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6qsce")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cghw5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_erpof")
+}],
+"loop": 1,
+"name": &"feral_walk_up",
+"speed": 5.0
 }]

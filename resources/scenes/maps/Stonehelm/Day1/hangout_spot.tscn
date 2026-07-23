@@ -1,0 +1,266 @@
+[gd_scene format=3 uid="uid://cs6yji3hx61qx"]
+
+[ext_resource type="Script" uid="uid://cqwj2adiedacl" path="res://resources/scripts/Maps/hangout_spot.gd" id="1_ub42e"]
+[ext_resource type="AudioStream" uid="uid://dg2b1wd67r0m8" path="res://resources/music/Temporary by shiftyz.mp3" id="2_ub42e"]
+[ext_resource type="Texture2D" uid="uid://bqismsdafvvch" path="res://resources/sprites/cutscenes/natalie_look.png" id="4_8jo25"]
+[ext_resource type="PackedScene" uid="uid://c8ka4co471t78" path="res://resources/scenes/objects/actionable.tscn" id="4_qon1m"]
+[ext_resource type="Texture2D" uid="uid://7asx0grldksh" path="res://resources/sprites/cutscenes/hangout_lighting.png" id="5_6y1o6"]
+[ext_resource type="Resource" uid="uid://q6q7untyvvfk" path="res://resources/dialogue/hangout_spot.dialogue" id="5_wv407"]
+[ext_resource type="PackedScene" uid="uid://ck5usmblr0wtq" path="res://resources/scenes/players.tscn" id="6_v14ej"]
+[ext_resource type="Texture2D" uid="uid://c454tpxgm1swb" path="res://resources/sprites/cutscenes/Chair_Back.png" id="7_ub42e"]
+[ext_resource type="Texture2D" uid="uid://b23adon1x64ur" path="res://resources/sprites/cutscenes/natalie_standing_head.png" id="7_wv407"]
+[ext_resource type="Texture2D" uid="uid://bb205q1uf0tjl" path="res://resources/sprites/cutscenes/susie_standing_head.png" id="8_ay087"]
+[ext_resource type="Texture2D" uid="uid://durtalfd5oya5" path="res://resources/sprites/cutscenes/natalie_table_lay.png" id="11_tly40"]
+[ext_resource type="Texture2D" uid="uid://b7a0ahpitqqwh" path="res://resources/sprites/cutscenes/susie_sitting.png" id="12_wh3i4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g2384"]
+
+[sub_resource type="Animation" id="Animation_ub42e"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Natalie:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Susie:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Natalie:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("7_wv407")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Susie:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("8_ay087")]
+}
+
+[sub_resource type="Animation" id="Animation_7256n"]
+resource_name = "checkUp"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Susie:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 1.2973055, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Susie:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+
+[sub_resource type="Animation" id="Animation_c1wov"]
+resource_name = "lay"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Natalie:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 1.3, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Susie:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 1.2973055, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Natalie:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.97),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("11_tly40")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Susie:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("12_wh3i4")]
+}
+
+[sub_resource type="Animation" id="Animation_qon1m"]
+resource_name = "standing"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Natalie:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Susie:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Natalie:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("7_wv407")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Susie:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("8_ay087")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ay087"]
+_data = {
+&"RESET": SubResource("Animation_ub42e"),
+&"checkUp": SubResource("Animation_7256n"),
+&"lay": SubResource("Animation_c1wov"),
+&"standing": SubResource("Animation_qon1m")
+}
+
+[node name="hang_out_spot" type="Node2D" unique_id=825236289]
+process_mode = 3
+y_sort_enabled = true
+script = ExtResource("1_ub42e")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=741284882]
+process_mode = 1
+stream = ExtResource("2_ub42e")
+autoplay = true
+
+[node name="Doors" type="Node2D" parent="." unique_id=859125480]
+
+[node name="Player" parent="." unique_id=1626850227 instance=ExtResource("6_v14ej")]
+process_mode = 1
+z_index = 1
+position = Vector2(-303, -275)
+floor_constant_speed = true
+
+[node name="Actionable" type="Node2D" parent="." unique_id=1200330021]
+
+[node name="actionable" parent="Actionable" unique_id=148220324 instance=ExtResource("4_qon1m")]
+dialogFile = ExtResource("5_wv407")
+activeOnStepOn = true
+smallText = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable/actionable" unique_id=135445003]
+shape = SubResource("CircleShape2D_g2384")
+
+[node name="Cutscenes" type="Node2D" parent="." unique_id=585520158]
+
+[node name="background" type="Sprite2D" parent="Cutscenes" unique_id=273817495]
+position = Vector2(588, 321)
+scale = Vector2(1.71521, 1.71521)
+texture = ExtResource("4_8jo25")
+
+[node name="Natalie" type="Sprite2D" parent="Cutscenes" unique_id=753574968]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(588, 321)
+scale = Vector2(1.71521, 1.71521)
+texture = ExtResource("7_wv407")
+
+[node name="Susie" type="Sprite2D" parent="Cutscenes" unique_id=568598702]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(588, 321)
+scale = Vector2(1.71521, 1.71521)
+texture = ExtResource("8_ay087")
+
+[node name="chair_back" type="Sprite2D" parent="Cutscenes" unique_id=1192385407]
+position = Vector2(588, 321)
+scale = Vector2(1.71521, 1.71521)
+texture = ExtResource("7_ub42e")
+
+[node name="lighting" type="Sprite2D" parent="Cutscenes" unique_id=1235622017]
+position = Vector2(588, 321)
+scale = Vector2(1.71521, 1.71521)
+texture = ExtResource("5_6y1o6")
+
+[node name="CutscneeAnimationPlayer" type="AnimationPlayer" parent="Cutscenes" unique_id=1260595666]
+libraries/ = SubResource("AnimationLibrary_ay087")

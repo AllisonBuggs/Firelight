@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://d3u3nuembdyl2"]
 
-[ext_resource type="Script" uid="uid://d4blkpy1xbsm7" path="res://resources/scripts/Maps/Map_LabLowerFloor.gd" id="1_cdyyy"]
+[ext_resource type="Script" uid="uid://bijlihp42or3o" path="res://resources/scripts/AllMaps.gd" id="1_fl8b2"]
 [ext_resource type="TileSet" uid="uid://c4mxm77yi2rpc" path="res://resources/tileset/tileset.tres" id="2_iejox"]
 [ext_resource type="Script" uid="uid://hraudamater6" path="res://resources/scripts/FootStepsTilemapScript.gd" id="4_ft0cd"]
 [ext_resource type="PackedScene" uid="uid://chnesmup7fj8u" path="res://resources/scenes/objects/event_door.tscn" id="5_k6kyt"]
@@ -14,16 +14,17 @@ size = Vector2(6.4234567, 8)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iejox"]
 size = Vector2(6.6241894, 11)
 
-[node name="LabLowerFloor" type="Node2D" unique_id=825236289]
+[node name="APARTMENT_STAIRWAY_TOP" type="Node2D" unique_id=825236289]
 process_mode = 3
 y_sort_enabled = true
-script = ExtResource("1_cdyyy")
+script = ExtResource("1_fl8b2")
 
 [node name="Overlay1" type="TileMapLayer" parent="." unique_id=1416965107]
 modulate = Color(0.48027045, 0.48027045, 0.48027045, 1)
 z_index = -1
 tile_map_data = PackedByteArray("AAAAAPv/AAAFAAEAAAD///v/AAAFAAEAAAD+//v/AAAFAAEAAAD9//v/AAAFAAEAAAD8//v/AAAFAAEAAAD7//v/AAAFAAEAAAD7//z/AAAFAAEAAAD7//3/AAAFAAEAAAD8//3/AAAFAAEAAAD9//3/AAAFAAEAAAD+//z/AAAFAAEAAAD///z/AAAFAAEAAAD///3/AAAFAAEAAAD+//3/AAAFAAEAAAD9//z/AAAFAAEAAAAAAPz/AAAFAAEAAAAAAP3/AAAFAAEAAAD8//z/AAAFAAEAAAADAPv/AAAFAAEAAAADAPz/AAAFAAEAAAADAP3/AAAFAAEAAAAEAPv/AAAFAAEAAAAEAPz/AAAFAAEAAAAEAP3/AAAFAAEAAAAFAPv/AAAFAAEAAAAFAPz/AAAFAAEAAAAFAP3/AAAFAAEAAAAGAPv/AAAFAAEAAAAGAPz/AAAFAAEAAAAGAP3/AAAFAAEAAAAHAPv/AAAFAAEAAAAHAPz/AAAFAAEAAAAHAP3/AAAFAAEAAAAIAPv/AAAFAAEAAAAIAPz/AAAFAAEAAAAIAP3/AAAFAAEAAAADAP7/AAAFAAEAAAAEAP7/AAAFAAEAAAAFAP7/AAAFAAEAAAAGAP7/AAAFAAEAAAAHAP7/AAAFAAEAAAAIAP7/AAAFAAEAAAD7//7/AAAEAAMAAAD7////AAAEAAMAAAD8//7/AAAEAAMAAAD8////AAAEAAMAAAD9//7/AAAFAAEAAAD9////AAAFAAEAAAD+//7/AAAFAAEAAAD+////AAAFAAEAAAD///7/AAAFAAEAAAD/////AAAFAAEAAAAAAP7/AAAFAAEAAAAAAP//AAAFAAEAAAAIAAEAAAAFAAEAAAAHAAEAAAAFAAEAAAAGAAEAAAAFAAEAAAAFAAEAAAAFAAEAAAAEAAEAAAAFAAEAAAADAAEAAAAFAAEAAAACAAEAAAAFAAEAAAABAAEAAAAFAAEAAAAAAAEAAAAFAAEAAAD//wEAAAAFAAEAAAD+/wEAAAAFAAEAAAD//wAAAAAFAAEAAAAAAAAAAAAFAAEAAAD8/wAAAAAEAAMAAAD8/wEAAAAEAAMAAAD+/wAAAAAFAAEAAAD9/wAAAAAFAAEAAAD9/wEAAAAFAAEAAAD7/wAAAAAEAAMAAAD7/wEAAAAEAAMAAAAJAP//AAALAAMAAAAJAAAAAAALAAMAAAAKAP//AAAEAAMAAFAKAAAAAAAEAAMAAFACAP7/AAAFAAEAAAACAP3/AAAFAAEAAAACAPz/AAAFAAEAAAACAPv/AAAFAAEAAAABAPv/AAAFAAEAAAABAPz/AAAFAAEAAAABAP3/AAAFAAEAAAABAP7/AAAFAAEAAAABAP//AAAFAAEAAAABAAAAAAAFAAEAAAACAAAAAAAFAAEAAAACAP//AAAFAAEAAAADAP//AAAFAAEAAAADAAAAAAAFAAEAAAAEAAAAAAAFAAEAAAAEAP//AAAFAAEAAAAFAP//AAAFAAEAAAAFAAAAAAAFAAEAAAAGAAAAAAAFAAEAAAAGAP//AAAFAAEAAAAHAP//AAAFAAEAAAAHAAAAAAAFAAEAAAAIAAAAAAAFAAEAAAAIAP//AAAFAAEAAAACAPr/AAALAAMAAAABAPr/AAALAAMAAAABAPn/AAALAAMAAAACAPn/AAALAAMAAAD6/wIAAAAEAAMAAAD6/wMAAAAEAAMAAAD7/wMAAAAEAAMAAAD7/wIAAAAEAAMAAAD7/wQAAAAEAAMAAAD8/wQAAAAEAAMAAAD8/wMAAAAEAAMAAAD8/wIAAAAEAAMAAAA=")
 tile_set = ExtResource("2_iejox")
+collision_enabled = false
 
 [node name="Main" type="TileMapLayer" parent="." unique_id=1594926581]
 top_level = true
@@ -46,7 +47,7 @@ process_mode = 1
 [node name="Player" parent="." unique_id=1626850227 instance=ExtResource("6_8sq1o")]
 process_mode = 1
 z_index = 1
-position = Vector2(1, 2)
+position = Vector2(-131, -156)
 floor_constant_speed = true
 recoveryTime = 0.4
 
@@ -66,31 +67,31 @@ target = NodePath("../Player")
 
 [node name="Doors" type="Node2D" parent="." unique_id=1938037833]
 
-[node name="Door_LLFUF" parent="Doors" unique_id=1341049881 instance=ExtResource("5_k6kyt")]
+[node name="Door_TSD" parent="Doors" unique_id=1341049881 instance=ExtResource("5_k6kyt")]
 position = Vector2(96, 242)
 scale = Vector2(9.963483, 1)
-mapToLoad = "LabUpperFloor"
-entranceUsed = "LFUFD"
+mapToLoad = "CaiApartmentHall"
+entranceUsed = "CAEU"
 
-[node name="CollisionShape2D" parent="Doors/Door_LLFUF" index="0" unique_id=1406666274]
+[node name="CollisionShape2D" parent="Doors/Door_TSD" index="0" unique_id=1406666274]
 position = Vector2(-0.10036651, 9)
 shape = SubResource("RectangleShape2D_cdyyy")
 
-[node name="Marker2D" parent="Doors/Door_LLFUF" index="1" unique_id=1701488384]
+[node name="Marker2D" parent="Doors/Door_TSD" index="1" unique_id=1701488384]
 position = Vector2(0, -43)
 
-[node name="Door_LLFUF2" parent="Doors" unique_id=515886208 instance=ExtResource("5_k6kyt")]
+[node name="Door_TSB" parent="Doors" unique_id=515886208 instance=ExtResource("5_k6kyt")]
 position = Vector2(-129, -59)
 scale = Vector2(9.963483, 1)
-mapToLoad = "LabUpperFloor"
-entranceUsed = "LFUFD"
+mapToLoad = "APARTMENT_STAIRWAY_MID"
+entranceUsed = "MST"
 
-[node name="CollisionShape2D" parent="Doors/Door_LLFUF2" index="0" unique_id=1406666274]
+[node name="CollisionShape2D" parent="Doors/Door_TSB" index="0" unique_id=1406666274]
 position = Vector2(0, 3.5)
 shape = SubResource("RectangleShape2D_iejox")
 
-[node name="Marker2D" parent="Doors/Door_LLFUF2" index="1" unique_id=1701488384]
+[node name="Marker2D" parent="Doors/Door_TSB" index="1" unique_id=1701488384]
 position = Vector2(-0.10036707, -34)
 
-[editable path="Doors/Door_LLFUF"]
-[editable path="Doors/Door_LLFUF2"]
+[editable path="Doors/Door_TSD"]
+[editable path="Doors/Door_TSB"]
