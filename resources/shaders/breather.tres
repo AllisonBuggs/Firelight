@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://dqte4117ggujc"]
+
+[ext_resource type="Shader" uid="uid://d1nvxr02xfeem" path="res://resources/shaders/Gentle Breathing Effect.gdshader" id="1_y5xic"]
+
+[resource]
+shader = ExtResource("1_y5xic")
+shader_parameter/breath_strength = 0.001
+shader_parameter/breath_speed = 0.8
+shader_parameter/face_center = Vector2(0.5, 0.1)
+shader_parameter/face_radius = 0.5

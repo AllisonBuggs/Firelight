@@ -25,7 +25,7 @@ extends CanvasLayer
 @onready var audio_stream_player: AudioStreamPlayer = %AudioStreamPlayer
 
 ##The Portrait for the character
-@onready var portrait: TextureRect = $Portrait
+@onready var portrait: Sprite2D = $Portrait
 
 ## Temporary game states
 var temporary_game_states: Array = []
@@ -231,9 +231,9 @@ func _on_dialogue_label_spoke(letter: String, letter_index: int, speed: float) -
 			audio_stream_player.stream = load("res://resources/sfx/snd_txttest.wav")
 			audio_stream_player.pitch_scale = randf_range(0.9,1.3)
 			audio_stream_player.play()
-		"Queen":if not letter in [" ", ".", ","]:
-			audio_stream_player.stream = load("res://resources/sfx/voices/caitest.wav")
-			audio_stream_player.pitch_scale = randf_range(0.1,2)
+		"Natalie":
+			audio_stream_player.stream = load("res://resources/sfx/voices/tested/natalie_4.ogg")
+			audio_stream_player.pitch_scale = 1
 			audio_stream_player.play()
 		"James":if not letter in [" ", ".", ","]:
 			audio_stream_player.stream = load("res://resources/sfx/voices/james2.ogg")

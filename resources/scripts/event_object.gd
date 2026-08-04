@@ -1,3 +1,4 @@
+@tool
 extends StaticBody2D
 
 @export var selected_sprite = Resource

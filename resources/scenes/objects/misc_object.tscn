@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://csdp0oxq8068n"]
 
 [ext_resource type="Script" uid="uid://l4jvs4sce14i" path="res://resources/scripts/event_object.gd" id="1_2x46m"]
-[ext_resource type="Texture2D" uid="uid://clf3votncstbm" path="res://resources/sprites/Sprites/tall_tree.png" id="2_2x46m"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_n1ahv"]
+light_mode = 2
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2x46m"]
 radius = 12.5
@@ -14,8 +16,8 @@ script = ExtResource("1_2x46m")
 
 [node name="sprite" type="Sprite2D" parent="." unique_id=1323008951]
 y_sort_enabled = true
+material = SubResource("CanvasItemMaterial_n1ahv")
 position = Vector2(0, -6)
-texture = ExtResource("2_2x46m")
 offset = Vector2(-1, -82)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1841845275]

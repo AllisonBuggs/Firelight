@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://cwnbqqaadnred"]
 
-[ext_resource type="Script" uid="uid://d4blkpy1xbsm7" path="res://resources/scripts/Maps/Map_LabLowerFloor.gd" id="1_c8jut"]
+[ext_resource type="Script" uid="uid://2q8t3os028rb" path="res://resources/scripts/Maps/Map_Cai_Bedroom.gd" id="1_ajs0n"]
 [ext_resource type="Material" uid="uid://2secgp2ouoi8" path="res://resources/shaders/shadowafect.tres" id="2_1pwhg"]
 [ext_resource type="TileSet" uid="uid://c4mxm77yi2rpc" path="res://resources/tileset/tileset.tres" id="3_utc46"]
 [ext_resource type="Script" uid="uid://hraudamater6" path="res://resources/scripts/FootStepsTilemapScript.gd" id="4_ajs0n"]
@@ -27,7 +27,7 @@ height = 107.20053
 [node name="CaiBedroom" type="Node2D" unique_id=825236289]
 process_mode = 3
 y_sort_enabled = true
-script = ExtResource("1_c8jut")
+script = ExtResource("1_ajs0n")
 
 [node name="Main" type="TileMapLayer" parent="." unique_id=1594926581]
 top_level = true
@@ -88,7 +88,6 @@ position = Vector2(-3.9142942, 2)
 process_mode = 1
 position = Vector2(1, 2)
 floor_constant_speed = true
-recoveryTime = 0.4
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=886609456]
 

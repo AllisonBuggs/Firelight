@@ -11,7 +11,7 @@ var balloon : DialogueManagerExampleBalloon = null
 @export var camera : Camera2D
 
 @onready var audioStream = $AudioStreamPlayer
-@onready var player = $Player
+
 @onready var inventory = SaveLoad.SaveFileData.inventoryContents
 
 var itemGivenText = ""
@@ -128,7 +128,7 @@ func find_closest(objectArrayToFind):
 	var lowest_distance = INF    # Initialized as infinity to avoid unintended behaviour at large distances
 	var closest_object
 	for object in objectArrayToFind:
-		var distance = object.global_position.distance_squared_to(player.global_position)
+		var distance = object.global_position.distance_squared_to(GlobalSignalBus.player.global_position)
 		if distance < lowest_distance:
 			closest_object = object
 			lowest_distance = distance
@@ -150,7 +150,3 @@ func startCutscene(path):
 
 func transitionRoom(mapToLoad, _entranceUsed):
 	GlobalSignalBus.call_deferred("ChangeMap", mapToLoad, _entranceUsed)
-
-func walk_to(npc_reference, goal_position : Vector2):
-	npc_reference.movement_target = goal_position
-	npc_reference.set_movement_target()

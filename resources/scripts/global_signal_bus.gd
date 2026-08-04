@@ -36,6 +36,8 @@ signal changePlayerTexture(imagePath : String)
 signal detachPlayerCamera()
 signal reattachPlayerCamera()
 signal removeItem(ITEMID)
+signal request_player_pos()
+signal got_player_pos()
 
 # Lab
 const LabExterior = preload("uid://c21gjtfrlt5bg")
@@ -58,6 +60,8 @@ const APARTMENT_STAIRWAY = preload("uid://3qyup362mv1k")
 const APARTMENT_STAIRWAY_MID = preload("uid://dchcn54dd6d6e")
 const APARTMENT_STAIRWAY_TOP = preload("uid://d3u3nuembdyl2")
 const holding_room_exterior = preload("uid://cm3ixshtsvv1w")
+const HANGOUT_SPOT = preload("uid://cs6yji3hx61qx")
+const NIGHT_WALK = preload("uid://daa8gf7y1ankg")
 
 
 var spawnDoorTag
@@ -65,6 +69,10 @@ var spawnDoorTag
 func ChangeMap(mapName, doorName):
 	var mapToLoad
 	match mapName:
+		"NIGHT_WALK":
+			mapToLoad = NIGHT_WALK
+		"HANGOUT_SPOT":
+			mapToLoad = HANGOUT_SPOT
 		"APARTMENT_STAIRWAY":
 			mapToLoad = APARTMENT_STAIRWAY
 		"APARTMENT_STAIRWAY_MID":

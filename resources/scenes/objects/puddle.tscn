@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://5xekrmxak7ke"]
+
+[ext_resource type="Script" uid="uid://dy8lgetnda3j0" path="res://resources/scripts/objects/MirrorScript.gd" id="1_tbojv"]
+[ext_resource type="Texture2D" uid="uid://blifcohtrm2fh" path="res://resources/sprites/Sprites/puddle_fill.png" id="2_ddh1t"]
+[ext_resource type="Texture2D" uid="uid://negftgu4njms" path="res://resources/sprites/Player/Feral_climb.png" id="3_tbojv"]
+[ext_resource type="Texture2D" uid="uid://btq0eu1bthv3j" path="res://resources/sprites/Sprites/puddle_outline.png" id="4_iquba"]
+
+[node name="puddle" type="Node2D" unique_id=1467396047]
+script = ExtResource("1_tbojv")
+
+[node name="puddle_fill" type="Sprite2D" parent="." unique_id=216577617]
+self_modulate = Color(1, 1, 1, 0.24313726)
+clip_children = 2
+texture = ExtResource("2_ddh1t")
+
+[node name="PlayerReflection" type="Sprite2D" parent="puddle_fill" unique_id=2043276928]
+light_mask = 512
+position = Vector2(0, -10)
+texture = ExtResource("3_tbojv")
+flip_v = true
+
+[node name="puddle_outline" type="Sprite2D" parent="." unique_id=1333075348]
+texture = ExtResource("4_iquba")

@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://bfqicqjwlcwtb"]
 
-[ext_resource type="Script" uid="uid://d4blkpy1xbsm7" path="res://resources/scripts/Maps/Map_LabLowerFloor.gd" id="1_v5038"]
+[ext_resource type="Script" uid="uid://dc6f1iuonbmg0" path="res://resources/scripts/Maps/Map_Cai_FrontRoom.gd" id="1_bpu6q"]
 [ext_resource type="Material" uid="uid://2secgp2ouoi8" path="res://resources/shaders/shadowafect.tres" id="2_0e2ho"]
 [ext_resource type="TileSet" uid="uid://c4mxm77yi2rpc" path="res://resources/tileset/tileset.tres" id="3_o3t4i"]
 [ext_resource type="Script" uid="uid://hraudamater6" path="res://resources/scripts/FootStepsTilemapScript.gd" id="4_hrsvu"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cbaxum6xw240c" path="res://resources/scenes/UI/ui_canvas_layer.tscn" id="7_31h60"]
 [ext_resource type="PackedScene" uid="uid://3q3vm527u3bw" path="res://resources/scenes/objects/camera.tscn" id="8_o7gla"]
 [ext_resource type="Texture2D" uid="uid://5frwt7sln26j" path="res://resources/sprites/NPCs/Cai/Casual Cai/Cai_Up1.png" id="9_0e2ho"]
+[ext_resource type="Material" uid="uid://dqte4117ggujc" path="res://resources/shaders/breather.tres" id="9_31h60"]
 [ext_resource type="Texture2D" uid="uid://6nod0xl5pf3i" path="res://resources/sprites/Sprites/dinner_table.png" id="10_hrsvu"]
 [ext_resource type="Texture2D" uid="uid://cjdgyll22ubi0" path="res://resources/sprites/Sprites/wooden_chair.png" id="11_umawh"]
 [ext_resource type="PackedScene" uid="uid://c8ka4co471t78" path="res://resources/scenes/objects/actionable.tscn" id="12_bpu6q"]
@@ -30,7 +31,7 @@ height = 38.0
 [node name="CaiFrontRoom" type="Node2D" unique_id=825236289]
 process_mode = 3
 y_sort_enabled = true
-script = ExtResource("1_v5038")
+script = ExtResource("1_bpu6q")
 
 [node name="Main" type="TileMapLayer" parent="." unique_id=1594926581]
 top_level = true
@@ -106,7 +107,6 @@ process_mode = 1
 z_index = 1
 position = Vector2(1, 2)
 floor_constant_speed = true
-recoveryTime = 0.4
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=886609456]
 
@@ -123,6 +123,7 @@ scale = Vector2(1.3, 1.3)
 target = NodePath("../Player")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=492629911]
+material = ExtResource("9_31h60")
 position = Vector2(302, -299)
 texture = ExtResource("9_0e2ho")
 

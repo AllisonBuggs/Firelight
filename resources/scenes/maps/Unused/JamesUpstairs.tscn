@@ -21,7 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://cor4outnbapda" path="res://resources/sprites/Sprites/Closest_Closed.png" id="17_72pks"]
 [ext_resource type="Texture2D" uid="uid://yudgs6x07a7j" path="res://resources/sprites/Sprites/JamesBigBed.png" id="17_mrfn2"]
 [ext_resource type="Texture2D" uid="uid://crvotnilvlddx" path="res://resources/sprites/Sprites/JamesBlanket.png" id="18_prcl6"]
-[ext_resource type="PackedScene" uid="uid://5xekrmxak7ke" path="res://resources/scenes/objects/mirror.tscn" id="19_x857l"]
+[ext_resource type="PackedScene" uid="uid://5xekrmxak7ke" path="res://resources/scenes/objects/puddle.tscn" id="19_x857l"]
 [ext_resource type="AudioStream" uid="uid://c2cxgr6m1raye" path="res://resources/sfx/alarmClockBeep.wav" id="21_72pks"]
 [ext_resource type="Texture2D" uid="uid://yvsn8p8upjtd" path="res://resources/sprites/Sprites/AlarmOff_CabnietBedside.png" id="21_xkqp3"]
 [ext_resource type="Resource" uid="uid://cv11othgk3mii" path="res://resources/dialogue/MISC/MISC_JamesWifeCloset.dialogue" id="22_8xn8r"]

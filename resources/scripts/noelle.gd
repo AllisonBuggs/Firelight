@@ -17,7 +17,6 @@ var right_held = false
 var movementAllowed = true
 var playerState
 
-
 var cooldown = false
 var canMove = true
 var timer_purpose
@@ -39,6 +38,7 @@ func setupAttackRaycast():
 	GlobalSignalBus.emit_signal("attackRaycastInitiate", SaveLoad.SaveFileData.Damage)
 
 func _ready() -> void:
+	GlobalSignalBus.connect("request_player_pos", send_player_pos)
 	GlobalSignalBus.connect("changePlayerTexture", changePlayerTexture)
 	GlobalSignalBus.connect("playerEnteredCombat", enteredCombat)
 	GlobalSignalBus.connect("playerMovement", playerMoveChanged) 
@@ -209,3 +209,6 @@ func changePlayerAnimation(animationName : String):
 
 func changePlayerTexture(imagePath):
 	visualSprite.animation = imagePath
+
+func send_player_pos():
+	GlobalSignalBus.emit_signal("got_player_pos", global_position)

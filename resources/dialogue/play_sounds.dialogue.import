@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://ctmfvbe6cwqwp"
+path="res://.godot/imported/play_sounds.dialogue-68babb4bf31fbbe85cd093e64d008f79.tres"
+
+[deps]
+
+source_file="res://resources/dialogue/play_sounds.dialogue"
+dest_files=["res://.godot/imported/play_sounds.dialogue-68babb4bf31fbbe85cd093e64d008f79.tres"]
+
+[params]
+
+defaults=true

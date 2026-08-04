@@ -1,0 +1,7 @@
+~ glass
+do playSound("res://resources/sfx/shdemo/echO_glass_clank.ogg")
+=> END
+
+~ dang
+do playSound("res://resources/sfx/shdemo/echoed_dang.ogg")
+=> END

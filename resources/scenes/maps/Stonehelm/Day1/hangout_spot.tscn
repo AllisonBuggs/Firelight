@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cqwj2adiedacl" path="res://resources/scripts/Maps/hangout_spot.gd" id="1_ub42e"]
 [ext_resource type="AudioStream" uid="uid://dg2b1wd67r0m8" path="res://resources/music/Temporary by shiftyz.mp3" id="2_ub42e"]
+[ext_resource type="PackedScene" uid="uid://chnesmup7fj8u" path="res://resources/scenes/objects/event_door.tscn" id="3_ay087"]
 [ext_resource type="Texture2D" uid="uid://bqismsdafvvch" path="res://resources/sprites/cutscenes/natalie_look.png" id="4_8jo25"]
 [ext_resource type="PackedScene" uid="uid://c8ka4co471t78" path="res://resources/scenes/objects/actionable.tscn" id="4_qon1m"]
 [ext_resource type="Texture2D" uid="uid://7asx0grldksh" path="res://resources/sprites/cutscenes/hangout_lighting.png" id="5_6y1o6"]
@@ -10,10 +11,18 @@
 [ext_resource type="Texture2D" uid="uid://c454tpxgm1swb" path="res://resources/sprites/cutscenes/Chair_Back.png" id="7_ub42e"]
 [ext_resource type="Texture2D" uid="uid://b23adon1x64ur" path="res://resources/sprites/cutscenes/natalie_standing_head.png" id="7_wv407"]
 [ext_resource type="Texture2D" uid="uid://bb205q1uf0tjl" path="res://resources/sprites/cutscenes/susie_standing_head.png" id="8_ay087"]
+[ext_resource type="Shader" uid="uid://d1nvxr02xfeem" path="res://resources/shaders/Gentle Breathing Effect.gdshader" id="8_tly40"]
 [ext_resource type="Texture2D" uid="uid://durtalfd5oya5" path="res://resources/sprites/cutscenes/natalie_table_lay.png" id="11_tly40"]
 [ext_resource type="Texture2D" uid="uid://b7a0ahpitqqwh" path="res://resources/sprites/cutscenes/susie_sitting.png" id="12_wh3i4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g2384"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fv3wq"]
+shader = ExtResource("8_tly40")
+shader_parameter/breath_strength = 0.007
+shader_parameter/breath_speed = 0.8
+shader_parameter/face_center = Vector2(0.5, 0.5)
+shader_parameter/face_radius = 0.5
 
 [sub_resource type="Animation" id="Animation_ub42e"]
 length = 0.001
@@ -205,7 +214,7 @@ _data = {
 &"standing": SubResource("Animation_qon1m")
 }
 
-[node name="hang_out_spot" type="Node2D" unique_id=825236289]
+[node name="HANGOUT_SPOT" type="Node2D" unique_id=825236289]
 process_mode = 3
 y_sort_enabled = true
 script = ExtResource("1_ub42e")
@@ -216,6 +225,14 @@ stream = ExtResource("2_ub42e")
 autoplay = true
 
 [node name="Doors" type="Node2D" parent="." unique_id=859125480]
+
+[node name="Door_myboneshurt" parent="Doors" unique_id=1341049881 instance=ExtResource("3_ay087")]
+position = Vector2(-210, -163)
+mapToLoad = "hangout_spot"
+entranceUsed = "imnotevenold"
+
+[node name="Marker2D" parent="Doors/Door_myboneshurt" index="1" unique_id=1701488384]
+position = Vector2(211, 162)
 
 [node name="Player" parent="." unique_id=1626850227 instance=ExtResource("6_v14ej")]
 process_mode = 1
@@ -242,6 +259,7 @@ texture = ExtResource("4_8jo25")
 
 [node name="Natalie" type="Sprite2D" parent="Cutscenes" unique_id=753574968]
 modulate = Color(1, 1, 1, 0)
+material = SubResource("ShaderMaterial_fv3wq")
 position = Vector2(588, 321)
 scale = Vector2(1.71521, 1.71521)
 texture = ExtResource("7_wv407")
@@ -264,3 +282,5 @@ texture = ExtResource("5_6y1o6")
 
 [node name="CutscneeAnimationPlayer" type="AnimationPlayer" parent="Cutscenes" unique_id=1260595666]
 libraries/ = SubResource("AnimationLibrary_ay087")
+
+[editable path="Doors/Door_myboneshurt"]

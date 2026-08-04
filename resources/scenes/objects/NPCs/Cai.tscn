@@ -2,8 +2,6 @@
 
 [ext_resource type="Script" uid="uid://bw2wrrspnbwpy" path="res://resources/scripts/objects/NPCs/cai.gd" id="1_klubx"]
 [ext_resource type="SpriteFrames" uid="uid://85pyfacikgmw" path="res://resources/sprite_frames/cai_sprite_frames.tres" id="2_kjn5x"]
-[ext_resource type="AudioStream" uid="uid://b06adu6f6lim7" path="res://resources/sfx/bladeAttackSFX.wav" id="16_knwbl"]
-[ext_resource type="PackedScene" uid="uid://bjmrystoren7x" path="res://resources/scenes/objects/attack_ray_cast.tscn" id="17_k1npu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_whwkn"]
 size = Vector2(17, 40)
@@ -360,22 +358,5 @@ path_desired_distance = 4.0
 path_max_distance = 10.0
 debug_enabled = true
 
-[node name="Timer" type="Timer" parent="." unique_id=299854803]
-
-[node name="spriteUpdateTimer" type="Timer" parent="." unique_id=716260504]
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=549370986]
-stream = ExtResource("16_knwbl")
-bus = &"SFX"
-
-[node name="attackCooldown" type="Timer" parent="." unique_id=825487701]
-
-[node name="AttackRayCast" parent="." unique_id=689401358 instance=ExtResource("17_k1npu")]
-scale = Vector2(1.5753632, 1.5753632)
-target_position = Vector2(-17.138905, 20.947552)
-
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="navigation_finished" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_navigation_finished"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="timeout" from="spriteUpdateTimer" to="." method="_on_sprite_update_timer_timeout"]
-[connection signal="timeout" from="attackCooldown" to="." method="_on_attack_cooldown_timeout"]

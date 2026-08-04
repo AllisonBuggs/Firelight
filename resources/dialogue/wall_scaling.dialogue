@@ -1,0 +1,9 @@
+~ landed
+do wait(1)
+do playSound("res://resources/sfx/shdemo/heart_beat.ogg")
+
+Queen: ...
+Queen: I don't think we are alone.[#mood=nervous]
+Queen: Your paranoia is infectious.[#mood=nervous]
+Queen: Walk quickly, the Factory is to our left.[#mood=nervous]
+=> END

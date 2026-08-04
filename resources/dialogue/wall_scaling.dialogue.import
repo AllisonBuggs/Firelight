@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://85srgjdgupxm"
+path="res://.godot/imported/wall_scaling.dialogue-d754fb98f2e687eab85ce890be1fcdf3.tres"
+
+[deps]
+
+source_file="res://resources/dialogue/wall_scaling.dialogue"
+dest_files=["res://.godot/imported/wall_scaling.dialogue-d754fb98f2e687eab85ce890be1fcdf3.tres"]
+
+[params]
+
+defaults=true

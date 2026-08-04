@@ -1,13 +1,103 @@
 ~ start
-do player.hide()
-do player.reparent(natalie)
-do walk_to(natalie, Vector2(-5140.0,-840.0))
-do destination_reacjed()
-do walk_to(natalie, Vector2(-2880.0, -840.0))
-do destination_reacjed()
-do walk_to(natalie, Vector2(-2880.0,-1344.0))
-do destination_reacjed()
-do walk_to(natalie, Vector2(-3364.0,-1344.0))
-do destination_reacjed()
-do walk_to(natalie, Vector2(-3456.0,-1403.0))
+
+do playAnimation("fog_in", cutscene_player, false)
+
+do wait(6)
+
+do playAnimation("natalie_in", cutscene_player, false)
+
+do wait(11)
+
+do playAnimation("RESET", cutscene_player, false)
+
+Natalie: Ha![wait=0.2] You should've seen your face!
+
+Natalie: Literally the one upside to this stupid burn.
+
+Natalie: Ha…
+
+Natalie: …
+
+Natalie: …
+
+Natalie: …
+
+Natalie: Woah[wait=0.5]…your[wait=0.5]…vibrantly[wait=0.2] red.
+
+Natalie: Why are you [wait=0.1]still on the floor?[wait=0.2] Come here. (reaches down to pull up)
+
+Natalie: You're new right?[wait=0.2] I didn't recognize your footsteps.
+
+Natalie: I'm sorry,[wait=0.1] I haven't slept in a while.[wait=0.2] I'm loopy.
+
+Natalie: That's not my name,[wait=0.1] what's your name?
+
+Natalie: Susie? Pretty name.[wait=0.2] You're sneaking out already too? Coooll.
+
+Natalie: Well where are you headed?
+
+- The Factory
+- Just wandering
+
+Natalie: The factory… [wait=1]it's not very comfortable there…
+
+Natalie: …
+
+Natalie: …
+
+Natalie: uh,[wait=0.1] what was I saying.
+
+Natalie: Well if you're headed that way [wait=0.2]you're going to have to wait, somewhere hidden, there's gonna be patrols all about its front for like[wait=0.5]  20 minutes.
+
+Natalie: I know a cool spot we could hangout in,[wait=0.2] it's in the abandoned district so it's out of any patrol's way.
+
+Natalie: It's got a cool view too.
+
+Natalie: … and uh, [wait=0.6]well there's no other kids here. I was the youngest here until well whenever you got here.
+
+Natalie: So it can't be that bad right?
+
+- Show me the way
+
+	Natalie: Yes!
+
+	Natalie: You're not sensitive to touch right?
+
+	Natalie: Good, come here.
+	do player.show()
+	do player.reparent(natalie)
+	do natalie.walk_to(Vector2(-5140.0,-840.0))
+	do destination_reacjed()
+	do natalie.walk_to(Vector2(-2880.0, -840.0))
+	do destination_reacjed()
+	do natalie.walk_to(Vector2(-2880.0,-1344.0))
+	do destination_reacjed()
+	do natalie.walk_to(Vector2(-3364.0,-1344.0))
+	do destination_reacjed()
+	do natalie.walk_to(Vector2(-3456.0,-1403.0))
+
+	Natalie: wOW ha my legs are less sturdy than[wait=0.2]i thought…they would be..
+
+	Natalie: Let's slow down a bit.
+
+	Natalie: Weridly...
+
+	Natalie: When I saw you on the ground a bit ago[wait=0.5] I got this strange feeling…
+
+	Natalie: I've had this dazey feeling since yesterday
+
+	Natalie: But it cleared up and[wait=0.5] I just stared and got this bad feeling.
+
+	Natalie: Like something was wrong in you.
+
+	Natalie: Then I got distracted by how colorful you are. 
+
+	Natalie: Now the fogs back[wait=0.5] ha.
+
+	Natalie: Try and sleep regularly, it's got[wait=0.5] weird effects if you don’t.
+
+	do transitionRoom("HANGOUT_SPOT", "myboneshurt")
+
+- I'll wait it out alone
+
 => END

@@ -2,10 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bw2wrrspnbwpy" path="res://resources/scripts/objects/NPCs/cai.gd" id="1_rb3k1"]
 [ext_resource type="Texture2D" uid="uid://dgtw8f1d8c2cu" path="res://resources/sprites/NPCs/Natalie/natalie_down.png" id="2_rb3k1"]
-[ext_resource type="AudioStream" uid="uid://b06adu6f6lim7" path="res://resources/sfx/bladeAttackSFX.wav" id="3_4v7wt"]
 [ext_resource type="Texture2D" uid="uid://daakixptu27c2" path="res://resources/sprites/NPCs/Natalie/natalie_left.png" id="3_g7e2e"]
 [ext_resource type="Texture2D" uid="uid://cbvb0g8fnwl64" path="res://resources/sprites/NPCs/Natalie/natalie_right.png" id="4_8hwi5"]
-[ext_resource type="PackedScene" uid="uid://bjmrystoren7x" path="res://resources/scenes/objects/attack_ray_cast.tscn" id="4_g7e2e"]
 [ext_resource type="Texture2D" uid="uid://cy4nga6xbxt71" path="res://resources/sprites/NPCs/Natalie/natalie_up.png" id="5_atnjl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l2w8d"]
@@ -269,21 +267,4 @@ path_desired_distance = 4.0
 path_max_distance = 10.0
 debug_enabled = true
 
-[node name="Timer" type="Timer" parent="." unique_id=299854803]
-
-[node name="spriteUpdateTimer" type="Timer" parent="." unique_id=716260504]
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=549370986]
-stream = ExtResource("3_4v7wt")
-bus = &"SFX"
-
-[node name="attackCooldown" type="Timer" parent="." unique_id=825487701]
-
-[node name="AttackRayCast" parent="." unique_id=689401358 instance=ExtResource("4_g7e2e")]
-scale = Vector2(1.5753632, 1.5753632)
-target_position = Vector2(-17.138905, 20.947552)
-
 [connection signal="navigation_finished" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_navigation_finished"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="timeout" from="spriteUpdateTimer" to="." method="_on_sprite_update_timer_timeout"]
-[connection signal="timeout" from="attackCooldown" to="." method="_on_attack_cooldown_timeout"]

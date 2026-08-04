@@ -28,29 +28,9 @@ func start() -> void:
 func set_movement_target():
 	navigation_agent.set_target_position(movement_target)
 
-
-func _physics_process(delta):
-	if navigation_agent.is_navigation_finished():
-		animation_player.stop()
-	else:
-			_direction = get_position_delta().normalized()
-			detectDirection()
-			match orientationNumber:
-				0:animation_player.play(animation_walk_left)
-				1:animation_player.play(animation_walk_up)
-				2:animation_player.play(animation_walk_up)
-				3:animation_player.play(animation_walk_up)
-				4:animation_player.play(animation_walk_right)
-				5:animation_player.play(animation_walk_down)
-				6:animation_player.play(animation_walk_down)
-				7:animation_player.play(animation_walk_down)
-			print(orientationNumber)
-	if velocity.abs().max_axis_index() == Vector2.Axis.AXIS_X:
-		if velocity.x > 0:
-			animation_player.play(animation_walk_right)
-		else:
-			if animation_player.current_animation != animation_walk_left:
-				animation_player.play(animation_walk_left)
+@warning_ignore("unused_parameter")
+func _process(delta: float) -> void:
+	process_animations()
 
 	
 	# Do not query when the map has never synchronized and is empty.
@@ -86,3 +66,29 @@ func detectDirection():
 
 func quantizeDirection(vectorToQuantize):
 	orientationNumber = int(8.0 * (vectorToQuantize.rotated(PI/8.0).angle() + PI) / TAU)
+
+func process_animations():
+	if navigation_agent.is_navigation_finished():
+		animation_player.stop()
+	else:
+			_direction = get_position_delta().normalized()
+			detectDirection()
+			match orientationNumber:
+				0:animation_player.play(animation_walk_left)
+				1:animation_player.play(animation_walk_up)
+				2:animation_player.play(animation_walk_up)
+				3:animation_player.play(animation_walk_up)
+				4:animation_player.play(animation_walk_right)
+				5:animation_player.play(animation_walk_down)
+				6:animation_player.play(animation_walk_down)
+				7:animation_player.play(animation_walk_down)
+	if velocity.abs().max_axis_index() == Vector2.Axis.AXIS_X:
+		if velocity.x > 0:
+			animation_player.play(animation_walk_right)
+		else:
+			if animation_player.current_animation != animation_walk_left:
+				animation_player.play(animation_walk_left)
+
+func walk_to(goal_position : Vector2):
+	movement_target = goal_position
+	set_movement_target()

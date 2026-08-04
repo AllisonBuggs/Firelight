@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://tgvmh05amym5" path="res://resources/sprites/Portraits/nervous_queen.png" id="2_os5iq"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_72ixx"]
 [ext_resource type="Texture2D" uid="uid://cusmo3r0mrubn" path="res://resources/sprites/Portraits/queen_talk.png" id="3_murkg"]
-[ext_resource type="Script" uid="uid://fre0hukjtjnb" path="res://addons/dialogue_manager/example_balloon/balloon.gd" id="4_r5ei8"]
 [ext_resource type="AudioStream" uid="uid://cc0gvsiqjviwm" path="res://resources/sfx/snd_text.wav" id="6_kmygl"]
 
 [sub_resource type="Animation" id="Animation_jytih"]
@@ -15,26 +14,26 @@ resource_name = "Cai_relax"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Portrait:size")
+tracks/0/path = NodePath("Portrait:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(183, 342)]
+"update": 1,
+"values": [ExtResource("2_murkg")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Portrait:texture")
+tracks/1/path = NodePath("Portrait:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_murkg")]
+"values": [true]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -46,7 +45,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(2.1948838, 2.1948838)]
+"values": [Vector2(2, 2)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -58,24 +57,12 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(781.00006, -62)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Portrait:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"values": [Vector2(993, 299)]
 }
 
-[sub_resource type="Animation" id="Animation_fafyh"]
-resource_name = "Queennervous"
-length = 0.06666667
+[sub_resource type="Animation" id="Animation_murkg"]
+resource_name = "Queen_nervous"
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -91,55 +78,31 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Portrait:size")
+tracks/1/path = NodePath("Portrait:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1152, 648)]
+"update": 1,
+"values": [true]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Portrait:visible")
+tracks/2/path = NodePath("Portrait:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Portrait:scale")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1, 1)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Portrait:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 1)]
+"values": [Vector2(572, 318)]
 }
 
 [sub_resource type="Animation" id="Animation_slj6w"]
 resource_name = "Queen_normal"
-length = 0.33333334
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -147,7 +110,7 @@ tracks/0/path = NodePath("Portrait:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.13333334),
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [ExtResource("3_murkg")]
@@ -155,50 +118,26 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Portrait:size")
+tracks/1/path = NodePath("Portrait:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.1),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1152, 648)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Portrait:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
 }
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Portrait:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Portrait:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 1)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Portrait:scale")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
+"values": [Vector2(572, 318)]
 }
 
 [sub_resource type="Animation" id="Animation_kd2qj"]
@@ -206,50 +145,50 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Portrait:modulate")
+tracks/0/path = NodePath("Portrait:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
+"update": 1,
+"values": [ExtResource("2_os5iq")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Portrait:texture")
+tracks/1/path = NodePath("Portrait:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_os5iq")]
+"values": [true]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Portrait:size")
+tracks/2/path = NodePath("Portrait:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1152, 648)]
+"values": [Vector2(781.00006, -62)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Portrait:visible")
+tracks/3/path = NodePath("Portrait:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -261,19 +200,7 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(2.1948838, 2.1948838)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Portrait:position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(781.00006, -62)]
+"values": [Vector2(2, 2)]
 }
 
 [sub_resource type="Animation" id="Animation_na8v5"]
@@ -294,7 +221,7 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_os5iq"]
 _data = {
 &"Cai_relax": SubResource("Animation_jytih"),
-&"Queen_nervous": SubResource("Animation_fafyh"),
+&"Queen_nervous": SubResource("Animation_murkg"),
 &"Queen_normal": SubResource("Animation_slj6w"),
 &"RESET": SubResource("Animation_kd2qj"),
 &"fade": SubResource("Animation_na8v5")
@@ -401,13 +328,10 @@ script = ExtResource("1_kd2qj")
 [node name="PortraitPlayer" type="AnimationPlayer" parent="." unique_id=732004220]
 libraries/ = SubResource("AnimationLibrary_os5iq")
 
-[node name="Portrait" type="TextureRect" parent="." unique_id=837155996]
+[node name="Portrait" type="Sprite2D" parent="." unique_id=2090568158]
 modulate = Color(1, 1, 1, 0)
-offset_left = 781.00006
-offset_top = -62.0
-offset_right = 1933.0
-offset_bottom = 586.0
-scale = Vector2(2.1948838, 2.1948838)
+position = Vector2(781.00006, -62)
+scale = Vector2(2, 2)
 texture = ExtResource("2_os5iq")
 
 [node name="Balloon" type="Control" parent="." unique_id=359403728]
@@ -421,7 +345,6 @@ offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_qq3yp")
-script = ExtResource("4_r5ei8")
 
 [node name="PanelContainer" type="PanelContainer" parent="Balloon" unique_id=1206944743]
 clip_children = 2
