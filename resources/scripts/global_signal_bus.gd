@@ -38,9 +38,12 @@ signal reattachPlayerCamera()
 signal removeItem(ITEMID)
 signal request_player_pos()
 signal got_player_pos()
+#Global Transition Scene
+signal change_scene_with_transition()
+signal play_transition(backwards : bool)
 
 # Lab
-const LabExterior = preload("uid://c21gjtfrlt5bg")
+#const LabExterior = preload("uid://c21gjtfrlt5bg")
 const LabUpperFloor = preload("uid://cx8w08igip3oh")
 const LabLowerFloor = preload("uid://2x767bx1tqky")
 
@@ -99,8 +102,8 @@ func ChangeMap(mapName, doorName):
 			mapToLoad = holding_room_exterior
 		"Sewers":
 			mapToLoad = SEWERS
-		"LabExterior":
-			mapToLoad = LabExterior
+		#"LabExterior":
+			#mapToLoad = LabExterior
 		"LabUpperFloor":
 			mapToLoad = LabUpperFloor
 		"LabLowerFloor":

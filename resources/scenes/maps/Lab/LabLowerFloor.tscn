@@ -444,6 +444,7 @@ position = Vector2(1122.0001, -522)
 scale = Vector2(9.963483, 1)
 mapToLoad = "LabUpperFloor"
 entranceUsed = "LFUFD"
+direction = "Down"
 
 [node name="Marker2D" parent="Doors/Door_LLFUF" index="1" unique_id=1701488384]
 position = Vector2(-0.30867922, -33)
@@ -461,6 +462,12 @@ z_index = 1
 position = Vector2(1034, -2545)
 floor_constant_speed = true
 recoveryTime = 0.4
+maxHealth = 100
+health = 100
+movementSpeed = 80
+maxStamina = 100
+Stamina = 100
+inventoryContents = ["FleshBurningMixture"]
 
 [node name="PointLight2D" type="PointLight2D" parent="Player" unique_id=1507966151]
 scale = Vector2(4.59375, 4.59375)
@@ -607,48 +614,48 @@ triggerOnce = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable/CatchNewSaves" unique_id=1290058174]
 shape = SubResource("CircleShape2D_jsypn")
 
-[node name="cutsceneItems" type="Node2D" parent="." unique_id=585520158]
+[node name="Cutscenes" type="Node2D" parent="." unique_id=585520158]
 
-[node name="cutsceneAnimationPlayer" type="AnimationPlayer" parent="cutsceneItems" unique_id=1821224391]
+[node name="cutsceneAnimationPlayer" type="AnimationPlayer" parent="Cutscenes" unique_id=1821224391]
 libraries/ = SubResource("AnimationLibrary_p1q85")
 
-[node name="QueenHoldingTenctale" type="Sprite2D" parent="cutsceneItems" unique_id=1976754905]
+[node name="QueenHoldingTenctale" type="Sprite2D" parent="Cutscenes" unique_id=1976754905]
 z_index = 1
 material = ExtResource("2_70nc6")
 position = Vector2(1032, -2645)
 texture = ExtResource("19_n1i8u")
 
-[node name="particle" type="Sprite2D" parent="cutsceneItems" unique_id=1289257304]
+[node name="particle" type="Sprite2D" parent="Cutscenes" unique_id=1289257304]
 z_index = 1
 position = Vector2(1011, -2625)
 texture = SubResource("AtlasTexture_n52jb")
 
-[node name="particle4" type="Sprite2D" parent="cutsceneItems" unique_id=1550354012]
+[node name="particle4" type="Sprite2D" parent="Cutscenes" unique_id=1550354012]
 z_index = 1
 position = Vector2(1050, -2622)
 texture = SubResource("AtlasTexture_nlj16")
 
-[node name="particle5" type="Sprite2D" parent="cutsceneItems" unique_id=131250646]
+[node name="particle5" type="Sprite2D" parent="Cutscenes" unique_id=131250646]
 z_index = 1
 position = Vector2(1053, -2635)
 scale = Vector2(-1.9795175, -1.9795175)
 texture = SubResource("AtlasTexture_nlj16")
 
-[node name="particle2" type="Sprite2D" parent="cutsceneItems" unique_id=163051184]
+[node name="particle2" type="Sprite2D" parent="Cutscenes" unique_id=163051184]
 z_index = 1
 position = Vector2(1033, -2627)
 rotation = -2.471107
 scale = Vector2(0.94392157, 0.37337372)
 texture = SubResource("AtlasTexture_n52jb")
 
-[node name="particle3" type="Sprite2D" parent="cutsceneItems" unique_id=1295678474]
+[node name="particle3" type="Sprite2D" parent="Cutscenes" unique_id=1295678474]
 z_index = 1
 position = Vector2(992.0001, -2621)
 rotation = -3.4772918
 scale = Vector2(0.8485967, 0.7312139)
 texture = SubResource("AtlasTexture_n52jb")
 
-[node name="cutsceneLight" type="PointLight2D" parent="cutsceneItems" unique_id=885994782]
+[node name="cutsceneLight" type="PointLight2D" parent="Cutscenes" unique_id=885994782]
 z_index = 1
 position = Vector2(1030, -2545)
 scale = Vector2(4.59375, 4.59375)

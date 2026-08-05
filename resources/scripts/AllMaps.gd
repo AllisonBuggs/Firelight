@@ -11,6 +11,7 @@ var balloon : DialogueManagerExampleBalloon = null
 @export var camera : Camera2D
 
 @onready var audioStream = $AudioStreamPlayer
+@onready var player: Player = $Player
 
 @onready var inventory = SaveLoad.SaveFileData.inventoryContents
 
