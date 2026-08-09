@@ -17,7 +17,6 @@
 [ext_resource type="AudioStream" uid="uid://bqf2b06kxx18h" path="res://resources/sfx/LabDoorClose.ogg" id="13_uwx1s"]
 [ext_resource type="Resource" uid="uid://b5yrymj1g1m12" path="res://resources/dialogue/Lab/OfficeFiles.dialogue" id="14_33yww"]
 [ext_resource type="AudioStream" uid="uid://cn4wiiaqwoqf3" path="res://resources/sfx/LabDoorOpen.ogg" id="14_igr6h"]
-[ext_resource type="PackedScene" uid="uid://cbaxum6xw240c" path="res://resources/scenes/UI/ui_canvas_layer.tscn" id="15_5yg50"]
 [ext_resource type="Resource" uid="uid://clps4yhftr48b" path="res://resources/dialogue/Lab/Gaurd1Locket.dialogue" id="15_n03fc"]
 [ext_resource type="PackedScene" uid="uid://es8ecuycrs6a" path="res://resources/scenes/objects/event_combat_area.tscn" id="16_5yg50"]
 [ext_resource type="Resource" uid="uid://b5hr84wj7lvm1" path="res://resources/cutscenes/LabLockdownStart.dialogue" id="17_vlfsv"]
@@ -503,7 +502,7 @@ tracks/23/keys = {
 tracks/24/type = "value"
 tracks/24/imported = false
 tracks/24/enabled = true
-tracks/24/path = NodePath("../CutsceneTextures/Playe:modulate")
+tracks/24/path = NodePath("../CutsceneTextures/Player:modulate")
 tracks/24/interp = 1
 tracks/24/loop_wrap = true
 tracks/24/keys = {
@@ -543,7 +542,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../CutsceneTextures/Playe:modulate")
+tracks/2/path = NodePath("../CutsceneTextures/Player:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -583,7 +582,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../CutsceneTextures/Playe:modulate")
+tracks/2/path = NodePath("../CutsceneTextures/Player:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -920,7 +919,6 @@ position = Vector2(575.99994, -1586)
 scale = Vector2(6.2799516, 1)
 mapToLoad = "LabLowerFloor"
 entranceUsed = "LLFUF"
-direction = "Down"
 
 [node name="Marker2D" parent="Doors/Door_LFUFD" index="1" unique_id=1701488384]
 position = Vector2(-5.90086e-06, 45)
@@ -932,14 +930,8 @@ bus = &"SFX"
 
 [node name="Player" parent="." unique_id=1626850227 instance=ExtResource("10_vlfsv")]
 process_mode = 1
-position = Vector2(-463, -1456)
+position = Vector2(569, -1439)
 floor_constant_speed = true
-recoveryTime = 0.4
-maxHealth = 100
-health = 100
-movementSpeed = 80
-maxStamina = 100
-Stamina = 100
 
 [node name="AnimatedSprite2D" parent="Player" index="1" unique_id=891970336]
 material = ExtResource("2_igr6h")
@@ -1413,8 +1405,6 @@ scale = Vector2(1.8906245, 1.90625)
 blend_mode = 2
 texture = SubResource("GradientTexture2D_vlfsv")
 
-[node name="UiCanvasLayer" parent="." unique_id=1431050982 instance=ExtResource("15_5yg50")]
-
 [node name="Crushed Door" type="Sprite2D" parent="." unique_id=107273987]
 visible = false
 position = Vector2(155, -1030)
@@ -1490,7 +1480,7 @@ offset_bottom = 40.0
 scale = Vector2(30.210585, 16.741196)
 color = Color(1, 1, 1, 0)
 
-[node name="Playe" type="Sprite2D" parent="CutsceneTextures" unique_id=672862372]
+[node name="Player" type="Sprite2D" parent="CutsceneTextures" unique_id=672862372]
 modulate = Color(0, 0, 0, 0)
 scale = Vector2(2, 2)
 texture = ExtResource("49_nj6tb")

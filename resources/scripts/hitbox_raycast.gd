@@ -3,25 +3,25 @@ extends RayCast2D
 var alreadyHit = false
 var overlappingObject
 var damage
-
-func _ready() -> void:
-	GlobalSignalBus.connect("attackRaycastInitiate", setup)
+var player_owned = false
 
 @warning_ignore("unused_parameter")
 func _process(delta: float) -> void:
 	if alreadyHit == false:
 		if is_colliding():
-			hit()
+			hurt()
 	if is_colliding() == false:
 		alreadyHit = false
 
-func hit():
+func hurt():
 	overlappingObject = get_collider()
-	if overlappingObject is TileMapLayer or overlappingObject == null or overlappingObject is Area2D:
-		pass
-	else:
-		overlappingObject.hurt(damage)
-		alreadyHit = true
+	if get_collider().has_method("hurt"):
+		deal_damage()
 
-func setup(parentDamage):
+func deal_damage():
+	overlappingObject.hurt(damage, get_parent().velocity)
+	alreadyHit = true
+
+func setup(parentDamage : int, player_owner : bool):
 	damage = parentDamage
+	player_owned = player_owner

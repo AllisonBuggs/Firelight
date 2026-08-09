@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c1wthfwgiunit" path="res://resources/scenes/objects/Climbing_Player.tscn" id="4_v6m11"]
 [ext_resource type="AudioStream" uid="uid://sxlbn8btmgoy" path="res://resources/sfx/Common/Dragon Studios/windgust.mp3" id="5_s1afn"]
 [ext_resource type="TileSet" uid="uid://c4mxm77yi2rpc" path="res://resources/tileset/tileset.tres" id="6_s1afn"]
-[ext_resource type="PackedScene" uid="uid://cbaxum6xw240c" path="res://resources/scenes/UI/ui_canvas_layer.tscn" id="7_n80yu"]
+[ext_resource type="PackedScene" uid="uid://cbaxum6xw240c" path="res://resources/scenes/UI/user_interface.tscn" id="7_n80yu"]
 
 [node name="ClimbingTest" type="Node2D" unique_id=987015982]
 script = ExtResource("1_v6m11")

@@ -10,7 +10,7 @@ func change_scene():
 	play_transition(false)
 	await transition_player.animation_finished
 	play_transition(true)
-	
+
 func play_transition(backwards : bool):
 	if backwards:
 		transition_player.play_backwards("transition")

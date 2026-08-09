@@ -5,4 +5,5 @@
 [node name="CombatZone" type="Area2D" unique_id=1495903131]
 script = ExtResource("1_mup5b")
 
-[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

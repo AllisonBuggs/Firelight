@@ -3,11 +3,11 @@ extends Control
 var pageNumber : int = 0
 var jounralToAdd : String
 var journalText : String
-var maxCharacterDisplay = 586
+var maxCharacterDisplay : int = 586
 
-@onready var pageNumberLabel = $Label
-@onready var soundStream = $AudioStreamPlayer2D
-@onready var leftPage = $MarginContainer/ColorRect/MarginContainer2/ColorRect/MarginContainer/LeftPageText
+@onready var pageNumberLabel : Label = $Label
+@onready var soundStream : AudioStreamPlayer2D = $AudioStreamPlayer2D
+@onready var leftPage : Label = $MarginContainer/ColorRect/MarginContainer2/ColorRect/MarginContainer/LeftPageText
 
 func _ready() -> void:
 	GlobalSignalBus.connect("updateJounral", jounralUpdated)

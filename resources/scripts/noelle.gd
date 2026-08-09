@@ -9,10 +9,14 @@ var down_held = false
 var left_held = false
 var right_held = false
 
+@export var recoveryTime : float = 0.4
+@onready var attackRaycast = $AttackRayCast
+@onready var audioStreamPlayer = $AudioStreamPlayer2D
 @onready var collision = $actionableFinder
 @onready var navAgent = $NavigationAgent2D
-@onready var attackCooldownTimer = $attackCooldownTimer
+@onready var attack_cooldown_timer: Timer = $attackCooldownTimer
 @onready var rollCoolDownTimer = $rollCoolDownTimer
+@onready var audio_stream_player_2d: AudioStreamPlayer = $AudioStreamPlayer2D
 
 var movementAllowed = true
 var playerState
@@ -34,19 +38,17 @@ const directions = [
 	"Down left"
 ]
 
-func setupAttackRaycast():
-	GlobalSignalBus.emit_signal("attackRaycastInitiate", SaveLoad.SaveFileData.Damage)
-
 func _ready() -> void:
+	attackRaycast.setup(10, true)
+	
+	GlobalSignalBus.connect("do_freeze_player", playermovefalse)
 	GlobalSignalBus.connect("request_player_pos", send_player_pos)
 	GlobalSignalBus.connect("changePlayerTexture", changePlayerTexture)
 	GlobalSignalBus.connect("playerEnteredCombat", enteredCombat)
 	GlobalSignalBus.connect("playerMovement", playerMoveChanged) 
-	GlobalSignalBus.onTriggerPlayerSpawn.connect(onSpawn)
 	GlobalSignalBus.connect("playerPositionDataRequested", playerPositionDataRequested)
 	
-	setupAttackRaycast()
-
+	GlobalSignalBus.onTriggerPlayerSpawn.connect(onSpawn)
 
 @warning_ignore("unused_parameter")
 func _physics_process(delta):
@@ -114,7 +116,7 @@ func _input(event: InputEvent) -> void:
 	if inCombat == true:
 		if event.is_action_released("Roll"):
 			if cooldown == false && SaveLoad.SaveFileData.Stamina != 0:
-				pushCharacter("Directional", false)
+				pushCharacter("Directional", false, false, null)
 				GlobalSignalBus.emit_signal("updatePlayerStats", 0, -10)
 				audioStreamPlayer.stream = load("res://resources/sfx/dodgeroll.wav")
 				audioStreamPlayer.pitch_scale = randf_range(1,1.2)
@@ -130,10 +132,32 @@ func _input(event: InputEvent) -> void:
 				updateAttackTimer = true
 				cooldown = true
 				spriteAnimationPlayer.play("fem_unarmed_attack")
-				attackCooldownTimer.start(recoveryTime)
-				pushCharacter("Mouse", true)
+				attack_cooldown_timer.start(recoveryTime)
 				attackRaycast.enabled = true
-				attackRaycast.target_position = get_local_mouse_position().clamp(Vector2(-50,-50),Vector2(50,50))
+				flip_twoards_mouse()
+				audio_stream_player_2d.stream = load("res://resources/sfx/boss/impact_body_ufx_2.ogg")
+				audio_stream_player_2d.play()
+				attackRaycast.target_position = get_local_mouse_position().clamp(Vector2(-24,-24),Vector2(24,24))
+
+func flip_twoards_mouse():
+	var mpos = get_local_mouse_position()
+	direction = mpos.normalized()
+	detectDirection()
+	match orientationNumber:
+			0: ##RIGHT 
+					visualSprite.flip_h = false
+			1:##UP LEFT
+					visualSprite.flip_h = false
+			3: ## UP
+					visualSprite.flip_h = true
+			4: ##LEFT
+					visualSprite.flip_h = true
+			5: ## down rightw
+					visualSprite.flip_h = true
+			7:## DOWN LEFT
+					visualSprite.flip_h = false
+func playermovefalse():
+	playerMoveChanged(false)
 
 func playerMoveChanged(_canMove: bool):
 	canMove = _canMove
@@ -147,7 +171,6 @@ func playerPositionDataRequested(positionToSet):
 func _on_timer_timeout() -> void:
 	cooldown = false
 	updateAttackTimer = false
-
 
 func _on_cool_down_timer_timeout() -> void:
 	canMove = true
@@ -172,7 +195,8 @@ func onSpawn(playerPosition):
 	print("player position set to " + str(playerPosition) + " on spawn")
 	global_position = playerPosition
 
-func hurt(damageTaken):
+func hurt(damageTaken: int, attacker_vel : Vector2):
+	apply_knockback(attacker_vel, 5000)
 	audioStreamPlayer.stream = load("res://resources/sfx/floraphonic-metal-hit-10-193281.mp3")
 	audioStreamPlayer.play()
 	GlobalSignalBus.emit_signal("updatePlayerStats",-damageTaken,0)

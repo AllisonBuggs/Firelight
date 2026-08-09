@@ -1,9 +1,10 @@
 extends allMaps
 
 @onready var natalie: NPCClass = $natalie
-@onready var fog: TextureRect = $UiCanvasLayer/cutscene/fog
-@onready var natalie_distorted: TextureRect = $UiCanvasLayer/cutscene/natalie_distorted
-@onready var cutscene_player: AnimationPlayer = $UiCanvasLayer/cutscene/cutscene_player
+@onready var fog: TextureRect = $CanvasLayer2/cutscene/fog
+@onready var natalie_distorted: TextureRect = $CanvasLayer2/cutscene/natalie_distorted
+@onready var shade: ColorRect = $CanvasLayer2/cutscene/shade
+@onready var cutscene_player: AnimationPlayer = $CanvasLayer2/cutscene/cutscene_player
 
 func _ready() -> void:
 	setUpMap()

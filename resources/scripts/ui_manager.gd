@@ -1,19 +1,19 @@
-extends CanvasLayer
+extends Control
 
 var currentUi = "none"
 var toggle = false
-@onready var pauseMenu = $PauseMenu
-@onready var inventory = $Inventory
-@onready var settings = $Settings
-@onready var saveloadMenu = $saveAndLoadMenu
-@onready var combatUI = $CombatUi
-@onready var journal = $StorySummary
+
+@onready var combatUI: Control = $CanvasLayer/CombatUi
+@onready var saveloadMenu: Control = $CanvasLayer/saveAndLoadMenu
+@onready var settings: Panel = $CanvasLayer/Settings
+@onready var pauseMenu: MarginContainer = $CanvasLayer/PauseMenu
+@onready var inventory: Control = $CanvasLayer/Inventory
+@onready var journal: Control = $CanvasLayer/StorySummary
 
 
 func _ready() -> void:
 	pauseMenu.hide()
 	GlobalSignalBus.connect("closeAllMenus", closeAllMenus)
-	GlobalSignalBus.connect("resumeButtonPressed", recived_resumeButtonPressed)
 	GlobalSignalBus.connect("settingsButtonPressed", recived_settingsButtonPressed)
 	GlobalSignalBus.connect("saveButtonPressed", recived_saveButtonPressed)
 	GlobalSignalBus.connect("returnButtonPressed", recived_returnButtonPressed)
@@ -89,12 +89,6 @@ func closeAllMenus():
 	Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
 	toggle =! toggle
 
-func recived_resumeButtonPressed():
-	currentUi = "none"
-	Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
-	pauseMenu.hide()
-	get_tree().paused = false
-	toggle =! toggle
 
 func recived_settingsButtonPressed():
 	currentUi = "settings"

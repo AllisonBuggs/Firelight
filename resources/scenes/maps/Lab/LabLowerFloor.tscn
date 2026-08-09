@@ -28,7 +28,6 @@
 [ext_resource type="Texture2D" uid="uid://b4xk7exsevlct" path="res://resources/sprites/particle/particles.png" id="22_wrwxx"]
 [ext_resource type="Resource" uid="uid://csnlxfuqpyb7x" path="res://resources/dialogue/MISC/firstmapnull.dialogue" id="23_h6ih0"]
 [ext_resource type="Texture2D" uid="uid://clr0ot8h4l1qu" path="res://resources/sprites/cutscenes/Queen_HoldPlayer5.png" id="23_n52jb"]
-[ext_resource type="PackedScene" uid="uid://cbaxum6xw240c" path="res://resources/scenes/UI/ui_canvas_layer.tscn" id="26_taw0o"]
 [ext_resource type="PackedScene" uid="uid://cghcgag30ky56" path="res://resources/scenes/UI/mixing_ui.tscn" id="27_jsypn"]
 [ext_resource type="Resource" uid="uid://c3juw7nxdx482" path="res://resources/dialogue/Lab/staircaseFleshWallInteract.dialogue" id="28_taw0o"]
 [ext_resource type="Texture2D" uid="uid://bn11o7a6drgx0" path="res://resources/sprites/Sprites/locker_closed.png" id="29_gmgiu"]
@@ -444,7 +443,6 @@ position = Vector2(1122.0001, -522)
 scale = Vector2(9.963483, 1)
 mapToLoad = "LabUpperFloor"
 entranceUsed = "LFUFD"
-direction = "Down"
 
 [node name="Marker2D" parent="Doors/Door_LLFUF" index="1" unique_id=1701488384]
 position = Vector2(-0.30867922, -33)
@@ -459,15 +457,8 @@ texture = SubResource("NoiseTexture2D_h6ih0")
 [node name="Player" parent="." unique_id=1626850227 instance=ExtResource("10_p1q85")]
 process_mode = 1
 z_index = 1
-position = Vector2(1034, -2545)
+position = Vector2(1033, -2580)
 floor_constant_speed = true
-recoveryTime = 0.4
-maxHealth = 100
-health = 100
-movementSpeed = 80
-maxStamina = 100
-Stamina = 100
-inventoryContents = ["FleshBurningMixture"]
 
 [node name="PointLight2D" type="PointLight2D" parent="Player" unique_id=1507966151]
 scale = Vector2(4.59375, 4.59375)
@@ -683,9 +674,9 @@ shape = SubResource("CircleShape2D_mwn5e")
 [node name="Sprite2D" type="Sprite2D" parent="SkeletonLab" unique_id=1595245007]
 texture = ExtResource("15_wyt8o")
 
-[node name="UiCanvasLayer" parent="." unique_id=1431050982 instance=ExtResource("26_taw0o")]
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=694087031]
 
-[node name="MixingUi" parent="UiCanvasLayer" unique_id=529118955 instance=ExtResource("27_jsypn")]
+[node name="MixingUi" parent="CanvasLayer2" unique_id=529118955 instance=ExtResource("27_jsypn")]
 visible = false
 
 [node name="fleshWall" type="StaticBody2D" parent="." unique_id=1474107593]

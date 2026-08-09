@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://d1mht5hfx6hsc"]
+
+[ext_resource type="Script" uid="uid://pgiveclnetrn" path="res://resources/scripts/objects/throwable_item.gd" id="1_a5l4j"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qsjtt"]
+radius = 20.0
+
+[node name="throwable_item" type="Sprite2D" unique_id=1107617242]
+script = ExtResource("1_a5l4j")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1973226296]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1290369315]
+shape = SubResource("CircleShape2D_qsjtt")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

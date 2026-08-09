@@ -1,10 +1,9 @@
-@tool
 extends NPCClass
 
 func _ready() -> void:
 	start()
-	animation_walk_up = "natalie_walk_up"
-	animation_walk_left= "natalie_walk_left"
-	animation_walk_right = "natalie_walk_right"
-	animation_walk_down = "natalie_walk_down"
-	animated_sprite_2d.play("natalie_walk_down")
+	animation_walk_up = "Cai_Masked_Walk_Up"
+	animation_walk_left= "Cai_Masked_Walk_Left"
+	animation_walk_right = "Cai_Masked_Walk_Right"
+	animation_walk_down = "Cai_Masked_Walk_Down"
+	animated_sprite_2d.play("Cai_Masked_Walk_Down")

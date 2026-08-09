@@ -1,13 +1,12 @@
 [gd_scene format=4 uid="uid://ddip3rc4dofki"]
 
-[ext_resource type="Script" uid="uid://d4blkpy1xbsm7" path="res://resources/scripts/Maps/Map_LabLowerFloor.gd" id="1_6upge"]
+[ext_resource type="Script" uid="uid://d000t7txkhub5" path="res://resources/scripts/Maps/cais_hallway.gd" id="1_wyd8a"]
 [ext_resource type="Material" uid="uid://2secgp2ouoi8" path="res://resources/shaders/shadowafect.tres" id="2_8fuxe"]
 [ext_resource type="TileSet" uid="uid://c4mxm77yi2rpc" path="res://resources/tileset/tileset.tres" id="3_1vmq2"]
 [ext_resource type="Script" uid="uid://hraudamater6" path="res://resources/scripts/FootStepsTilemapScript.gd" id="4_hie7b"]
 [ext_resource type="PackedScene" uid="uid://chnesmup7fj8u" path="res://resources/scenes/objects/event_door.tscn" id="5_p5mjf"]
 [ext_resource type="PackedScene" uid="uid://ck5usmblr0wtq" path="res://resources/scenes/players.tscn" id="6_1m4je"]
 [ext_resource type="PackedScene" uid="uid://dxkh0vywac844" path="res://resources/scenes/objects/object_door.tscn" id="7_4r644"]
-[ext_resource type="PackedScene" uid="uid://cbaxum6xw240c" path="res://resources/scenes/UI/ui_canvas_layer.tscn" id="7_sno5b"]
 [ext_resource type="PackedScene" uid="uid://c8ka4co471t78" path="res://resources/scenes/objects/actionable.tscn" id="7_wyd8a"]
 [ext_resource type="Texture2D" uid="uid://cwo03o4vr5uik" path="res://resources/sprites/Sprites/door/WoodenInteriorDoor_open.png" id="8_hvapc"]
 [ext_resource type="Resource" uid="uid://bsamxy80nsy7k" path="res://resources/dialogue/cai_house_tour.dialogue" id="8_ngj7m"]
@@ -29,7 +28,7 @@ size = Vector2(20, 64)
 [node name="CaiHallway" type="Node2D" unique_id=825236289]
 process_mode = 3
 y_sort_enabled = true
-script = ExtResource("1_6upge")
+script = ExtResource("1_wyd8a")
 
 [node name="Main" type="TileMapLayer" parent="." unique_id=1594926581]
 top_level = true
@@ -80,7 +79,7 @@ position = Vector2(-3.362278, 0)
 shape = SubResource("RectangleShape2D_cydto")
 
 [node name="Marker2D" parent="Doors/Door_CBRE" index="1" unique_id=1701488384]
-position = Vector2(-3.3120947, -34)
+position = Vector2(-3.5128276, -65)
 
 [node name="Door_ARHI" parent="Doors" unique_id=74234126 instance=ExtResource("5_p5mjf")]
 position = Vector2(-209, -1)
@@ -112,7 +111,6 @@ position = Vector2(-5.9216228, -2)
 process_mode = 1
 position = Vector2(1, 2)
 floor_constant_speed = true
-recoveryTime = 0.4
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=886609456]
 
@@ -198,9 +196,6 @@ closedSprite = ExtResource("12_8vrar")
 closeDoorSFX = ExtResource("11_jwxlk")
 openDoorSFX = ExtResource("10_ngj7m")
 try_door_sfx = ExtResource("11_jwxlk")
-
-[node name="UiCanvasLayer" parent="." unique_id=1431050982 instance=ExtResource("7_sno5b")]
-visible = false
 
 [node name="PLAYERCAMERA" parent="." unique_id=430412013 node_paths=PackedStringArray("target") instance=ExtResource("8_o7esf")]
 z_index = 6

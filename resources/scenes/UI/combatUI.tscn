@@ -1,7 +1,47 @@
 [gd_scene format=3 uid="uid://dwsy4f3chvuw2"]
 
-[ext_resource type="Texture2D" uid="uid://dlipilpcknq3t" path="res://resources/sprites/icons/heart.jpeg" id="1_fmubx"]
 [ext_resource type="Script" uid="uid://gpafc0e23b4u" path="res://resources/scripts/combat_ui.gd" id="1_ji0aw"]
+[ext_resource type="Texture2D" uid="uid://bmsj46euoub6p" path="res://resources/sprites/UI/heart_display.png" id="2_ramm0"]
+[ext_resource type="Shader" uid="uid://dnhd48724jq1r" path="res://resources/shaders/capsule_shader.gdshader" id="3_ramm0"]
+[ext_resource type="Texture2D" uid="uid://dkk7j1sqd6mxq" path="res://resources/sprites/UI/heart_capsule.png" id="4_ul78g"]
+
+[sub_resource type="Shader" id="Shader_ramm0"]
+code = "shader_type canvas_item;
+
+uniform float breath_strength = 0.007;
+uniform float breath_speed = 0.8;
+uniform vec2 face_center = vec2(0.5, 0.5);
+uniform float face_radius = 0.5;
+
+varying vec4 modulate;
+
+void vertex() {
+	modulate = COLOR;
+}
+
+float circle_mask(vec2 uv, vec2 center, float radius) {
+	float d = distance(uv, center);
+	return 1.0 - smoothstep(radius * 0.6, radius, d);
+}
+
+void fragment() {
+	vec2 uv = UV;
+	float face_m = circle_mask(uv, face_center, face_radius);
+	float dist = distance(uv, face_center);
+	float falloff = exp(-dist * dist * 6.0);
+	float breath = sin(TIME * breath_speed) * breath_strength * face_m * falloff;
+	vec2 breath_disp = vec2(0.0, breath);
+	vec2 final_uv = uv + breath_disp;
+	COLOR = texture(TEXTURE, final_uv) * modulate;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_42yn2"]
+shader = SubResource("Shader_ramm0")
+shader_parameter/breath_strength = 0.01
+shader_parameter/breath_speed = 6.0
+shader_parameter/face_center = Vector2(0.5, 0.5)
+shader_parameter/face_radius = 0.5
 
 [sub_resource type="Animation" id="Animation_ul78g"]
 length = 0.001
@@ -32,26 +72,50 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("HealthDisplay:position")
+tracks/2/path = NodePath("MarginContainer:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-126, 45)]
+"values": [Vector2(12, 666)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("HealthDisplay/HealthDisplaySprite:position")
+tracks/3/path = NodePath("HealthDisplaySprite/HP_Display:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(29, 43)]
+"values": [Vector2(-20, -80)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("HealthDisplaySprite:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-84, 133)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("HealthDisplaySprite/HealthDisplay:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-24, -10)]
 }
 
 [sub_resource type="Animation" id="Animation_2kcnm"]
@@ -72,14 +136,26 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("HealthDisplay:position")
+tracks/1/path = NodePath("MarginContainer:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.0009999999, 1.0333333),
+"times": PackedFloat32Array(0, 1.0333333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(58, 45), Vector2(-121, 45)]
+"values": [Vector2(12, 531), Vector2(12, 648)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HealthDisplaySprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(80, 133), Vector2(-84, 133)]
 }
 
 [sub_resource type="Animation" id="Animation_05b4e"]
@@ -112,26 +188,26 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("HealthDisplay/HealthDisplaySprite:position")
+tracks/2/path = NodePath("MarginContainer:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.8333333),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(29, 43)]
+"values": [Vector2(12, 682), Vector2(12, 531)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("HealthDisplay:position")
+tracks/3/path = NodePath("HealthDisplaySprite:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0.0009999999, 0.8),
+"times": PackedFloat32Array(0, 0.8333333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-116, 45), Vector2(58, 45)]
+"values": [Vector2(-87, 133), Vector2(73.65161, 133)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_u1y6v"]
@@ -168,6 +244,16 @@ states/UiEnter/position = Vector2(461, 42)
 transitions = ["UIExit", "UiEnter", SubResource("AnimationNodeStateMachineTransition_ul78g"), "UiEnter", "UIExit", SubResource("AnimationNodeStateMachineTransition_2kcnm"), "Start", "UIExit", SubResource("AnimationNodeStateMachineTransition_ji0aw")]
 graph_offset = Vector2(-178, -48)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o405x"]
+shader = ExtResource("3_ramm0")
+shader_parameter/progress = 0.182000008645
+shader_parameter/overlay_color = Color(0, 0, 0, 0.9019608)
+shader_parameter/fill_dir = Vector2(0, 1)
+shader_parameter/alpha_cutoff = 0.01
+shader_parameter/wave_height = 0.02400000114
+shader_parameter/wave_frequency = 1.0
+shader_parameter/wave_speed = 5.0
+
 [node name="CombatUi" type="Control" unique_id=341429763]
 layout_mode = 3
 anchors_preset = 15
@@ -194,25 +280,49 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 value = 100.0
 fill_mode = 3
 
-[node name="HealthDisplay" type="Label" parent="." unique_id=960027196]
-layout_mode = 1
-offset_left = -126.0
-offset_top = 45.0
-offset_right = -58.0
-offset_bottom = 158.0
+[node name="HealthDisplaySprite" type="Sprite2D" parent="." unique_id=271356503]
+z_index = -1
+material = SubResource("ShaderMaterial_42yn2")
+position = Vector2(-84, 133)
+scale = Vector2(2, 2)
+texture = ExtResource("2_ramm0")
+flip_h = true
+
+[node name="HealthDisplay" type="Label" parent="HealthDisplaySprite" unique_id=960027196]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -24.0
+offset_top = -10.0
+offset_right = -43.0
+offset_bottom = -94.33333
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.72360146, 0.72360146, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
-theme_override_font_sizes/font_size = 30
-text = "HP:100"
+theme_override_font_sizes/font_size = 20
+text = "HP:"
 horizontal_alignment = 1
-autowrap_mode = 1
 
-[node name="HealthDisplaySprite" type="Sprite2D" parent="HealthDisplay" unique_id=271356503]
-z_index = -1
-position = Vector2(29, 43)
-scale = Vector2(0.7196137, 0.7196137)
-texture = ExtResource("1_fmubx")
-flip_h = true
+[node name="HP_Display" type="Label" parent="HealthDisplaySprite" unique_id=1958417106]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -80.0
+offset_right = -39.0
+offset_bottom = -131.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.72360146, 0.72360146, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 20
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 2
+autowrap_mode = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1233041742]
 libraries/ = SubResource("AnimationLibrary_u1y6v")
@@ -224,5 +334,41 @@ tree_root = SubResource("AnimationNodeStateMachine_05b4e")
 anim_player = NodePath("../AnimationPlayer")
 parameters/conditions/inCombat = false
 parameters/conditions/notInCombat = true
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1280001220]
+custom_minimum_size = Vector2(0, 117)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = 18.0
+offset_bottom = 135.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_bottom = 15
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=891294406]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+
+[node name="TextureRect5" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=350744260]
+material = SubResource("ShaderMaterial_o405x")
+layout_mode = 2
+texture = ExtResource("4_ul78g")
+expand_mode = 3
+
+[node name="TextureRect6" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=132609775]
+material = SubResource("ShaderMaterial_o405x")
+layout_mode = 2
+texture = ExtResource("4_ul78g")
+expand_mode = 3
+
+[node name="TextureRect7" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=240698891]
+material = SubResource("ShaderMaterial_o405x")
+layout_mode = 2
+texture = ExtResource("4_ul78g")
+expand_mode = 3
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

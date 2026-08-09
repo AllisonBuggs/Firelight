@@ -476,8 +476,9 @@ shape = SubResource("RectangleShape2D_wt6j5")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=891970336]
 position = Vector2(-1, 14)
 sprite_frames = ExtResource("2_wt6j5")
-animation = &"feral_walk_side"
-frame_progress = 0.093501374
+animation = &"fem_unarmed_attack"
+frame = 5
+frame_progress = 1.0
 offset = Vector2(0, -14)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1372068339]
@@ -501,7 +502,7 @@ path_max_distance = 10.0
 debug_enabled = true
 
 [node name="AttackRayCast" parent="." unique_id=689401358 instance=ExtResource("25_7vcye")]
-collide_with_areas = true
+target_position = Vector2(-24, 0)
 
 [node name="actionableFinder" type="Area2D" parent="." unique_id=43526840]
 position = Vector2(-0.99999994, 1.7881393e-07)

@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://cbaxum6xw240c"]
+
+[ext_resource type="Script" uid="uid://cfdg4montfh3v" path="res://resources/scripts/ui_manager.gd" id="1_lqegw"]
+[ext_resource type="PackedScene" uid="uid://dwsy4f3chvuw2" path="res://resources/scenes/UI/combatUI.tscn" id="2_sslbp"]
+[ext_resource type="PackedScene" uid="uid://cnwqtspdwtkyt" path="res://resources/scenes/UI/choicer.tscn" id="3_bylw4"]
+[ext_resource type="PackedScene" uid="uid://d0m7qdpcqhgjg" path="res://resources/scenes/UI/save&load_menu.tscn" id="4_fhtvh"]
+[ext_resource type="PackedScene" uid="uid://gaxsfxeq5rc5" path="res://resources/scenes/UI/settings.tscn" id="5_sg8ch"]
+[ext_resource type="PackedScene" uid="uid://b2h8b7uyns1ss" path="res://resources/scenes/UI/pause_menu.tscn" id="6_xsxsf"]
+[ext_resource type="PackedScene" uid="uid://ck0p7s5qyx61a" path="res://resources/scenes/UI/inventory.tscn" id="7_kgald"]
+[ext_resource type="PackedScene" uid="uid://cayuxqn3r4jco" path="res://resources/scenes/UI/story_summary.tscn" id="8_t3isf"]
+[ext_resource type="Texture2D" uid="uid://wjkic6okxpes" path="res://resources/sprites/UI/crosshair043.png" id="9_dhavl"]
+[ext_resource type="Script" uid="uid://cgpudasvu764r" path="res://resources/scripts/crosshair.gd" id="10_kty4u"]
+[ext_resource type="Script" uid="uid://cjgbxtuotfgaq" path="res://resources/scripts/UI/boss_bar.gd" id="11_sslbp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rlw81"]
+bg_color = Color(1, 0, 0, 1)
+
+[node name="user_interface" type="Control" unique_id=1691056623]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lqegw")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1897299331]
+layer = 2
+
+[node name="CombatUi" parent="CanvasLayer" unique_id=341429763 instance=ExtResource("2_sslbp")]
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="PopUps" parent="CanvasLayer" unique_id=1902225285 instance=ExtResource("3_bylw4")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 0.0
+offset_bottom = -324.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="saveAndLoadMenu" parent="CanvasLayer" unique_id=186759610 instance=ExtResource("4_fhtvh")]
+visible = false
+mouse_filter = 1
+
+[node name="PauseMenu" parent="CanvasLayer" unique_id=188524214 instance=ExtResource("6_xsxsf")]
+visible = false
+mouse_filter = 1
+
+[node name="Settings" parent="CanvasLayer" unique_id=581721721 instance=ExtResource("5_sg8ch")]
+visible = false
+offset_left = 68.0
+offset_top = 84.0
+offset_right = 38.0
+offset_bottom = 63.0
+mouse_filter = 1
+
+[node name="Inventory" parent="CanvasLayer" unique_id=1930745018 instance=ExtResource("7_kgald")]
+visible = false
+
+[node name="StorySummary" parent="CanvasLayer" unique_id=792417365 instance=ExtResource("8_t3isf")]
+visible = false
+mouse_filter = 1
+
+[node name="crosshair" type="Sprite2D" parent="CanvasLayer" unique_id=1616860946]
+top_level = true
+visibility_layer = 512
+z_index = 10
+z_as_relative = false
+position = Vector2(39.999996, 39.999996)
+scale = Vector2(0.57004595, 0.57004595)
+texture = ExtResource("9_dhavl")
+script = ExtResource("10_kty4u")
+
+[node name="boss_bar" type="ProgressBar" parent="CanvasLayer" unique_id=78137017]
+custom_maximum_size = Vector2(500, -1)
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 326.0
+offset_right = -326.0
+offset_bottom = 34.0
+grow_horizontal = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 30)
+offset_transform_visual_only = false
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 20
+theme_override_styles/fill = SubResource("StyleBoxFlat_rlw81")
+step = 1.0
+value = 100.0
+script = ExtResource("11_sslbp")

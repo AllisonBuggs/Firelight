@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bqbn7edl6vane"]
 
 [ext_resource type="Script" uid="uid://bnc7omf8jipyq" path="res://resources/scripts/across_all_scenes.gd" id="1_ybrst"]
-[ext_resource type="PackedScene" uid="uid://cbaxum6xw240c" path="res://resources/scenes/UI/ui_canvas_layer.tscn" id="2_ybrst"]
+[ext_resource type="PackedScene" uid="uid://cbaxum6xw240c" path="res://resources/scenes/UI/user_interface.tscn" id="2_ybrst"]
 [ext_resource type="AudioStream" uid="uid://bnx6dqnss7tor" path="res://resources/music/SIGNALIS - Eulenlieder [Extended] [R7csUdGAQE0].mp3" id="3_1iol0"]
 [ext_resource type="Script" uid="uid://dukw6v0aknwfl" path="res://resources/scripts/music_stream.gd" id="4_v1278"]
 

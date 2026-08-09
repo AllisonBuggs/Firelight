@@ -6,7 +6,6 @@
 [ext_resource type="Script" uid="uid://hraudamater6" path="res://resources/scripts/FootStepsTilemapScript.gd" id="4_4jwho"]
 [ext_resource type="PackedScene" uid="uid://chnesmup7fj8u" path="res://resources/scenes/objects/event_door.tscn" id="5_ebsd7"]
 [ext_resource type="PackedScene" uid="uid://ck5usmblr0wtq" path="res://resources/scenes/players.tscn" id="6_cnq5e"]
-[ext_resource type="PackedScene" uid="uid://cbaxum6xw240c" path="res://resources/scenes/UI/ui_canvas_layer.tscn" id="7_p0w11"]
 [ext_resource type="AudioStream" uid="uid://dvga0n8xsextj" path="res://resources/music/ambience/YourPalRob/Rain_Medium_2.wav" id="7_w02p3"]
 [ext_resource type="Texture2D" uid="uid://ddrip0keseg4s" path="res://resources/sprites/particle/rain_particles.png" id="8_b67c6"]
 [ext_resource type="PackedScene" uid="uid://3q3vm527u3bw" path="res://resources/scenes/objects/camera.tscn" id="8_ir3bc"]
@@ -69,14 +68,9 @@ gravity = Vector3(0, 10, 0)
 alpha_curve = SubResource("CurveTexture_lvtyl")
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_g2384"]
-vertices = PackedVector2Array(11344.594, -4407.3125, 11540.148, -4414.547, 11399.5, -3555.0313, 11240.531, -3750.9219, 9539.9375, -3563.0234, 9492.047, -3766.961, 8036.1016, -2335, 8115.9297, -2171, 454.07813, -2171, 402, -2327.0078, 402, -2152.961, 445.9922, -1152.0781, 394, -1154.0391, 522, -578.10156, 558, -576.0078, 522, 197.03906, 558, 168.92188, 706.78125, 197.96875, 701.90625, 170.11719, 759.34375, 122.046875, 692.71875, 142.53906)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(3, 2, 4, 5), PackedInt32Array(6, 5, 4, 7), PackedInt32Array(6, 7, 8, 9), PackedInt32Array(10, 9, 8, 11), PackedInt32Array(12, 10, 11), PackedInt32Array(13, 12, 11, 14), PackedInt32Array(15, 13, 14, 16), PackedInt32Array(17, 15, 16, 18), PackedInt32Array(19, 17, 18), PackedInt32Array(19, 18, 20)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(568, 159, 688, 160, 680, 136, 784, 104, 712, 208, 512, 207, 512, 159, 512, -577, 384, -1153, 392, -2153, 392, -2337, 8032, -2345, 9488, -3777, 11232, -3761, 11336, -4417, 11552, -4425, 11408, -3545, 9544, -3553, 8120, -2161, 464, -2161, 456, -1153, 568, -577)])
-
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_5rymw"]
-vertices = PackedVector2Array(6, 86, -214, 86, -214, 50, -38, 50, 6, -46, -38, -46)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 0, 3, 5)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-48, -56, 16, -56, 16, 96, -48, 96, -224, 96, -224, 40, -48, 40)])
+vertices = PackedVector2Array(11344.594, -4407.3125, 11540.148, -4414.547, 11399.5, -3555.0313, 11240.531, -3750.9219, 9539.9375, -3563.0234, 9492.047, -3766.961, 8036.1016, -2335, 8115.9297, -2171, 454.07813, -2171, 402, -2327.0078, 402, -2152.961, 445.9922, -1152.0781, 394, -1154.0391, 522, -578.10156, 558, -576.0078, 522, 206, 558, 168.92188, 970, 178.29688, 1014, 206, 687.71094, 170, 970, 58, 1014, 58, 687.71094, 169.99219)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(3, 2, 4, 5), PackedInt32Array(6, 5, 4, 7), PackedInt32Array(6, 7, 8, 9), PackedInt32Array(10, 9, 8, 11), PackedInt32Array(12, 10, 11), PackedInt32Array(13, 12, 11, 14), PackedInt32Array(15, 13, 14, 16), PackedInt32Array(17, 18, 15, 16, 19), PackedInt32Array(17, 20, 21, 18), PackedInt32Array(19, 16, 22)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(568, 159, 688, 160, 960, 168, 960, 48, 1024, 48, 1024, 168, 1024, 216, 712, 216, 512, 216, 512, 159, 512, -577, 384, -1153, 392, -2153, 392, -2337, 8032, -2345, 9488, -3777, 11232, -3761, 11336, -4417, 11552, -4425, 11408, -3545, 9544, -3553, 8120, -2161, 464, -2161, 456, -1153, 568, -577)])
 
 [node name="holding_room_exterior" type="Node2D" unique_id=825236289]
 process_mode = 3
@@ -123,7 +117,7 @@ position = Vector2(-0.200735, -8)
 
 [node name="Player" parent="." unique_id=1626850227 instance=ExtResource("6_cnq5e")]
 process_mode = 1
-position = Vector2(992, 81)
+position = Vector2(840, 55)
 floor_constant_speed = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="." unique_id=1093945612]
@@ -142,26 +136,26 @@ shape = SubResource("RectangleShape2D_g2384")
 
 [node name="Cutscenes" type="Node2D" parent="." unique_id=585520158]
 
-[node name="UiCanvasLayer" parent="." unique_id=1431050982 instance=ExtResource("7_p0w11")]
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=877695526]
 
-[node name="Rain" type="Node2D" parent="UiCanvasLayer" unique_id=2052895228]
+[node name="Rain" type="Node2D" parent="CanvasLayer2" unique_id=2052895228]
 
-[node name="Parallax2D" type="ParallaxBackground" parent="UiCanvasLayer/Rain" unique_id=2054071633]
+[node name="Parallax2D" type="ParallaxBackground" parent="CanvasLayer2/Rain" unique_id=2054071633]
 layer = 2
 scroll_ignore_camera_zoom = true
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="UiCanvasLayer/Rain/Parallax2D" unique_id=859737155]
+[node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasLayer2/Rain/Parallax2D" unique_id=859737155]
 position = Vector2(-2, 0)
 motion_mirroring = Vector2(1152, 648)
 
-[node name="ColorRect" type="ColorRect" parent="UiCanvasLayer/Rain/Parallax2D/ParallaxLayer" unique_id=304840037]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer2/Rain/Parallax2D/ParallaxLayer" unique_id=304840037]
 material = SubResource("ShaderMaterial_aec1s")
 offset_right = 1152.0
 offset_bottom = 648.0
 mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="RainParticleGPU" type="GPUParticles2D" parent="UiCanvasLayer/Rain/Parallax2D" unique_id=1223460329]
+[node name="RainParticleGPU" type="GPUParticles2D" parent="CanvasLayer2/Rain/Parallax2D" unique_id=1223460329]
 position = Vector2(577, 0)
 amount = 1000
 sub_emitter = NodePath("../SplashParticleGPU")
@@ -171,13 +165,13 @@ trail_enabled = true
 trail_lifetime = 0.1
 process_material = SubResource("ParticleProcessMaterial_qv8hc")
 
-[node name="SplashParticleGPU" type="GPUParticles2D" parent="UiCanvasLayer/Rain/Parallax2D" unique_id=2138046119]
+[node name="SplashParticleGPU" type="GPUParticles2D" parent="CanvasLayer2/Rain/Parallax2D" unique_id=2138046119]
 emitting = false
 amount = 1000
 texture = ExtResource("9_w02p3")
 process_material = SubResource("ParticleProcessMaterial_b602t")
 
-[node name="ColorRect" type="ColorRect" parent="UiCanvasLayer" unique_id=167120482]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer2" unique_id=167120482]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -202,10 +196,7 @@ position = Vector2(0, -8)
 navigation_polygon = SubResource("NavigationPolygon_g2384")
 
 [node name="cai" parent="." unique_id=1218638180 instance=ExtResource("16_h547l")]
-position = Vector2(992, 48)
-
-[node name="NavigationRegion2D2" type="NavigationRegion2D" parent="." unique_id=1964552281]
-position = Vector2(1008, 120)
-navigation_polygon = SubResource("NavigationPolygon_5rymw")
+position = Vector2(994, 72)
+movement_target = Vector2(0, 0)
 
 [editable path="Doors/Door_HRED"]

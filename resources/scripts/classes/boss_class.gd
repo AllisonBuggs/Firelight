@@ -1,4 +1,3 @@
-@tool
 extends NPCClass
 class_name boss_class
 
@@ -12,21 +11,30 @@ var current_phase : int = 0
 
 var health : int
 var stamina : int
-var attack : int
+var attack_dmg : int
 var boss_title : String
 var default_movement_speed : float = 4.0
+
+var next_cycle_time : float = 1.0
 
 # default animations
 var ani_walk_up : String
 var ani_walk_down : String
 var ani_walk_side : String
 
+@onready var attack_ray_cast: RayCast2D = $AttackRayCast
+@onready var boss_audio_player: AudioStreamPlayer = $boss_audio_player
+@onready var damage_player: AnimationPlayer = $damage_player
+
 @onready var rand_gen = RandomNumberGenerator.new()
+
 @onready var phase_timer: Timer = $phase_timer
+@onready var tracker_timer: Timer = $tracker_timer
 
 var glob_player_pos : Vector2
 
 func setup():
+	attack_ray_cast.setup(attack_dmg, false)
 	GlobalSignalBus.connect("got_player_pos", update_player_pos)
 
 func choose_random_action(array : Array):
@@ -38,16 +46,14 @@ func choose_random_action(array : Array):
 			current_phase = 1
 		recovery_available:
 			current_phase = 2
+	print(current_action)
 	match current_action:
 		"walk_into": 
-			GlobalSignalBus.emit_signal("request_player_pos")
-			walk_to(glob_player_pos)
+			track_player()
 		"idle_protect_self": 
-			GlobalSignalBus.emit_signal("request_player_pos")
-			walk_to(glob_player_pos)
+			walk_to(global_position)
 		"approach_swipe":
-			GlobalSignalBus.emit_signal("request_player_pos")
-			walk_to(glob_player_pos)
+			track_player()
 		"dash": 
 			GlobalSignalBus.emit_signal("request_player_pos")
 			movement_speed = 60.0
@@ -57,19 +63,54 @@ func choose_random_action(array : Array):
 			walk_to(glob_player_pos)
 		"pant":
 			change_animation("jug_pant")
+			boss_audio_player.stream = load("res://resources/sfx/boss/RF_pant_loop.wav")
+			boss_audio_player.play()
 			walk_to(global_position)
 		"roar":
-			walk_to(global_position)
+			cycle_phase()
+
+func track_player():
+	GlobalSignalBus.emit_signal("request_player_pos")
+	walk_to(glob_player_pos)
+	tracker_timer.start()
 
 func update_player_pos(_player_pos):
 	glob_player_pos = _player_pos
 
+func hurt(_damage, player_vel : Vector2):
+	health -= _damage
+	GlobalSignalBus.emit_signal("update_boss_health_bar", health)
+	apply_knockback(player_vel, 500)
+	if health <= 0:
+		queue_free()
+	damage_player.play("hit")
+	await damage_player.animation_finished
+	damage_player.play_backwards("hit")
+
+func end_action_behaviors():
+	match current_action:
+		"pant":
+			boss_audio_player.stream = load("res://resources/sfx/boss/RF_pant_end.wav")
+			boss_audio_player.play()
+
 func cycle_phase():
+	movement_speed = default_movement_speed
+	end_action_behaviors()
+	tracker_timer.stop()
+	# End Action Behaviors
 	match current_phase:
 		0: # Idle
 			choose_random_action(attacks_avilable)
+			next_cycle_time = 5
 		1: # Attack
 			choose_random_action(recovery_available)
+			next_cycle_time = 5
 		2: # Recovery
 			choose_random_action(idle_available)
-	phase_timer.start()
+			next_cycle_time = 3
+	phase_timer.start(next_cycle_time)
+	
+func deal_contact_dmg(body: Node2D) -> void:
+	if body is not boss_class:
+		if body.has_method("hurt"):
+			body.hurt(attack_dmg, velocity)

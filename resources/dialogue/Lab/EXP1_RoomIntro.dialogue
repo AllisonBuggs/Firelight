@@ -1,8 +1,8 @@
 ~ start
 do freezePlayer()
-do playAnimation("QueenEnter", cutsceneAnimationPlayer, false)
+do playAnimation("QueenEnter", cutscene_animation_player, false)
 do wait(0.10)
-do destory(cutsceneLight, null)
+do destory(cutscene_light, null)
 do changePlayerTexture("PlayerRol")
 do changePlayerTexture("PlayerFlat")
 do wait(3)
@@ -10,11 +10,11 @@ Queen: ...i had [wait=0.3]not anticipated the shared experence of pain.[wait=1.0
 do wait(0.5)
 Queen: Dont whine to me.[wait=0.3] Stand up! [wait=0.1]Dont act so worthless...
 do wait(1)
-do playAnimation("QueenExit", cutsceneAnimationPlayer, false)
+do playAnimation("QueenExit", cutscene_animation_player, false)
 do wait(0.4)
 do changePlayerTexture("PlayerStand")
 do wait(0.4)
 do changePlayerTexture("fem_walk_down")
-do destory(cutsceneItems, null)
+do destory(cutscenes, null)
 do unfreezePlayer()
 => END

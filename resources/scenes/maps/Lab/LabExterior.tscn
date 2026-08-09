@@ -13,7 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://bqf2b06kxx18h" path="res://resources/sfx/LabDoorClose.ogg" id="15_8xiid"]
 [ext_resource type="AudioStream" uid="uid://cn4wiiaqwoqf3" path="res://resources/sfx/LabDoorOpen.ogg" id="16_eiunl"]
 [ext_resource type="PackedScene" uid="uid://csdp0oxq8068n" path="res://resources/scenes/objects/misc_object.tscn" id="18_rhhym"]
-[ext_resource type="PackedScene" uid="uid://cbaxum6xw240c" path="res://resources/scenes/UI/ui_canvas_layer.tscn" id="19_eiunl"]
+[ext_resource type="PackedScene" uid="uid://cbaxum6xw240c" path="res://resources/scenes/UI/user_interface.tscn" id="19_eiunl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8xiid"]
 size = Vector2(32, 20)

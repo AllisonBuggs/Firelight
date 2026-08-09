@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://ck5usmblr0wtq" path="res://resources/scenes/players.tscn" id="6_5ljyl"]
 [ext_resource type="AudioStream" uid="uid://dvga0n8xsextj" path="res://resources/music/ambience/YourPalRob/Rain_Medium_2.wav" id="7_s1e1a"]
 [ext_resource type="PackedScene" uid="uid://c8ka4co471t78" path="res://resources/scenes/objects/actionable.tscn" id="8_0i2e7"]
-[ext_resource type="PackedScene" uid="uid://cbaxum6xw240c" path="res://resources/scenes/UI/ui_canvas_layer.tscn" id="8_ga0n8"]
 [ext_resource type="Resource" uid="uid://ir67w2nc6l5k" path="res://resources/dialogue/night_walk.dialogue" id="9_8ss0f"]
 [ext_resource type="PackedScene" uid="uid://csdp0oxq8068n" path="res://resources/scenes/objects/misc_object.tscn" id="10_b0y1q"]
 [ext_resource type="Resource" uid="uid://85srgjdgupxm" path="res://resources/dialogue/wall_scaling.dialogue" id="10_s1e1a"]
@@ -252,7 +251,7 @@ position = Vector2(-0.50183296, 19)
 
 [node name="Player" parent="." unique_id=1626850227 instance=ExtResource("6_5ljyl")]
 process_mode = 1
-position = Vector2(-5144, -80)
+position = Vector2(-5183, -398)
 floor_constant_speed = true
 
 [node name="PointLight2D" type="PointLight2D" parent="Player" unique_id=1693292095]
@@ -282,7 +281,7 @@ dialogStart = "landed"
 activeOnStepOn = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable/landing_actionable" unique_id=1315344125]
-position = Vector2(237, 117)
+position = Vector2(182, -17)
 shape = SubResource("RectangleShape2D_qsjtt")
 
 [node name="audio_cue_1" parent="Actionable" unique_id=1240615807 instance=ExtResource("8_0i2e7")]
@@ -338,19 +337,19 @@ offset = Vector2(0, -28)
 position = Vector2(1, 1)
 shape = SubResource("CapsuleShape2D_hf8lk")
 
-[node name="UiCanvasLayer" parent="." unique_id=1431050982 instance=ExtResource("8_ga0n8")]
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1287891379]
 
-[node name="Rain" type="Node2D" parent="UiCanvasLayer" unique_id=2052895228]
+[node name="Rain" type="Node2D" parent="CanvasLayer2" unique_id=2052895228]
 
-[node name="Parallax2D" type="ParallaxBackground" parent="UiCanvasLayer/Rain" unique_id=2054071633]
+[node name="Parallax2D" type="ParallaxBackground" parent="CanvasLayer2/Rain" unique_id=2054071633]
 layer = 2
 scroll_ignore_camera_zoom = true
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="UiCanvasLayer/Rain/Parallax2D" unique_id=859737155]
+[node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasLayer2/Rain/Parallax2D" unique_id=859737155]
 position = Vector2(-2, 0)
 motion_mirroring = Vector2(1152, 648)
 
-[node name="ColorRect" type="ColorRect" parent="UiCanvasLayer/Rain/Parallax2D/ParallaxLayer" unique_id=304840037]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer2/Rain/Parallax2D/ParallaxLayer" unique_id=304840037]
 material = SubResource("ShaderMaterial_aec1s")
 offset_right = 1152.0
 offset_bottom = 648.0
@@ -358,9 +357,9 @@ mouse_filter = 2
 color = Color(1, 1, 1, 0.16470589)
 metadata/_edit_use_anchors_ = true
 
-[node name="cutscene" type="Node2D" parent="UiCanvasLayer" unique_id=1205656878]
+[node name="cutscene" type="Node2D" parent="CanvasLayer2" unique_id=1205656878]
 
-[node name="fog" type="TextureRect" parent="UiCanvasLayer/cutscene" unique_id=229391835]
+[node name="fog" type="TextureRect" parent="CanvasLayer2/cutscene" unique_id=229391835]
 visible = false
 self_modulate = Color(1, 1, 1, 0)
 offset_right = 1152.0
@@ -368,7 +367,7 @@ offset_bottom = 648.0
 mouse_filter = 2
 texture = ExtResource("15_s1e1a")
 
-[node name="natalie_distorted" type="TextureRect" parent="UiCanvasLayer/cutscene" unique_id=1842618990]
+[node name="natalie_distorted" type="TextureRect" parent="CanvasLayer2/cutscene" unique_id=1842618990]
 visible = false
 self_modulate = Color(1, 1, 1, 0)
 offset_right = 1152.0
@@ -376,13 +375,13 @@ offset_bottom = 648.0
 mouse_filter = 2
 texture = ExtResource("16_ga0n8")
 
-[node name="shade" type="ColorRect" parent="UiCanvasLayer/cutscene" unique_id=1184196207]
+[node name="shade" type="ColorRect" parent="CanvasLayer2/cutscene" unique_id=1184196207]
 offset_right = 1152.0
 offset_bottom = 648.0
 mouse_filter = 2
 color = Color(0, 0, 0, 0.33333334)
 
-[node name="cutscene_player" type="AnimationPlayer" parent="UiCanvasLayer/cutscene" unique_id=1395101413]
+[node name="cutscene_player" type="AnimationPlayer" parent="CanvasLayer2/cutscene" unique_id=1395101413]
 libraries/ = SubResource("AnimationLibrary_ikrv6")
 
 [node name="PLAYERCAMERA" parent="." unique_id=430412013 node_paths=PackedStringArray("target") instance=ExtResource("12_abhs4")]
@@ -397,6 +396,7 @@ navigation_polygon = SubResource("NavigationPolygon_lddtl")
 [node name="natalie" parent="." unique_id=1218638180 instance=ExtResource("12_ahyxx")]
 position = Vector2(-5120, -88)
 movement_speed = 60.0
+knockback_power = 2000
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1326630894]
 

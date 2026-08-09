@@ -19,7 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://dhtuotn32tuv1" path="res://resources/sprites/Sprites/BedsideTable.png" id="16_uel53"]
 [ext_resource type="Texture2D" uid="uid://ce2dfuvbec3uv" path="res://resources/sprites/Sprites/SmallBedBlanket.png" id="17_ek1pr"]
 [ext_resource type="Texture2D" uid="uid://cor4outnbapda" path="res://resources/sprites/Sprites/Closest_Closed.png" id="17_mxj3k"]
-[ext_resource type="PackedScene" uid="uid://cbaxum6xw240c" path="res://resources/scenes/UI/ui_canvas_layer.tscn" id="20_uel53"]
+[ext_resource type="PackedScene" uid="uid://cbaxum6xw240c" path="res://resources/scenes/UI/user_interface.tscn" id="20_uel53"]
 [ext_resource type="PackedScene" uid="uid://3q3vm527u3bw" path="res://resources/scenes/objects/camera.tscn" id="21_mxj3k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dd8x1"]

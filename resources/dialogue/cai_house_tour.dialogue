@@ -1,13 +1,14 @@
 ~ start
 
-do cai.movement_speed = 50.0 
-do walk_to(cai, Vector2(992.0,173.0))
+do cai.walk_to(Vector2(992.0,173.0))
+
 do wait(3)
-do walk_to(cai, Vector2(800.0,187.0))
+
+do cai.walk_to(Vector2(800.0,187.0))
 do wait(3)
-do walk_to(cai, Vector2(992.0,173.0))
+do cai.walk_to(Vector2(992.0,173.0))
 do wait(3)
-do walk_to(cai, Vector2(992.0,81.0))
+do cai.walk_to(Vector2(992.0,81.0))
 #do walk_to(cai, Vector2(11456.0,-4328.0))
 do unfreezePlayer()
 => END
@@ -24,7 +25,7 @@ do playSound("res://resources/sfx/Common/TomMusic/Door Close 1.ogg")
 do wait(0.7)
 do changePlayerTexture("res://resources/sprites/Player/femwalk_down.png")
 do cai.change_animation("Cai_Guiding_Hands")
-do walk_to(cai, Vector2(997,100))
+do cai.walk_to(Vector2(997,100))
 do wait(1)
 Cai: Nothing feels like[wait=0.5] its stinging?
 do wait(1)

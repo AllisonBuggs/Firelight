@@ -6,7 +6,7 @@
 [ext_resource type="Material" uid="uid://2secgp2ouoi8" path="res://resources/shaders/shadowafect.tres" id="4_rnw23"]
 [ext_resource type="PackedScene" uid="uid://chnesmup7fj8u" path="res://resources/scenes/objects/event_door.tscn" id="5_n8ktj"]
 [ext_resource type="PackedScene" uid="uid://ck5usmblr0wtq" path="res://resources/scenes/players.tscn" id="6_murok"]
-[ext_resource type="PackedScene" uid="uid://cbaxum6xw240c" path="res://resources/scenes/UI/ui_canvas_layer.tscn" id="7_j04tg"]
+[ext_resource type="PackedScene" uid="uid://cbaxum6xw240c" path="res://resources/scenes/UI/user_interface.tscn" id="7_j04tg"]
 [ext_resource type="PackedScene" uid="uid://3q3vm527u3bw" path="res://resources/scenes/objects/camera.tscn" id="8_slh8v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c8jut"]

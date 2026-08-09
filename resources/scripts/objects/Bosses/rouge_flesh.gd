@@ -1,4 +1,3 @@
-@tool
 extends boss_class
 
 func _ready() -> void:
@@ -15,8 +14,14 @@ func _ready() -> void:
 	animations.append("jug_swipe_down")
 	animations.append("jug_pant")
 	
+	default_movement_speed = 40
+	attack_dmg = 20
+	health = 1000
+	
 	setup()
 	start()
 	
+	GlobalSignalBus.emit_signal("set_bar_max", health)
+	GlobalSignalBus.emit_signal("update_boss_health_bar", health)
 	choose_random_action(idle_available)
 	animated_sprite_2d.play(animation_walk_down)

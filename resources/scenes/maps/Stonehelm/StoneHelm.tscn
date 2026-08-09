@@ -5,7 +5,6 @@
 [ext_resource type="Script" uid="uid://hraudamater6" path="res://resources/scripts/FootStepsTilemapScript.gd" id="3_gtjgi"]
 [ext_resource type="PackedScene" uid="uid://csdp0oxq8068n" path="res://resources/scenes/objects/misc_object.tscn" id="5_v061c"]
 [ext_resource type="PackedScene" uid="uid://chnesmup7fj8u" path="res://resources/scenes/objects/event_door.tscn" id="9_5iyx6"]
-[ext_resource type="PackedScene" uid="uid://cbaxum6xw240c" path="res://resources/scenes/UI/ui_canvas_layer.tscn" id="9_n42f3"]
 [ext_resource type="PackedScene" uid="uid://ck5usmblr0wtq" path="res://resources/scenes/players.tscn" id="12_rab1m"]
 [ext_resource type="PackedScene" uid="uid://3q3vm527u3bw" path="res://resources/scenes/objects/camera.tscn" id="14_2cvyl"]
 
@@ -42,7 +41,6 @@ tile_set = ExtResource("2_3etrj")
 process_mode = 1
 position = Vector2(-965, 1614)
 floor_constant_speed = true
-recoveryTime = 0.4
 
 [node name="Trees" type="Node2D" parent="." unique_id=1326810879]
 y_sort_enabled = true
@@ -50,63 +48,103 @@ position = Vector2(-600, -723)
 
 [node name="Tree_1" parent="Trees" unique_id=1323008951 instance=ExtResource("5_v061c")]
 position = Vector2(61, 237)
+selected_sprite = Object(GDScriptNativeClass,"script":null)
+
 
 [node name="Tree_2" parent="Trees" unique_id=1484301585 instance=ExtResource("5_v061c")]
 position = Vector2(407, 119)
+selected_sprite = Object(GDScriptNativeClass,"script":null)
+
 
 [node name="Tree_3" parent="Trees" unique_id=456537154 instance=ExtResource("5_v061c")]
 position = Vector2(-273, -237)
+selected_sprite = Object(GDScriptNativeClass,"script":null)
+
 
 [node name="Tree_4" parent="Trees" unique_id=112449355 instance=ExtResource("5_v061c")]
 position = Vector2(2856, 839)
+selected_sprite = Object(GDScriptNativeClass,"script":null)
+
 
 [node name="Tree_5" parent="Trees" unique_id=814555134 instance=ExtResource("5_v061c")]
 position = Vector2(12, 897)
+selected_sprite = Object(GDScriptNativeClass,"script":null)
+
 
 [node name="Tree_6" parent="Trees" unique_id=2067535561 instance=ExtResource("5_v061c")]
 position = Vector2(2986, 232)
+selected_sprite = Object(GDScriptNativeClass,"script":null)
+
 
 [node name="Tree_7" parent="Trees" unique_id=905093485 instance=ExtResource("5_v061c")]
 position = Vector2(2528, 1063)
+selected_sprite = Object(GDScriptNativeClass,"script":null)
+
 
 [node name="Tree_8" parent="Trees" unique_id=1758113356 instance=ExtResource("5_v061c")]
 position = Vector2(2993, -236)
+selected_sprite = Object(GDScriptNativeClass,"script":null)
+
 
 [node name="Tree_9" parent="Trees" unique_id=2020350946 instance=ExtResource("5_v061c")]
 position = Vector2(1232, 424)
+selected_sprite = Object(GDScriptNativeClass,"script":null)
+
 
 [node name="Tree_10" parent="Trees" unique_id=696943612 instance=ExtResource("5_v061c")]
 position = Vector2(29, 430)
+selected_sprite = Object(GDScriptNativeClass,"script":null)
+
 
 [node name="Tree_11" parent="Trees" unique_id=320242552 instance=ExtResource("5_v061c")]
 position = Vector2(1840, -228)
+selected_sprite = Object(GDScriptNativeClass,"script":null)
+
 
 [node name="Tree_12" parent="Trees" unique_id=87614056 instance=ExtResource("5_v061c")]
 position = Vector2(2354, 724)
+selected_sprite = Object(GDScriptNativeClass,"script":null)
+
 
 [node name="Tree_13" parent="Trees" unique_id=1746353902 instance=ExtResource("5_v061c")]
 position = Vector2(637, 873)
+selected_sprite = Object(GDScriptNativeClass,"script":null)
+
 
 [node name="Tree_14" parent="Trees" unique_id=322642206 instance=ExtResource("5_v061c")]
 position = Vector2(1907, 745)
+selected_sprite = Object(GDScriptNativeClass,"script":null)
+
 
 [node name="Tree_15" parent="Trees" unique_id=1353774165 instance=ExtResource("5_v061c")]
 position = Vector2(964, -267)
+selected_sprite = Object(GDScriptNativeClass,"script":null)
+
 
 [node name="Tree_16" parent="Trees" unique_id=1907678141 instance=ExtResource("5_v061c")]
 position = Vector2(2582, -19)
+selected_sprite = Object(GDScriptNativeClass,"script":null)
+
 
 [node name="Tree_17" parent="Trees" unique_id=1338360640 instance=ExtResource("5_v061c")]
 position = Vector2(801, 1035)
+selected_sprite = Object(GDScriptNativeClass,"script":null)
+
 
 [node name="Tree_18" parent="Trees" unique_id=1397730132 instance=ExtResource("5_v061c")]
 position = Vector2(1891, 285)
+selected_sprite = Object(GDScriptNativeClass,"script":null)
+
 
 [node name="Tree_19" parent="Trees" unique_id=171548820 instance=ExtResource("5_v061c")]
 position = Vector2(-477, 14)
+selected_sprite = Object(GDScriptNativeClass,"script":null)
+
 
 [node name="Tree_20" parent="Trees" unique_id=849665174 instance=ExtResource("5_v061c")]
 position = Vector2(-580, 766)
+selected_sprite = Object(GDScriptNativeClass,"script":null)
+
 
 [node name="Doors" type="Node2D" parent="." unique_id=853109270]
 position = Vector2(465, 0)
@@ -137,8 +175,6 @@ position = Vector2(439, 0)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=741284882]
 process_mode = 1
-
-[node name="UiCanvasLayer" parent="." unique_id=1431050982 instance=ExtResource("9_n42f3")]
 
 [node name="camera" parent="." unique_id=430412013 node_paths=PackedStringArray("target") instance=ExtResource("14_2cvyl")]
 target = NodePath("../Player")

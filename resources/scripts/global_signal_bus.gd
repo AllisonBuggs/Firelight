@@ -1,11 +1,26 @@
 extends Node
 
 @warning_ignore_start("unused_signal")
+
+#Player Signals
+signal do_freeze_player(_canMove: bool)
+signal playerMovement(canMove: bool)
+signal playerPositionDataRequested(VectorToMoveTO: Vector2)
+signal playerEnteredCombat(target: String, state: String)
+signal updatePlayerStats(Health: int, Stamina: int)
+signal changePlayerTexture(imagePath : String)
+signal request_player_pos()
+signal got_player_pos()
+
+# Boss Signals
+signal update_boss_health_bar(current_health : int)
+signal set_bar_max(new_max : int)
+
 signal container_data(contains)
 signal transition_data(mapToLoad: String, entranceUsed: String)
 signal interactableData(dialogText: String, facePath: String, nameBox: String)
-signal playerMovement(canMove: bool)
-signal resumeButtonPressed()
+
+
 signal settingsButtonPressed()
 signal saveButtonPressed()
 signal returnButtonPressed()
@@ -14,14 +29,13 @@ signal settingsOpened()
 signal saveloadMenuOpened()
 signal inventoryOpened()
 signal iventoryReturnButtonPressed()
-signal playerPositionDataRequested(VectorToMoveTO)
+
 signal activateCameraTransition()
-signal playerEnteredCombat(target: String, state: String)
-signal updatePlayerStats(Health: int, Stamina: int)
+
 signal startCutscene(cutsceneName)
 signal findDoorToMovePlayerTo(Doorname)
 signal onTriggerPlayerSpawn()
-signal attackRaycastInitiate(parentDamage)
+
 signal updateJounral(journalName: String)
 signal journalOpened()
 signal changeMouseToCrossHair()
@@ -32,12 +46,11 @@ signal TriggerPopUp(text, timeOut)
 signal changeMusic(songPath)
 signal pauseMusic(pauseMusicBool : bool)
 signal fadeMusic(Out : bool)
-signal changePlayerTexture(imagePath : String)
+
 signal detachPlayerCamera()
 signal reattachPlayerCamera()
 signal removeItem(ITEMID)
-signal request_player_pos()
-signal got_player_pos()
+
 #Global Transition Scene
 signal change_scene_with_transition()
 signal play_transition(backwards : bool)
@@ -56,7 +69,7 @@ const CAIS_BEDROOM = preload("uid://cwnbqqaadnred")
 const CAIS_FRONT_ROOM = preload("uid://bfqicqjwlcwtb")
 const CAIS_HALLWAY = preload("uid://ddip3rc4dofki")
 const CAIS_BATHROOM = preload("uid://dyl2k4jof3glf")
-const STONE_HELM = preload("uid://dcuq0tvhmqs2l")
+
 const CAI_APARTMENT_ENTRANCE = preload("uid://ynegjw8cighh")
 const CAI_APARTMENT_HALL = preload("uid://455bg5qysh1w")
 const APARTMENT_STAIRWAY = preload("uid://3qyup362mv1k")
@@ -110,6 +123,9 @@ func ChangeMap(mapName, doorName):
 			mapToLoad = LabLowerFloor
 	if mapToLoad != null:
 		spawnDoorTag = doorName
+		TransitionScene.play_transition(false)
+		await TransitionScene.transition_player.animation_finished
+		TransitionScene.play_transition(true)
 		get_tree().change_scene_to_packed(mapToLoad)
 
 func triggerPlayerSpawn(position):

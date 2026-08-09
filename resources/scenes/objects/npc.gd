@@ -1,19 +1,16 @@
-@tool
-extends CharacterBody2D
+extends Character
 class_name NPCClass
 
 @export var movement_speed: float = 4.0
 @export var movement_target : Vector2
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
 
-@onready var navigation_agent: NavigationAgent2D = get_node("NavigationAgent2D")
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 var movement_delta: float
 var _direction : Vector2
 var direction_tolerance: float = 10.0
-var orientationNumber : int
 
 var animation_walk_up : String
 var animation_walk_right : String
@@ -55,11 +52,11 @@ func _on_velocity_computed(safe_velocity: Vector2) -> void:
 	global_position = global_position.move_toward(global_position + safe_velocity, movement_delta)
 
 func change_animation(animation_name: String):
-	animation_player.play(animation_name)
+	spriteAnimationPlayer.play(animation_name)
 
 func pause_animation():
 	animated_sprite_2d.pause()
-	animation_player.pause()
+	spriteAnimationPlayer.pause()
 
 func detectDirection():
 	quantizeDirection(_direction)
@@ -69,25 +66,25 @@ func quantizeDirection(vectorToQuantize):
 
 func process_animations():
 	if navigation_agent.is_navigation_finished():
-		animation_player.stop()
+		spriteAnimationPlayer.stop()
 	else:
 			_direction = get_position_delta().normalized()
 			detectDirection()
 			match orientationNumber:
-				0:animation_player.play(animation_walk_left)
-				1:animation_player.play(animation_walk_up)
-				2:animation_player.play(animation_walk_up)
-				3:animation_player.play(animation_walk_up)
-				4:animation_player.play(animation_walk_right)
-				5:animation_player.play(animation_walk_down)
-				6:animation_player.play(animation_walk_down)
-				7:animation_player.play(animation_walk_down)
+				0:spriteAnimationPlayer.play(animation_walk_left)
+				1:spriteAnimationPlayer.play(animation_walk_up)
+				2:spriteAnimationPlayer.play(animation_walk_up)
+				3:spriteAnimationPlayer.play(animation_walk_up)
+				4:spriteAnimationPlayer.play(animation_walk_right)
+				5:spriteAnimationPlayer.play(animation_walk_down)
+				6:spriteAnimationPlayer.play(animation_walk_down)
+				7:spriteAnimationPlayer.play(animation_walk_down)
 	if velocity.abs().max_axis_index() == Vector2.Axis.AXIS_X:
 		if velocity.x > 0:
-			animation_player.play(animation_walk_right)
+			spriteAnimationPlayer.play(animation_walk_right)
 		else:
-			if animation_player.current_animation != animation_walk_left:
-				animation_player.play(animation_walk_left)
+			if spriteAnimationPlayer.current_animation != animation_walk_left:
+				spriteAnimationPlayer.play(animation_walk_left)
 
 func walk_to(goal_position : Vector2):
 	movement_target = goal_position

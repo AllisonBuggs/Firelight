@@ -13,21 +13,29 @@
 [ext_resource type="Texture2D" uid="uid://cyhv2p6l2wekf" path="res://resources/sprites/Player/Feralwalk_side.png" id="11_wcvy6"]
 [ext_resource type="Texture2D" uid="uid://c3lyrxqedchlb" path="res://resources/sprites/Player/Feralwalk_up.png" id="12_hmx4t"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_sxdsy"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_wcvy6"]
 atlas = ExtResource("1_5d02u")
-region = Rect2(27, 0, 27, 33)
+region = Rect2(0, 0, 38, 33)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_f14lq"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_hmx4t"]
 atlas = ExtResource("1_5d02u")
-region = Rect2(54, 0, 27, 33)
+region = Rect2(38, 0, 38, 33)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jr7cl"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_eeqje"]
 atlas = ExtResource("1_5d02u")
-region = Rect2(0, 0, 27, 33)
+region = Rect2(76, 0, 38, 33)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_aebu5"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvubd"]
 atlas = ExtResource("1_5d02u")
-region = Rect2(81, 0, 27, 33)
+region = Rect2(152, 0, 38, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lme5e"]
+atlas = ExtResource("1_5d02u")
+region = Rect2(190, 0, 38, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nlhjr"]
+atlas = ExtResource("1_5d02u")
+region = Rect2(114, 0, 38, 33)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2q0i3"]
 atlas = ExtResource("2_ml7dm")
@@ -141,16 +149,22 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_sxdsy")
+"texture": SubResource("AtlasTexture_wcvy6")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_f14lq")
+"texture": SubResource("AtlasTexture_hmx4t")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_jr7cl")
+"texture": SubResource("AtlasTexture_eeqje")
 }, {
-"duration": 1.1,
-"texture": SubResource("AtlasTexture_aebu5")
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nvubd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lme5e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nlhjr")
 }],
 "loop": 0,
 "name": &"fem_unarmed_attack",

@@ -26,6 +26,8 @@ DialogueManager="*uid://c3rodes2l3gxb"
 FootstepSoundManager="*uid://3i5xf7pnfakd"
 GlobalMusicPlayer="*uid://cfvbpu7v2lhro"
 SaveLoad="*uid://7xfkym1tt6lc"
+TransitionScene="*uid://bn8vuh235mdpn"
+UserInterface="*uid://cbaxum6xw240c"
 
 [dialogue_manager]
 
