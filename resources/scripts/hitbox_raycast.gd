@@ -16,11 +16,9 @@ func _process(delta: float) -> void:
 func hurt():
 	overlappingObject = get_collider()
 	if get_collider().has_method("hurt"):
-		deal_damage()
-
-func deal_damage():
-	overlappingObject.hurt(damage, get_parent().velocity)
-	alreadyHit = true
+		var knock_dir = (overlappingObject.global_position - global_position).normalized()
+		overlappingObject.hurt(damage, knock_dir)
+		alreadyHit = true
 
 func setup(parentDamage : int, player_owner : bool):
 	damage = parentDamage

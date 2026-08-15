@@ -536,7 +536,7 @@ debug_color = Color(0, 0.1438947, 0.70196074, 0.41960785)
 
 [node name="AttackRayCast" parent="." unique_id=689401358 instance=ExtResource("9_0ts8l")]
 enabled = true
-target_position = Vector2(0, 82)
+target_position = Vector2(0, 34)
 
 [node name="damage_player" type="AnimationPlayer" parent="." unique_id=2017859500]
 libraries/ = SubResource("AnimationLibrary_5t12g")

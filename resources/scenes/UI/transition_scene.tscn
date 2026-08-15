@@ -9,11 +9,11 @@ shader_parameter/center = Vector2(0.5, 0.5)
 shader_parameter/radius = 1.438000068305
 shader_parameter/pixel_size = 8.0
 shader_parameter/resolution = Vector2(400, 400)
-shader_parameter/dither_offset = Vector2(2, 0)
-shader_parameter/bayer_size = 2
+shader_parameter/dither_offset = Vector2(5, 0)
+shader_parameter/bayer_size = 0
 shader_parameter/interpolate = true
 shader_parameter/invert = true
-shader_parameter/falloff = 2.5
+shader_parameter/falloff = 1.00000004424012
 shader_parameter/color = Color(0, 0, 0, 1)
 
 [sub_resource type="Animation" id="Animation_bl7a0"]

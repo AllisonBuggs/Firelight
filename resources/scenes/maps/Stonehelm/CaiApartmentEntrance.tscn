@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://ynegjw8cighh"]
 
-[ext_resource type="Script" uid="uid://18wowmatd0oc" path="res://resources/scripts/Maps/Map_CaiApartmentEntrance.gd" id="1_kg606"]
+[ext_resource type="Script" uid="uid://bijlihp42or3o" path="res://resources/scripts/AllMaps.gd" id="1_jsyds"]
 [ext_resource type="Material" uid="uid://2secgp2ouoi8" path="res://resources/shaders/shadowafect.tres" id="2_w3jy6"]
 [ext_resource type="TileSet" uid="uid://c4mxm77yi2rpc" path="res://resources/tileset/tileset.tres" id="3_uoqf8"]
 [ext_resource type="Script" uid="uid://hraudamater6" path="res://resources/scripts/FootStepsTilemapScript.gd" id="4_l3wtx"]
@@ -17,7 +17,7 @@ size = Vector2(6.423457, 25)
 [node name="CaiApartmentEntrance" type="Node2D" unique_id=825236289]
 process_mode = 3
 y_sort_enabled = true
-script = ExtResource("1_kg606")
+script = ExtResource("1_jsyds")
 
 [node name="Main" type="TileMapLayer" parent="." unique_id=1594926581]
 top_level = true

@@ -4,9 +4,9 @@ extends allMaps
 @onready var backgroundPlayer = $AnimationPlayer
 @onready var allCutsceneSprites = $Cutscene
 @onready var textLabel = $Cutscene/Camera2D/Label
-@onready var camera = $Cutscene/Camera2D
 @onready var fadeAnimationPlayer = $FadeAnimationPlayer
 @onready var extraanimations = $extraanimations
+@onready var camera_center: Marker2D = $camera_center
 
 func fadeOut():
 	fadeAnimationPlayer.play_backwards("fade")

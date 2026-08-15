@@ -3,7 +3,27 @@
 [ext_resource type="Script" uid="uid://gpafc0e23b4u" path="res://resources/scripts/combat_ui.gd" id="1_ji0aw"]
 [ext_resource type="Texture2D" uid="uid://bmsj46euoub6p" path="res://resources/sprites/UI/heart_display.png" id="2_ramm0"]
 [ext_resource type="Shader" uid="uid://dnhd48724jq1r" path="res://resources/shaders/capsule_shader.gdshader" id="3_ramm0"]
+[ext_resource type="Shader" uid="uid://7e62emjqq3x3" path="res://resources/shaders/wavy.gdshader" id="3_ul78g"]
 [ext_resource type="Texture2D" uid="uid://dkk7j1sqd6mxq" path="res://resources/sprites/UI/heart_capsule.png" id="4_ul78g"]
+[ext_resource type="AudioStream" uid="uid://wga2tiu7xwgx" path="res://resources/sfx/Common/Tagirijus/heart_beat_2.wav" id="6_2kcnm"]
+[ext_resource type="Texture2D" uid="uid://buyggnoui1jp6" path="res://resources/sprites/UI/combat_ui/boss_bar_bg.png" id="7_6x58v"]
+[ext_resource type="Texture2D" uid="uid://dggn4i00xuooo" path="res://resources/sprites/UI/combat_ui/aboss_barr_progress.png" id="8_5jpuj"]
+[ext_resource type="Texture2D" uid="uid://ug72hmgr800l" path="res://resources/sprites/UI/combat_ui/aboss_bar_progress.png" id="9_a1lpd"]
+[ext_resource type="Script" uid="uid://cjgbxtuotfgaq" path="res://resources/scripts/UI/boss_bar.gd" id="10_qipom"]
+[ext_resource type="Material" uid="uid://cqq42b74cdp15" path="res://resources/shaders/text_wave_material.tres" id="11_lgg8o"]
+[ext_resource type="PackedScene" uid="uid://f24rr680acoe" path="res://resources/scenes/objects/eye.tscn" id="12_0tbtu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ul78g"]
+shader = ExtResource("3_ramm0")
+shader_parameter/progress = 0.9630000457425
+shader_parameter/overlay_color = Color(0, 0, 1, 1)
+shader_parameter/fill_dir = Vector2(0, -1)
+shader_parameter/alpha_cutoff = 0.01
+shader_parameter/wave_height = 0.02
+shader_parameter/wave_frequency = 1.0800000038
+shader_parameter/wave_speed = 1.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ul78g"]
 
 [sub_resource type="Shader" id="Shader_ramm0"]
 code = "shader_type canvas_item;
@@ -43,12 +63,157 @@ shader_parameter/breath_speed = 6.0
 shader_parameter/face_center = Vector2(0.5, 0.5)
 shader_parameter/face_radius = 0.5
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1c162"]
+shader = ExtResource("3_ul78g")
+shader_parameter/jiggle = 3.0
+shader_parameter/speed = 1.0
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2kcnm"]
+animation = &"middle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_05b4e"]
+animation = &"highest"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_u1y6v"]
+animation = &"Lowest"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_1c162"]
+snap = 0.12
+blend_point_0/node = SubResource("AnimationNodeAnimation_2kcnm")
+blend_point_0/pos = 0.48
+blend_point_0/name = &"middle"
+blend_point_1/node = SubResource("AnimationNodeAnimation_05b4e")
+blend_point_1/pos = 0.84
+blend_point_1/name = &"highest"
+blend_point_2/node = SubResource("AnimationNodeAnimation_u1y6v")
+blend_point_2/pos = 0.12
+blend_point_2/name = &"Lowest"
+
+[sub_resource type="Animation" id="Animation_haolc"]
+resource_name = "Lowest"
+length = 0.16666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HealthDisplaySprite/VBoxContainer/HP_Display:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0.14148235, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HealthDisplaySprite/VBoxContainer/HP_Display:theme_override_colors/font_outline_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.14486825, 0, 0.0660159, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_tggse"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HealthDisplaySprite/VBoxContainer/HP_Display:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0.75686276, 0.78039217, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HealthDisplaySprite/VBoxContainer/HP_Display:theme_override_colors/font_outline_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.1715845, 0, 0.07819039, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_qq6u4"]
+resource_name = "highest"
+length = 0.16666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HealthDisplaySprite/VBoxContainer/HP_Display:theme_override_colors/font_outline_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.16666667),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.17254902, 0, 0.078431375, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HealthDisplaySprite/VBoxContainer/HP_Display:theme_override_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.16666667),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0.75686276, 0.78039217, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_6x58v"]
+resource_name = "middle"
+length = 0.16666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HealthDisplaySprite/VBoxContainer/HP_Display:theme_override_colors/font_outline_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.16666667),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.42765832, 0, 0.19488223, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HealthDisplaySprite/VBoxContainer/HP_Display:theme_override_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.16666667),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0.5, 0.5490198, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5jpuj"]
+_data = {
+&"Lowest": SubResource("Animation_haolc"),
+&"RESET": SubResource("Animation_tggse"),
+&"highest": SubResource("Animation_qq6u4"),
+&"middle": SubResource("Animation_6x58v")
+}
+
 [sub_resource type="Animation" id="Animation_ul78g"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ProgressBar:position")
+tracks/0/path = NodePath("stamina_bar:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -60,7 +225,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("ProgressBar:size")
+tracks/1/path = NodePath("stamina_bar:size")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -84,38 +249,26 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("HealthDisplaySprite/HP_Display:position")
+tracks/3/path = NodePath("HealthDisplaySprite:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-20, -80)]
+"values": [Vector2(-84, 133)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("HealthDisplaySprite:position")
+tracks/4/path = NodePath("boss_bar:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-84, 133)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("HealthDisplaySprite/HealthDisplay:position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-24, -10)]
+"values": [Vector2(480, -156)]
 }
 
 [sub_resource type="Animation" id="Animation_2kcnm"]
@@ -124,7 +277,7 @@ length = 1.0333333
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ProgressBar:position")
+tracks/0/path = NodePath("stamina_bar:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -157,6 +310,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [Vector2(80, 133), Vector2(-84, 133)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("boss_bar:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(480, 0), Vector2(480, -155)]
+}
 
 [sub_resource type="Animation" id="Animation_05b4e"]
 resource_name = "UiEnter"
@@ -164,7 +329,7 @@ length = 0.8333333
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ProgressBar:position")
+tracks/0/path = NodePath("stamina_bar:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -176,7 +341,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("ProgressBar:size")
+tracks/1/path = NodePath("stamina_bar:size")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -208,6 +373,18 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(-87, 133), Vector2(73.65161, 133)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("boss_bar:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.8333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(480, -155), Vector2(480, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_u1y6v"]
@@ -263,7 +440,8 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ji0aw")
 
-[node name="ProgressBar" type="ProgressBar" parent="." unique_id=2028520820]
+[node name="stamina_bar" type="ProgressBar" parent="." unique_id=2028520820]
+material = SubResource("ShaderMaterial_ul78g")
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -276,9 +454,10 @@ offset_right = 122.0
 offset_bottom = 132.0
 grow_horizontal = 0
 grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-value = 100.0
+theme_override_styles/background = SubResource("StyleBoxEmpty_ul78g")
+value = 28.43
 fill_mode = 3
+show_percentage = false
 
 [node name="HealthDisplaySprite" type="Sprite2D" parent="." unique_id=271356503]
 z_index = -1
@@ -288,41 +467,49 @@ scale = Vector2(2, 2)
 texture = ExtResource("2_ramm0")
 flip_h = true
 
-[node name="HealthDisplay" type="Label" parent="HealthDisplaySprite" unique_id=960027196]
+[node name="VBoxContainer" type="VBoxContainer" parent="HealthDisplaySprite" unique_id=1905616008]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -24.0
-offset_top = -10.0
-offset_right = -43.0
-offset_bottom = -94.33333
+offset_left = -34.5
+offset_top = -60.5
+offset_right = -34.5
+offset_bottom = -60.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(1, 0.72360146, 0.72360146, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 10
-theme_override_font_sizes/font_size = 20
-text = "HP:"
-horizontal_alignment = 1
+alignment = 1
 
-[node name="HP_Display" type="Label" parent="HealthDisplaySprite" unique_id=1958417106]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -20.0
-offset_top = -80.0
-offset_right = -39.0
-offset_bottom = -131.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(1, 0.72360146, 0.72360146, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+[node name="Health_Display" type="Label" parent="HealthDisplaySprite/VBoxContainer" unique_id=627389978]
+material = SubResource("ShaderMaterial_1c162")
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.75648403, 0.78035825, 1)
+theme_override_colors/font_outline_color = Color(0.17254902, 0, 0.078431375, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 15
+text = "Health:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HP_Display" type="Label" parent="HealthDisplaySprite/VBoxContainer" unique_id=963480761]
+material = SubResource("ShaderMaterial_1c162")
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.75686276, 0.78039217, 1)
+theme_override_colors/font_outline_color = Color(0.1715845, 0, 0.07819039, 1)
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 20
 text = "100"
 horizontal_alignment = 1
-vertical_alignment = 2
-autowrap_mode = 1
+vertical_alignment = 1
+
+[node name="text_color_tree" type="AnimationTree" parent="HealthDisplaySprite" unique_id=1210681024]
+root_node = NodePath("../..")
+tree_root = SubResource("AnimationNodeBlendSpace1D_1c162")
+anim_player = NodePath("../color_text_player")
+parameters/blend_position = 0.051349044
+
+[node name="color_text_player" type="AnimationPlayer" parent="HealthDisplaySprite" unique_id=31580317]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_5jpuj")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1233041742]
 libraries/ = SubResource("AnimationLibrary_u1y6v")
@@ -371,4 +558,57 @@ layout_mode = 2
 texture = ExtResource("4_ul78g")
 expand_mode = 3
 
+[node name="heart_beat_player" type="AudioStreamPlayer" parent="." unique_id=1095665707]
+stream = ExtResource("6_2kcnm")
+bus = &"SFX"
+
+[node name="boss_bar" type="TextureProgressBar" parent="." unique_id=1998877409]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -96.0
+offset_top = -156.0
+offset_right = 96.0
+offset_bottom = -105.0
+grow_horizontal = 2
+scale = Vector2(3, 3)
+pivot_offset = Vector2(100, 0)
+value = 100.0
+nine_patch_stretch = true
+texture_under = ExtResource("7_6x58v")
+texture_over = ExtResource("8_5jpuj")
+texture_progress = ExtResource("9_a1lpd")
+script = ExtResource("10_qipom")
+
+[node name="boss_hp_label" type="Label" parent="boss_bar" unique_id=944817294]
+material = ExtResource("11_lgg8o")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -7.333336
+offset_top = -5.833334
+offset_right = 6.666664
+offset_bottom = 8.833332
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 8
+text = "111"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="hurt_timer" type="Timer" parent="boss_bar" unique_id=1386255329]
+wait_time = 0.3
+
+[node name="Eye" parent="boss_bar" unique_id=1132439873 instance=ExtResource("12_0tbtu")]
+position = Vector2(96.333336, 15)
+variant = 3
+max_dist = 1
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="finished" from="heart_beat_player" to="." method="play_heart_beat"]
+[connection signal="timeout" from="boss_bar/hurt_timer" to="boss_bar" method="_on_hurt_timer_timeout"]

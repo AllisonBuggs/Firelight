@@ -8,7 +8,7 @@ extends allMaps
 
 func _ready() -> void:
 	setUpMap()
-	GlobalMusicPlayer.changeMusic("FEEL")
+	GlobalMusicPlayer.changeMusic("DARKER_EYES")
 
 func destination_reacjed():
 	await natalie.navigation_agent.navigation_finished

@@ -7,13 +7,15 @@ signal do_freeze_player(_canMove: bool)
 signal playerMovement(canMove: bool)
 signal playerPositionDataRequested(VectorToMoveTO: Vector2)
 signal playerEnteredCombat(target: String, state: String)
-signal updatePlayerStats(Health: int, Stamina: int)
+signal updatePlayerStamina(Stamina: int)
+signal updatePlayerHealth(Health: int)
 signal changePlayerTexture(imagePath : String)
 signal request_player_pos()
 signal got_player_pos()
+signal hit_connected()
 
 # Boss Signals
-signal update_boss_health_bar(current_health : int)
+signal update_boss_health_bar(current_health : int, before_health : int)
 signal set_bar_max(new_max : int)
 
 signal container_data(contains)
@@ -43,6 +45,8 @@ signal changeMouseToSelect()
 signal changeCameraSettings()
 signal closeAllMenus()
 signal TriggerPopUp(text, timeOut)
+
+# GLOBAL MUSIC MANAGER
 signal changeMusic(songPath)
 signal pauseMusic(pauseMusicBool : bool)
 signal fadeMusic(Out : bool)

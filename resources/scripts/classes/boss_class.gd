@@ -77,10 +77,12 @@ func track_player():
 func update_player_pos(_player_pos):
 	glob_player_pos = _player_pos
 
+@warning_ignore("unused_parameter")
 func hurt(_damage, player_vel : Vector2):
+	GlobalSignalBus.emit_signal("hit_connected")
+	var temp = health
 	health -= _damage
-	GlobalSignalBus.emit_signal("update_boss_health_bar", health)
-	apply_knockback(player_vel, 500)
+	GlobalSignalBus.emit_signal("update_boss_health_bar", health, temp)
 	if health <= 0:
 		queue_free()
 	damage_player.play("hit")
@@ -113,4 +115,5 @@ func cycle_phase():
 func deal_contact_dmg(body: Node2D) -> void:
 	if body is not boss_class:
 		if body.has_method("hurt"):
-			body.hurt(attack_dmg, velocity)
+			var knock_dir = (body.global_position - global_position).normalized()
+			body.hurt(attack_dmg, knock_dir)

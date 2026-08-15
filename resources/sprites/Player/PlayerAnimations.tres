@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dif7kgo74s7vj" path="res://resources/sprites/Player/femwalk_up.png" id="4_i0o1j"]
 [ext_resource type="Texture2D" uid="uid://fv4lss6vaeyi" path="res://resources/sprites/Player/Feral_jump.png" id="8_clvee"]
 [ext_resource type="Texture2D" uid="uid://b3lk76uw5pdua" path="res://resources/sprites/Player/Feral_wall_scoot.png" id="9_de717"]
+[ext_resource type="Texture2D" uid="uid://bwbnxrh35vww0" path="res://resources/sprites/Player/Feralwalk_pinball.png" id="9_wcvy6"]
 [ext_resource type="Texture2D" uid="uid://donkh7a4ml1v7" path="res://resources/sprites/Player/Feralwalk_down.png" id="10_b6wq1"]
 [ext_resource type="Texture2D" uid="uid://cyhv2p6l2wekf" path="res://resources/sprites/Player/Feralwalk_side.png" id="11_wcvy6"]
 [ext_resource type="Texture2D" uid="uid://c3lyrxqedchlb" path="res://resources/sprites/Player/Feralwalk_up.png" id="12_hmx4t"]
@@ -76,6 +77,26 @@ region = Rect2(21, 0, 21, 34)
 [sub_resource type="AtlasTexture" id="AtlasTexture_juw5k"]
 atlas = ExtResource("4_i0o1j")
 region = Rect2(42, 0, 21, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a33xw"]
+atlas = ExtResource("9_wcvy6")
+region = Rect2(0, 0, 52, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2a345"]
+atlas = ExtResource("9_wcvy6")
+region = Rect2(52, 0, 52, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mo23x"]
+atlas = ExtResource("9_wcvy6")
+region = Rect2(104, 0, 52, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7w1ul"]
+atlas = ExtResource("9_wcvy6")
+region = Rect2(156, 0, 52, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jtgf6"]
+atlas = ExtResource("9_wcvy6")
+region = Rect2(208, 0, 52, 44)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3618p"]
 atlas = ExtResource("9_de717")
@@ -227,6 +248,26 @@ animations = [{
 }],
 "loop": 1,
 "name": &"feral_jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a33xw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2a345")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mo23x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7w1ul")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jtgf6")
+}],
+"loop": 1,
+"name": &"feral_pinball",
 "speed": 5.0
 }, {
 "frames": [{

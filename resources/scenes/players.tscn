@@ -98,7 +98,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_wt6j5"]
-length = 0.41000000238418577
+length = 0.6
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -106,10 +106,10 @@ tracks/0/path = NodePath("AnimatedSprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 2, 3]
+"values": [0, 1, 2, 3, 4, 5]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -284,6 +284,33 @@ tracks/1/keys = {
 "values": ["feral_jump"]
 }
 
+[sub_resource type="Animation" id="Animation_hup5a"]
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["feral_pinball"]
+}
+
 [sub_resource type="Animation" id="Animation_sxdsy"]
 length = 0.6666666666666666
 loop_mode = 1
@@ -358,7 +385,7 @@ tracks/2/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_aebu5"]
-length = 1.3333333333333333
+length = 0.8
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -367,7 +394,7 @@ tracks/0/path = NodePath("AnimatedSprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.33333334, 0.6666667, 1),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3]
@@ -457,6 +484,7 @@ _data = {
 &"fem_walk_side": SubResource("Animation_8x0iq"),
 &"fem_walk_up": SubResource("Animation_rki77"),
 &"feral_jump": SubResource("Animation_jr7cl"),
+&"feral_pinball": SubResource("Animation_hup5a"),
 &"feral_scoot": SubResource("Animation_sxdsy"),
 &"feral_walk_down": SubResource("Animation_f14lq"),
 &"feral_walk_side": SubResource("Animation_aebu5"),
@@ -474,11 +502,9 @@ position = Vector2(0, 11)
 shape = SubResource("RectangleShape2D_wt6j5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=891970336]
-position = Vector2(-1, 14)
+position = Vector2(0, 14)
 sprite_frames = ExtResource("2_wt6j5")
-animation = &"fem_unarmed_attack"
-frame = 5
-frame_progress = 1.0
+animation = &"fem_walk_down"
 offset = Vector2(0, -14)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1372068339]
@@ -489,12 +515,6 @@ collision_mask = 3
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1904505983]
 position = Vector2(1, 7)
 shape = SubResource("RectangleShape2D_bylw6")
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="." unique_id=1116810602]
-
-[node name="rollCoolDownTimer" type="Timer" parent="." unique_id=1950842467]
-
-[node name="attackCooldownTimer" type="Timer" parent="." unique_id=359109020]
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1319756017]
 path_desired_distance = 4.0
@@ -517,6 +537,16 @@ shape = SubResource("RectangleShape2D_1j4lw")
 
 [node name="spriteAnimationPlayer" type="AnimationPlayer" parent="." unique_id=640786153]
 libraries/ = SubResource("AnimationLibrary_1j4lw")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="." unique_id=1116810602]
+
+[node name="sfx_swipe_player" type="AudioStreamPlayer" parent="." unique_id=71666879]
+
+[node name="sfx_hit_player" type="AudioStreamPlayer" parent="." unique_id=1979808338]
+
+[node name="rollCoolDownTimer" type="Timer" parent="." unique_id=1950842467]
+
+[node name="attackCooldownTimer" type="Timer" parent="." unique_id=359109020]
 
 [connection signal="timeout" from="rollCoolDownTimer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="attackCooldownTimer" to="." method="_on_cool_down_timer_timeout"]

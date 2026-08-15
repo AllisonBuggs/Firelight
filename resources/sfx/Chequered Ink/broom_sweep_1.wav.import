@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://buvkg1uaoulah"
+path="res://.godot/imported/broom_sweep_1.wav-be0e926da44fad594d35aec8ad1f3832.sample"
+
+[deps]
+
+source_file="res://resources/sfx/Chequered Ink/broom_sweep_1.wav"
+dest_files=["res://.godot/imported/broom_sweep_1.wav-be0e926da44fad594d35aec8ad1f3832.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

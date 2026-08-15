@@ -5,11 +5,15 @@ extends AudioStreamPlayer
 var currentSong = "5PM"
 
 # All Music
-const LONESOME_WARMTH = preload("uid://bbm5qqnfo3mr")
-const NIGHT1 = preload("uid://b5yhqi2olir66")
-const FEEL = preload("uid://c86ysy66y1pqn")
-
-
+const ANOTHER_KID = preload("uid://cq4ad14nvxhh4")
+const DARKER_EYES = preload("uid://b6d21s03h1d0o")
+const LAB_AMB = preload("uid://dr3qeguub5gx8")
+const SEWER_AMB = preload("uid://dfy6h7isdjx0l")
+const NATALIES_BOX = preload("uid://dvj5w2pi26aw2")
+const NEW_MOM = preload("uid://bfovpgvsh6tab")
+const OLD_WORLD = preload("uid://budmk3j0u3msb")
+const NEW_HOME = preload("uid://bsm6wo8xxyfl8")
+const MAIN_THEME = preload("uid://bnx6dqnss7tor")
 
 func _ready() -> void:
 	GlobalSignalBus.connect("fadeMusic", fadeMusic)
@@ -19,15 +23,33 @@ func _ready() -> void:
 func changeMusic(songName):
 	if songName != currentSong:
 		match songName:
-			"LONESOMEWARMTH":
-				stream = LONESOME_WARMTH
-				currentSong = "LONESOMEWARMTH"
-			"NIGHT1":
-				stream = NIGHT1
-				currentSong = "NIGHT1"
-			"FEEL":
-				stream = FEEL
-				currentSong = "FEEL"
+			"ANOTHER_KID":
+				stream = ANOTHER_KID
+				currentSong = "ANOTHER_KID"
+			"DARKER_EYES":
+				stream = DARKER_EYES
+				currentSong = "DARKER_EYES"
+			"LAB_AMB":
+				stream = LAB_AMB
+				currentSong = "LAB_AMB"
+			"SEWER_AMB":
+				stream = SEWER_AMB
+				currentSong = "SEWER_AMB"
+			"NATALIES_BOX":
+				stream = NATALIES_BOX
+				currentSong = "NATALIES_BOX"
+			"NEW_MOM":
+				stream = NEW_MOM
+				currentSong = "NEW_MOM"
+			"OLD_WORLD":
+				stream = OLD_WORLD
+				currentSong = "OLD_WORLD"
+			"NEW_HOME":
+				stream = NEW_HOME
+				currentSong = "NEW_HOME"
+			"MAIN_THEME":
+				stream = MAIN_THEME
+				currentSong = "MAIN_THEME"
 		play()
 
 func pauseMusic(pauseMusicBool):

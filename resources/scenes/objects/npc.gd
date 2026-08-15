@@ -17,7 +17,6 @@ var animation_walk_right : String
 var animation_walk_left : String
 var animation_walk_down : String
 
-var do_velocity_animations = true
 
 func start() -> void:
 	navigation_agent.velocity_computed.connect(Callable(_on_velocity_computed))
@@ -28,7 +27,6 @@ func set_movement_target():
 @warning_ignore("unused_parameter")
 func _process(delta: float) -> void:
 	process_animations()
-
 	
 	# Do not query when the map has never synchronized and is empty.
 	if NavigationServer2D.map_get_iteration_id(navigation_agent.get_navigation_map()) == 0:
@@ -37,6 +35,16 @@ func _process(delta: float) -> void:
 		return
 
 	move()
+
+func _physics_process(delta: float) -> void:
+	if knockback_timer > 0.0:
+			velocity = knockback
+			knockback_timer -= delta
+			if knockback_timer <= 0.0:
+				knockback = Vector2.ZERO
+			move_and_slide()
+	else:
+		move()
 
 func move():
 	if navigation_agent.is_navigation_finished():

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bsm6wo8xxyfl8"
+path="res://.godot/imported/Bed_Sheets_Loop1.ogg-b5704a203c779b6969e0511376a62950.oggvorbisstr"
+
+[deps]
+
+source_file="res://resources/music/CROW SHADE/Bed_Sheets_Loop1.ogg"
+dest_files=["res://.godot/imported/Bed_Sheets_Loop1.ogg-b5704a203c779b6969e0511376a62950.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

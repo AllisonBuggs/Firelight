@@ -29,7 +29,7 @@ func _ready() -> void:
 	GlobalSignalBus.connect("returnButtonPressed", backPressed)
 	savesButton.grab_focus()
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	GlobalSignalBus.emit_signal("changeMusic", "res://resources/music/SIGNALIS - Eulenlieder [Extended] [R7csUdGAQE0].mp3")
+	GlobalSignalBus.emit_signal("changeMusic", "MAIN_THEME")
 	GlobalMusicPlayer.play()
 
 func checkMousePosition():

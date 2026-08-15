@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://cs6yji3hx61qx"]
 
 [ext_resource type="Script" uid="uid://cqwj2adiedacl" path="res://resources/scripts/Maps/hangout_spot.gd" id="1_ub42e"]
-[ext_resource type="AudioStream" uid="uid://dg2b1wd67r0m8" path="res://resources/music/Temporary by shiftyz.mp3" id="2_ub42e"]
 [ext_resource type="PackedScene" uid="uid://chnesmup7fj8u" path="res://resources/scenes/objects/event_door.tscn" id="3_ay087"]
 [ext_resource type="Texture2D" uid="uid://bqismsdafvvch" path="res://resources/sprites/cutscenes/natalie_look.png" id="4_8jo25"]
 [ext_resource type="PackedScene" uid="uid://c8ka4co471t78" path="res://resources/scenes/objects/actionable.tscn" id="4_qon1m"]
@@ -221,7 +220,6 @@ script = ExtResource("1_ub42e")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=741284882]
 process_mode = 1
-stream = ExtResource("2_ub42e")
 autoplay = true
 
 [node name="Doors" type="Node2D" parent="." unique_id=859125480]

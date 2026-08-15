@@ -22,6 +22,6 @@ func _ready() -> void:
 	start()
 	
 	GlobalSignalBus.emit_signal("set_bar_max", health)
-	GlobalSignalBus.emit_signal("update_boss_health_bar", health)
+	GlobalSignalBus.emit_signal("update_boss_health_bar", health, 0)
 	choose_random_action(idle_available)
 	animated_sprite_2d.play(animation_walk_down)

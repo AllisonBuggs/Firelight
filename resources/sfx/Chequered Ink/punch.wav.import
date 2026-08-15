@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cg4s4oinxf20r"
+path="res://.godot/imported/punch.wav-5028e5dbb3a52df4eaf96d755b204506.sample"
+
+[deps]
+
+source_file="res://resources/sfx/Chequered Ink/punch.wav"
+dest_files=["res://.godot/imported/punch.wav-5028e5dbb3a52df4eaf96d755b204506.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

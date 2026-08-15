@@ -15,3 +15,4 @@ func _ready() -> void:
 	if SaveLoad.SaveFileData.LockdownTriggered == false:
 		lock_down_actionable.queue_free()
 	setUpMap()
+	GlobalMusicPlayer.changeMusic("LAB_AMB")

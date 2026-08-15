@@ -7,4 +7,4 @@ extends allMaps
 
 func _ready() -> void:
 	setUpMap()
-	GlobalMusicPlayer.changeMusic("NIGHT1")
+	GlobalMusicPlayer.changeMusic("LAB_AMB")
