@@ -1,5 +1,0 @@
-~ start
-Select Command
-- Skip Holding Room Boss
-	do transitionRoom("holding_room_exterior", "HRED")
-	

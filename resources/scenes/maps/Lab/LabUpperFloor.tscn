@@ -15,23 +15,18 @@
 [ext_resource type="Texture2D" uid="uid://3sv281jsfg61" path="res://resources/sprites/Sprites/door/lab_single_closed.png" id="12_5yg50"]
 [ext_resource type="AudioStream" uid="uid://drwwxjj3nq7w8" path="res://resources/sfx/Common/doorlockedtry.wav" id="13_c6rhd"]
 [ext_resource type="AudioStream" uid="uid://bqf2b06kxx18h" path="res://resources/sfx/LabDoorClose.ogg" id="13_uwx1s"]
-[ext_resource type="Resource" uid="uid://b5yrymj1g1m12" path="res://resources/dialogue/Lab/OfficeFiles.dialogue" id="14_33yww"]
 [ext_resource type="AudioStream" uid="uid://cn4wiiaqwoqf3" path="res://resources/sfx/LabDoorOpen.ogg" id="14_igr6h"]
-[ext_resource type="Resource" uid="uid://clps4yhftr48b" path="res://resources/dialogue/Lab/Gaurd1Locket.dialogue" id="15_n03fc"]
 [ext_resource type="PackedScene" uid="uid://es8ecuycrs6a" path="res://resources/scenes/objects/event_combat_area.tscn" id="16_5yg50"]
-[ext_resource type="Resource" uid="uid://b5hr84wj7lvm1" path="res://resources/cutscenes/LabLockdownStart.dialogue" id="17_vlfsv"]
+[ext_resource type="Resource" uid="uid://bv6d0v2q8a61y" path="res://resources/dialogue/maps/lab_levels.dialogue" id="18_hxdqj"]
 [ext_resource type="Texture2D" uid="uid://conwyhywagika" path="res://resources/sprites/Sprites/file_cabniet.png" id="18_lw0wo"]
 [ext_resource type="FastNoiseLite" uid="uid://dp43k6ttccfrb" path="res://resources/shaders/new_fast_noise_lite.tres" id="19_8t2mb"]
 [ext_resource type="PackedScene" uid="uid://lbj5lximnw1v" path="res://resources/scenes/objects/on_enter_lights.tscn" id="19_vlfsv"]
 [ext_resource type="Texture2D" uid="uid://b06aqohti7tq5" path="res://resources/sprites/Sprites/codedlocker_closed.png" id="20_7l48p"]
-[ext_resource type="Resource" uid="uid://chf5bih4itm0n" path="res://resources/dialogue/Lab/Key1Trigger.dialogue" id="21_7l48p"]
 [ext_resource type="Texture2D" uid="uid://yq4ql6rycdst" path="res://resources/sprites/cutscenes/Queen_burst1.png" id="22_fv8cq"]
-[ext_resource type="Resource" uid="uid://d38c1vj0low82" path="res://resources/dialogue/Lab/Key2Trigger.dialogue" id="22_ys8uw"]
 [ext_resource type="Texture2D" uid="uid://b4xk7exsevlct" path="res://resources/sprites/particle/particles.png" id="23_3e857"]
 [ext_resource type="Texture2D" uid="uid://c72sje7mrx814" path="res://resources/sprites/cutscenes/Queen_grasp_door1.png" id="24_71q14"]
 [ext_resource type="Texture2D" uid="uid://difwa30qdi3k0" path="res://resources/sprites/cutscenes/ripped_door.png" id="24_sggrn"]
 [ext_resource type="Texture2D" uid="uid://bjbu8fvrd7fta" path="res://resources/sprites/cutscenes/Queen_burst2.png" id="24_vjmaw"]
-[ext_resource type="Resource" uid="uid://bl2o8xsmt174w" path="res://resources/dialogue/Lab/ExitLabCutscene.dialogue" id="25_1ubv3"]
 [ext_resource type="Texture2D" uid="uid://b01a6cfmhrsdg" path="res://resources/sprites/cutscenes/Queen_grasp_door2.png" id="25_e0fos"]
 [ext_resource type="Texture2D" uid="uid://cpnys0j8ghxa" path="res://resources/sprites/cutscenes/Queen_burst3.png" id="25_in80f"]
 [ext_resource type="Texture2D" uid="uid://btlnl1ptkkj3h" path="res://resources/sprites/cutscenes/Queen_burst4.png" id="26_qxyj3"]
@@ -1240,7 +1235,8 @@ y_sort_enabled = true
 [node name="FileCabinet" parent="Actionables" unique_id=1080863730 instance=ExtResource("7_uwx1s")]
 y_sort_enabled = true
 position = Vector2(389, -1534)
-dialogFile = ExtResource("14_33yww")
+dialogFile = ExtResource("18_hxdqj")
+dialogStart = "documentation"
 triggerOnce = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Actionables/FileCabinet" unique_id=747467332]
@@ -1260,7 +1256,8 @@ texture = ExtResource("18_lw0wo")
 
 [node name="GaurdLockerActinoable" parent="Actionables" unique_id=148220324 instance=ExtResource("7_uwx1s")]
 position = Vector2(1142, -1456)
-dialogFile = ExtResource("15_n03fc")
+dialogFile = ExtResource("18_hxdqj")
+dialogStart = "locker_1"
 triggerOnce = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Actionables/GaurdLockerActinoable" unique_id=241434218]
@@ -1280,7 +1277,8 @@ texture = ExtResource("20_7l48p")
 
 [node name="Key1Trigger" parent="Actionables" unique_id=1491431364 instance=ExtResource("7_uwx1s")]
 position = Vector2(1445, -1460)
-dialogFile = ExtResource("21_7l48p")
+dialogFile = ExtResource("18_hxdqj")
+dialogStart = "insert_key_1"
 triggerOnce = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Actionables/Key1Trigger" unique_id=1320947111]
@@ -1288,7 +1286,8 @@ shape = SubResource("RectangleShape2D_8t2mb")
 
 [node name="Key2Trigger" parent="Actionables" unique_id=367176537 instance=ExtResource("7_uwx1s")]
 position = Vector2(-518, -1419)
-dialogFile = ExtResource("22_ys8uw")
+dialogFile = ExtResource("18_hxdqj")
+dialogStart = "insert_key_2"
 triggerOnce = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Actionables/Key2Trigger" unique_id=1855275579]
@@ -1303,7 +1302,8 @@ shape = SubResource("RectangleShape2D_uwx1s")
 
 [node name="LockDownActionable" parent="Actionables" unique_id=1904961233 instance=ExtResource("7_uwx1s")]
 position = Vector2(304, -986)
-dialogFile = ExtResource("17_vlfsv")
+dialogFile = ExtResource("18_hxdqj")
+dialogStart = "start_lockdown"
 activeOnStepOn = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Actionables/LockDownActionable" unique_id=8891305]
@@ -1312,7 +1312,8 @@ shape = SubResource("RectangleShape2D_c6rhd")
 
 [node name="ExitLab" parent="Actionables" unique_id=1868480516 instance=ExtResource("7_uwx1s")]
 position = Vector2(559, 640)
-dialogFile = ExtResource("25_1ubv3")
+dialogFile = ExtResource("18_hxdqj")
+dialogStart = "escape"
 activeOnStepOn = true
 smallText = true
 

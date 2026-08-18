@@ -1,7 +1,0 @@
-~ start
-do freezePlayer()
-You: Opening the door the light catches on a rusted crowbar.
-You: You slip the crowbar onto your back for later.
-You: Crowbar added to your inventory.
-do unfreezePlayer()
-=> END

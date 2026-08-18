@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://chnesmup7fj8u" path="res://resources/scenes/objects/event_door.tscn" id="7_1erqi"]
 [ext_resource type="PackedScene" uid="uid://c8ka4co471t78" path="res://resources/scenes/objects/actionable.tscn" id="9_4nuhd"]
 [ext_resource type="PackedScene" uid="uid://ck5usmblr0wtq" path="res://resources/scenes/players.tscn" id="9_ix4ss"]
-[ext_resource type="Resource" uid="uid://bi62jh307160b" path="res://resources/dialogue/Sewers/Meeting_Cai_Cutscene.dialogue" id="10_ilv3f"]
+[ext_resource type="Resource" uid="uid://bi62jh307160b" path="res://resources/dialogue/maps/sewers.dialogue" id="10_ilv3f"]
 [ext_resource type="PackedScene" uid="uid://3q3vm527u3bw" path="res://resources/scenes/objects/camera.tscn" id="33_448yq"]
 
 [sub_resource type="Gradient" id="Gradient_3y7n5"]

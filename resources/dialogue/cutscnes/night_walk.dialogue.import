@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://ir67w2nc6l5k"
+path="res://.godot/imported/night_walk.dialogue-e4182f2896cc72d79170ae9acd803a20.tres"
+
+[deps]
+
+source_file="res://resources/dialogue/cutscnes/night_walk.dialogue"
+dest_files=["res://.godot/imported/night_walk.dialogue-e4182f2896cc72d79170ae9acd803a20.tres"]
+
+[params]
+
+defaults=true

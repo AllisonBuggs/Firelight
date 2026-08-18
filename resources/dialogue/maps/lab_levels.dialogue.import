@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bv6d0v2q8a61y"
+path="res://.godot/imported/lab_levels.dialogue-c360e897aab8b466ad2c7b5448a029e8.tres"
+
+[deps]
+
+source_file="res://resources/dialogue/maps/lab_levels.dialogue"
+dest_files=["res://.godot/imported/lab_levels.dialogue-c360e897aab8b466ad2c7b5448a029e8.tres"]
+
+[params]
+
+defaults=true

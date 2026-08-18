@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://ce4vt8q87nihc" path="res://resources/sprites/cutscenes/FleshyRestrained.png" id="7_xr080"]
 [ext_resource type="Texture2D" uid="uid://65dixkcy6gwl" path="res://resources/sprites/cutscenes/string.png" id="8_4rm10"]
 [ext_resource type="Texture2D" uid="uid://jr1y6tmwmiee" path="res://resources/sprites/cutscenes/playerEncasedIdle.png" id="8_xr080"]
-[ext_resource type="Resource" uid="uid://dc1w8ehqjpqsn" path="res://resources/dialogue/Intro.dialogue" id="9_7afyl"]
+[ext_resource type="Resource" uid="uid://dc1w8ehqjpqsn" path="res://resources/dialogue/cutscnes/Intro.dialogue" id="9_7afyl"]
 [ext_resource type="Texture2D" uid="uid://bwnalbmp8lem6" path="res://resources/sprites/cutscenes/miniQueen.png" id="9_n3406"]
 [ext_resource type="Texture2D" uid="uid://c3vamkob5ep8m" path="res://resources/sprites/cutscenes/fleshyarmrestraint.png" id="13_ukuab"]
 [ext_resource type="PackedScene" uid="uid://c8ka4co471t78" path="res://resources/scenes/objects/actionable.tscn" id="15_ukuab"]

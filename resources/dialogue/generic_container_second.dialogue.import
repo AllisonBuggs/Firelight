@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://l07t5g1h07jh"
+path="res://.godot/imported/generic_container_second.dialogue-341ef1be06fb394b0f343bda338ad15a.tres"
+
+[deps]
+
+source_file="res://resources/dialogue/generic_container_second.dialogue"
+dest_files=["res://.godot/imported/generic_container_second.dialogue-341ef1be06fb394b0f343bda338ad15a.tres"]
+
+[params]
+
+defaults=true

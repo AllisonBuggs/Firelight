@@ -1,0 +1,198 @@
+~ pry_door
+do freezePlayer()
+if Player.instance.inventoryContents.has("Crowbar") == true:
+	do playSound("res://resources/sfx/WoodSnap5.ogg")
+	do unlockClosetDoor()
+	do destory(find_closest(actionables), actionables)
+	You: The door is now open.
+else
+	You: You pull on the door as hard as you can. It's jammed.
+do unfreezePlayer()
+=> END
+
+~ escape
+do freezePlayer()
+do playAnimation("Wasteland" ,cutscene_player, false)
+do wait(2)
+Queen: Congragulations, [wait=0.2]as I did many years ago you are leaving my birthplace.
+Queen: You've proven youself.
+Queen: Look out at my work.
+do playAnimation("Wasteland_2" ,cutscene_player, false)
+do wait(1)
+Queen: One day nature will overtake it [wait=0.1]as I have planned.
+Queen: When you are ready,[wait=0.1] to the North there is a sewers.
+Queen: Its been dried after disuse, when you are found I will not be your guide any longer.
+Queen: Your eyes have adjusted nicely, let us start.
+do wait(2)
+do unfreezePlayer()
+do transitionRoom("LabExterior", "LEMD")
+=> END
+
+~ exp1_intro
+do freezePlayer()
+do playAnimation("QueenEnter", cutscene_animation_player, false)
+do wait(0.10)
+do destory(cutscene_light, null)
+do changePlayerTexture("PlayerRol")
+do changePlayerTexture("PlayerFlat")
+do wait(3)
+Queen: ...i had [wait=0.3]not anticipated the shared experence of pain.[wait=1.0] ahem.
+do wait(0.5)
+Queen: Dont whine to me.[wait=0.3] Stand up! [wait=0.1]Dont act so worthless...
+do wait(1)
+do playAnimation("QueenExit", cutscene_animation_player, false)
+do wait(0.4)
+do changePlayerTexture("PlayerStand")
+do wait(0.4)
+do changePlayerTexture("fem_walk_down")
+do destory(cutscenes, null)
+do unfreezePlayer()
+=> END
+
+~ got_you_now
+do player.global_position = Vector2(1063,-2545)
+=> END
+
+~ locker_1
+do freezePlayer()
+You: You tug on the handle but its locked
+- Press Random Buttons
+	You: After bashing the keypad, the prompt changes to asking for the number of kids you have to reset the password.
+	You: Its best to come back when you have that infomation.
+- Leave
+do unfreezePlayer()
+=> END
+
+~ crowbar_locker
+do freezePlayer()
+You: Opening the door the light catches on a rusted crowbar.
+You: You slip the crowbar onto your back for later.
+You: Crowbar added to your inventory.
+do unfreezePlayer()
+=> END
+
+~ flesh_barrier
+do freezePlayer()
+You: The stairway seems to be blocked by a wall of flesh from wall to wall,[wait=0.3] it feels dry agasint your fingers.
+- Spill Orange Mixture [if inventory.has("FleshBurningMixture") == true]
+	do destory(fleshWall, null)
+	do destory(meatwall_1, null)
+	do destory(meatwall_2, null)
+	do destory(fleshwall_actionable, actionables)
+	do SaveLoad.SaveFileData.burned_away_flesh = true
+	You: As the mixture ignites the flesh burns away instintaniously,[wait=0.3] the path up opened.
+- Spill Mixture [if inventory.has("Mixture") == true]
+	% You: You spill it to no effect
+	% You: It bubbles softly on the flesh with no effect
+	do unfreezePlayer()
+	=> END
+- Back
+	do unfreezePlayer()
+	=> END
+do unfreezePlayer()
+=> END
+
+~ open_mixer
+do freezePlayer()
+do toggleVisiblity(mixingUI)
+=> END
+
+~ documentation
+do freezePlayer()
+You: The drawer opens smoothly, each filled to the brim with documents
+- Look Inside
+	You: Endless papers can be found, you'd need a name to find any real information.
+- Search for 1008 [if SaveLoad.SaveFileData.hasGaurd1Seen]
+- Search for 1000 [if SaveLoad.SaveFileData.hasGaurd1Seen]
+- Leave
+do unfreezePlayer()
+=> END
+
+~ lifted_lockdown
+do freezePlayer()
+do changeCameraTarget(camera_marker_2)
+do SaveLoad.SaveFileData.LockdownTriggered = true
+do changeDoorLock(front_hall_do_entrance_hall_first_dooror_2, false)
+do playSound("res://resources/sfx/cutscenes/announcement.mp3")
+do wait(1)
+EAS: LOCKDOWN HAS BEEN LIFTED, MAKE YOUR WAY TO THE ENTRACE PROMPTLY.
+do wait(1)
+do changeCameraTarget(player)
+do unfreezePlayer()
+=> END
+
+~ insert_key_1
+do freezePlayer()
+You: Theres a key hole on this panel.
+~ key_1_choice
+- Insert and Twist Red Key [if inventory.has("GaurdKey2")]
+	You: It slips in with a nice click, twisting and giving a confirming click.
+	do SaveLoad.SaveFileData.Key1In = true
+	do removeItem("GaurdKey1")
+	=> key_1_choice
+- Insert and Twist Purple Key [if inventory.has("GaurdKey1")]
+	You: The only way to make this key fit would be to crush it into the hole.
+- Leave
+if SaveLoad.SaveFileData.Key2In == true and SaveLoad.SaveFileData.Key1In == true:
+	do startCutscene("res://resources/dialogue/Lab/LiftLockdown.dialogue")
+do unfreezePlayer()
+=> END
+
+~ insert_key_2
+do freezePlayer()
+You: Theres a key hole on this panel.
+~ key_2_choice
+- Insert and Twist Red Key [if inventory.has("GaurdKey1")]
+	You: It slips in with a nice click, twisting and giving a confirming click.
+	do SaveLoad.SaveFileData.Key2In = true
+	do removeItem("GaurdKey2")
+- Insert and Twist Purple Key [if inventory.has("GaurdKey2")]
+	You: The only way to make this key fit would be to crush it into the hole.
+	=> key_2_choice
+- Leave
+if SaveLoad.SaveFileData.Key2In == true and SaveLoad.SaveFileData.Key1In == true:
+	do startCutscene("res://resources/dialogue/Lab/LiftLockdown.dialogue")
+do unfreezePlayer()
+=> END
+
+~ start_lockdown
+do playSound("res://resources/sfx/Common/indoor door lock 3.wav")
+do changeDoorLock(entrance_hall_second_door, true)
+do wait(0.5)
+do playSound("res://resources/sfx/cutscenes/EASALARM.wav")
+do wait(3)
+do playSound("res://resources/sfx/cutscenes/EASALARM.wav")
+do wait(3)
+do playSound("res://resources/sfx/cutscenes/EASALARM.wav")
+do wait(3)
+do playSound("res://resources/sfx/cutscenes/EASALARM.wav")
+do wait(3)
+do playSound("res://resources/sfx/cutscenes/EASALARM.wav")
+do wait(3)
+do freezePlayer()
+EAS: UNREGESTERED LIFE FORM IN ENTRANCE HALL, [wait=0.2]PLEASE AWAIT INSTRUCTIONS
+do wait(2)
+Queen: Well...  [#mood=nervous]
+Queen: These sensors were not functional when I was here last.[#mood=nervous]
+Queen: Steel doors have closed around all exits.
+Queen: They are uniquely tiring to tear down.
+Queen: ..however,[wait=0.2] I see a way for you to lift the lock down yourself.
+Queen: Let me clear the way for you,[wait=0.2]watch closely.
+do changeCameraTarget(camera_marker)
+do wait(1)
+do playAnimation("grow", cutscene_player, false)
+do wait(1)
+do playAnimation("emerge", cutscene_player, false)
+do wait(1)
+do playAnimation("REMOVEOBSTACLE", cutscene_player, false)
+do wait(2)
+do destory(entrance_hall_second_door, null)
+do wait(3)
+do playAnimation("retreat", cutscene_player, false)
+do wait(1.71)
+do changeCameraTarget(player)
+do unfreezePlayer()
+do wait(1)
+do destory(camera_marker, null)
+do destory(tenticle, null)
+=> END

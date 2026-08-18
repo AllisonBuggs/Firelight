@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://6nod0xl5pf3i" path="res://resources/sprites/Sprites/dinner_table.png" id="10_hrsvu"]
 [ext_resource type="Texture2D" uid="uid://cjdgyll22ubi0" path="res://resources/sprites/Sprites/wooden_chair.png" id="11_umawh"]
 [ext_resource type="PackedScene" uid="uid://c8ka4co471t78" path="res://resources/scenes/objects/actionable.tscn" id="12_bpu6q"]
-[ext_resource type="Resource" uid="uid://bsamxy80nsy7k" path="res://resources/dialogue/cai_house_tour.dialogue" id="13_31h60"]
+[ext_resource type="Resource" uid="uid://bsamxy80nsy7k" path="res://resources/dialogue/cutscnes/cai_house_tour.dialogue" id="13_31h60"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v5038"]
 size = Vector2(1.7062306, 71)

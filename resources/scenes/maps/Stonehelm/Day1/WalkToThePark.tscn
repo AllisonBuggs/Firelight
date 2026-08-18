@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://ddrip0keseg4s" path="res://resources/sprites/particle/rain_particles.png" id="8_b67c6"]
 [ext_resource type="PackedScene" uid="uid://3q3vm527u3bw" path="res://resources/scenes/objects/camera.tscn" id="8_ir3bc"]
 [ext_resource type="PackedScene" uid="uid://c8ka4co471t78" path="res://resources/scenes/objects/actionable.tscn" id="8_qv8hc"]
-[ext_resource type="Resource" uid="uid://bsamxy80nsy7k" path="res://resources/dialogue/cai_house_tour.dialogue" id="9_h547l"]
+[ext_resource type="Resource" uid="uid://bsamxy80nsy7k" path="res://resources/dialogue/cutscnes/cai_house_tour.dialogue" id="9_h547l"]
 [ext_resource type="Shader" uid="uid://cepgn3lr74ape" path="res://resources/shaders/fog.gdshader" id="9_uybcr"]
 [ext_resource type="AudioStream" uid="uid://dh4lxjsgcl8w3" path="res://resources/music/Unused/ambience/YourPalRob/Rain_Heavy.wav" id="9_vlwf0"]
 [ext_resource type="Texture2D" uid="uid://df3wp1of1l4hg" path="res://resources/sprites/particle/raind_splash_particle.png" id="9_w02p3"]

@@ -1,25 +1,14 @@
 [gd_scene format=3 uid="uid://csdp0oxq8068n"]
 
-[ext_resource type="Script" uid="uid://l4jvs4sce14i" path="res://resources/scripts/event_object.gd" id="1_2x46m"]
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_n1ahv"]
-light_mode = 2
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2x46m"]
-radius = 12.5
-height = 28.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1c162"]
 
 [node name="Node2D" type="StaticBody2D" unique_id=2067535561]
 y_sort_enabled = true
 texture_filter = 1
-script = ExtResource("1_2x46m")
 
 [node name="sprite" type="Sprite2D" parent="." unique_id=1323008951]
 y_sort_enabled = true
-material = SubResource("CanvasItemMaterial_n1ahv")
 position = Vector2(0, -6)
-offset = Vector2(-1, -82)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1841845275]
-position = Vector2(1.5, -15)
-shape = SubResource("CapsuleShape2D_2x46m")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=952162591]
+shape = SubResource("RectangleShape2D_1c162")

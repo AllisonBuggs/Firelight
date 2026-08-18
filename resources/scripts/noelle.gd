@@ -254,7 +254,7 @@ func hurt(damageTaken: int, knock_dir : Vector2):
 	spriteAnimationPlayer.play("feral_pinball")
 	rollCoolDownTimer.start(0.5)
 	do_velocity_animations = false
-	audioStreamPlayer.stream = load("res://resources/sfx/floraphonic-metal-hit-10-193281.mp3")
+	audioStreamPlayer.stream = load("res://resources/sfx/Chequered Ink/punch.wav")
 	audioStreamPlayer.play()
 	GlobalSignalBus.emit_signal("updatePlayerHealth",-damageTaken)
 	

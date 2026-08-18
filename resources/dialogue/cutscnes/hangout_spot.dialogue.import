@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://q6q7untyvvfk"
+path="res://.godot/imported/hangout_spot.dialogue-1a3d86b1dc29ac5debe5465daedfee85.tres"
+
+[deps]
+
+source_file="res://resources/dialogue/cutscnes/hangout_spot.dialogue"
+dest_files=["res://.godot/imported/hangout_spot.dialogue-1a3d86b1dc29ac5debe5465daedfee85.tres"]
+
+[params]
+
+defaults=true

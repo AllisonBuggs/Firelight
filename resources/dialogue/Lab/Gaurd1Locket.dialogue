@@ -1,9 +1,0 @@
-~ start
-do freezePlayer()
-You: You tug on the handle but its locked
-- Press Random Buttons
-	You: After bashing the keypad, the prompt changes to asking for the number of kids you have to reset the password.
-	You: Its best to come back when you have that infomation.
-- Leave
-do unfreezePlayer()
-=> END

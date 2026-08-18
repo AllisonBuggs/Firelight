@@ -1,4 +1,0 @@
-~ start
-do freezePlayer()
-do toggleVisiblity(mixingUI)
-=> END
