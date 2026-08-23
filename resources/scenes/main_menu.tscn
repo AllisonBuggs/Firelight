@@ -115,13 +115,13 @@ scale = Vector2(3.9895833, 3.9938273)
 texture = ExtResource("2_6g5lw")
 
 [node name="NoelleIsTheGoat2" type="Sprite2D" parent="." unique_id=1125145278]
-position = Vector2(1724.0001, 325)
-scale = Vector2(3.9895833, 3.9938273)
+position = Vector2(1496.9999, 325)
+scale = Vector2(2.4218745, 3.9938273)
 texture = ExtResource("2_6g5lw")
 flip_h = true
 
 [node name="shade" type="ColorRect" parent="." unique_id=782620518]
-offset_right = 1152.0
+offset_right = 2084.0
 offset_bottom = 648.0
 mouse_filter = 2
 color = Color(0, 0, 0, 0.7058824)
@@ -156,8 +156,17 @@ scale = Vector2(1.4954177, 1.4954177)
 variant = 0
 
 [node name="Eye11" parent="Eyes" unique_id=1783537716 instance=ExtResource("14_6g5lw")]
-position = Vector2(1254.0001, 133.00002)
-rotation = -0.8874589
+position = Vector2(1214.0001, 131.00002)
+rotation = -1.2259188
+scale = Vector2(1.1271217, 1.1271217)
+
+[node name="Eye17" parent="Eyes" unique_id=145663377 instance=ExtResource("14_6g5lw")]
+position = Vector2(1310, 534.9999)
+rotation = -0.48360083
+scale = Vector2(1.1271217, 1.1271217)
+
+[node name="Eye18" parent="Eyes" unique_id=1343116688 instance=ExtResource("14_6g5lw")]
+position = Vector2(1459, 181)
 scale = Vector2(1.1271217, 1.1271217)
 
 [node name="Eye10" parent="Eyes" unique_id=1697743724 instance=ExtResource("14_6g5lw")]
