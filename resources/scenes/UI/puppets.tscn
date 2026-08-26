@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://qknldp8uuf7j"]
+
+[ext_resource type="Texture2D" uid="uid://bk5gyos5ro207" path="res://resources/sprites/Portraits/Cai_Relax.png" id="1_yonry"]
+[ext_resource type="Script" uid="uid://bjidtduyfggpk" path="res://resources/scripts/puppets/puppets.gd" id="2_abs3h"]
+
+[node name="puppet_texture" type="TextureRect" unique_id=63608172]
+z_index = -1
+offset_right = 183.0
+offset_bottom = 342.0
+scale = Vector2(2, 2)
+mouse_filter = 2
+texture = ExtResource("1_yonry")
+script = ExtResource("2_abs3h")

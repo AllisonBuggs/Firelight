@@ -1,7 +1,6 @@
 extends CanvasLayer
 ## A basic dialogue balloon for use with Dialogue Manager.
 
-
 ## The dialogue resource
 @export var dialogue_resource: DialogueResource
 
@@ -24,9 +23,14 @@ extends CanvasLayer
 ## A sound player for voice lines (if they exist).
 @onready var audio_stream_player: AudioStreamPlayer = %AudioStreamPlayer
 
-##The Portrait for the character
-@onready var portrait: Sprite2D = $Portrait
+##The Puppet Control Node
+@onready var puppets: Control = $Balloon/puppets
 
+## Puppet Holder
+var puppets_holder : Dictionary[String, TextureRect] = {}
+
+## Puppet Scene
+const puppet = preload("uid://qknldp8uuf7j")
 
 ## Temporary game states
 var temporary_game_states: Array = []
@@ -76,13 +80,14 @@ var mutation_cooldown: Timer = Timer.new()
 ## Indicator to show that player can progress dialogue.
 @onready var progress: Polygon2D = %Progress
 
-## Animation Player to Fade In & Out the Portrait
-@onready var portrait_player: AnimationPlayer = $PortraitPlayer
-
 func _ready() -> void:
 	balloon.hide()
 	Engine.get_singleton("DialogueManager").mutated.connect(_on_mutated)
-
+	DialogueManager.connect("dialogue_ended", clear_puppets)
+	GlobalSignalBus.connect("move_puppet", move_puppet)
+	GlobalSignalBus.connect("change_puppet_expression", change_puppet_expression)
+	GlobalSignalBus.connect("remove_puppet", remove_puppet)
+	
 	# If the responses menu doesn't have a next action set, use this one
 	if responses_menu.next_action.is_empty():
 		responses_menu.next_action = next_action
@@ -145,17 +150,11 @@ func apply_dialogue_line() -> void:
 	
 	match dialogue_line.character.to_lower():
 		"queen":
-				match dialogue_line.get_tag_value("mood"):
-					"nervous":
-						portrait_player.play("Queen_nervous")
-					_:
-						portrait_player.play("Queen_normal")
-				fadePortraitIn()
+				if !puppets_holder.has("queen"):
+					create_puppet("queen",preload( "uid://cywfjlq6s7got"))
 		"cai":
-				match dialogue_line.get_tag_value("mood"):
-					_:
-						portrait_player.play("Cai_relax")
-				fadePortraitIn()
+				if !puppets_holder.has("cai"):
+					create_puppet("cai", preload("uid://cywfjlq6s7got"))
 		_:pass
 
 
@@ -265,7 +264,29 @@ func _on_dialogue_label_spoke(letter: String, letter_index: int, speed: float) -
 			audio_stream_player.pitch_scale = randf_range(0.9,2)
 			audio_stream_player.play()
 
-func fadePortraitIn():
-	if portrait.modulate.a == 0.0:
-		await portrait_player.animation_finished
-		portrait_player.play("fade")
+func create_puppet(_name : String, puppet_file : Puppet):
+	var _puppet = puppet.duplicate()	
+	_puppet = _puppet.instantiate()
+	_puppet.puppet_file = puppet_file
+	add_child(_puppet)
+	puppets_holder.set(_name, _puppet)
+
+
+@warning_ignore("unused_parameter")
+func clear_puppets(resource):
+	for child in puppets_holder:
+		var _puppet = puppets_holder.get(child)
+		_puppet.queue_free()
+		puppets_holder.erase(child)
+
+func remove_puppet(puppet_key : String):
+	puppets_holder[puppet_key].queue_free()
+	puppets_holder.erase(puppet_key)
+
+func move_puppet(puppet_key : String, pos : Vector2):
+	var _puppet = puppets_holder.get(puppet_key)
+	_puppet.move(pos)
+
+func change_puppet_expression(puppet_key : String, expression_name : String):
+	var _puppet = puppets_holder.get(puppet_key)
+	_puppet.change_expression(expression_name)

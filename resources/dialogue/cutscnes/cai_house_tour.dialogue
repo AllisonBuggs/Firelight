@@ -66,9 +66,11 @@ do unfreezePlayer()
 => END
 ~ kitchen
 do freezePlayer()
-Cai: Oh dear. 
+Oh dear. 
 Cai: I'm still adjusting![wait=0.5] I swear I can cook better than that..
+$> GlobalSignalBus.remove_puppet.emit("cai")
 Cai: I can salvage this,[wait=0.5] it might not even taste horrible.
+$> GlobalSignalBus.change_puppet_expression.emit("cai", "jaxtoy")
 Cai: I'll bring it over to the table when it's ready okay, [wait=0.5]just take a seat.
 do unfreezePlayer()
 => END

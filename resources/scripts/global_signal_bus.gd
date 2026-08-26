@@ -18,10 +18,14 @@ signal hit_connected()
 signal update_boss_health_bar(current_health : int, before_health : int)
 signal set_bar_max(new_max : int)
 
+## Puppet Signals
+signal move_puppet(pos : Vector2)
+signal remove_puppet(puppet_key : String)
+signal change_puppet_expression(puppet_key : String, expression_name : String) 
+
 signal container_data(contains)
 signal transition_data(mapToLoad: String, entranceUsed: String)
 signal interactableData(dialogText: String, facePath: String, nameBox: String)
-
 
 signal settingsButtonPressed()
 signal saveButtonPressed()

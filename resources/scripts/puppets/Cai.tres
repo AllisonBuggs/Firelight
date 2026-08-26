@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Puppet" format=3 uid="uid://cywfjlq6s7got"]
+
+[ext_resource type="Texture2D" uid="uid://ftjn5eyclcum" path="res://resources/sprites/Portraits/queen.png" id="1_07lqw"]
+[ext_resource type="Script" uid="uid://cpagl2fkyhkmm" path="res://resources/scripts/classes/puppet.gd" id="2_7rxab"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7rxab"]
+load_path = "res://.godot/imported/Cai_Relax.png-1594ab181c4a77ef9b04ea3590c0cb8d.ctex"
+
+[resource]
+script = ExtResource("2_7rxab")
+expressions = Dictionary[String, Texture2D]({
+"default": SubResource("CompressedTexture2D_7rxab"),
+"jaxtoy": ExtResource("1_07lqw")
+})
+metadata/_custom_type_script = "uid://cpagl2fkyhkmm"
