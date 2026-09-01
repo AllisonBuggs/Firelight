@@ -4,13 +4,13 @@ var currentMap
 
 var doors = []
 var actionables = []
+var throwable_objects = []
 
 var balloon : DialogueManagerExampleBalloon = null
 
 @export var area : Area2D
 @export var camera : Camera2D
-
-@onready var audioStream = $AudioStreamPlayer
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 @onready var player: Player = $Player
 
 @onready var inventory = SaveLoad.SaveFileData.inventoryContents
@@ -75,9 +75,9 @@ func onMapSpawn(doorTag):
 	print(door, doorPath)
 	GlobalSignalBus.triggerPlayerSpawn(door.Spawn.global_position)
 
-func playSound(path):
-	audioStream.stream = load(path)
-	audioStream.play()
+func playSound(path : String):
+	audio_stream_player.stream = load(path)
+	audio_stream_player.play()
 
 func giveItem(itemID):
 	var itemSpace = SaveLoad.SaveFileData.inventoryContents.find("None", 0)
@@ -151,3 +151,7 @@ func startCutscene(path):
 
 func transitionRoom(mapToLoad, _entranceUsed):
 	GlobalSignalBus.call_deferred("ChangeMap", mapToLoad, _entranceUsed)
+
+func get_throwable():
+	var selected = throwable_objects.pick_random()
+	return selected

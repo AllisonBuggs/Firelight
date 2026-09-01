@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://13v385odjcg2" path="res://resources/scenes/UI/balloon.gd" id="1_kd2qj"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
-[ext_resource type="StyleBox" uid="uid://djb24ahi6mwse" path="res://resources/styles/pause_menu.tres" id="2_nlsx6"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_72ixx"]
 [ext_resource type="AudioStream" uid="uid://cc0gvsiqjviwm" path="res://resources/sfx/snd_text.wav" id="6_kmygl"]
 
@@ -65,12 +64,25 @@ MarginContainer/constants/margin_right = 30
 MarginContainer/constants/margin_top = 15
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_qkmqt")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0wm2c"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
 [sub_resource type="Animation" id="Animation_nlsx6"]
 length = 0.001
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Progress:position:y")
+tracks/0/path = NodePath("../../../../../Progress:position:y")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -86,7 +98,7 @@ step = 0.1
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Progress:position:y")
+tracks/0/path = NodePath("../../../../../Progress:position:y")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -102,6 +114,7 @@ _data = {
 }
 
 [node name="ExampleBalloon" type="CanvasLayer" unique_id=1434168376]
+layer = 2
 script = ExtResource("1_kd2qj")
 
 [node name="Balloon" type="Control" parent="." unique_id=359403728]
@@ -127,24 +140,28 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="Balloon" unique_id=1206944743]
-clip_children = 2
-layout_mode = 0
+[node name="Panel" type="Panel" parent="Balloon" unique_id=1865243941]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
 offset_left = 40.0
-offset_top = 413.0
-offset_right = 180.0
-offset_bottom = 466.0
-mouse_filter = 1
-theme_override_styles/panel = ExtResource("2_nlsx6")
+offset_top = 85.0
+offset_right = 190.0
+offset_bottom = 125.0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0wm2c")
 
-[node name="CharacterLabel" type="RichTextLabel" parent="Balloon" unique_id=507199029]
+[node name="CharacterLabel" type="RichTextLabel" parent="Balloon/Panel" unique_id=507199029]
 unique_name_in_owner = true
 modulate = Color(1, 1, 1, 0.501961)
-layout_mode = 0
-offset_left = 39.0
-offset_top = 408.0
-offset_right = 182.0
-offset_bottom = 483.04965
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 1
 bbcode_enabled = true
 text = "Character"
@@ -189,16 +206,9 @@ custom_minimum_size = Vector2(20, 10)
 layout_mode = 2
 size_flags_vertical = 8
 
-[node name="Progress" type="Polygon2D" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/Control" unique_id=821575988]
-unique_name_in_owner = true
-polygon = PackedVector2Array(0, 0, 10, 10, 20, 0)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/Control" unique_id=452325722]
-libraries/ = SubResource("AnimationLibrary_1337t")
-autoplay = &"progress"
-
 [node name="ResponsesMenu" type="VBoxContainer" parent="Balloon" unique_id=966297223 node_paths=PackedStringArray("response_template")]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -221,6 +231,16 @@ hide_failed_responses = true
 [node name="ResponseExample" type="Button" parent="Balloon/ResponsesMenu" unique_id=914537232]
 layout_mode = 2
 text = "Response example"
+
+[node name="Progress" type="Polygon2D" parent="Balloon" unique_id=821575988]
+unique_name_in_owner = true
+position = Vector2(876, 0)
+polygon = PackedVector2Array(0, 0, 10, 10, 20, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Balloon" unique_id=452325722]
+root_node = NodePath("../MarginContainer/PanelContainer/MarginContainer/HBoxContainer/Control")
+libraries/ = SubResource("AnimationLibrary_1337t")
+autoplay = &"progress"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1116280512]
 unique_name_in_owner = true

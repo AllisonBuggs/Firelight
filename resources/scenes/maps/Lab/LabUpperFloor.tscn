@@ -925,7 +925,7 @@ bus = &"SFX"
 
 [node name="Player" parent="." unique_id=1626850227 instance=ExtResource("10_vlfsv")]
 process_mode = 1
-position = Vector2(569, -1439)
+position = Vector2(313, -834)
 floor_constant_speed = true
 
 [node name="AnimatedSprite2D" parent="Player" index="1" unique_id=891970336]

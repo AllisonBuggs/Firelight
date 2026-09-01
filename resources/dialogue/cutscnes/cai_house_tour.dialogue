@@ -1,5 +1,5 @@
 ~ start
-
+Cai: Nothing feels like[wait=0.5] its stinging?
 do cai.walk_to(Vector2(992.0,173.0))
 
 do wait(3)

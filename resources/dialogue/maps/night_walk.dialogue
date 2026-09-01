@@ -1,6 +1,6 @@
 ~ landed
 do wait(1)
-do playSound("res://resources/sfx/shdemo/heart_beat.ogg")
+do playSound("res://resources/sfx/Common/Tagirijus/heart_beat_2.wav")
 
 Queen: ...
 Queen: I don't think we are alone.[#mood=nervous]

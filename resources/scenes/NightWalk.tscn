@@ -6,7 +6,6 @@
 [ext_resource type="Material" uid="uid://2secgp2ouoi8" path="res://resources/shaders/shadowafect.tres" id="4_b0y1q"]
 [ext_resource type="PackedScene" uid="uid://chnesmup7fj8u" path="res://resources/scenes/objects/event_door.tscn" id="5_hf8lk"]
 [ext_resource type="PackedScene" uid="uid://ck5usmblr0wtq" path="res://resources/scenes/players.tscn" id="6_5ljyl"]
-[ext_resource type="AudioStream" uid="uid://dvga0n8xsextj" path="res://resources/music/Unused/ambience/YourPalRob/Rain_Medium_2.wav" id="7_s1e1a"]
 [ext_resource type="PackedScene" uid="uid://c8ka4co471t78" path="res://resources/scenes/objects/actionable.tscn" id="8_0i2e7"]
 [ext_resource type="Resource" uid="uid://ir67w2nc6l5k" path="res://resources/dialogue/cutscnes/night_walk.dialogue" id="9_8ss0f"]
 [ext_resource type="PackedScene" uid="uid://csdp0oxq8068n" path="res://resources/scenes/objects/misc_object.tscn" id="10_b0y1q"]
@@ -260,10 +259,6 @@ scale = Vector2(3.0000014, 2.9999998)
 blend_mode = 2
 texture = SubResource("GradientTexture2D_wwgy0")
 
-[node name="rain_player" type="AudioStreamPlayer" parent="." unique_id=1093945612]
-stream = ExtResource("7_s1e1a")
-autoplay = true
-
 [node name="Actionable" type="Node2D" parent="." unique_id=1200330021]
 
 [node name="meet_natalie_actionable" parent="Actionable" unique_id=148220324 instance=ExtResource("8_0i2e7")]
@@ -308,7 +303,6 @@ shape = SubResource("RectangleShape2D_wwgy0")
 
 [node name="trash_can_1" parent="Objects" unique_id=2067535561 instance=ExtResource("10_b0y1q")]
 position = Vector2(-674, -1)
-selected_sprite = ExtResource("11_hf8lk")
 
 [node name="sprite" parent="Objects/trash_can_1" index="0" unique_id=1323008951]
 position = Vector2(0, -5)
@@ -317,7 +311,6 @@ offset = Vector2(1, -13)
 
 [node name="trash_can_2" parent="Objects" unique_id=502169753 instance=ExtResource("10_b0y1q")]
 position = Vector2(-3126, -156)
-selected_sprite = ExtResource("11_hf8lk")
 
 [node name="sprite" parent="Objects/trash_can_2" index="0" unique_id=1323008951]
 position = Vector2(2, -4)
@@ -326,14 +319,13 @@ offset = Vector2(-1, -14)
 
 [node name="stop_sign" parent="Objects" unique_id=1094306937 instance=ExtResource("10_b0y1q")]
 position = Vector2(-1448, 366)
-selected_sprite = ExtResource("12_hf8lk")
 
 [node name="sprite" parent="Objects/stop_sign" index="0" unique_id=1323008951]
 position = Vector2(1, 10)
 texture = ExtResource("12_hf8lk")
 offset = Vector2(0, -28)
 
-[node name="CollisionShape2D" parent="Objects/stop_sign" index="1" unique_id=1841845275]
+[node name="CollisionShape2D" parent="Objects/stop_sign" index="1" unique_id=952162591]
 position = Vector2(1, 1)
 shape = SubResource("CapsuleShape2D_hf8lk")
 

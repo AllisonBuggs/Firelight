@@ -53,21 +53,20 @@ func choose_random_action(array : Array):
 		"idle_protect_self": 
 			walk_to(global_position)
 		"approach_swipe":
-			track_player()
+			pass
 		"dash": 
 			GlobalSignalBus.emit_signal("request_player_pos")
-			movement_speed = 60.0
+			movement_speed = 100.0
 			walk_to(glob_player_pos)
 		"throw_object":
-			GlobalSignalBus.emit_signal("request_player_pos")
-			walk_to(glob_player_pos)
+			pass
 		"pant":
 			change_animation("jug_pant")
 			boss_audio_player.stream = load("res://resources/sfx/boss/RF_pant_loop.wav")
 			boss_audio_player.play()
 			walk_to(global_position)
 		"roar":
-			cycle_phase()
+			pass
 
 func track_player():
 	GlobalSignalBus.emit_signal("request_player_pos")

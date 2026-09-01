@@ -24,9 +24,6 @@ extends CanvasLayer
 ## A sound player for voice lines (if they exist).
 @onready var audio_stream_player: AudioStreamPlayer = %AudioStreamPlayer
 
-##The Portrait for the character
-@onready var portrait: Sprite2D = $Portrait
-
 ## Temporary game states
 var temporary_game_states: Array = []
 
@@ -74,9 +71,6 @@ var mutation_cooldown: Timer = Timer.new()
 
 ## Indicator to show that player can progress dialogue.
 @onready var progress: Polygon2D = %Progress
-
-## Animation Player to Fade In & Out the Portrait
-@onready var portrait_player: AnimationPlayer = $PortraitPlayer
 
 func _ready() -> void:
 	balloon.hide()
@@ -246,8 +240,3 @@ func _on_dialogue_label_spoke(letter: String, letter_index: int, speed: float) -
 			audio_stream_player.stream = load("res://resources/sfx/snd_text.wav")
 			audio_stream_player.pitch_scale = randf_range(0.9,2)
 			audio_stream_player.play()
-
-func fadePortraitIn():
-	if portrait.modulate.a == 0.0:
-		await portrait_player.animation_finished
-		portrait_player.play("fade")

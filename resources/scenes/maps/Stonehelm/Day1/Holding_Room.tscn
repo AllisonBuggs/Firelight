@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://bwhiuwe18fke2" path="res://resources/sprites/Sprites/door/WoodenInteriorDoor_closed.png" id="17_8gp15"]
 [ext_resource type="AudioStream" uid="uid://xrpgjgmquwh0" path="res://resources/sfx/snd_doorclose.wav" id="18_i3us0"]
 [ext_resource type="AudioStream" uid="uid://dvr412bxu7ayh" path="res://resources/sfx/snd_dooropen.wav" id="19_t5ab7"]
+[ext_resource type="PackedScene" uid="uid://d1mht5hfx6hsc" path="res://resources/scenes/objects/throwable_item.tscn" id="20_rgfnr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h6y2j"]
 size = Vector2(2.5091648, 137)
@@ -119,6 +120,8 @@ visible = false
 navigation_polygon = SubResource("NavigationPolygon_o405x")
 
 [node name="boss_rouge_flesh" parent="." unique_id=1218638180 instance=ExtResource("8_t70j4")]
+z_index = 1
+position = Vector2(9, -5)
 
 [node name="CombatZone" parent="." unique_id=1495903131 instance=ExtResource("9_y6k03")]
 visible = false
@@ -186,6 +189,9 @@ closedSprite = ExtResource("17_8gp15")
 closeDoorSFX = ExtResource("18_i3us0")
 openDoorSFX = ExtResource("19_t5ab7")
 TopDown = true
+
+[node name="throwable_item" parent="." unique_id=1107617242 instance=ExtResource("20_rgfnr")]
+position = Vector2(180, -42)
 
 [editable path="Doors/Door_HBI"]
 [editable path="metal_locker"]

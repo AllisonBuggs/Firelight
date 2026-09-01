@@ -7,7 +7,6 @@ var currentSong = "5PM"
 # All Music
 const ANOTHER_KID = preload("uid://cq4ad14nvxhh4")
 const DARKER_EYES = preload("uid://b6d21s03h1d0o")
-const LAB_AMB = preload("uid://dr3qeguub5gx8")
 const SEWER_AMB = preload("uid://dfy6h7isdjx0l")
 const NATALIES_BOX = preload("uid://dvj5w2pi26aw2")
 const NEW_MOM = preload("uid://bfovpgvsh6tab")
@@ -29,9 +28,6 @@ func changeMusic(songName):
 			"DARKER_EYES":
 				stream = DARKER_EYES
 				currentSong = "DARKER_EYES"
-			"LAB_AMB":
-				stream = LAB_AMB
-				currentSong = "LAB_AMB"
 			"SEWER_AMB":
 				stream = SEWER_AMB
 				currentSong = "SEWER_AMB"
