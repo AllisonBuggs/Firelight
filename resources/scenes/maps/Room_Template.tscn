@@ -13,6 +13,10 @@ process_mode = 3
 y_sort_enabled = true
 script = ExtResource("1_60bl3")
 
+[node name="background" type="TileMapLayer" parent="." unique_id=2062294765]
+z_index = -1
+tile_set = ExtResource("3_uel3x")
+
 [node name="Main" type="TileMapLayer" parent="." unique_id=1594926581]
 top_level = true
 z_index = -1
