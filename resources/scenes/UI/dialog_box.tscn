@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cpbagh8wa1dgu"]
 
 [ext_resource type="Script" uid="uid://du5y7p64ese1g" path="res://resources/scripts/dialog_box.gd" id="1_7ybiw"]
+[ext_resource type="AudioStream" uid="uid://pe3avj7mhvg3" path="res://resources/sfx/voices/switch.wav" id="3_6kvcu"]
 [ext_resource type="Script" uid="uid://cbceqowr5ws2" path="res://resources/scripts/typeWriterEffectScript.gd" id="3_a5f43"]
-[ext_resource type="AudioStream" uid="uid://dg7hayp1quik" path="res://resources/sfx/snd_txtnoe.wav" id="4_6kvcu"]
 [ext_resource type="Texture2D" uid="uid://bipmliofrgn8d" path="res://resources/sprites/CoolestSickCats/coolcat.jpeg" id="4_aiqa7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a5f43"]
@@ -53,7 +53,7 @@ libraries/ = SubResource("AnimationLibrary_6kvcu")
 script = ExtResource("3_a5f43")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=322539101]
-stream = ExtResource("4_6kvcu")
+stream = ExtResource("3_6kvcu")
 
 [node name="Panel" type="Panel" parent="." unique_id=707623142]
 layout_mode = 0

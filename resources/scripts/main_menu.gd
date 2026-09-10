@@ -28,7 +28,7 @@ var extraSelection = 0
 func _ready() -> void:
 	GlobalSignalBus.connect("returnButtonPressed", backPressed)
 	savesButton.grab_focus()
-	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
 	GlobalSignalBus.emit_signal("changeMusic", "MAIN_THEME")
 	GlobalMusicPlayer.play()
 

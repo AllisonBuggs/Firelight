@@ -76,9 +76,7 @@ var mutation_cooldown: Timer = Timer.new()
 
 ## The menu of responses
 @onready var responses_menu: DialogueResponsesMenu = %ResponsesMenu
-
-## Indicator to show that player can progress dialogue.
-@onready var progress: Polygon2D = %Progress
+@onready var character_panel: Panel = $Balloon/character_panel
 
 func _ready() -> void:
 	balloon.hide()
@@ -99,13 +97,6 @@ func _ready() -> void:
 		if not is_instance_valid(dialogue_resource):
 			assert(false, DMConstants.get_error_message(DMConstants.ERR_MISSING_RESOURCE_FOR_AUTOSTART))
 		start()
-
-
-@warning_ignore("unused_parameter")
-func _process(delta: float) -> void:
-	if is_instance_valid(dialogue_line):
-		progress.visible = not dialogue_label.is_typing and dialogue_line.responses.size() == 0 and not dialogue_line.has_tag("voice")
-
 
 func _unhandled_input(_event: InputEvent) -> void:
 	# Only the balloon is allowed to handle input while it's showing
@@ -139,15 +130,14 @@ func start(with_dialogue_resource: DialogueResource = null, title: String = "", 
 func apply_dialogue_line() -> void:
 	mutation_cooldown.stop()
 
-	progress.hide()
 	is_waiting_for_input = false
 	balloon.focus_mode = Control.FOCUS_ALL
 	balloon.grab_focus()
 
-	character_label.visible = not dialogue_line.character.is_empty()
+	character_panel.visible = not dialogue_line.character.is_empty()
 	character_label.text = tr(dialogue_line.character, "dialogue")
 
-	
+		
 	match dialogue_line.character.to_lower():
 		"queen":
 				if !puppets_holder.has("queen"):
@@ -260,8 +250,8 @@ func _on_dialogue_label_spoke(letter: String, letter_index: int, speed: float) -
 			audio_stream_player.stream = load("res://resources/sfx/voices/vce_alarm.wav")
 			audio_stream_player.play()
 		_: 
-			audio_stream_player.stream = load("res://resources/sfx/snd_text.wav")
-			audio_stream_player.pitch_scale = randf_range(0.9,2)
+			audio_stream_player.stream = load("res://resources/sfx/voices/switch.wav")
+			audio_stream_player.pitch_scale = randf_range(1,1)
 			audio_stream_player.play()
 
 func create_puppet(_name : String, puppet_file : Puppet):

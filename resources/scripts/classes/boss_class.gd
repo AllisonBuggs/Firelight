@@ -22,6 +22,8 @@ var ani_walk_up : String
 var ani_walk_down : String
 var ani_walk_side : String
 
+@export var active : bool = true
+
 @onready var attack_ray_cast: RayCast2D = $AttackRayCast
 @onready var boss_audio_player: AudioStreamPlayer = $boss_audio_player
 @onready var damage_player: AnimationPlayer = $damage_player
@@ -69,9 +71,10 @@ func choose_random_action(array : Array):
 			pass
 
 func track_player():
-	GlobalSignalBus.emit_signal("request_player_pos")
-	walk_to(glob_player_pos)
-	tracker_timer.start()
+	if active:
+		GlobalSignalBus.emit_signal("request_player_pos")
+		walk_to(glob_player_pos)
+		tracker_timer.start()
 
 func update_player_pos(_player_pos):
 	glob_player_pos = _player_pos
@@ -95,21 +98,22 @@ func end_action_behaviors():
 			boss_audio_player.play()
 
 func cycle_phase():
-	movement_speed = default_movement_speed
-	end_action_behaviors()
-	tracker_timer.stop()
-	# End Action Behaviors
-	match current_phase:
-		0: # Idle
-			choose_random_action(attacks_avilable)
-			next_cycle_time = 5
-		1: # Attack
-			choose_random_action(recovery_available)
-			next_cycle_time = 5
-		2: # Recovery
-			choose_random_action(idle_available)
-			next_cycle_time = 3
-	phase_timer.start(next_cycle_time)
+	if active:
+		movement_speed = default_movement_speed
+		end_action_behaviors()
+		tracker_timer.stop()
+		# End Action Behaviors
+		match current_phase:
+			0: # Idle
+				choose_random_action(attacks_avilable)
+				next_cycle_time = 5
+			1: # Attack
+				choose_random_action(recovery_available)
+				next_cycle_time = 5
+			2: # Recovery
+				choose_random_action(idle_available)
+				next_cycle_time = 3
+		phase_timer.start(next_cycle_time)
 	
 func deal_contact_dmg(body: Node2D) -> void:
 	if body is not boss_class:

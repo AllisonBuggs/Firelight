@@ -515,7 +515,6 @@ libraries/ = SubResource("AnimationLibrary_p8l5d")
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1657308766]
 path_desired_distance = 4.0
 path_max_distance = 10.0
-debug_enabled = true
 
 [node name="phase_timer" type="Timer" parent="." unique_id=1667533357]
 autostart = true

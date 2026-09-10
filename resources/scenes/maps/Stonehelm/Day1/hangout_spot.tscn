@@ -248,37 +248,65 @@ smallText = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable/actionable" unique_id=135445003]
 shape = SubResource("CircleShape2D_g2384")
 
-[node name="Cutscenes" type="Node2D" parent="." unique_id=585520158]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=296632851]
 
-[node name="background" type="Sprite2D" parent="Cutscenes" unique_id=273817495]
-position = Vector2(588, 321)
-scale = Vector2(1.71521, 1.71521)
+[node name="Cutscenes" type="Control" parent="CanvasLayer" unique_id=1847631521]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="background" type="TextureRect" parent="CanvasLayer/Cutscenes" unique_id=2069130964]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("4_8jo25")
 
-[node name="Natalie" type="Sprite2D" parent="Cutscenes" unique_id=753574968]
+[node name="Natalie" type="TextureRect" parent="CanvasLayer/Cutscenes" unique_id=1049612775]
 modulate = Color(1, 1, 1, 0)
 material = SubResource("ShaderMaterial_fv3wq")
-position = Vector2(588, 321)
-scale = Vector2(1.71521, 1.71521)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("7_wv407")
 
-[node name="Susie" type="Sprite2D" parent="Cutscenes" unique_id=568598702]
+[node name="Susie" type="TextureRect" parent="CanvasLayer/Cutscenes" unique_id=1915479319]
 modulate = Color(1, 1, 1, 0)
-position = Vector2(588, 321)
-scale = Vector2(1.71521, 1.71521)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("8_ay087")
 
-[node name="chair_back" type="Sprite2D" parent="Cutscenes" unique_id=1192385407]
-position = Vector2(588, 321)
-scale = Vector2(1.71521, 1.71521)
+[node name="chair_back" type="TextureRect" parent="CanvasLayer/Cutscenes" unique_id=706607957]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("7_ub42e")
 
-[node name="lighting" type="Sprite2D" parent="Cutscenes" unique_id=1235622017]
-position = Vector2(588, 321)
-scale = Vector2(1.71521, 1.71521)
+[node name="lighting" type="TextureRect" parent="CanvasLayer/Cutscenes" unique_id=1583023157]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("5_6y1o6")
 
-[node name="CutscneeAnimationPlayer" type="AnimationPlayer" parent="Cutscenes" unique_id=1260595666]
+[node name="CutscneeAnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Cutscenes" unique_id=1260595666]
 libraries/ = SubResource("AnimationLibrary_ay087")
 
 [editable path="Doors/Door_myboneshurt"]
