@@ -185,6 +185,7 @@ TopDown = true
 
 [node name="Node2D3" parent="." unique_id=1604045432 instance=ExtResource("15_dpdc7")]
 position = Vector2(143, -94)
+flipped = true
 openSprite = ExtResource("16_rgfnr")
 closedSprite = ExtResource("17_8gp15")
 closeDoorSFX = ExtResource("18_i3us0")
