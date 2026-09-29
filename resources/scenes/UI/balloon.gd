@@ -136,7 +136,7 @@ func apply_dialogue_line() -> void:
 
 	character_panel.visible = not dialogue_line.character.is_empty()
 	character_label.text = tr(dialogue_line.character, "dialogue")
-
+	
 		
 	match dialogue_line.character.to_lower():
 		"queen":
@@ -231,26 +231,48 @@ func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
 
 #endregion
 
+const CAI = preload("uid://fptvuk68e88p")
+const ISSAC_MELLOW = preload("uid://bcogyw8d2r5jl")
+const ISSAC_NORMAL = preload("uid://ibnjp64jqvvp")
+const QUEEN = preload("uid://5o3lgmd637s8")
+const DEFAULT = preload("uid://pe3avj7mhvg3")
+const ALARM = preload("uid://586fm1r8uuor")
+const NATALIE = preload("uid://ddyohxlj5w31k")
+
+const JANITOR = preload("uid://ck4w5owwhpu0o")
+
+
+
 @warning_ignore("unused_parameter")
 func _on_dialogue_label_spoke(letter: String, letter_index: int, speed: float) -> void:
+	audio_stream_player.volume_db = 0
 	match dialogue_line.character:
+		"Issac_Mellowed":
+			audio_stream_player.stream = ISSAC_MELLOW
+			audio_stream_player.pitch_scale = 1
+			audio_stream_player.play()
+		"Issac":if not letter in [" ", ".", ","]:
+			audio_stream_player.stream = ISSAC_NORMAL
+			audio_stream_player.pitch_scale = randf_range(1,3.2)
+			audio_stream_player.play()
 		"Natalie":
-			audio_stream_player.stream = load("res://resources/sfx/voices/tested/natalie_4.ogg")
+			audio_stream_player.stream = NATALIE
 			audio_stream_player.pitch_scale = 1
 			audio_stream_player.play()
 		"Cai":if not letter in [" ", ".", ","]:
-			audio_stream_player.stream = load("res://resources/sfx/voices/cai_1.ogg")
+			audio_stream_player.stream = CAI
 			audio_stream_player.pitch_scale = 1
 			audio_stream_player.play()
 		"Queen":if not letter in [" ", ".", ","]:
-			audio_stream_player.stream = load("res://resources/sfx/voices/queen_1.ogg")
+			audio_stream_player.stream = QUEEN
 			audio_stream_player.pitch_scale = randf_range(0.1,2)
 			audio_stream_player.play()
 		"EAS":if not letter in [" ", ".", ","]:
-			audio_stream_player.stream = load("res://resources/sfx/voices/vce_alarm.wav")
+			audio_stream_player.stream = ALARM
 			audio_stream_player.play()
 		_: 
-			audio_stream_player.stream = load("res://resources/sfx/voices/switch.wav")
+			audio_stream_player.stream = DEFAULT
+			audio_stream_player.volume_db = -18
 			audio_stream_player.pitch_scale = randf_range(1,1)
 			audio_stream_player.play()
 

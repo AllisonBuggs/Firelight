@@ -2,11 +2,67 @@
 It's a blank sticky note
 If only you had a pen... what would you draw?
 - Cai, me and Natalie
-	Theres a word you three
+	Theres a word for you three
 	but you can't think of it
+	oh well.
 - A silly cat
 	You wonder if you'll ever see a cute cat
-	You decide to keep the legacy of the cat alive and tell someone later about cats
+	You decide to keep the legacy of the cat alive and tell someone later about cats.
 - I don't have a pen
-	Queen: Nothing gets past us
+	Queen: Nothing gets past you.
+=> END
+
+~ dinner 
+*She places the plate down softly, The chunk of flesh has been carved from the burnt outer layers*
+
+*It is unlike any editable meat you've seen before, and not because of her cooking.*
+
+*It feels soft under your blade like cotton. Yet, as you slice forward it is rough, and hard to cut.*
+
+Cai: Come on kiddo, it's not that bad. [wait:0.6]Lydia's got all the good stuff if it upsets your stomach, promise.
+
+Queen: ... A meal cooked by *her* hands. [wait:1.2] I won't stop you from eating, but I find the idea repulsive.
+
+~ choice
+
+- Eat
+
+- Don't
+	Cai: Come on kiddo, it isn't that bad. I'd be eating it if there was anything left.
+	=> meat_source
+
+- "Her hands?"
+	Queen: *Her* food
+	Cai: I know you might not be super trusting but... I'm trying my best.
+	Cai: I'll stock up on something better the next time we're around the warehouse.
+	=> choice
+
+~ meat_source
+Cai: I'm not quite sure what it is, but we found a lot of it in storage
+Cai: Like. A whole lot. Atleast its safe, we've been eating it for a while.
+Cai: Who'd pass up free food? 
+Cai: Actually Lydia would. She stocks up on anything but meat, makes her sick.
+Cai: .. speaking of flesh, We haven't properly introduced ourselves.
+Cai: I'm Cai, I guess I'm responsible for you kiddo.
+- I'm {{SaveLoad.SaveFileData.playerName}}
+	Cai: Susie,[wait:0.6] you have a cute name.
+	Cai: It's nice to meet you Susie.
+- ...
+	Cai: No?
+	Cai: That's okay, I won't push it but I'd like to know your name soon enough kid.
+Cai: So..Your pretty young, I have to assume that somebody was taking care of you,
+Cai: With The Scarlet Flesh and all, it's a death sentence out there.
+Cai: Oh, Right. The Scarlet Flesh,[wait:0.6] it's the big massive wasteland of meat
+Cai: The thing that well, ended the world.
+Queen: Me? The Scarlet Flesh, [wait:0.6]elegant[wait:1], I approve.
+Cai: I'm sure you have a name for it, I did for a while too but -
+Cai: It's better to just adopt the one thats popular here huh.
+Cai: ... I guess it has me wantin to ask if yo-
+*Radio Skweak*
+Radio: All non-essential or off-duty officers are needed IMMEDEATLY at Wall 3
+Radio: This is an emergency, please come combat ready
+Radio: Looping signal now.
+Cai: Alright kid, I'm sorry to cut us short.
+Cai: But thats me,[wait:0.6] let's get you to bed.
+Cai: I'll grab some better food on my way home okay? [wait:0.6]Probably in a couple hours.
 => END
