@@ -9,6 +9,8 @@ extends Area2D
 const BALLOON = preload("uid://cn1dkki7x6vy3")
 const CUTSCENE_BALLOON = preload("uid://cy757to5k3igj")
 
+var triggered : bool = false
+
 func _ready() -> void:
 	if activeOnStepOn == true:
 		collision_layer = 1
@@ -25,10 +27,13 @@ func action():
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
-		GlobalSignalBus.spawnDoorTag = null
-		if smallText == true:
-			DialogueManager.show_dialogue_balloon_scene(CUTSCENE_BALLOON, dialogFile, dialogStart)
-		else: 
-			DialogueManager.show_dialogue_balloon_scene(BALLOON, dialogFile, dialogStart)
-		if triggerOnce == true:
-			queue_free()
+		if !triggered:
+			triggered = true
+			print("triggered on enter")
+			GlobalSignalBus.spawnDoorTag = null
+			if smallText == true:
+				DialogueManager.show_dialogue_balloon_scene(CUTSCENE_BALLOON, dialogFile, dialogStart)
+			else: 
+				DialogueManager.show_dialogue_balloon_scene(BALLOON, dialogFile, dialogStart)
+			if triggerOnce == true:
+				queue_free()

@@ -12,7 +12,13 @@ If only you had a pen... what would you draw?
 	Queen: Nothing gets past you.
 => END
 
-~ dinner 
+~ dinner_day1
+do freezePlayer()
+do changeCameraTarget(dinner_table_cutscene)
+do camera.change_zoom(4)
+do get_npc("cai").movement_speed = 30.0
+do get_npc("cai").walk_to(Vector2(280.0,-320.0))
+do awaitPathingFinish(get_npc("cai"))
 *She places the plate down softly, The chunk of flesh has been carved from the burnt outer layers*
 
 *It is unlike any editable meat you've seen before, and not because of her cooking.*
@@ -58,11 +64,18 @@ Queen: Me? The Scarlet Flesh, [wait:0.6]elegant[wait:1], I approve.
 Cai: I'm sure you have a name for it, I did for a while too but -
 Cai: It's better to just adopt the one thats popular here huh.
 Cai: ... I guess it has me wantin to ask if yo-
-*Radio Skweak*
+do playSound("res://resources/sfx/cutscenes/pixabay/radio_static_pixabay.mp3")
+*Radio Static*
 Radio: All non-essential or off-duty officers are needed IMMEDEATLY at Wall 3
 Radio: This is an emergency, please come combat ready
 Radio: Looping signal now.
 Cai: Alright kid, I'm sorry to cut us short.
 Cai: But thats me,[wait:0.6] let's get you to bed.
 Cai: I'll grab some better food on my way home okay? [wait:0.6]Probably in a couple hours.
+do changeCameraTarget(player)
+do camera.change_zoom(2.7)
+do get_npc("cai").movement_speed = 33.0
+do get_npc("cai").walk_to(Vector2(-216.0, -288.0))
 => END
+
+

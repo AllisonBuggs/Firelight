@@ -49,27 +49,55 @@ Cai: I got the rundown a bit ago.
 Cai: It's a little barren but, [wait=0.5]it's better than my last home. 
 do unfreezePlayer()
 => END
+
 ~ hallway
 do freezePlayer()
+do spawn_npc("res://resources/scenes/objects/NPCs/Cai.tscn", -160.0, -10.0)
+do player.hide()
+do player.global_position = Vector2(-180.0, -5.0)
+do player.reparent(get_npc("cai"))
+do get_npc("cai").movement_speed = 30.0
 Cai: I'll show you around, like a [wait=0.2]tour. 
+do get_npc("cai").walk_to(Vector2(-31,-12))
 Cai: To our right should be the bathrom
 Cai: And this way is our room!
+do get_npc("cai").walk_to(Vector2(-31,-192))
+do wait(2)
+do toggleDoorState("bedroomdoor_r")
+do toggleDoorState("bedroomdoor_l")
+do wait(0.8)
+do transitionRoom("CaiBedroom", "CBDI")
 do unfreezePlayer()
 => END
+
 ~ room
+do spawn_npc("res://resources/scenes/objects/NPCs/Cai.tscn", 40, 100)
+do player.hide()
+do player.reparent(get_npc("cai"))
+do get_npc("cai").movement_speed = 30.0
 do freezePlayer()
 Cai: ...
-Cai: The bed is nice and big. [wait=0.5] Just dont hog the blanket eh? (Some sort of teasing look)
+do get_npc("cai").walk_to(Vector2(60,0))
+Cai: Well... the bed is nice and big. [wait=0.5] Just dont hog the blanket eh? (Some sort of teasing look)
 Cai: I'll find some paintings okay?[wait=0.5] It'll feel homey soon enough. 
 Cai: Come on, I bet your hungry,[wait=0.5] I put some meat on the Oven before I came to pick you up. 
+do get_npc("cai").walk_to(Vector2(152.0,56.0))
+do wait(1)
+do transitionRoom("CaiFrontRoom", "CBKDK")
 do unfreezePlayer()
 => END
+
 ~ kitchen
+do spawn_npc("res://resources/scenes/objects/NPCs/Cai.tscn", -170, -320)
 do freezePlayer()
-Oh dear. 
+do get_npc("cai").movement_speed = 30.0
+Cai: Oh dear.
+do get_npc("cai").walk_to(Vector2(-90.0,-310.0)) 
 Cai: I'm still adjusting![wait=0.5] I swear I can cook better than that..
 $> GlobalSignalBus.remove_puppet.emit("cai")
 Cai: I can salvage this,[wait=0.5] it might not even taste horrible.
+do get_npc("cai").movement_speed = 40.0
+do get_npc("cai").walk_to(Vector2(15.0,-368.0))
 $> GlobalSignalBus.change_puppet_expression.emit("cai", "jaxtoy")
 Cai: I'll bring it over to the table when it's ready okay, [wait=0.5]just take a seat.
 do unfreezePlayer()

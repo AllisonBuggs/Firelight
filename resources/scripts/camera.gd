@@ -4,19 +4,18 @@ extends Camera2D
 @onready var audioPlayer = $AudioStreamPlayer2D
 @onready var noise = FastNoiseLite.new()
 
-var tween:Tween
-
-const LERP_WEIGHT = 0.1
-const SHAKE = 0.5
-const DECAY = 0.8
+const LERP_WEIGHT : float = 0.1 
+const SHAKE : float = 0.5
+const DECAY : float = 0.8
 const MAX_OFFSET = Vector2(160, 90)
-const MAX_ROLL = 0.15
-const TRAUMA_POWER = 2
+const MAX_ROLL : float = 0.15
+const TRAUMA_POWER : int = 2
 
-var trauma = 0.0
-var aim_rot = 0
-var base_rotation = 0
-var noise_y = 0
+var trauma : float = 0.0
+var aim_rot : int = 0
+var base_rotation : int = 0
+var noise_y : int = 0
+
 
 @export var target : Node
 
@@ -35,7 +34,6 @@ func _process(delta: float) -> void:
 	else:
 		rotation = base_rotation
 	global_position = target.global_position
-
 
 func add_trauma(amount = SHAKE):
 	trauma = amount
@@ -57,3 +55,10 @@ func changeCameraSettings(LeftLimit,TopLimit, RightLimit,BottomLimit):
 	limit_top = LeftLimit
 	limit_right = RightLimit
 	limit_bottom = BottomLimit
+
+func change_zoom(new_amount : int):
+	var tween = create_tween()
+	tween.set_trans(Tween.TRANS_SINE)
+	tween.set_ease(Tween.EASE_IN)
+	var new_zoom = Vector2(new_amount, new_amount)
+	tween.tween_property(self, "zoom", new_zoom, 1.0)

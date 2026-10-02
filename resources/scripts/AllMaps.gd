@@ -2,9 +2,10 @@ extends Node2D
 class_name allMaps
 var currentMap
 
-var doors = []
-var actionables = []
-var throwable_objects = []
+var doors : Dictionary = {}
+var actionables : Array = []
+var throwable_objects : Array = []
+var NPCs : Dictionary = {}
 
 var balloon : DialogueManagerExampleBalloon = null
 
@@ -39,6 +40,7 @@ func _ready() -> void:
 	setUpMap()
 
 func setUpMap():
+	DebugTools.player = player
 	GlobalSignalBus.emit_signal("changeCameraSettings", LeftLimit, TopLimit, RightLimit, BottomLimit)
 	GlobalSignalBus.connect("transition_data", get_TransitionData)
 	Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
@@ -72,7 +74,6 @@ func onMapLoadSpawn():
 func onMapSpawn(doorTag):
 	var doorPath = "Doors/Door_" + doorTag
 	var door = get_node(doorPath) as Door
-	print(door, doorPath)
 	GlobalSignalBus.triggerPlayerSpawn(door.Spawn.global_position)
 
 func playSound(path : String):
@@ -83,7 +84,6 @@ func giveItem(itemID):
 	var itemSpace = SaveLoad.SaveFileData.inventoryContents.find("None", 0)
 	if itemSpace != -1:
 		SaveLoad.SaveFileData.inventoryContents.set(itemSpace, itemID)
-	print(SaveLoad.SaveFileData.inventoryContents)
 
 func removeItem(ItemId):
 	GlobalSignalBus.emit_signal("removeItem", ItemId)
@@ -125,6 +125,11 @@ func unlockClosetDoor():
 	if is_instance_valid(closetDoor) :
 		closetDoor.locked = false
 
+func toggleDoorState(doorName : String):
+	var door = doors.get(doorName)
+	print(door)
+	door.action()
+
 func find_closest(objectArrayToFind):
 	var lowest_distance = INF    # Initialized as infinity to avoid unintended behaviour at large distances
 	var closest_object
@@ -155,3 +160,21 @@ func transitionRoom(mapToLoad, _entranceUsed):
 func get_throwable():
 	var selected = throwable_objects.pick_random()
 	return selected
+
+func spawn_npc(path : String, x_pos : int, y_pos : int):
+	var object : PackedScene = load(path)
+	var node = object.instantiate()
+	add_child(node)
+	node.global_position = Vector2(x_pos, y_pos)
+	NPCs.set(node.name, node)
+
+func get_npc(npc_name : String):
+	var node = NPCs.get(npc_name)
+	print(node)
+	return node
+
+func awaitPathingFinish(npc : Node2D):
+	var agent : NavigationAgent2D = npc.agent
+	print("NPC", npc)
+	print("Agent", agent)
+	await agent.navigation_finished

@@ -23,6 +23,11 @@ size = Vector2(1.8065968, 69)
 radius = 31.575256
 height = 107.20053
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_utc46"]
+vertices = PackedVector2Array(293.57813, 301.21094, 317.57813, 301.21094, 317.57813, 345.21094, 293.57813, 345.21094, 293.57813, 385.21094, 253.57813, 385.21094, 253.57813, 409.21094, 209.57813, 409.21094, 209.57813, 385.21094, 9.578125, 385.21094, 9.578125, 13.2109375, 293.57813, 13.2109375)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(3, 4, 5), PackedInt32Array(5, 6, 7, 8), PackedInt32Array(8, 9, 10, 11, 0), PackedInt32Array(8, 0, 3, 5)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-0.42279053, 395.21027, 199.57721, 395.21027, 199.57721, 419.21027, 263.5772, 419.21027, 263.5772, 395.21027, 303.5772, 395.21027, 303.5772, 355.21027, 327.5772, 355.21027, 327.5772, 291.21027, 303.5772, 291.21027, 303.5772, 3.210266, -0.42279053, 3.210266)])
+
 [node name="CaiBedroom" type="Node2D" unique_id=825236289]
 process_mode = 3
 y_sort_enabled = true
@@ -85,7 +90,6 @@ position = Vector2(-3.9142942, 2)
 
 [node name="Player" parent="." unique_id=1626850227 instance=ExtResource("6_6g3j1")]
 process_mode = 1
-position = Vector2(1, 2)
 floor_constant_speed = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=886609456]
@@ -120,6 +124,10 @@ texture = ExtResource("10_ajs0n")
 position = Vector2(-1, 1)
 rotation = -1.3778195
 shape = SubResource("CapsuleShape2D_g2384")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=408002125]
+position = Vector2(-167.57721, -259.21027)
+navigation_polygon = SubResource("NavigationPolygon_utc46")
 
 [editable path="Doors/Door_CBDI"]
 [editable path="Doors/Door_CBKDB"]

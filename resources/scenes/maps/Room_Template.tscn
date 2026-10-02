@@ -8,10 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://ck5usmblr0wtq" path="res://resources/scenes/players.tscn" id="9_1upqo"]
 [ext_resource type="PackedScene" uid="uid://3q3vm527u3bw" path="res://resources/scenes/objects/camera.tscn" id="33_uk3da"]
 
-[node name="LabLowerFloor" type="Node2D" unique_id=825236289]
+[node name="LabLowerFloor" type="Node2D" unique_id=825236289 node_paths=PackedStringArray("camera")]
 process_mode = 3
 y_sort_enabled = true
 script = ExtResource("1_60bl3")
+camera = NodePath("PLAYERCAMERA")
 
 [node name="background" type="TileMapLayer" parent="." unique_id=2062294765]
 z_index = -1

@@ -1,13 +1,13 @@
 extends Character
 class_name NPCClass
 
-@export var movement_speed: float = 4.0
+@export var movement_speed: float = 40.0
 @export var movement_target : Vector2
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
 
-
+@export var agent: NavigationAgent2D
 var movement_delta: float
 var _direction : Vector2
 var direction_tolerance: float = 10.0
@@ -17,9 +17,9 @@ var animation_walk_right : String
 var animation_walk_left : String
 var animation_walk_down : String
 
-
 func start() -> void:
 	navigation_agent.velocity_computed.connect(Callable(_on_velocity_computed))
+	agent = navigation_agent
 
 func set_movement_target():
 	navigation_agent.set_target_position(movement_target)

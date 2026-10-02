@@ -4,7 +4,7 @@
 [ext_resource type="SpriteFrames" uid="uid://85pyfacikgmw" path="res://resources/sprite_frames/cai_sprite_frames.tres" id="2_kjn5x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_whwkn"]
-size = Vector2(17, 40)
+size = Vector2(17, 38)
 
 [sub_resource type="Animation" id="Animation_5ansj"]
 length = 1.5
@@ -336,11 +336,8 @@ _data = {
 }
 
 [node name="cai" type="CharacterBody2D" unique_id=1218638180]
+y_sort_enabled = true
 script = ExtResource("1_klubx")
-movement_speed = null
-movement_target = Object(AnimatedSprite2D,"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"physics_interpolation_mode":0,"auto_translate_mode":0,"editor_description":"","visible":true,"modulate":Color(1, 1, 1, 1),"self_modulate":Color(1, 1, 1, 1),"show_behind_parent":false,"top_level":false,"clip_children":0,"oversampling_with_scale":0,"light_mask":1,"visibility_layer":1,"z_index":0,"z_as_relative":true,"y_sort_enabled":false,"texture_filter":0,"texture_repeat":0,"material":null,"use_parent_material":false,"position":Vector2(2, 20),"rotation":0.0,"scale":Vector2(1, 1),"skew":0.0,"sprite_frames":ExtResource("2_kjn5x"),"animation":&"Cai_Masked_Walk_Down","autoplay":"","frame":0,"frame_progress":0.0,"speed_scale":1.0,"centered":true,"offset":Vector2(-1, -24),"flip_h":true,"flip_v":false,"script":null)
-
-knockback_power = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2087780079]
 position = Vector2(2, 20)
@@ -350,7 +347,7 @@ offset = Vector2(-1, -24)
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2109252420]
-position = Vector2(1, 7)
+position = Vector2(1, 8)
 shape = SubResource("RectangleShape2D_whwkn")
 
 [node name="spriteAnimationPlayer" type="AnimationPlayer" parent="." unique_id=337644496]

@@ -1,6 +1,8 @@
 extends Resource
 class_name SaveDataResource
 
+@export var current_day = 1
+
 @export var playerName = "Susie"
 @export var completionPercent = 0
 @export var timeElapsed = 0

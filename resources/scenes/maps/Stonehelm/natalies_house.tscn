@@ -9,9 +9,13 @@
 [ext_resource type="PackedScene" uid="uid://3q3vm527u3bw" path="res://resources/scenes/objects/camera.tscn" id="7_ckia8"]
 [ext_resource type="PackedScene" uid="uid://c8ka4co471t78" path="res://resources/scenes/objects/actionable.tscn" id="8_mjxws"]
 [ext_resource type="Resource" uid="uid://d0equm1i5n2hd" path="res://resources/dialogue/Testing.dialogue" id="9_w4yhq"]
+[ext_resource type="Resource" uid="uid://bsamxy80nsy7k" path="res://resources/dialogue/cutscnes/cai_house_tour.dialogue" id="10_w4yhq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1c162"]
 radius = 35.35534
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bnrxn"]
+size = Vector2(20, 64)
 
 [node name="LabLowerFloor" type="Node2D" unique_id=825236289]
 process_mode = 3
@@ -82,5 +86,15 @@ dialogFile = ExtResource("9_w4yhq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="actionable" unique_id=143101067]
 shape = SubResource("CircleShape2D_1c162")
+
+[node name="actionable2" parent="." unique_id=1999308283 instance=ExtResource("8_mjxws")]
+position = Vector2(12, 13)
+dialogFile = ExtResource("10_w4yhq")
+dialogStart = "hallway"
+activeOnStepOn = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="actionable2" unique_id=1576823905]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_bnrxn")
 
 [editable path="Doors/Door_LLFUF"]

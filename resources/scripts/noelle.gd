@@ -303,3 +303,18 @@ func commit_roll():
 
 func set_veloicy_animation_() -> void:
 	do_velocity_animations = true
+
+
+#region DEBUG
+var noclip : bool = false
+
+func toggle_noclip():
+	noclip = !noclip
+	if noclip:
+		SaveLoad.SaveFileData.movementSpeed = 200
+		$CollisionShape2D2.disabled = true
+	else:
+		SaveLoad.SaveFileData.movementSpeed = 80
+		$CollisionShape2D2.disabled = false
+
+#endregion
