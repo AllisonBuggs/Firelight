@@ -27,13 +27,13 @@ func action():
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
-		if !triggered:
-			triggered = true
-			print("triggered on enter")
-			GlobalSignalBus.spawnDoorTag = null
-			if smallText == true:
-				DialogueManager.show_dialogue_balloon_scene(CUTSCENE_BALLOON, dialogFile, dialogStart)
-			else: 
-				DialogueManager.show_dialogue_balloon_scene(BALLOON, dialogFile, dialogStart)
-			if triggerOnce == true:
-				queue_free()
+		if dialogFile:
+			if !triggered:
+				triggered = true
+				GlobalSignalBus.spawnDoorTag = null
+				if smallText == true:
+					DialogueManager.show_dialogue_balloon_scene(CUTSCENE_BALLOON, dialogFile, dialogStart)
+				else: 
+					DialogueManager.show_dialogue_balloon_scene(BALLOON, dialogFile, dialogStart)
+				if triggerOnce == true:
+					queue_free()

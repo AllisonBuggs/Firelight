@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cabh1wscrtqll"]
+
+[ext_resource type="Script" uid="uid://can0lw3qch5df" path="res://resources/scripts/autoloads/cutscene_button.gd" id="1_81ejm"]
+
+[node name="FlagEdit" type="HBoxContainer" unique_id=231380107]
+script = ExtResource("1_81ejm")
+
+[node name="Label" type="Label" parent="." unique_id=622008622]
+layout_mode = 2
+text = "awdawd"
+
+[node name="LineEdit" type="LineEdit" parent="." unique_id=1793181888]
+layout_mode = 2
+text = "wadwad"
+
+[connection signal="text_submitted" from="LineEdit" to="." method="_on_line_edit_text_submitted"]

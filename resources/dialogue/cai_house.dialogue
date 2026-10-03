@@ -1,0 +1,16 @@
+~ on_enter_bedroom
+do freezePlayer()
+if SaveLoad.SaveFileData.completed_house_tour:
+#	do player.hide()
+	do spawn_npc("res://resources/scenes/objects/NPCs/Cai.tscn", 125.0, 47.0)
+	do player.global_position = Vector2(-18.0, 13.0)
+	do player.reparent(get_npc("cai"))
+	do changeCameraTarget(player)
+	do camera.change_zoom(2.7)
+	do get_npc("cai").movement_speed = 40.0
+	do get_npc("cai").walk_to(Vector2(-75.0,-100.0))
+	Cai: You can sleep alone?
+	Cai: Good, good.
+
+do unfreezePlayer()
+=> END

@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://ck5usmblr0wtq" path="res://resources/scenes/players.tscn" id="6_d761e"]
 [ext_resource type="PackedScene" uid="uid://c8ka4co471t78" path="res://resources/scenes/objects/actionable.tscn" id="7_bvap8"]
 [ext_resource type="PackedScene" uid="uid://3q3vm527u3bw" path="res://resources/scenes/objects/camera.tscn" id="8_76q26"]
-[ext_resource type="Resource" uid="uid://bsamxy80nsy7k" path="res://resources/dialogue/cutscnes/cai_house_tour.dialogue" id="8_yvnyk"]
+[ext_resource type="Resource" uid="uid://bsamxy80nsy7k" path="res://resources/dialogue/cai_house_tour.dialogue" id="8_yvnyk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aaib2"]
 size = Vector2(6.423459, 11.5)

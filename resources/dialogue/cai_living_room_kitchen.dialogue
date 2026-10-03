@@ -74,8 +74,14 @@ Cai: But thats me,[wait:0.6] let's get you to bed.
 Cai: I'll grab some better food on my way home okay? [wait:0.6]Probably in a couple hours.
 do changeCameraTarget(player)
 do camera.change_zoom(2.7)
+do player.hide()
+do player.reparent(get_npc("cai"))
 do get_npc("cai").movement_speed = 33.0
 do get_npc("cai").walk_to(Vector2(-216.0, -288.0))
+do SaveLoad.SaveFileData.completed_house_tour = true
+do wait(6.5)
+do transitionRoom("CaiBedroom", "CBKDB")
+do unfreezePlayer()
 => END
 
 

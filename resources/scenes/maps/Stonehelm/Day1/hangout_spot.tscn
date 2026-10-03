@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bqismsdafvvch" path="res://resources/sprites/cutscenes/natalie_look.png" id="4_8jo25"]
 [ext_resource type="PackedScene" uid="uid://c8ka4co471t78" path="res://resources/scenes/objects/actionable.tscn" id="4_qon1m"]
 [ext_resource type="Texture2D" uid="uid://7asx0grldksh" path="res://resources/sprites/cutscenes/hangout_lighting.png" id="5_6y1o6"]
-[ext_resource type="Resource" uid="uid://q6q7untyvvfk" path="res://resources/dialogue/cutscnes/hangout_spot.dialogue" id="5_wv407"]
+[ext_resource type="Resource" uid="uid://q6q7untyvvfk" path="res://resources/dialogue/hangout_spot.dialogue" id="5_wv407"]
 [ext_resource type="PackedScene" uid="uid://ck5usmblr0wtq" path="res://resources/scenes/players.tscn" id="6_v14ej"]
 [ext_resource type="Texture2D" uid="uid://c454tpxgm1swb" path="res://resources/sprites/cutscenes/Chair_Back.png" id="7_ub42e"]
 [ext_resource type="Texture2D" uid="uid://b23adon1x64ur" path="res://resources/sprites/cutscenes/natalie_standing_head.png" id="7_wv407"]

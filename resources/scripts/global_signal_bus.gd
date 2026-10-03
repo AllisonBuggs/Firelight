@@ -2,8 +2,7 @@ extends Node
 
 @warning_ignore_start("unused_signal")
 
-#Player Signals
-signal do_freeze_player(_canMove: bool)
+#Player Signalss
 signal playerMovement(canMove: bool)
 signal playerPositionDataRequested(VectorToMoveTO: Vector2)
 signal playerEnteredCombat(target: String, state: String)
@@ -87,7 +86,7 @@ const holding_room_exterior = preload("uid://cm3ixshtsvv1w")
 const HANGOUT_SPOT = preload("uid://cs6yji3hx61qx")
 const NIGHT_WALK = preload("uid://daa8gf7y1ankg")
 
-
+const BALLOON = preload("uid://cn1dkki7x6vy3")
 var spawnDoorTag
 
 func ChangeMap(mapName, doorName):

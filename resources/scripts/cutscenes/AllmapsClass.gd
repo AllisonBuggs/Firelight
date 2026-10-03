@@ -45,7 +45,7 @@ func onMapSpawn(doorTag):
 	var doorPath = "Doors/Door_" + doorTag
 	print(doorPath)
 	var door = get_node(doorPath) as Door
-	GlobalSignalBus.triggerPlayerSpawn(door.Spawn.global_position, door.direction)
+	GlobalSignalBus.triggerPlayerSpawn(door.Spawn.global_position)
 
 func playSound(path):
 	audioStream.stream = load(path)

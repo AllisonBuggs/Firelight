@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://c8ka4co471t78" path="res://resources/scenes/objects/actionable.tscn" id="14_p1q85"]
 [ext_resource type="Texture2D" uid="uid://boy8rwrbc14bn" path="res://resources/sprites/Sprites/Lab_Corpse_1.png" id="15_wyt8o"]
 [ext_resource type="PackedScene" uid="uid://ciqkem08lahxa" path="res://resources/scenes/objects/actionable_give_item.tscn" id="16_8oloj"]
-[ext_resource type="Resource" uid="uid://bv6d0v2q8a61y" path="res://resources/dialogue/maps/lab_levels.dialogue" id="16_jy6gs"]
+[ext_resource type="Resource" uid="uid://bv6d0v2q8a61y" path="res://resources/dialogue/lab_levels.dialogue" id="16_jy6gs"]
 [ext_resource type="Texture2D" uid="uid://bggackwvoy4ld" path="res://resources/sprites/cutscenes/Queen_HoldPlayer.png" id="19_n1i8u"]
 [ext_resource type="AudioStream" uid="uid://hx6bv5ov24bt" path="res://resources/sfx/cutscenes/DebrisBreak.wav" id="20_fua5o"]
 [ext_resource type="PackedScene" uid="uid://02c46wm0rjp0" path="res://resources/scenes/objects/event_update_jounral.tscn" id="20_nlj16"]

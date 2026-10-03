@@ -17,7 +17,7 @@
 [ext_resource type="AudioStream" uid="uid://bqf2b06kxx18h" path="res://resources/sfx/LabDoorClose.ogg" id="13_uwx1s"]
 [ext_resource type="AudioStream" uid="uid://cn4wiiaqwoqf3" path="res://resources/sfx/LabDoorOpen.ogg" id="14_igr6h"]
 [ext_resource type="PackedScene" uid="uid://es8ecuycrs6a" path="res://resources/scenes/objects/event_combat_area.tscn" id="16_5yg50"]
-[ext_resource type="Resource" uid="uid://bv6d0v2q8a61y" path="res://resources/dialogue/maps/lab_levels.dialogue" id="18_hxdqj"]
+[ext_resource type="Resource" uid="uid://bv6d0v2q8a61y" path="res://resources/dialogue/lab_levels.dialogue" id="18_hxdqj"]
 [ext_resource type="Texture2D" uid="uid://conwyhywagika" path="res://resources/sprites/Sprites/file_cabniet.png" id="18_lw0wo"]
 [ext_resource type="FastNoiseLite" uid="uid://dp43k6ttccfrb" path="res://resources/shaders/new_fast_noise_lite.tres" id="19_8t2mb"]
 [ext_resource type="PackedScene" uid="uid://lbj5lximnw1v" path="res://resources/scenes/objects/on_enter_lights.tscn" id="19_vlfsv"]

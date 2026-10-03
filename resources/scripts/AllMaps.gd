@@ -170,11 +170,8 @@ func spawn_npc(path : String, x_pos : int, y_pos : int):
 
 func get_npc(npc_name : String):
 	var node = NPCs.get(npc_name)
-	print(node)
 	return node
 
 func awaitPathingFinish(npc : Node2D):
 	var agent : NavigationAgent2D = npc.agent
-	print("NPC", npc)
-	print("Agent", agent)
 	await agent.navigation_finished

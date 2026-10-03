@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cplbp8jsomnsy"
+path="res://.godot/imported/cai_living_room_kitchen.dialogue-a2cd249eb767627d2e3ca0ac1feda393.tres"
+
+[deps]
+
+source_file="res://resources/dialogue/cai_living_room_kitchen.dialogue"
+dest_files=["res://.godot/imported/cai_living_room_kitchen.dialogue-a2cd249eb767627d2e3ca0ac1feda393.tres"]
+
+[params]
+
+defaults=true

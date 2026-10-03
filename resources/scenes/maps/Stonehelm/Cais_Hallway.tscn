@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dxkh0vywac844" path="res://resources/scenes/objects/object_door.tscn" id="7_4r644"]
 [ext_resource type="PackedScene" uid="uid://c8ka4co471t78" path="res://resources/scenes/objects/actionable.tscn" id="7_wyd8a"]
 [ext_resource type="Texture2D" uid="uid://cwo03o4vr5uik" path="res://resources/sprites/Sprites/door/WoodenInteriorDoor_open.png" id="8_hvapc"]
-[ext_resource type="Resource" uid="uid://bsamxy80nsy7k" path="res://resources/dialogue/cutscnes/cai_house_tour.dialogue" id="8_ngj7m"]
+[ext_resource type="Resource" uid="uid://bsamxy80nsy7k" path="res://resources/dialogue/cai_house_tour.dialogue" id="8_ngj7m"]
 [ext_resource type="PackedScene" uid="uid://3q3vm527u3bw" path="res://resources/scenes/objects/camera.tscn" id="8_o7esf"]
 [ext_resource type="Texture2D" uid="uid://bwhiuwe18fke2" path="res://resources/sprites/Sprites/door/WoodenInteriorDoor_closed.png" id="9_wyd8a"]
 [ext_resource type="AudioStream" uid="uid://dvr412bxu7ayh" path="res://resources/sfx/snd_dooropen.wav" id="10_ngj7m"]

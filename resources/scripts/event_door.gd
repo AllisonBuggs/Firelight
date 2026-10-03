@@ -1,7 +1,5 @@
 extends Event
-
 class_name Door
-
 
 @export var mapToLoad = ""
 @export var entranceUsed = ""
@@ -10,5 +8,5 @@ class_name Door
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
 		print(mapToLoad, entranceUsed)
-		GlobalSignalBus.emit_signal("do_freeze_player")
+		GlobalSignalBus.emit_signal("playerMovement", false)
 		GlobalSignalBus.call_deferred("ChangeMap", mapToLoad, entranceUsed)

@@ -61,7 +61,6 @@ const directions = [
 func _ready() -> void:
 	attackRaycast.setup(10, true)
 	GlobalSignalBus.connect("hit_connected", play_hit_sound)
-	GlobalSignalBus.connect("do_freeze_player", playermovefalse)
 	GlobalSignalBus.connect("request_player_pos", send_player_pos)
 	GlobalSignalBus.connect("changePlayerTexture", changePlayerTexture)
 	GlobalSignalBus.connect("playerEnteredCombat", enteredCombat)
@@ -76,7 +75,7 @@ func move(delta : float ):
 
 @warning_ignore("unused_parameter")
 func _physics_process(delta):
-	if canMove == true :
+	if canMove:
 		if knockback_timer > 0.0:
 			velocity = knockback
 			knockback_timer -= delta
@@ -190,7 +189,6 @@ func play_hit_sound():
 			sfx_hit_player.stream = PUNCH_3
 			sfx_hit_player.play()
 
-
 func flip_twoards_mouse():
 	var mpos = get_local_mouse_position()
 	direction = mpos.normalized()
@@ -209,14 +207,9 @@ func flip_twoards_mouse():
 			7:## DOWN LEFT
 					visualSprite.flip_h = false
 
-func playermovefalse():
-	playerMoveChanged(false)
-
 func playerMoveChanged(_canMove: bool):
 	canMove = _canMove
-	if !canMove:
-		spriteAnimationPlayer.stop()
-		playerState = "Idle"
+	velocity = Vector2(0,0)
 
 func playerPositionDataRequested(positionToSet):
 		global_position = positionToSet

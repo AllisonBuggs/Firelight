@@ -2,6 +2,7 @@ extends Resource
 class_name SaveDataResource
 
 @export var current_day = 1
+@export var current_time = "morning"
 
 @export var playerName = "Susie"
 @export var completionPercent = 0
@@ -30,3 +31,7 @@ class_name SaveDataResource
 @export var Key1In = true
 @export var Key2In = true
 @export var LockdownTriggered = true
+
+#region Day 1 
+
+@export var completed_house_tour = false

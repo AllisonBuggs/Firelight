@@ -14,8 +14,8 @@
 [ext_resource type="Texture2D" uid="uid://cjdgyll22ubi0" path="res://resources/sprites/Sprites/wooden_chair.png" id="11_umawh"]
 [ext_resource type="Texture2D" uid="uid://7vx87uwrnuj1" path="res://resources/sprites/Sprites/curtained_window_2.png" id="11_who6k"]
 [ext_resource type="PackedScene" uid="uid://c8ka4co471t78" path="res://resources/scenes/objects/actionable.tscn" id="12_bpu6q"]
-[ext_resource type="Resource" uid="uid://bsamxy80nsy7k" path="res://resources/dialogue/cutscnes/cai_house_tour.dialogue" id="13_31h60"]
-[ext_resource type="Resource" uid="uid://cplbp8jsomnsy" path="res://resources/dialogue/maps/cai_living_room_kitchen.dialogue" id="16_8q5a6"]
+[ext_resource type="Resource" uid="uid://bsamxy80nsy7k" path="res://resources/dialogue/cai_house_tour.dialogue" id="13_31h60"]
+[ext_resource type="Resource" uid="uid://cplbp8jsomnsy" path="res://resources/dialogue/cai_living_room_kitchen.dialogue" id="16_8q5a6"]
 [ext_resource type="Texture2D" uid="uid://cvjelp7sop1en" path="res://resources/sprites/Sprites/big_light_spool.png" id="17_7t202"]
 [ext_resource type="Texture2D" uid="uid://b46tvr8xpmec3" path="res://resources/sprites/Sprites/tiny_light_spool.png" id="18_4tp48"]
 
@@ -123,7 +123,7 @@ position = Vector2(-3.9142928, 3)
 
 [node name="Player" parent="." unique_id=1626850227 instance=ExtResource("6_bpu6q")]
 process_mode = 1
-position = Vector2(-216, -288)
+position = Vector2(-159, -332)
 floor_constant_speed = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=886609456]
