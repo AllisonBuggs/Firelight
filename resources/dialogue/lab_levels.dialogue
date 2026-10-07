@@ -1,9 +1,9 @@
 ~ pry_door
 do freezePlayer()
-if Player.instance.inventoryContents.has("Crowbar") == true:
+if SaveLoad.SaveFileData.inventoryContents.has("Jimmy") == true:
 	do playSound("res://resources/sfx/WoodSnap5.ogg")
-	do unlockClosetDoor()
-	do destory(find_closest(actionables), actionables)
+#	do unlockClosetDoor()
+#	do destory(find_closest(actionables), actionables)
 	You: The door is now open.
 else
 	You: You pull on the door as hard as you can. It's jammed.
@@ -63,11 +63,12 @@ You: You tug on the handle but its locked
 do unfreezePlayer()
 => END
 
-~ crowbar_locker
+~ jimmy_locker
 do freezePlayer()
-You: Opening the door the light catches on a rusted crowbar.
-You: You slip the crowbar onto your back for later.
-You: Crowbar added to your inventory.
+You: Opening the door the light catches on a rusted Jimmy.
+You: You slip the Jimmy onto your back for later.
+You: A Jimmy added to your inventory.
+do giveItem("Jimmy")
 do unfreezePlayer()
 => END
 

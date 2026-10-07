@@ -91,8 +91,8 @@ func updateTooltip(slotNumber):
 		match SaveLoad.SaveFileData.inventoryContents[slotNumber]:
 				"Mixture":
 					tooltipLabelText = "A bubbling mess in a flask."
-				"Crowbar":
-					tooltipLabelText = "A rusted crowbar, used to bash and pry."
+				"Jimmy":
+					tooltipLabelText = "A rusted Jimmy, too weak to bash but might unlock a door."
 				"None": 
 					tooltipLabelText = "Nothing"
 				"GaurdKey1": 

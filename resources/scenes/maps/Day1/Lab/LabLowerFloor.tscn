@@ -6,7 +6,6 @@
 [ext_resource type="Script" uid="uid://hraudamater6" path="res://resources/scripts/FootStepsTilemapScript.gd" id="3_70nc6"]
 [ext_resource type="PackedScene" uid="uid://chnesmup7fj8u" path="res://resources/scenes/objects/event_door.tscn" id="4_70nc6"]
 [ext_resource type="AudioStream" uid="uid://dmosityscghyn" path="res://resources/sfx/cutscenes/bodyFallFromDrop.wav" id="5_p1q85"]
-[ext_resource type="FastNoiseLite" uid="uid://dp43k6ttccfrb" path="res://resources/shaders/new_fast_noise_lite.tres" id="7_jsypn"]
 [ext_resource type="PackedScene" uid="uid://dxkh0vywac844" path="res://resources/scenes/objects/object_door.tscn" id="9_blj3d"]
 [ext_resource type="Texture2D" uid="uid://pyyesjvcw6yi" path="res://resources/sprites/Sprites/door/lab_single_open.png" id="10_05p42"]
 [ext_resource type="PackedScene" uid="uid://ck5usmblr0wtq" path="res://resources/scenes/players.tscn" id="10_p1q85"]
@@ -27,8 +26,10 @@
 [ext_resource type="Texture2D" uid="uid://bn11o7a6drgx0" path="res://resources/sprites/Sprites/locker_closed.png" id="29_gmgiu"]
 [ext_resource type="PackedScene" uid="uid://3q3vm527u3bw" path="res://resources/scenes/objects/camera.tscn" id="31_vu8r7"]
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_h6ih0"]
-noise = ExtResource("7_jsypn")
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_f5t41"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_rlw81"]
+noise = SubResource("FastNoiseLite_f5t41")
 
 [sub_resource type="Gradient" id="Gradient_3y7n5"]
 interpolation_color_space = 2
@@ -430,6 +431,12 @@ stream = ExtResource("20_fua5o")
 process_mode = 1
 stream = ExtResource("5_p1q85")
 
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=799997178]
+position = Vector2(1535.5, -1623)
+scale = Vector2(2.6308594, 4.4921875)
+editor_only = true
+texture = SubResource("NoiseTexture2D_rlw81")
+
 [node name="Doors" type="Node2D" parent="." unique_id=859125480]
 
 [node name="Door_LLFUF" parent="Doors" unique_id=1341049881 instance=ExtResource("4_70nc6")]
@@ -441,13 +448,6 @@ entranceUsed = "LFUFD"
 [node name="Marker2D" parent="Doors/Door_LLFUF" index="1" unique_id=1701488384]
 position = Vector2(-0.30867922, -33)
 
-[node name="PointLight2D2" type="PointLight2D" parent="." unique_id=866663988]
-position = Vector2(-14, 16.999985)
-scale = Vector2(1351.7593, 808.77985)
-editor_only = true
-blend_mode = 2
-texture = SubResource("NoiseTexture2D_h6ih0")
-
 [node name="Player" parent="." unique_id=1626850227 instance=ExtResource("10_p1q85")]
 process_mode = 1
 z_index = 1
@@ -455,7 +455,6 @@ position = Vector2(1033, -2580)
 floor_constant_speed = true
 
 [node name="PointLight2D" type="PointLight2D" parent="Player" unique_id=1507966151]
-visible = false
 scale = Vector2(4.59375, 4.59375)
 color = Color(1, 0.38144204, 0.37121847, 1)
 blend_mode = 2

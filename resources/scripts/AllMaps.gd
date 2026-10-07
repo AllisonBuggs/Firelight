@@ -130,13 +130,13 @@ func toggleDoorState(doorName : String):
 	print(door)
 	door.action()
 
-func find_closest(objectArrayToFind):
+func find_closest(dict):
 	var lowest_distance = INF    # Initialized as infinity to avoid unintended behaviour at large distances
 	var closest_object
-	for object in objectArrayToFind:
-		var distance = object.global_position.distance_squared_to(GlobalSignalBus.player.global_position)
+	for value in dict:
+		var distance = value.global_position.distance_squared_to(GlobalSignalBus.player.global_position)
 		if distance < lowest_distance:
-			closest_object = object
+			closest_object = value
 			lowest_distance = distance
 
 	if !is_instance_valid(closest_object) or lowest_distance == INF:
