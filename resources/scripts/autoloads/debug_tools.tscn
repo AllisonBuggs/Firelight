@@ -5,7 +5,7 @@
 [node name="DebugTools" type="CanvasLayer" unique_id=1897850068]
 script = ExtResource("1_dckss")
 
-[node name="User_Interface" type="Control" parent="." unique_id=584111463]
+[node name="UIs" type="Control" parent="." unique_id=584111463]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -13,7 +13,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ScrollContainer" type="ScrollContainer" parent="User_Interface" unique_id=1175347577]
+[node name="ScrollContainer" type="ScrollContainer" parent="UIs" unique_id=1175347577]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 1
 anchors_preset = 9
@@ -22,10 +22,10 @@ grow_vertical = 2
 horizontal_scroll_mode = 0
 scroll_horizontal_by_default = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="User_Interface/ScrollContainer" unique_id=1557224050]
+[node name="VBoxContainer" type="VBoxContainer" parent="UIs/ScrollContainer" unique_id=1557224050]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="LineEdit" type="LineEdit" parent="User_Interface/ScrollContainer/VBoxContainer" unique_id=2098737484]
+[node name="LineEdit" type="LineEdit" parent="UIs/ScrollContainer/VBoxContainer" unique_id=2098737484]
 layout_mode = 2

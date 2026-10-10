@@ -52,7 +52,6 @@ visible = false
 mouse_filter = 1
 
 [node name="Settings" parent="CanvasLayer" unique_id=581721721 instance=ExtResource("5_sg8ch")]
-visible = false
 offset_left = 68.0
 offset_top = 84.0
 offset_right = 38.0

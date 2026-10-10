@@ -10,7 +10,6 @@ var toggle = false
 @onready var inventory: Control = $CanvasLayer/Inventory
 @onready var journal: Control = $CanvasLayer/StorySummary
 
-
 func _ready() -> void:
 	pauseMenu.hide()
 	GlobalSignalBus.connect("closeAllMenus", closeAllMenus)

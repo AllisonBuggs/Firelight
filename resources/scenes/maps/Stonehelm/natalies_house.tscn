@@ -55,7 +55,7 @@ process_mode = 1
 [node name="Doors" type="Node2D" parent="." unique_id=859125480]
 
 [node name="Door_LLFUF" parent="Doors" unique_id=1341049881 instance=ExtResource("5_bnrxn")]
-position = Vector2(2, -157)
+position = Vector2(48, 128)
 scale = Vector2(9.963483, 1)
 mapToLoad = "LabUpperFloor"
 entranceUsed = "LFUFD"

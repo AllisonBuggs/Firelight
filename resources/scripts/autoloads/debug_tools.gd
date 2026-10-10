@@ -5,9 +5,9 @@ const OPEN = preload("uid://bm7hev4ranqr1")
 
 @export var player : Player
 @export var title : String
-@onready var user_interface: Control = $User_Interface
+@onready var user_interface: Control = $UIs
 
-@onready var cutscene_box: VBoxContainer = $User_Interface/ScrollContainer/VBoxContainer
+@onready var cutscene_box: VBoxContainer = $UIs/ScrollContainer/VBoxContainer
 
 
 var active : bool = true
