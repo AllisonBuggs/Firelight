@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://hraudamater6" path="res://resources/scripts/FootStepsTilemapScript.gd" id="3_g26ls"]
 [ext_resource type="Material" uid="uid://2secgp2ouoi8" path="res://resources/shaders/shadowafect.tres" id="4_4yx52"]
 [ext_resource type="PackedScene" uid="uid://chnesmup7fj8u" path="res://resources/scenes/objects/event_door.tscn" id="5_1wtan"]
-[ext_resource type="PackedScene" uid="uid://ck5usmblr0wtq" path="res://resources/scenes/players.tscn" id="6_bpjot"]
+[ext_resource type="PackedScene" uid="uid://ck5usmblr0wtq" path="res://resources/scenes/objects/players/players.tscn" id="6_bpjot"]
 [ext_resource type="PackedScene" uid="uid://3q3vm527u3bw" path="res://resources/scenes/objects/camera.tscn" id="7_a5bve"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pretd"]

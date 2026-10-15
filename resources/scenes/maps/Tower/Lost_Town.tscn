@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://hraudamater6" path="res://resources/scripts/FootStepsTilemapScript.gd" id="3_kaghl"]
 [ext_resource type="Material" uid="uid://2secgp2ouoi8" path="res://resources/shaders/shadowafect.tres" id="4_gtt8q"]
 [ext_resource type="PackedScene" uid="uid://chnesmup7fj8u" path="res://resources/scenes/objects/event_door.tscn" id="5_pxswb"]
-[ext_resource type="PackedScene" uid="uid://ck5usmblr0wtq" path="res://resources/scenes/players.tscn" id="6_maeva"]
+[ext_resource type="PackedScene" uid="uid://ck5usmblr0wtq" path="res://resources/scenes/objects/players/players.tscn" id="6_maeva"]
 [ext_resource type="PackedScene" uid="uid://3q3vm527u3bw" path="res://resources/scenes/objects/camera.tscn" id="7_qrp6i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lwtcs"]
@@ -87,8 +87,8 @@ position = Vector2(-5.620524, -40)
 [node name="Door_LT3" parent="Doors" unique_id=397042447 instance=ExtResource("5_pxswb")]
 position = Vector2(280, -72)
 scale = Vector2(9.963483, 1)
-mapToLoad = "LabUpperFloor"
-entranceUsed = "LFUFD"
+mapToLoad = "LOST_TOWN_INTERIORS"
+entranceUsed = "LTI2"
 
 [node name="CollisionShape2D" parent="Doors/Door_LT3" index="0" unique_id=1406666274]
 position = Vector2(-5.6205254, -2.25)
@@ -100,8 +100,8 @@ position = Vector2(-5.620524, 32)
 [node name="Door_LT4" parent="Doors" unique_id=2108294196 instance=ExtResource("5_pxswb")]
 position = Vector2(-400, 56)
 scale = Vector2(9.963483, 1)
-mapToLoad = "LabUpperFloor"
-entranceUsed = "LFUFD"
+mapToLoad = "LOST_TOWN_INTERIORS"
+entranceUsed = "LTI1"
 
 [node name="CollisionShape2D" parent="Doors/Door_LT4" index="0" unique_id=1406666274]
 position = Vector2(-5.2190704, 4)

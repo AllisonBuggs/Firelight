@@ -96,7 +96,7 @@ const HAROLDS_OFFICE = preload("uid://cj2p47avs6fix")
 const NATALIES_HOUSE = preload("uid://28vss2pscypy")
 const BALCONY_DAY_1 = preload("uid://70ywnqp1ndh0")
 const WALK_TO_THE_PARK = preload("uid://cm3ixshtsvv1w")
-const MISC_ROOMS_MAP = preload("uid://djibpy4welrep")
+const LOST_TOWN_INTERIORS = preload("uid://dk2ffjjac2qw1")
 
 # Sewer
 const SEWER_CAI_HALL = preload("uid://cqsufl0ic0nai")
@@ -125,6 +125,8 @@ var spawnDoorTag
 func ChangeMap(mapName, doorName):
 	var mapToLoad
 	match mapName:
+		"LOST_TOWN_INTERIORS":
+			mapToLoad = LOST_TOWN_INTERIORS
 		"LOST_CITY":
 			mapToLoad = LOST_CITY
 		"LOST_TOWN":
@@ -143,8 +145,6 @@ func ChangeMap(mapName, doorName):
 			mapToLoad = TOWER_STAIRWAY_1
 		"TOWER_STAIRWAY_2":
 			mapToLoad = TOWER_STAIRWAY_2
-		"MISC_ROOMS_MAP":
-			mapToLoad = MISC_ROOMS_MAP
 		"SEWER_CAI_HALL":
 			mapToLoad = SEWER_CAI_HALL
 		"SEWER_PUZZLE_ROOM":

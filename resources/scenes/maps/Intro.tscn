@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://duplyevqp8ik6" path="res://resources/scripts/cutscenes/IntroSpetics.gd" id="1_gtngw"]
 [ext_resource type="AudioStream" uid="uid://5gyj15h1e171" path="res://resources/sfx/fleshinsert.ogg" id="2_4rm10"]
 [ext_resource type="AudioStream" uid="uid://o0umli15ilwg" path="res://resources/sfx/Pulse.wav" id="3_4rm10"]
-[ext_resource type="PackedScene" uid="uid://ck5usmblr0wtq" path="res://resources/scenes/players.tscn" id="3_gtngw"]
+[ext_resource type="PackedScene" uid="uid://ck5usmblr0wtq" path="res://resources/scenes/objects/players/players.tscn" id="3_gtngw"]
 [ext_resource type="Texture2D" uid="uid://bmh6fnbqotxsu" path="res://resources/sprites/cutscenes/IntroOverlay1.png" id="5_pyiv2"]
 [ext_resource type="Texture2D" uid="uid://bgy85vu4gluy3" path="res://resources/sprites/cutscenes/FleshHome_BG.png" id="6_gtngw"]
 [ext_resource type="Texture2D" uid="uid://ce4vt8q87nihc" path="res://resources/sprites/cutscenes/FleshyRestrained.png" id="7_xr080"]

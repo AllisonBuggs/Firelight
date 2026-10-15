@@ -574,11 +574,10 @@ offset_bottom = -105.0
 grow_horizontal = 2
 scale = Vector2(3, 3)
 pivot_offset = Vector2(100, 0)
-value = 100.0
-nine_patch_stretch = true
 texture_under = ExtResource("7_6x58v")
 texture_over = ExtResource("8_5jpuj")
 texture_progress = ExtResource("9_a1lpd")
+texture_progress_offset = Vector2(28, 21)
 script = ExtResource("10_qipom")
 
 [node name="boss_hp_label" type="Label" parent="boss_bar" unique_id=944817294]

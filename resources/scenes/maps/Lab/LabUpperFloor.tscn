@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://c8ka4co471t78" path="res://resources/scenes/objects/actionable.tscn" id="7_uwx1s"]
 [ext_resource type="PackedScene" uid="uid://3q3vm527u3bw" path="res://resources/scenes/objects/camera.tscn" id="8_e0fos"]
 [ext_resource type="PackedScene" uid="uid://dxkh0vywac844" path="res://resources/scenes/objects/object_door.tscn" id="10_33yww"]
-[ext_resource type="PackedScene" uid="uid://ck5usmblr0wtq" path="res://resources/scenes/players.tscn" id="10_vlfsv"]
+[ext_resource type="PackedScene" uid="uid://ck5usmblr0wtq" path="res://resources/scenes/objects/players/players.tscn" id="10_vlfsv"]
 [ext_resource type="Texture2D" uid="uid://pyyesjvcw6yi" path="res://resources/sprites/Sprites/door/lab_single_open.png" id="11_n03fc"]
 [ext_resource type="Texture2D" uid="uid://3sv281jsfg61" path="res://resources/sprites/Sprites/door/lab_single_closed.png" id="12_5yg50"]
 [ext_resource type="AudioStream" uid="uid://drwwxjj3nq7w8" path="res://resources/sfx/Common/doorlockedtry.wav" id="13_c6rhd"]

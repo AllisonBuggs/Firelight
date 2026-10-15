@@ -8,7 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://dmosityscghyn" path="res://resources/sfx/cutscenes/bodyFallFromDrop.wav" id="5_p1q85"]
 [ext_resource type="PackedScene" uid="uid://dxkh0vywac844" path="res://resources/scenes/objects/object_door.tscn" id="9_blj3d"]
 [ext_resource type="Texture2D" uid="uid://pyyesjvcw6yi" path="res://resources/sprites/Sprites/door/lab_single_open.png" id="10_05p42"]
-[ext_resource type="PackedScene" uid="uid://ck5usmblr0wtq" path="res://resources/scenes/players.tscn" id="10_p1q85"]
+[ext_resource type="PackedScene" uid="uid://ck5usmblr0wtq" path="res://resources/scenes/objects/players/players.tscn" id="10_p1q85"]
 [ext_resource type="Texture2D" uid="uid://3sv281jsfg61" path="res://resources/sprites/Sprites/door/lab_single_closed.png" id="11_ekq8m"]
 [ext_resource type="AudioStream" uid="uid://cn4wiiaqwoqf3" path="res://resources/sfx/LabDoorOpen.ogg" id="12_8oloj"]
 [ext_resource type="AudioStream" uid="uid://bqf2b06kxx18h" path="res://resources/sfx/LabDoorClose.ogg" id="13_n1i8u"]

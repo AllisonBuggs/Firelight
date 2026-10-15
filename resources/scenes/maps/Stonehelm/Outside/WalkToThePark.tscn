@@ -5,7 +5,7 @@
 [ext_resource type="TileSet" uid="uid://c4mxm77yi2rpc" path="res://resources/tileset/tileset.tres" id="3_8ilft"]
 [ext_resource type="Script" uid="uid://hraudamater6" path="res://resources/scripts/FootStepsTilemapScript.gd" id="4_4jwho"]
 [ext_resource type="PackedScene" uid="uid://chnesmup7fj8u" path="res://resources/scenes/objects/event_door.tscn" id="5_ebsd7"]
-[ext_resource type="PackedScene" uid="uid://ck5usmblr0wtq" path="res://resources/scenes/players.tscn" id="6_cnq5e"]
+[ext_resource type="PackedScene" uid="uid://ck5usmblr0wtq" path="res://resources/scenes/objects/players/players.tscn" id="6_cnq5e"]
 [ext_resource type="Texture2D" uid="uid://ddrip0keseg4s" path="res://resources/sprites/particle/rain_particles.png" id="8_b67c6"]
 [ext_resource type="PackedScene" uid="uid://3q3vm527u3bw" path="res://resources/scenes/objects/camera.tscn" id="8_ir3bc"]
 [ext_resource type="PackedScene" uid="uid://c8ka4co471t78" path="res://resources/scenes/objects/actionable.tscn" id="8_qv8hc"]

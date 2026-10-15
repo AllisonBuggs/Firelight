@@ -1,5 +1,21 @@
 extends NPCClass
 class_name boss_class
+@export var health : int
+@export var limbs : Dictionary = {}
+
+@export var right_leg_hp = 100
+@export var left_arm_hp = 100
+@export var right_arm_hp = 100
+@export var torso_hp = 100
+
+@onready var rightleg_area: Area2D = $rightleg_area
+@onready var leftleg_area: Area2D = $leftleg_area
+@onready var rightarm_area: Area2D = $rightarm_area
+@onready var leftarm_area: Area2D = $leftarm_area
+@onready var body_area: Area2D = $body_area
+
+@onready var attack_ray_cast: RayCast2D = $AttackRayCast
+var attack_dmg : int = 0
 
 var attacks_avilable = []
 var idle_available = []
@@ -9,9 +25,8 @@ var animations = [ani_walk_up, ani_walk_down, ani_walk_side]
 var current_action : String = "NULL"
 var current_phase : int = 0
 
-var health : int
 var stamina : int
-var attack_dmg : int
+
 var boss_title : String
 var default_movement_speed : float = 4.0
 
@@ -24,8 +39,8 @@ var ani_walk_side : String
 
 @export var active : bool = true
 
-@onready var attack_ray_cast: RayCast2D = $AttackRayCast
-@onready var boss_audio_player: AudioStreamPlayer = $boss_audio_player
+
+@onready var boss_audio_player: AudioStreamPlayer2D = $boss_audio_player
 @onready var damage_player: AnimationPlayer = $damage_player
 
 @onready var rand_gen = RandomNumberGenerator.new()
@@ -35,9 +50,43 @@ var ani_walk_side : String
 
 var glob_player_pos : Vector2
 
+
+func _ready() -> void:
+	registerLimb("rightarm_area", rightarm_area)
+	registerLimb("leftarm_area", leftarm_area)
+	registerLimb("rightleg_area", rightleg_area)
+	registerLimb("leftleg_area", leftleg_area)
+	registerLimb("body_area", body_area)
+	setup()
+	start()
+
 func setup():
 	attack_ray_cast.setup(attack_dmg, false)
+	updateHealthBar()
+	GlobalSignalBus.emit_signal("set_bar_max", health)
+	updateHealthBar()
 	GlobalSignalBus.connect("got_player_pos", update_player_pos)
+
+
+func registerLimb(limbName : String, nodeReference):
+	limbs.set(limbName, nodeReference)
+
+func removeLimb(limbName : String):
+	limbs.erase(limbName)
+
+func updateHealthBar():
+	var temp = health
+	health = 0
+	for limb in limbs:
+		if limb == "body_area":
+			health += limbs[limb].limbHealth
+	GlobalSignalBus.emit_signal("update_boss_health_bar", health, temp)
+
+func deal_contact_dmg(body: Node2D) -> void:
+	if body is not boss_class:
+		if body.has_method("hurt"):
+			var knock_dir = (body.global_position - global_position).normalized()
+			body.hurt(attack_dmg, knock_dir)
 
 func choose_random_action(array : Array):
 	current_action = array.pick_random()
@@ -115,8 +164,3 @@ func cycle_phase():
 				next_cycle_time = 3
 		phase_timer.start(next_cycle_time)
 	
-func deal_contact_dmg(body: Node2D) -> void:
-	if body is not boss_class:
-		if body.has_method("hurt"):
-			var knock_dir = (body.global_position - global_position).normalized()
-			body.hurt(attack_dmg, knock_dir)

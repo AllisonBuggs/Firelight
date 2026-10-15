@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bijlihp42or3o" path="res://resources/scripts/AllMaps.gd" id="1_nh3ud"]
 [ext_resource type="TileSet" uid="uid://c4mxm77yi2rpc" path="res://resources/tileset/tileset.tres" id="2_j71tv"]
 [ext_resource type="Script" uid="uid://hraudamater6" path="res://resources/scripts/FootStepsTilemapScript.gd" id="3_gkb54"]
-[ext_resource type="PackedScene" uid="uid://ck5usmblr0wtq" path="res://resources/scenes/players.tscn" id="6_h4ku0"]
+[ext_resource type="PackedScene" uid="uid://ck5usmblr0wtq" path="res://resources/scenes/objects/players/players.tscn" id="6_h4ku0"]
 [ext_resource type="PackedScene" uid="uid://3q3vm527u3bw" path="res://resources/scenes/objects/camera.tscn" id="7_3l1bp"]
 
 [node name="LabLowerFloor" type="Node2D" unique_id=825236289 node_paths=PackedStringArray("camera")]
