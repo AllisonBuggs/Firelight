@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://c2n2uj54764qr"
+path="res://.godot/imported/workarea2.dialogue-96965ac7497bcceaa4a21009759fab2a.tres"
+
+[deps]
+
+source_file="res://resources/dialogue/workarea2.dialogue"
+dest_files=["res://.godot/imported/workarea2.dialogue-96965ac7497bcceaa4a21009759fab2a.tres"]
+
+[params]
+
+defaults=true

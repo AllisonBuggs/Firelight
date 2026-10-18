@@ -5,7 +5,9 @@
 [ext_resource type="Script" uid="uid://hraudamater6" path="res://resources/scripts/FootStepsTilemapScript.gd" id="3_kld3o"]
 [ext_resource type="PackedScene" uid="uid://chnesmup7fj8u" path="res://resources/scenes/objects/event_door.tscn" id="5_rgcs1"]
 [ext_resource type="PackedScene" uid="uid://ck5usmblr0wtq" path="res://resources/scenes/objects/players/players.tscn" id="6_esf5x"]
+[ext_resource type="PackedScene" uid="uid://c8ka4co471t78" path="res://resources/scenes/objects/actionable.tscn" id="6_m4xam"]
 [ext_resource type="PackedScene" uid="uid://3q3vm527u3bw" path="res://resources/scenes/objects/camera.tscn" id="7_2mh5t"]
+[ext_resource type="Resource" uid="uid://dtyxfeo0vkdfm" path="res://resources/dialogue/factory_storage_hall.dialogue" id="7_fw731"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r64n0"]
 size = Vector2(5.6205215, 288)
@@ -13,7 +15,10 @@ size = Vector2(5.6205215, 288)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a7bwl"]
 size = Vector2(2.0073214, 64)
 
-[node name="LabLowerFloor" type="Node2D" unique_id=825236289 node_paths=PackedStringArray("camera")]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1c162"]
+size = Vector2(42, 128)
+
+[node name="factory_storage_hall" type="Node2D" unique_id=825236289 node_paths=PackedStringArray("camera")]
 process_mode = 3
 y_sort_enabled = true
 script = ExtResource("1_dw8nn")
@@ -88,6 +93,16 @@ floor_constant_speed = true
 [node name="Actionable" type="Node2D" parent="." unique_id=1200330021]
 
 [node name="Cutscenes" type="Node2D" parent="." unique_id=585520158]
+
+[node name="actionable" parent="Cutscenes" unique_id=148220324 instance=ExtResource("6_m4xam")]
+position = Vector2(-456, 0)
+dialogFile = ExtResource("7_fw731")
+dialogStart = "meetissac"
+activeOnStepOn = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cutscenes/actionable" unique_id=1650546465]
+position = Vector2(11, 0)
+shape = SubResource("RectangleShape2D_1c162")
 
 [node name="PLAYERCAMERA" parent="." unique_id=430412013 node_paths=PackedStringArray("target") instance=ExtResource("7_2mh5t")]
 z_index = 6

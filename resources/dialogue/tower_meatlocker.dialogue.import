@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://uuy47jwnfqvi"
+path="res://.godot/imported/tower_meatlocker.dialogue-1a03a9eb889dfaf7d1611c6969b2ddb6.tres"
+
+[deps]
+
+source_file="res://resources/dialogue/tower_meatlocker.dialogue"
+dest_files=["res://.godot/imported/tower_meatlocker.dialogue-1a03a9eb889dfaf7d1611c6969b2ddb6.tres"]
+
+[params]
+
+defaults=true

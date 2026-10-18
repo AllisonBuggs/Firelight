@@ -7,16 +7,32 @@
 [ext_resource type="PackedScene" uid="uid://chnesmup7fj8u" path="res://resources/scenes/objects/event_door.tscn" id="5_ed3qp"]
 [ext_resource type="PackedScene" uid="uid://ck5usmblr0wtq" path="res://resources/scenes/objects/players/players.tscn" id="6_dd3m2"]
 [ext_resource type="PackedScene" uid="uid://3q3vm527u3bw" path="res://resources/scenes/objects/camera.tscn" id="7_n16kj"]
+[ext_resource type="PackedScene" uid="uid://c8ka4co471t78" path="res://resources/scenes/objects/actionable.tscn" id="7_na5va"]
+[ext_resource type="Resource" uid="uid://d07esl20651ry" path="res://resources/dialogue/lost_city.dialogue" id="8_b8pwv"]
 [ext_resource type="PackedScene" uid="uid://c44qlgcyff3wi" path="res://resources/scenes/objects/Enemies/dummy_test.tscn" id="8_s2q51"]
 [ext_resource type="PackedScene" uid="uid://rhq2lpg0pb46" path="res://resources/scenes/objects/combat_zone.tscn" id="9_84w2p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6uiq3"]
 size = Vector2(6.4234567, 24)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rlw81"]
+size = Vector2(73, 108)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b8pwv"]
+size = Vector2(172.5, 134)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f5t41"]
+size = Vector2(6056, 208)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1c162"]
 size = Vector2(248, 210)
 
-[node name="LabLowerFloor" type="Node2D" unique_id=825236289]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_b8pwv"]
+vertices = PackedVector2Array(38, -2, -190, -2, -190, -190, 38, -190)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-200, -200, 48, -200, 48, 8, -200, 8)])
+
+[node name="lost_city" type="Node2D" unique_id=825236289]
 process_mode = 3
 y_sort_enabled = true
 script = ExtResource("1_r3nts")
@@ -74,6 +90,60 @@ floor_constant_speed = true
 
 [node name="Actionable" type="Node2D" parent="." unique_id=1200330021]
 
+[node name="sewers_actionable" parent="Actionable" unique_id=148220324 instance=ExtResource("7_na5va")]
+position = Vector2(1864, -3480)
+dialogFile = ExtResource("8_b8pwv")
+dialogStart = "sewers"
+activeOnStepOn = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable/sewers_actionable" unique_id=772152363]
+position = Vector2(23, -12)
+shape = SubResource("RectangleShape2D_rlw81")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Actionable/sewers_actionable" unique_id=1372072330]
+position = Vector2(56, -88)
+shape = SubResource("RectangleShape2D_rlw81")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Actionable/sewers_actionable" unique_id=433871503]
+position = Vector2(123.5, -146)
+shape = SubResource("RectangleShape2D_rlw81")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Actionable/sewers_actionable" unique_id=1455007965]
+position = Vector2(-48, 0)
+shape = SubResource("RectangleShape2D_rlw81")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Actionable/sewers_actionable" unique_id=149414651]
+position = Vector2(-104, 40)
+shape = SubResource("RectangleShape2D_rlw81")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Actionable/sewers_actionable" unique_id=622868202]
+position = Vector2(-225.75, 83)
+shape = SubResource("RectangleShape2D_b8pwv")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Actionable/sewers_actionable" unique_id=1451979333]
+position = Vector2(-232, -40)
+shape = SubResource("RectangleShape2D_rlw81")
+
+[node name="growl_actionable" parent="Actionable" unique_id=1527875955 instance=ExtResource("7_na5va")]
+position = Vector2(1848, -336)
+dialogFile = ExtResource("8_b8pwv")
+dialogStart = "hungerpains"
+activeOnStepOn = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable/growl_actionable" unique_id=846113878]
+position = Vector2(132, -80)
+shape = SubResource("RectangleShape2D_f5t41")
+
+[node name="growl_actionable2" parent="Actionable" unique_id=1860433983 instance=ExtResource("7_na5va")]
+position = Vector2(1848, -1376)
+dialogFile = ExtResource("8_b8pwv")
+dialogStart = "stomachgrowl"
+activeOnStepOn = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable/growl_actionable2" unique_id=1616674820]
+position = Vector2(-20, -80)
+shape = SubResource("RectangleShape2D_f5t41")
+
 [node name="Cutscenes" type="Node2D" parent="." unique_id=585520158]
 
 [node name="PLAYERCAMERA" parent="." unique_id=430412013 node_paths=PackedStringArray("target") instance=ExtResource("7_n16kj")]
@@ -89,5 +159,8 @@ position = Vector2(-63, -103)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CombatZone" unique_id=1800820511]
 position = Vector2(-76, -95)
 shape = SubResource("RectangleShape2D_1c162")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=251831780]
+navigation_polygon = SubResource("NavigationPolygon_b8pwv")
 
 [editable path="Doors/Door_LC1"]

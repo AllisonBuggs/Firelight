@@ -197,3 +197,6 @@ do wait(1)
 do destory(camera_marker, null)
 do destory(tenticle, null)
 => END
+
+~ battle_tutorial
+=> END

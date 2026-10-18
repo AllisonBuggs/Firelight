@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cihd5jt43aneg"
+path="res://.godot/imported/factoryfuelroom.dialogue-13fdb8eae1792adf60cb42f41e5990a9.tres"
+
+[deps]
+
+source_file="res://resources/dialogue/factoryfuelroom.dialogue"
+dest_files=["res://.godot/imported/factoryfuelroom.dialogue-13fdb8eae1792adf60cb42f41e5990a9.tres"]
+
+[params]
+
+defaults=true

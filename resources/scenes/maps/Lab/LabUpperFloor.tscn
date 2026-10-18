@@ -67,6 +67,12 @@ size = Vector2(159, 130)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5tki2"]
 size = Vector2(111, 21)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1c162"]
+size = Vector2(176, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hxdqj"]
+size = Vector2(24, 116)
+
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_vlfsv"]
 width = 75
 height = 281
@@ -1320,6 +1326,20 @@ smallText = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Actionables/ExitLab" unique_id=1793415506]
 position = Vector2(0.5, -8.5)
 shape = SubResource("RectangleShape2D_5tki2")
+
+[node name="battletut_actionable" parent="Actionables" unique_id=405836150 instance=ExtResource("7_uwx1s")]
+position = Vector2(1392, -928)
+dialogFile = ExtResource("18_hxdqj")
+dialogStart = "battle_tutorial"
+activeOnStepOn = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionables/battletut_actionable" unique_id=674947211]
+position = Vector2(-8, 1)
+shape = SubResource("RectangleShape2D_1c162")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Actionables/battletut_actionable" unique_id=545795886]
+position = Vector2(-84, -70)
+shape = SubResource("RectangleShape2D_hxdqj")
 
 [node name="Lights" type="Node2D" parent="." unique_id=1749280156]
 

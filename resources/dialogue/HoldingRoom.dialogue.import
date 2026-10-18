@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dnupoq3i8praw"
+path="res://.godot/imported/HoldingRoom.dialogue-19f3e6c0e684f225b024dcf0b8b3990a.tres"
+
+[deps]
+
+source_file="res://resources/dialogue/HoldingRoom.dialogue"
+dest_files=["res://.godot/imported/HoldingRoom.dialogue-19f3e6c0e684f225b024dcf0b8b3990a.tres"]
+
+[params]
+
+defaults=true

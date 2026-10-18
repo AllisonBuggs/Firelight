@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://c8ka4co471t78" path="res://resources/scenes/objects/actionable.tscn" id="7_bvap8"]
 [ext_resource type="PackedScene" uid="uid://3q3vm527u3bw" path="res://resources/scenes/objects/camera.tscn" id="8_76q26"]
 [ext_resource type="Resource" uid="uid://bsamxy80nsy7k" path="res://resources/dialogue/cai_house_tour.dialogue" id="8_yvnyk"]
+[ext_resource type="Resource" uid="uid://cc6d1feayerfj" path="res://resources/dialogue/CaiApartmentHall.dialogue" id="9_geyre"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aaib2"]
 size = Vector2(6.423459, 11.5)
@@ -17,6 +18,9 @@ size = Vector2(6.423459, 11.5)
 size = Vector2(3.261912, 11.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g2384"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_awk8v"]
+size = Vector2(80, 160)
 
 [node name="CaiApartmentHall" type="Node2D" unique_id=825236289]
 process_mode = 3
@@ -83,14 +87,24 @@ floor_constant_speed = true
 
 [node name="Actionable" type="Node2D" parent="." unique_id=1200330021]
 
-[node name="actionable" parent="Actionable" unique_id=148220324 instance=ExtResource("7_bvap8")]
+[node name="enter_actionable" parent="Actionable" unique_id=148220324 instance=ExtResource("7_bvap8")]
 position = Vector2(-641, -43)
 dialogFile = ExtResource("8_yvnyk")
 dialogStart = "apartment_hall"
 activeOnStepOn = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable/actionable" unique_id=798473050]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable/enter_actionable" unique_id=798473050]
 shape = SubResource("RectangleShape2D_g2384")
+
+[node name="confront_actionable" parent="Actionable" unique_id=319061203 instance=ExtResource("7_bvap8")]
+position = Vector2(-80, -40)
+dialogFile = ExtResource("9_geyre")
+dialogStart = "confront"
+activeOnStepOn = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable/confront_actionable" unique_id=749842013]
+position = Vector2(0, 56)
+shape = SubResource("RectangleShape2D_awk8v")
 
 [node name="Cutscenes" type="Node2D" parent="." unique_id=585520158]
 

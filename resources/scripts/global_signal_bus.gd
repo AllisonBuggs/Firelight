@@ -95,7 +95,7 @@ const AUBREYS_APARTMENT = preload("uid://bgggc6qcagbg8")
 const HAROLDS_OFFICE = preload("uid://cj2p47avs6fix")
 const NATALIES_HOUSE = preload("uid://28vss2pscypy")
 const BALCONY_DAY_1 = preload("uid://70ywnqp1ndh0")
-const WALK_TO_THE_PARK = preload("uid://cm3ixshtsvv1w")
+const WALK_IN_THE_PARK = preload("uid://cm3ixshtsvv1w")
 const LOST_TOWN_INTERIORS = preload("uid://dk2ffjjac2qw1")
 
 # Sewer
@@ -125,6 +125,8 @@ var spawnDoorTag
 func ChangeMap(mapName, doorName):
 	var mapToLoad
 	match mapName:
+		"WALK_IN_THE_PARK":
+			mapToLoad = WALK_IN_THE_PARK
 		"LOST_TOWN_INTERIORS":
 			mapToLoad = LOST_TOWN_INTERIORS
 		"LOST_CITY":

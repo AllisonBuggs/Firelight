@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://7ec8rp7sjvnj"
+path="res://.godot/imported/CaiBathroom.dialogue-7daa9bd888698e7bfae57ac84a86e5ba.tres"
+
+[deps]
+
+source_file="res://resources/dialogue/CaiBathroom.dialogue"
+dest_files=["res://.godot/imported/CaiBathroom.dialogue-7daa9bd888698e7bfae57ac84a86e5ba.tres"]
+
+[params]
+
+defaults=true

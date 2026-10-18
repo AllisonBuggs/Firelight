@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://c6maouw6tj3ec"
+path="res://.godot/imported/sewer_caihall.dialogue-304aa6105d98a4b5734b5829ddf227d1.tres"
+
+[deps]
+
+source_file="res://resources/dialogue/sewer_caihall.dialogue"
+dest_files=["res://.godot/imported/sewer_caihall.dialogue-304aa6105d98a4b5734b5829ddf227d1.tres"]
+
+[params]
+
+defaults=true

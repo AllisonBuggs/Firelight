@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dtyxfeo0vkdfm"
+path="res://.godot/imported/factory_storage_hall.dialogue-bf12f1e23ada526351bdb3f3dce15e06.tres"
+
+[deps]
+
+source_file="res://resources/dialogue/factory_storage_hall.dialogue"
+dest_files=["res://.godot/imported/factory_storage_hall.dialogue-bf12f1e23ada526351bdb3f3dce15e06.tres"]
+
+[params]
+
+defaults=true

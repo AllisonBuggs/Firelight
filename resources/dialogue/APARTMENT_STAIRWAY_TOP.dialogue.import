@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bn7b726accp6w"
+path="res://.godot/imported/APARTMENT_STAIRWAY_TOP.dialogue-8f60c672ea2474c9c8928620acf82a1e.tres"
+
+[deps]
+
+source_file="res://resources/dialogue/APARTMENT_STAIRWAY_TOP.dialogue"
+dest_files=["res://.godot/imported/APARTMENT_STAIRWAY_TOP.dialogue-8f60c672ea2474c9c8928620acf82a1e.tres"]
+
+[params]
+
+defaults=true

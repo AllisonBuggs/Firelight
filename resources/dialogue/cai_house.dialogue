@@ -14,3 +14,7 @@ if SaveLoad.SaveFileData.completed_house_tour:
 
 do unfreezePlayer()
 => END
+
+~ insomina
+
+=> END

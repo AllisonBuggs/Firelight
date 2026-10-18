@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://d07esl20651ry"
+path="res://.godot/imported/lost_city.dialogue-0c08d1d68ebf38dfff76ce2046027a41.tres"
+
+[deps]
+
+source_file="res://resources/dialogue/lost_city.dialogue"
+dest_files=["res://.godot/imported/lost_city.dialogue-0c08d1d68ebf38dfff76ce2046027a41.tres"]
+
+[params]
+
+defaults=true

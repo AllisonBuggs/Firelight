@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cc6d1feayerfj"
+path="res://.godot/imported/CaiApartmentHall.dialogue-8c343eb1de25a55f50dd0e0c2d1190a9.tres"
+
+[deps]
+
+source_file="res://resources/dialogue/CaiApartmentHall.dialogue"
+dest_files=["res://.godot/imported/CaiApartmentHall.dialogue-8c343eb1de25a55f50dd0e0c2d1190a9.tres"]
+
+[params]
+
+defaults=true

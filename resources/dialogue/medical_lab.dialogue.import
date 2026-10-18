@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dxthqpbbu24y8"
+path="res://.godot/imported/medical_lab.dialogue-d37b4c6de83bac30128a933cfd060d89.tres"
+
+[deps]
+
+source_file="res://resources/dialogue/medical_lab.dialogue"
+dest_files=["res://.godot/imported/medical_lab.dialogue-d37b4c6de83bac30128a933cfd060d89.tres"]
+
+[params]
+
+defaults=true
