@@ -497,7 +497,7 @@ motion_mode = 1
 platform_floor_layers = 4294967041
 script = ExtResource("1_aebu5")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1894482814]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1894482814]
 position = Vector2(0, 11)
 shape = SubResource("RectangleShape2D_wt6j5")
 

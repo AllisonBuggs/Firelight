@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://brqg7wqh6x83g"
+path="res://.godot/imported/map_open.wav-2dfe523ed0f52d761250cbef64ab6cf3.sample"
+
+[deps]
+
+source_file="res://resources/sfx/Common/Chequered Ink/map_open.wav"
+dest_files=["res://.godot/imported/map_open.wav-2dfe523ed0f52d761250cbef64ab6cf3.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

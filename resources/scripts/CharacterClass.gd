@@ -3,6 +3,7 @@ class_name Character
 
 static var instance: Character = null
 
+@onready var collision_main: CollisionShape2D = $CollisionShape2D
 
 @onready var visualSprite = $AnimatedSprite2D
 @onready var spriteAnimationPlayer: AnimationPlayer = $spriteAnimationPlayer
@@ -97,3 +98,9 @@ func pushCharacter(monitor: String, flip : bool, is_knockback : bool, attackRayc
 				move_and_slide()
 				if monitor == "Mouse" and flip == true:
 					visualSprite.flip_h = false
+
+func doCollision(toggle : bool):
+	if toggle:
+		collision_main.disabled = false
+	else:
+		collision_main.disabled = true

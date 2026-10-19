@@ -34,4 +34,5 @@ class_name SaveDataResource
 
 #region Day 1 
 
+@export var balcony_door_left_open = true
 @export var completed_house_tour = false

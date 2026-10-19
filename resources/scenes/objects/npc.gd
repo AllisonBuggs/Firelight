@@ -26,7 +26,7 @@ func set_movement_target():
 
 @warning_ignore("unused_parameter")
 func _process(delta: float) -> void:
-	#process_animations()
+	process_animations()
 	
 	# Do not query when the map has never synchronized and is empty.
 	if NavigationServer2D.map_get_iteration_id(navigation_agent.get_navigation_map()) == 0:

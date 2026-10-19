@@ -1,2 +1,53 @@
 ~ meetissac
+do freezePlayer()
+do spawn_npc("res://resources/scenes/objects/NPCs/Issac.tscn", -496, -88)
+do playSound("res://resources/sfx/Common/door_slam.wav")
+do storage_door.action()
+do spawn_npc("res://resources/scenes/objects/NPCs/Scarlet.tscn", player.global_position.x, player.global_position.y)
+do player.visible = false
+do player.reparent(get_npc("scarlet"))
+do get_npc("scarlet").walk_to(Vector2(-408,47))
+Issac: Show yourself
+do issac = get_npc("GentleGiant")
+do issac.walk_to(Vector2(-496,-50))
+do wait(0.5)
+Issac: I heard it, I heard..
+do issac.walk_to(Vector2(-496,-70))
+do wait(0.5)
+Issac: What's wrong with me, I need, I need to just, I can sleep through this episode.
+# SHAKE
+Issac: When I'm dismissed
+Issac: why. Why haven't I been dismissed?
+Issac: I. It. It's been hours
+# SHAKE
+Issac: I cant. I cant breathe
+*he starts fumbling with his mask before turning arou m d and taking it off letting it fall to the floor, he kneels to breathe*
+do player.visible = true
+do player.reparent(get_tree().root)
+do destroy_npc("scarlet")
+do changeCameraTarget(player)
+do unfreezePlayer()
+do col_1.disabled = false
+do col_2.disabled = false
+do col_3.disabled = false
+=> END
+~ startle
+do freezePlayer()
+*issac skuttkes back into the darkness putting the mask back on and stepping out*
+*faces that direction and backs up*
+Issac:...
+do playSound("res://resources/sfx/combat/Wolff-SFX/gas_light_loop.wav")
+*issac begins approach before a shuttling behind him*
+
+*he turns around and immediately incinerates a rat*
+do playSound("res://resources/sfx/combat/boss/GodsChosen/flame_thrower.mp3")
+Issac: stupid, why would it be in here. Because I. The Breach. 
+*hits mask*
+Issac: i need, i cant do this
+Issac: I need to go, I can take the sleeping pills early and just walk, I'll
+
+Issac: Ill make it home in time.
+Issac: I dont care, I just
+Issac: want to feel something diff. Different..
+do unfreezePlayer()
 => END

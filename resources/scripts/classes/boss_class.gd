@@ -59,6 +59,9 @@ func _ready() -> void:
 	registerLimb("body_area", body_area)
 	setup()
 	start()
+	active = true
+	cycle_phase()
+	
 
 func setup():
 	attack_ray_cast.setup(attack_dmg, false)
@@ -66,7 +69,9 @@ func setup():
 	GlobalSignalBus.emit_signal("set_bar_max", health)
 	updateHealthBar()
 	GlobalSignalBus.connect("got_player_pos", update_player_pos)
-
+	idle_available = ["walk_into", "idle_protect_self"]
+	attacks_avilable = ["approach_swipe"]
+	recovery_available = ["pant", "roar"]
 
 func registerLimb(limbName : String, nodeReference):
 	limbs.set(limbName, nodeReference)

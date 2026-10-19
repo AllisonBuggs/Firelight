@@ -172,6 +172,12 @@ func get_npc(npc_name : String):
 	var node = NPCs.get(npc_name)
 	return node
 
+func destroy_npc(npc_name : String):
+	var npc : Node = NPCs.get(npc_name)
+	npc.queue_free()
+	NPCs.erase(npc_name)
+
+
 func awaitPathingFinish(npc : Node2D):
 	var agent : NavigationAgent2D = npc.agent
 	await agent.navigation_finished

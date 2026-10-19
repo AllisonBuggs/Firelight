@@ -10,6 +10,10 @@
 [ext_resource type="PackedScene" uid="uid://3q3vm527u3bw" path="res://resources/scenes/objects/camera.tscn" id="8_76q26"]
 [ext_resource type="Resource" uid="uid://bsamxy80nsy7k" path="res://resources/dialogue/cai_house_tour.dialogue" id="8_yvnyk"]
 [ext_resource type="Resource" uid="uid://cc6d1feayerfj" path="res://resources/dialogue/CaiApartmentHall.dialogue" id="9_geyre"]
+[ext_resource type="PackedScene" uid="uid://dxkh0vywac844" path="res://resources/scenes/objects/object_door.tscn" id="10_ks1gm"]
+[ext_resource type="Texture2D" uid="uid://cwo03o4vr5uik" path="res://resources/sprites/Sprites/door/WoodenInteriorDoor_open.png" id="11_kn2yf"]
+[ext_resource type="Texture2D" uid="uid://bwhiuwe18fke2" path="res://resources/sprites/Sprites/door/WoodenInteriorDoor_closed.png" id="12_gouh3"]
+[ext_resource type="AudioStream" uid="uid://xrpgjgmquwh0" path="res://resources/sfx/snd_doorclose.wav" id="13_jpgrf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aaib2"]
 size = Vector2(6.423459, 11.5)
@@ -22,10 +26,16 @@ size = Vector2(3.261912, 11.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_awk8v"]
 size = Vector2(80, 160)
 
-[node name="CaiApartmentHall" type="Node2D" unique_id=825236289]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_ks1gm"]
+vertices = PackedVector2Array(-86, -54, -86, -78, -74, -78, -74, -54, -50, -54, -50, 86, -726, 86, -618, -54, -726, -54, -662, -54, -618, -78, -662, -78)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(3, 4, 5, 6), PackedInt32Array(0, 3, 6), PackedInt32Array(7, 0, 6), PackedInt32Array(6, 8, 9), PackedInt32Array(7, 6, 9, 10), PackedInt32Array(10, 9, 11)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-64, -88, -64, -64, -40, -64, -40, 96, -736, 96, -736, -64, -672, -64, -672, -88, -608, -88, -608, -64, -96, -64, -96, -88)])
+
+[node name="CaiApartmentHall" type="Node2D" unique_id=825236289 node_paths=PackedStringArray("camera")]
 process_mode = 3
 y_sort_enabled = true
 script = ExtResource("1_aaib2")
+camera = NodePath("PLAYERCAMERA")
 
 [node name="Main" type="TileMapLayer" parent="." unique_id=1594926581]
 top_level = true
@@ -80,7 +90,7 @@ position = Vector2(-0.100368485, 29)
 [node name="Player" parent="." unique_id=1626850227 instance=ExtResource("6_d761e")]
 process_mode = 1
 z_index = 1
-position = Vector2(1, 2)
+position = Vector2(-173, -40)
 floor_constant_speed = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=886609456]
@@ -108,10 +118,20 @@ shape = SubResource("RectangleShape2D_awk8v")
 
 [node name="Cutscenes" type="Node2D" parent="." unique_id=585520158]
 
+[node name="cais_door" parent="Cutscenes" unique_id=1059243313 instance=ExtResource("10_ks1gm")]
+position = Vector2(-81, -63)
+openSprite = ExtResource("11_kn2yf")
+closedSprite = ExtResource("12_gouh3")
+closeDoorSFX = ExtResource("13_jpgrf")
+TopDown = true
+
 [node name="PLAYERCAMERA" parent="." unique_id=430412013 node_paths=PackedStringArray("target") instance=ExtResource("8_76q26")]
 z_index = 6
 scale = Vector2(1.3, 1.3)
 target = NodePath("../Player")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=2123308542]
+navigation_polygon = SubResource("NavigationPolygon_ks1gm")
 
 [editable path="Doors/Door_CAEU"]
 [editable path="Doors/Door_ARHE"]

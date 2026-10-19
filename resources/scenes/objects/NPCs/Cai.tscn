@@ -337,6 +337,7 @@ _data = {
 
 [node name="cai" type="CharacterBody2D" unique_id=1218638180]
 y_sort_enabled = true
+motion_mode = 1
 script = ExtResource("1_klubx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2087780079]

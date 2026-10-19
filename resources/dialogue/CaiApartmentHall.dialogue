@@ -1,2 +1,42 @@
 ~ confront
+do freezePlayer()
+do spawn_npc("res://resources/scenes/objects/NPCs/Cai.tscn", -78, -96)
+do playSound("res://resources/sfx/Common/door_slam.wav")
+do cais_door.action()
+do wait(1)
+do camera.change_zoom(3)
+do character = get_npc("cai")
+do character.doCollision(false)
+do changeCameraTarget(character)
+do character.walk_to(Vector2(-80,-40))
+do wait(1)
+do character.walk_to(Vector2(-80,-39))
+Cai: kid!
+do character.movement_speed = 80.0
+do character.walk_to(Vector2(player.global_position.x + 20,player.global_position.y))
+do wait(0.6)
+do character.change_animation("Cai_Masked_Walk_Left")
+do wait(1)
+Cai: Where have you been !
+Cai: I'm responsible for you, you know?
+Cai: I know you might not trust me right now but thats no reason to.
+Cai: Run off!
+if SaveLoad.SaveFileData.balcony_door_left_open == true:
+	Cai: You didn't even close the balcony door, were you trying to give me a heart attack?!
+else:
+	Cai: I don't know how you got out but.
+Cai: Your not doing that again okay.
+Cai: Stop pulling away!
+Queen: She can't stop me
+Cai: look. Just. Nobody saw you out there?
+- Natalie did
+	Cai: Natalie.. she won't snitch I see her break curfew all the time.
+- Nobody saw me
+Cai: Your a lucky kid. Look I get in trouble too if you mess up.
+Cai: Come on, lets.. just go to bed, we can talk about this over some real food tomorrow.
+do player.reparent(character)
+do character.walk_to(Vector2(-78, -96))
+do wait(1)
+do transitionRoom("CaiHallway", "ARHI")
+do unfreezePlayer()
 => END

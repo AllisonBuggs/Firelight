@@ -5,7 +5,7 @@
 [ext_resource type="Shader" uid="uid://dnhd48724jq1r" path="res://resources/shaders/capsule_shader.gdshader" id="3_ramm0"]
 [ext_resource type="Shader" uid="uid://7e62emjqq3x3" path="res://resources/shaders/wavy.gdshader" id="3_ul78g"]
 [ext_resource type="Texture2D" uid="uid://dkk7j1sqd6mxq" path="res://resources/sprites/UI/heart_capsule.png" id="4_ul78g"]
-[ext_resource type="AudioStream" uid="uid://wga2tiu7xwgx" path="res://resources/sfx/Common/Tagirijus/heart_beat_2.wav" id="6_2kcnm"]
+[ext_resource type="AudioStream" uid="uid://wga2tiu7xwgx" path="res://resources/sfx/combat/Tagirijus/heart_beat_2.wav" id="6_2kcnm"]
 [ext_resource type="Texture2D" uid="uid://buyggnoui1jp6" path="res://resources/sprites/UI/combat_ui/boss_bar_bg.png" id="7_6x58v"]
 [ext_resource type="Texture2D" uid="uid://dggn4i00xuooo" path="res://resources/sprites/UI/combat_ui/aboss_barr_progress.png" id="8_5jpuj"]
 [ext_resource type="Texture2D" uid="uid://ug72hmgr800l" path="res://resources/sprites/UI/combat_ui/aboss_bar_progress.png" id="9_a1lpd"]
