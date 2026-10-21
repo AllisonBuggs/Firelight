@@ -1,2 +1,6 @@
 ~ caught
+do freezePlayer()
+Hey! You can't be in here, get out! 
+do transitionRoom("FACTORY_ENTRANCE_HALL", "EH4")
+do unfreezePlayer()
 => END
