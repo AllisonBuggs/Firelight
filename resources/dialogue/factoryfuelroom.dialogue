@@ -1,2 +1,22 @@
 ~ furnace
+do freezePlayer()
+Queen: This machine, it is their fuel storage for their defense.
+Queen: Without it they are defenseless
+Queen: Shall we take a peek at much much remains?
+- Look
+	=> look
+- Walk Away
+	Queen: I can wait.
+do unfreezePlayer()
+=> END
+
+~ look
+do playAnimation("fade", cutscene_player, false)
+do wait(1)
+Queen: I thought we had so much more time..
+Queen: It seems you have only 7 or so days to sway me, it would be in your interest you try.
+Queen: My curiosities are satisfied, you can explore but do bring us home soon.
+Queen: You humans tire so quickly.
+do playAnimation("fade", cutscene_player, true)
+do unfreezePlayer()
 => END

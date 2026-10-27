@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://ck5usmblr0wtq" path="res://resources/scenes/objects/players/players.tscn" id="6_maeva"]
 [ext_resource type="PackedScene" uid="uid://c8ka4co471t78" path="res://resources/scenes/objects/actionable.tscn" id="7_fd53h"]
 [ext_resource type="PackedScene" uid="uid://3q3vm527u3bw" path="res://resources/scenes/objects/camera.tscn" id="7_qrp6i"]
-[ext_resource type="Resource" uid="uid://3mjqany4xl3j" path="res://resources/dialogue/lost_town.dialogue" id="8_1f5pm"]
+[ext_resource type="Resource" uid="uid://bah61co8nn7xy" path="res://resources/dialogue/lost_town.dialogue" id="8_1f5pm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lwtcs"]
 size = Vector2(9.635185, 20.5)

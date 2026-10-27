@@ -12,6 +12,8 @@ do issac = get_npc("GentleGiant")
 do issac.walk_to(Vector2(-496,-50))
 do wait(0.5)
 Issac: I heard it, I heard..
+do issac.walk_to(Vector2(-496,-40))
+do wait(0.5)
 do issac.walk_to(Vector2(-496,-70))
 do wait(0.5)
 Issac: What's wrong with me, I need, I need to just, I can sleep through this episode.
@@ -33,21 +35,32 @@ do col_3.disabled = false
 => END
 ~ startle
 do freezePlayer()
+do issac.walk_to(Vector2(-496,-100))
+do wait(0.5)
 *issac skuttkes back into the darkness putting the mask back on and stepping out*
-*faces that direction and backs up*
+do issac.walk_to(Vector2(-496,-60))
+do wait(0.5)
+*faces your direction and backs up*
+do issac.walk_to(Vector2(-500,-30))
 Issac:...
 do playSound("res://resources/sfx/combat/Wolff-SFX/gas_light_loop.wav")
 *issac begins approach before a shuttling behind him*
-
-*he turns around and immediately incinerates a rat*
+do issac.walk_to(Vector2(-460,-30))
+do wait(0.5)
+do issac.walk_to(Vector2(-500,-30))
 do playSound("res://resources/sfx/combat/boss/GodsChosen/flame_thrower.mp3")
+*he turns around and immediately incinerates a rat*
+
+do issac.walk_to(Vector2(-420,-60))
+
 Issac: stupid, why would it be in here. Because I. The Breach. 
 *hits mask*
 Issac: i need, i cant do this
 Issac: I need to go, I can take the sleeping pills early and just walk, I'll
-
+do issac.walk_to(Vector2(-496,-60))
 Issac: Ill make it home in time.
 Issac: I dont care, I just
 Issac: want to feel something diff. Different..
+do issac.walk_to(Vector2(-496,-300))
 do unfreezePlayer()
 => END

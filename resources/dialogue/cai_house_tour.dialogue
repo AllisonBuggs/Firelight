@@ -1,4 +1,12 @@
 ~ start
+do freezePlayer()
+do cai.walk_to(Vector2(-832,-1904))
+do wait(3)
+do playSound("res://resources/sfx/snd_dooropen.wav")
+do transitionRoom("MEDICAL_LAB", "MedicalLab2")
+=> END
+
+~ calm
 Cai: Nothing feels like[wait=0.5] its stinging?
 do cai.walk_to(Vector2(992.0,173.0))
 

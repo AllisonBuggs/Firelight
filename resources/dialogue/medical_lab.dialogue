@@ -1,5 +1,17 @@
 ~ entrance
-entrance
+do spawn_npc("res://resources/scenes/objects/NPCs/Cai.tscn", -16, 160)
+do freezePlayer()
+do get_npc("cai").walk_to(Vector2(1216,-688))
+do wait(2)
+do get_npc("cai").walk_to(Vector2(-16,-304))
+do wait(2)
+Cai: Lydia! 
+Cai: Lydia this is an emergency! 
+Cai: Hello?!
+Cai: She must be in her lab. Come on
+do get_npc("cai").walk_to(Vector2(1216,-688))
+do wait(2)
+do transitionRoom("MED_LAB_LAB", "MedLab")
 => END
 
 ~ exitlab

@@ -16,5 +16,73 @@ do unfreezePlayer()
 => END
 
 ~ insomina
+do freezePlayer()
+Queen: You have more energy still? I must admit it is admirable.
+Queen: However, that does mean you will not be sleeping anytime soon unless you let some of it out.
+Queen: ... Let's look around a bit, maybe you will find something illuminating about Cai. Unfortunately, she will not be going away anytime soon.
+do unfreezePlayer()
+=> END
+~ necklace
+*Inside the drawer are two necklaces. You pick them up, and something about it draws your gaze.*
+#do animation_player.play("magnet")
 
+*It's almost hypnotic in a way. To see the necklace complete.*
+
+Speaking of complete, do you feel complete?
+- Yes
+	It would be nice to feel complete when everything is changing around you, when nothing seems to be stable or familiar.
+	If you are lying to me, I cannot tell.
+	For I am a necklace. 
+- No
+	That is fair it's all been moving so fast, hasn't it? Im sure you will find some time to slow down soon, but don't end up like me. 
+	In some drawer, alone to gather dust. Maybe it wouldn't be so bad if I had another to spend that time with.
+	But what would I know, I am but a necklace.
+I have another question, if you will permit it.
+Have you ever lost someone, someone who was as close as family, or maybe was?
+- Yes
+	I'm sorry to hear so. It's dreadfully common in this town. This town used to be thousands of souls bigger, and well. It isn't now, is it? 
+	I can relate to that feeling. Of loss.
+- No
+	You're lucky, but not many others are. I haven't been able to see many others, but I know that loss is something many of us have in common. Try to sympathize; put yourself in their shoes.
+- I don't have to tell a necklace about myself.
+	WELL, it was more rhetorical anyway.
+
+I'll tell you I used to be two, hanging on two people's necks all day long, and I would only be whole when they were close, they were so happy sometimes they would put one of me onto a smaller person who made me herself out of love. 
+But one day they took me off, and never came back. It was a strange feeling because, despite being two, only one person wore me every day, all day, for a long time. I was whole. Yet, she was so sad. And she was for a long time.
+
+I still don't think that I will ever get used to feeling whole like this, but I don't want to go back to being two anymore. 
+
+Isn't that strange?
+
+- Yes
+	I'm glad you agree. After all, it would be strange to disagree with a necklace.  But the feeling will still stay no matter how I think I should feel.
+- No
+	Oh. I see. I guess you're right in a way. But the feeling will still stay no matter how I feel.
+
+It may be rude for me to ask. But this talk of loss has got me wondering.
+Do *you* have any family?
+- Yes.
+	Oh, do tell? I did see that taller person tuck you in, in a hurry. Would it be her?
+	- She's my mom.
+		Isn't that sweet. I think I remember the little one having one of those, my right half was mostly on a mom. 
+	- She's my caretaker.
+		A caretaker. That's very good to have at your age, I couldn't imagine what it's like to be deprived at one in a time of need. I would say things would go bad very, very fast. 
+	- No. 
+		I see. Well atleast you have someone around. After all it's not like your parents are here for you. Although that might be an insentive thing to say.
+- No.
+	=> nofamily
+- Not anymore
+	~ nofamily
+	Im sorry for your loss, that really is quite sad. But. I wouldn't stop looking. Families are what you make of them. You don't have to be related. But I hope you find someone you may call a friend.
+
+I'm glad we met, but I have one final question. Just between us?
+Isn't it strange you're talking to something that can't talk.
+- Yes
+- No
+
+Queen: What? I was lost in my thoughts since you were busy doing nothing. 
+Queen: If you are done staring at that locket, I have been thinking about something for a long time, and I think now would be perfect. 
+Queen: Down the road, just a short walk, is there a factory, inside the machinery is a room with a container and gauge. That gauge will tell us how long until their flamers' fuel runs dry.
+Queen: Why don't you go find us a way to that factory? It is just left of the front of the building, a night walk, if you will.
+Queen: Then maybe you will be able to sleep.
 => END

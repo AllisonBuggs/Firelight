@@ -1,2 +1,40 @@
 ~ meetozz
+do freezePlayer()
+Ozz: Here we are
+Ozz: ha Get comfortable , I was told we were going to be here for a while.
+Ozz: I'm Ozz. What's your name?
+Ozz: PLAYERNAME, how nice. 
+Ozz: I suspect you aren't the kind of kid who likes to sit around and talk their head off, so I think maybe we should just play a game.
+Ozz: Why don't you look around and let me know when you find something, hm?
+Ozz: I'll just take a seat over here.
+Ozz: Just let me know.
+do unfreezePlayer()
+=> END
+
+~ talk
+Ozz: Don't know where to start?
+Ozz: Look under the cabinets. I think they stored some old junk in there, probably a chess set, I'd bet.
+=> END
+
+~ PanicOzz
+do freezePlayer()
+do spawn_npc("res://resources/scenes/objects/NPCs/Cai.tscn", -192.0, -328.0)
+do get_npc("cai").movement_speed = 40.0
+do get_npc("cai").walk_to(Vector2(128,-144))
+do wait(2)
+do door_l.action()
+do door_r.action()
+do get_npc("cai").walk_to(Vector2(104,-48))
+Cai: Kid!
+do get_npc("cai").walk_to(closestPlayerApproach())
+Cai: Are you okay? What happened.
+Cai: Wheres..
+Cai: 
+do get_npc("cai").walk_to(ozz_top)
+do player.reparent(get_npc("cai"))
+Cai: Come on kid.
+Cai: She needs Lydia's help, a doctor.
+do get_npc("cai").walk_to(Vector2(-552,-448))
+do wait(3)
+do transitionRoom("holding_room_exterior", "HRED")
 => END

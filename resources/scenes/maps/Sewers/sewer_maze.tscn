@@ -79,6 +79,18 @@ shape = SubResource("RectangleShape2D_35vfi")
 [node name="Marker2D" parent="Doors/Door_SM" index="1" unique_id=1701488384]
 position = Vector2(-3.6977458, 37.760654)
 
+[node name="Door_SPAWNER" parent="Doors" unique_id=503799557 instance=ExtResource("7_1erqi")]
+position = Vector2(-157, -219.99998)
+scale = Vector2(2.1634817, 0.84744287)
+
+[node name="CollisionShape2D" parent="Doors/Door_SPAWNER" index="0" unique_id=1406666274]
+position = Vector2(-3.697754, 4.7192383)
+scale = Vector2(0.9999999, 0.9999997)
+shape = SubResource("RectangleShape2D_35vfi")
+
+[node name="Marker2D" parent="Doors/Door_SPAWNER" index="1" unique_id=1701488384]
+position = Vector2(71.64377, 260.78452)
+
 [node name="Player" parent="." unique_id=1626850227 instance=ExtResource("9_ix4ss")]
 process_mode = 1
 z_index = 1
@@ -104,3 +116,4 @@ scale = Vector2(1.3, 1.3)
 target = NodePath("../Player")
 
 [editable path="Doors/Door_SM"]
+[editable path="Doors/Door_SPAWNER"]

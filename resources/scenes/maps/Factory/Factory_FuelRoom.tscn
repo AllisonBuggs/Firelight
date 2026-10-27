@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://bd1tcqo4uicd7"]
 
-[ext_resource type="Script" uid="uid://bijlihp42or3o" path="res://resources/scripts/AllMaps.gd" id="1_qog1t"]
+[ext_resource type="Script" uid="uid://b8lg7ebjavhy2" path="res://resources/scripts/Maps/factory_fuel_room.gd" id="1_cjb7m"]
 [ext_resource type="TileSet" uid="uid://c4mxm77yi2rpc" path="res://resources/tileset/tileset.tres" id="2_laghu"]
 [ext_resource type="Script" uid="uid://hraudamater6" path="res://resources/scripts/FootStepsTilemapScript.gd" id="3_lxn6x"]
 [ext_resource type="Material" uid="uid://2secgp2ouoi8" path="res://resources/shaders/shadowafect.tres" id="4_1p7ik"]
@@ -8,7 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://ck5usmblr0wtq" path="res://resources/scenes/objects/players/players.tscn" id="6_q81p3"]
 [ext_resource type="PackedScene" uid="uid://c8ka4co471t78" path="res://resources/scenes/objects/actionable.tscn" id="7_l1ir3"]
 [ext_resource type="PackedScene" uid="uid://3q3vm527u3bw" path="res://resources/scenes/objects/camera.tscn" id="7_u67js"]
-[ext_resource type="Resource" uid="uid://cihd5jt43aneg" path="res://resources/dialogue/factoryfuelroom.dialogue" id="8_l1ir3"]
+[ext_resource type="Resource" uid="uid://ds6lhaxnd1k46" path="res://resources/dialogue/factoryfuelroom.dialogue" id="8_l1ir3"]
+[ext_resource type="Texture2D" uid="uid://cs7hu4yhwbak8" path="res://resources/sprites/cutscenes/placeholder.png" id="10_kwo4k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j0s4u"]
 size = Vector2(1.6058636, 48)
@@ -16,11 +17,46 @@ size = Vector2(1.6058636, 48)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kwo4k"]
 size = Vector2(192, 32)
 
-[node name="factoryfuelroom" type="Node2D" unique_id=825236289 node_paths=PackedStringArray("camera")]
+[sub_resource type="Animation" id="Animation_6ornb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/gauge:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_5ujsx"]
+resource_name = "fade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/gauge:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_d3ngg"]
+_data = {
+&"RESET": SubResource("Animation_6ornb"),
+&"fade": SubResource("Animation_5ujsx")
+}
+
+[node name="factoryfuelroom" type="Node2D" unique_id=825236289]
 process_mode = 3
 y_sort_enabled = true
-script = ExtResource("1_qog1t")
-camera = NodePath("PLAYERCAMERA")
+script = ExtResource("1_cjb7m")
 
 [node name="background" type="TileMapLayer" parent="." unique_id=2062294765]
 z_index = -1
@@ -81,16 +117,33 @@ floor_constant_speed = true
 position = Vector2(40, -376)
 dialogFile = ExtResource("8_l1ir3")
 dialogStart = "furnace"
+triggerOnce = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable/furnace_actionable" unique_id=550561916]
 position = Vector2(-8, -32)
 shape = SubResource("RectangleShape2D_kwo4k")
 
-[node name="Cutscenes" type="Node2D" parent="." unique_id=585520158]
-
 [node name="PLAYERCAMERA" parent="." unique_id=430412013 node_paths=PackedStringArray("target") instance=ExtResource("7_u67js")]
 z_index = 6
 scale = Vector2(1.3, 1.3)
 target = NodePath("../Player")
+
+[node name="Cutscenes" type="Node2D" parent="." unique_id=1165265943]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Cutscenes" unique_id=842621125]
+
+[node name="gauge" type="TextureRect" parent="Cutscenes/CanvasLayer" unique_id=468623773]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("10_kwo4k")
+
+[node name="cutscene_player" type="AnimationPlayer" parent="Cutscenes/CanvasLayer" unique_id=181995310]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_d3ngg")
 
 [editable path="Doors/Door_FR"]

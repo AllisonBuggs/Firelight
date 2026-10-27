@@ -30,6 +30,7 @@ func _on_return_button_pressed() -> void:
 	GlobalSignalBus.emit_signal("iventoryReturnButtonPressed")
 
 func recived_inventoryOpened():
+	print("invetoru")
 	ReturnButton.grab_focus()
 	updateInventory()
 
@@ -101,6 +102,8 @@ func updateTooltip(slotNumber):
 					tooltipLabelText = "It's a little red key, it feels important."
 				"FleshBurningMixture":
 					tooltipLabelText = "Make it hurt for getting in your way, burn it away."
+				"Metal Bat":
+					tooltipLabelText = "A dinky aluminum bat, it may not be a good weapon. But its yours."
 		tooltipDescriptionLabel.text = tooltipLabelText
 
 func _on_inv_slot_0_pressed() -> void:
@@ -154,6 +157,8 @@ func updateInventory():
 			"GaurdKey1":
 				item = "res://resources/sprites/icons/Items/GaurdKey2.png"
 			"GaurdKey2":
+				item = "res://resources/sprites/icons/Items/GaurdKey1.png"
+			"Metal Bat":
 				item = "res://resources/sprites/icons/Items/GaurdKey1.png"
 		match i:
 			0:InvSlot0.icon = load(item)

@@ -1,3 +1,10 @@
 ~ entered
-entered lab
+do spawn_npc("res://resources/scenes/objects/NPCs/Cai.tscn", -16, 160)
+do freezePlayer()
+Cai: Lydia!
+
+do get_npc("cai").walk_to(Vector2(504,576))
+Cai: She's sleeping, you.. insomniac.
+Cai: Kid! Go wake her up while I get Ozz breathing again. Go!
+do get_npc("cai").walk_to(Vector2(696,568))
 => END

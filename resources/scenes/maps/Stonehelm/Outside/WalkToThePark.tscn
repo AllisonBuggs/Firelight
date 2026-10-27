@@ -9,11 +9,11 @@
 [ext_resource type="Texture2D" uid="uid://ddrip0keseg4s" path="res://resources/sprites/particle/rain_particles.png" id="8_b67c6"]
 [ext_resource type="PackedScene" uid="uid://3q3vm527u3bw" path="res://resources/scenes/objects/camera.tscn" id="8_ir3bc"]
 [ext_resource type="PackedScene" uid="uid://c8ka4co471t78" path="res://resources/scenes/objects/actionable.tscn" id="8_qv8hc"]
-[ext_resource type="Resource" uid="uid://bsamxy80nsy7k" path="res://resources/dialogue/cai_house_tour.dialogue" id="9_h547l"]
+[ext_resource type="Resource" uid="uid://fstil88x6qn" path="res://resources/dialogue/cai_house_tour.dialogue" id="9_h547l"]
 [ext_resource type="Shader" uid="uid://cepgn3lr74ape" path="res://resources/shaders/fog.gdshader" id="9_uybcr"]
 [ext_resource type="AudioStream" uid="uid://crxcfa2ne5pje" path="res://resources/music/ambience/SoundWorks12/Amb_Rain_1.wav" id="9_vlwf0"]
 [ext_resource type="Texture2D" uid="uid://df3wp1of1l4hg" path="res://resources/sprites/particle/raind_splash_particle.png" id="9_w02p3"]
-[ext_resource type="Resource" uid="uid://bhlwv1e3r2qyf" path="res://resources/dialogue/stonehelm_exterior.dialogue" id="10_3f537"]
+[ext_resource type="Resource" uid="uid://bm7714vixuyht" path="res://resources/dialogue/stonehelm_exterior.dialogue" id="10_3f537"]
 [ext_resource type="PackedScene" uid="uid://bxgiylaod06js" path="res://resources/scenes/objects/NPCs/Cai.tscn" id="16_h547l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w02p3"]
@@ -71,9 +71,9 @@ gravity = Vector3(0, 10, 0)
 alpha_curve = SubResource("CurveTexture_lvtyl")
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_g2384"]
-vertices = PackedVector2Array(11344.594, -4407.3125, 11540.148, -4414.547, 11399.5, -3555.0313, 11240.531, -3750.9219, 9539.9375, -3563.0234, 9492.047, -3766.961, 8036.1016, -2335, 8115.9688, -2171.0469, 398.09375, -2266.0234, 394.10938, -2327, -573.89844, -1902, -586, -1862.7109, -810, -1902, 970, 178.29688, 970, 58, 1014, 58, 1014, 206, 687.71094, 170, 517.96875, 206, 561.9922, 168.95313, -546.03906, -1762, -854, -1762, -854, -1918, -586, -1814, -810, -1918, 687.71094, 169.99219, -501.97656, -1814)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(3, 2, 4, 5), PackedInt32Array(6, 5, 4, 7), PackedInt32Array(6, 7, 8, 9), PackedInt32Array(10, 9, 8, 11), PackedInt32Array(12, 10, 11), PackedInt32Array(13, 14, 15, 16), PackedInt32Array(17, 13, 16, 18, 19), PackedInt32Array(20, 21, 22, 12, 23), PackedInt32Array(22, 24, 12), PackedInt32Array(19, 25, 17), PackedInt32Array(19, 18, 20, 26), PackedInt32Array(23, 26, 20), PackedInt32Array(12, 11, 23)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(568, 159, 688, 160, 960, 168, 960, 48, 1024, 48, 1024, 168, 1024, 216, 712, 216, 512, 216, -552, -1752, -864, -1752, -864, -1816, -864, -1912, -864, -1928, -800, -1928, -800, -1912, -576, -1912, 392, -2337, 8032, -2345, 9488, -3777, 11232, -3761, 11336, -4417, 11552, -4425, 11408, -3545, 9544, -3553, 8120, -2161, 400, -2256, -576, -1856, -576, -1824, -496, -1824)])
+vertices = PackedVector2Array(11344.594, -4407.3125, 11540.148, -4414.547, 11399.5, -3555.0313, 11240.531, -3750.9219, 9539.9375, -3563.0234, 9492.047, -3766.961, 8036.1016, -2335, 8115.9688, -2171.0469, 398.09375, -2266.0234, 394.10938, -2327, -573.89844, -1902, -586, -1862.7109, -810, -1902, 970, 178.29688, 970, 58, 1014, 58, 1014, 206, 687.71094, 170, 517.96875, 206, 561.9922, 168.95313, -854, -1824.1563, -854, -1918, -810, -1918, -545.4219, -1760.8594, -586, -1814, 687.71094, 169.99219, -501.97656, -1814)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(3, 2, 4, 5), PackedInt32Array(6, 5, 4, 7), PackedInt32Array(6, 7, 8, 9), PackedInt32Array(10, 9, 8, 11), PackedInt32Array(12, 10, 11), PackedInt32Array(13, 14, 15, 16), PackedInt32Array(17, 13, 16, 18, 19), PackedInt32Array(20, 21, 22, 12), PackedInt32Array(23, 20, 12, 24), PackedInt32Array(19, 25, 17), PackedInt32Array(19, 18, 23, 26), PackedInt32Array(24, 26, 23), PackedInt32Array(12, 11, 24)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(568, 159, 688, 160, 960, 168, 960, 48, 1024, 48, 1024, 168, 1024, 216, 712, 216, 512, 216, -552, -1752, -864, -1816, -864, -1912, -864, -1928, -800, -1928, -800, -1912, -576, -1912, 392, -2337, 8032, -2345, 9488, -3777, 11232, -3761, 11336, -4417, 11552, -4425, 11408, -3545, 9544, -3553, 8120, -2161, 400, -2256, -576, -1856, -576, -1824, -496, -1824)])
 
 [node name="stonehelm_exterior" type="Node2D" unique_id=825236289]
 process_mode = 3
@@ -133,7 +133,7 @@ position = Vector2(24, 32)
 
 [node name="Player" parent="." unique_id=1626850227 instance=ExtResource("6_cnq5e")]
 process_mode = 1
-position = Vector2(840, 55)
+position = Vector2(-832, -1904)
 floor_constant_speed = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="." unique_id=1093945612]
@@ -217,7 +217,7 @@ position = Vector2(0, -8)
 navigation_polygon = SubResource("NavigationPolygon_g2384")
 
 [node name="cai" parent="." unique_id=1218638180 instance=ExtResource("16_h547l")]
-position = Vector2(915, 84)
+position = Vector2(992, 80)
 
 [editable path="Doors/Door_HRED"]
 [editable path="Doors/Door_LE"]

@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://chnesmup7fj8u" path="res://resources/scenes/objects/event_door.tscn" id="5_jecx2"]
 [ext_resource type="PackedScene" uid="uid://c8ka4co471t78" path="res://resources/scenes/objects/actionable.tscn" id="6_3phs4"]
 [ext_resource type="PackedScene" uid="uid://ck5usmblr0wtq" path="res://resources/scenes/objects/players/players.tscn" id="6_4ephd"]
-[ext_resource type="Resource" uid="uid://uuy47jwnfqvi" path="res://resources/dialogue/tower_meatlocker.dialogue" id="7_3phs4"]
+[ext_resource type="Resource" uid="uid://bd451hy7m8i7i" path="res://resources/dialogue/tower_meatlocker.dialogue" id="7_3phs4"]
 [ext_resource type="PackedScene" uid="uid://3q3vm527u3bw" path="res://resources/scenes/objects/camera.tscn" id="7_b3eyl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bsaso"]
@@ -111,7 +111,7 @@ shape = SubResource("RectangleShape2D_c21qh")
 [node name="bang)actionable" parent="Actionable" unique_id=1458038423 instance=ExtResource("6_3phs4")]
 position = Vector2(864, 304)
 dialogFile = ExtResource("7_3phs4")
-dialogStart = "banging"
+dialogStart = "noise"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable/bang)actionable" unique_id=1496480788]
 position = Vector2(0, -1)

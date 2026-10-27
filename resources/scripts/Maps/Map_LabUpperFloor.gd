@@ -7,6 +7,7 @@ extends allMaps
 @onready var tenticle: Sprite2D = $Cutscenes/Tenticle
 @onready var cutscene_player: AnimationPlayer = $Cutscenes/cutscene_player
 @onready var lock_down_actionable: Area2D = $Actionables/LockDownActionable
+@onready var arena_marker: Marker2D = $Cutscenes/arena_marker
 
 
 @onready var cutscene_textures: CanvasLayer = $CutsceneTextures

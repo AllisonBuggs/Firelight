@@ -199,4 +199,17 @@ do destory(tenticle, null)
 => END
 
 ~ battle_tutorial
+do freezePlayer()
+do wait(1)
+do changeCameraTarget(arena_marker)
+do wait(1)
+Queen: These two are some of my earilest creations, built from need and in haste.
+Queen: Fortunetly, their quite stupid. Unfortunetly one of them has something you need, that key.
+Queen: If you can get close enough, attack to take it from him, and flee.
+Queen: There will be a proper time in the future to show you how to fight.
+Queen: Although you are human, I'm sure your well acustomed to violence.
+Press Shift to roll and Left Mouse Button to attack.
+do wait(1)
+do changeCameraTarget(player)
+do unfreezePlayer()
 => END

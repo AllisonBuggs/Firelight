@@ -1,6 +1,12 @@
 ~ lost_town
 => END
 
-~ set_ablaze
-
+~ get_bat
+do freezePlayer()
+*Its a dinky metal bat, it feels hollow. At the tip its covered in old blood.*
+Queen:  If it was good enough for its last owner, its good enough for you.
+*It may be a little big but its yours now. "Metal Bat" was added to your inventory.*
+do playSound("res://resources/sfx/Common/Chequered Ink/map_open.wav")
+do giveItem("Metal Bat")
+do unfreezePlayer()
 => END

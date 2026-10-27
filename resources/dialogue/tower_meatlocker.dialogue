@@ -1,6 +1,26 @@
 ~ tower_meatlocker
+
+*The window looks fogged over, white fog and the smell of rotting meat leak out from the door's crack.*
+
+- Wipe the smog and take a look
+- Walk Away
+	=> END
+*It's a meat locker. Seems that it's still keeping the meat preserved*
+#do eyes open
+*There is something inside on a meat hook that is not quite dead.*
+#do moving sounds and animation
+Queen: Quite the jackpot of meat, don't you think?
+#do snap hook sound and fall animation
+do wait(3)
+#do animation of it getting close to window
+#do window smashing
+#do break and the fall-back animation
+#do queen laugh sound
+Queen: Scared of a frozen meat bag? 
+Queen: I'd get up and get to making use of him sooner, human. 
+
 => END
 
-~ banging
+~ noise
 
 => END

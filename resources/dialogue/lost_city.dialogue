@@ -1,6 +1,27 @@
 ~ sewers
+do freezePlayer()
+*Its a massive hole. Below is some dark tunnels, could be handy for a quick escape*
+Queen: wait- I
+do spawn_npc("res://resources/scenes/objects/NPCs/Scarlet.tscn", player.global_position.x, player.global_position.y)
+do player.visible = false
+do player.reparent(get_npc("scarlet"))
+do get_npc("scarlet").walk_to(Vector2(player.global_position.x,player.global_position.y - 30))
+do playAnimation("fade", cutscene_player, false)
+do wait(1)
+do cutscene_player.play("rush")
+do cutscene_player_2.play("fall")
+do wait(3)
+do unfreezePlayer()
+do transitionRoom("Sewers", "SPAWNER")
 => END
+
 ~ hungerpains
+do playSound("res://resources/sfx/cutscenes/common/pixabay/stomach_growl.mp3")
+do freezePlayer()
+Queen: There is a short time before we can start, in the meantime find yourself food and a place to stay. 
+Queen: I'd start with food, you seem quite hungry.
+do unfreezePlayer()
 => END
 ~ stomachgrowl
+do playSound("res://resources/sfx/cutscenes/common/pixabay/stomach_growl.mp3")
 => END

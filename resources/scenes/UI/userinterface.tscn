@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dotn5qqriv2fy"]
 
 [ext_resource type="PackedScene" uid="uid://dwsy4f3chvuw2" path="res://resources/scenes/UI/combatUI.tscn" id="1_25msd"]
+[ext_resource type="Script" uid="uid://cfdg4montfh3v" path="res://resources/scripts/ui_manager.gd" id="1_vegjp"]
 [ext_resource type="PackedScene" uid="uid://cnwqtspdwtkyt" path="res://resources/scenes/UI/choicer.tscn" id="2_vegjp"]
 [ext_resource type="PackedScene" uid="uid://d0m7qdpcqhgjg" path="res://resources/scenes/UI/save&load_menu.tscn" id="3_lprmj"]
 [ext_resource type="PackedScene" uid="uid://b2h8b7uyns1ss" path="res://resources/scenes/UI/pause_menu.tscn" id="4_3m053"]
@@ -17,6 +18,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_vegjp")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=709854559]
 layer = 2
