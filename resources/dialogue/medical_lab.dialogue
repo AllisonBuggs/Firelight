@@ -14,6 +14,14 @@ do wait(2)
 do transitionRoom("MED_LAB_LAB", "MedLab")
 => END
 
-~ exitlab
-exited
+~ walk_out
+*Takes player's hand for walk*
+Cai:  That was an exciting start, right? 
+Cai: What all, uh, happened in there? I guess I just saw the aftermath.
+Don't want to talk about it.
+Cai: I see. Fair enough, I'll ask her what happened for my report later.
+There was a big monster, and it hurt her.
+Cai: Oh, well, I'm glad you weren't hurt too much. 
+*If player is less than half health*
+Cai: We can stop by later again to get you fixed up, but I think I have some bandages, which should do.
 => END

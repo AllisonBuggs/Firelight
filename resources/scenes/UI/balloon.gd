@@ -232,12 +232,13 @@ func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
 #endregion
 
 const CAI = preload("uid://fptvuk68e88p")
-const ISSAC_MELLOW = preload("uid://bcogyw8d2r5jl")
-const ISSAC_NORMAL = preload("uid://ibnjp64jqvvp")
+const ISSAC_MELLOW = preload("uid://dt3ylhq6cc5y6")
+const ISSAC_NORMAL = preload("uid://debqjowy3t3cq")
 const QUEEN = preload("uid://5o3lgmd637s8")
 const DEFAULT = preload("uid://pe3avj7mhvg3")
 const ALARM = preload("uid://586fm1r8uuor")
 const NATALIE = preload("uid://ddyohxlj5w31k")
+const HADE = preload("uid://ch8dnhe38ef2j")
 
 const JANITOR = preload("uid://ck4w5owwhpu0o")
 
@@ -247,6 +248,10 @@ const JANITOR = preload("uid://ck4w5owwhpu0o")
 func _on_dialogue_label_spoke(letter: String, letter_index: int, speed: float) -> void:
 	audio_stream_player.volume_db = 0
 	match dialogue_line.character:
+		"Hade":
+			audio_stream_player.stream = HADE
+			audio_stream_player.pitch_scale = randf_range(0.8,1.5)
+			audio_stream_player.play()
 		"Issac_Mellowed":
 			audio_stream_player.stream = ISSAC_MELLOW
 			audio_stream_player.pitch_scale = 1

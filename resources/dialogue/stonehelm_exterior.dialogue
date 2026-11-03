@@ -1,3 +1,48 @@
-~ lab_exit
-test
+~ walk_home
+Cai: Hey, it's raining. Hell yeah.
+Cai: Do you like the rain?
+- It's Nice.
+- Not really
+	Cai: It's getting to be winter soon, so you won't have to deal with it for long.
+- ...
+	Cai: No thoughts? That's okay.
+Cai: Well, I do. When it's cold, anyway. 
+do wait(5)
+Cai: Well, now's a good time to get to know each other a bit. 
+Cai: Well, uh, I like...
+Cai: I guess it's been a while since I've had free time.
+Cai: Speaking of which, I've been given the next couple of days off!
+Cai: So thanks for that. 
+Cai: Maybe we should get you washed up sometime soon, huh?
+do wait(5)
+Cai: Say, you were in those sewers when we met. 
+Cai: Why did you bark at me, seriously, kid. 
+- I don't know
+- *Bark at her*
+	Cai: You're one silly kid. 
+	Cai: You're growing on me, kiddo.
+	Queen: ... 
+- ...
+Cai: Yeah, fair, well.
+Cai: I didn't expect to meet anyone, but even less in the sewers.
+Cai: Why were you down there? How did you end up there?
+- Fleshy Tunnel.
+	Cai: I.. What
+	Cai: That must have been terrible.
+	Cai: It also explains your, uh... need for a bath.
+	Cai: You're a stinky kid. No offense.
+- Survival.
+	Cai: Fair, well, you don't have to live in dark tunnels anymore.
+	Cai: You're in Stonehelm! Best and probably last town on this continent. 
+	Cai: Well, you're safe now. You're in Stonehelm now!
+- I was chased down there.
+	Cai: Oh, I'm sorry to hear that. You are a lucky kid to survive that.
+	Cai: Well, you're safe now. You're in Stonehelm now!
+Cai: We're almost there.
+=> END
+
+~ walk_done
+Cai: We're here!
+Cai: I'll give you a tour of the place tomorrow, okay?
+Cai: This is the building. Let's get you something to eat!
 => END

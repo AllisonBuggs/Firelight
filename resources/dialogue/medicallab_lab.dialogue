@@ -8,3 +8,22 @@ Cai: She's sleeping, you.. insomniac.
 Cai: Kid! Go wake her up while I get Ozz breathing again. Go!
 do get_npc("cai").walk_to(Vector2(696,568))
 => END
+
+~ wake_lydia
+Lydia: Ughh, who... who are you?
+*animation of Lydia moving her head to face you here*
+Cai: LYDIA, GET OVER HERE. YOU GOT SOMEBODY DYING, probably.
+Lydia: What? Oh! I'm coming! 
+*Move around Cai and nudge her aside.*
+Lydia: Move, move.
+do wait(2)
+Cai: ...
+Cai: So? 
+Lydia: It's not good, but she'll live.
+Lydia: You two can run off now, thanks for bringing her in.
+Lydia: I'll see exactly which bones are broken and have her rest here for a while. Just leave us.
+do wait(1)
+Cai: Alright..
+Cai: Come on, kiddo, I'll show you the way to our house. 
+*Walks out of the room*
+=> END

@@ -1,4 +1,21 @@
-~ lost_town
+~ furnace_room
+do freezePlayer()
+*There is a furnace here. It hasn't been lit for a long time. Dust coats its interior.*
+Queen: Let me show you something: how easily everything can slip away. See that button on the side of the furnace. Twist it high and step back quickly.
+
+*show panel here*
+
+<Character backs up automatically as flames burst from the furnace and catch the structure on fire>
+do unfreezePlayer()
+=> END
+
+~ burn_spread
+do freezePlayer()
+<slow spread across the entire town and the burning of the thing blocking the exit>
+
+Queen: Haunting, isn't it? Yet hard to look away.
+Queen: Well, I suggest you do. The smoke will soon build despite the fire's age. The exit is now open for us to continue.
+do unfreezePlayer()
 => END
 
 ~ get_bat
