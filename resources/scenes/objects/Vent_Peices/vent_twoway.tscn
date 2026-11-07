@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dn7mbrj1057s"]
+
+[ext_resource type="Texture2D" uid="uid://cs7hu4yhwbak8" path="res://resources/sprites/cutscenes/placeholder.png" id="1_eg3or"]
+[ext_resource type="ArrayMesh" uid="uid://c6di03x71clgd" path="res://resources/models/vent_two.obj" id="2_arfby"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_rlw81"]
+vertices = PackedVector3Array(1.4746709, -0.58316004, 0.47713208, 2.224671, -0.58316004, 2.227132, 3.224671, -0.58316004, 2.477132, 3.224671, -0.58316004, -2.522868, 2.224671, -0.58316004, -2.272868, 1.4746709, -0.58316004, -0.27286792, -2.025329, -0.58316004, -0.27286792, -2.025329, -0.58316004, 0.47713208)
+polygons = [PackedInt32Array(0, 5, 1), PackedInt32Array(1, 5, 2), PackedInt32Array(2, 5, 4), PackedInt32Array(2, 4, 3), PackedInt32Array(5, 0, 6), PackedInt32Array(6, 0, 7)]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_06ld2"]
+albedo_texture = ExtResource("1_eg3or")
+uv1_triplanar = true
+
+[node name="vent_twoway" type="Node3D" unique_id=996587186]
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=956429357]
+navigation_mesh = SubResource("NavigationMesh_rlw81")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D" unique_id=922276897]
+material_override = SubResource("StandardMaterial3D_06ld2")
+mesh = ExtResource("2_arfby")
+skeleton = NodePath("../../..")
+
+[node name="movement_points" type="Node3D" parent="." unique_id=223535940]
+
+[node name="Marker3D4" type="Marker3D" parent="movement_points" unique_id=1991060058]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="Marker3D2" type="Marker3D" parent="movement_points" unique_id=737874969]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8964853, 0, -2.4843447)
+
+[node name="Marker3D3" type="Marker3D" parent="movement_points" unique_id=721391207]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8964853, 0, 2.5156553)

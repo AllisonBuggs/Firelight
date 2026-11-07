@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dciuj30cquxe"]
+
+[ext_resource type="Script" uid="uid://lbf06wtl7pol" path="res://resources/scripts/classes/vent_map_generator.gd" id="1_rsq2t"]
+[ext_resource type="Script" uid="uid://mdd0nuo2c2k" path="res://resources/scripts/Player/vent_player.gd" id="3_3rs05"]
+[ext_resource type="AudioStream" uid="uid://uhuxi7stqhs8" path="res://resources/sfx/Gameplay/Vents/Vent_Move_Metal.wav" id="4_3rs05"]
+[ext_resource type="PackedScene" uid="uid://wy2f0bbvn8rm" path="res://resources/scenes/objects/Vent_Peices/vent_threeway.tscn" id="4_pkjk3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1c162"]
+
+[node name="VentTest" type="Node3D" unique_id=371385195 node_paths=PackedStringArray("target")]
+script = ExtResource("1_rsq2t")
+target = NodePath("VentPlayer")
+
+[node name="VentPlayer" type="Node3D" parent="." unique_id=1523070127]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+script = ExtResource("3_3rs05")
+
+[node name="head" type="Node3D" parent="VentPlayer" unique_id=1044156163]
+
+[node name="camera" type="Camera3D" parent="VentPlayer/head" unique_id=1872224660]
+
+[node name="Area3D" type="Area3D" parent="VentPlayer" unique_id=1567325013]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="VentPlayer/Area3D" unique_id=116829532]
+shape = SubResource("BoxShape3D_1c162")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="VentPlayer" unique_id=2014467774]
+stream = ExtResource("4_3rs05")
+bus = &"SFX"
+
+[node name="vent_threeway" parent="." unique_id=1349132004 instance=ExtResource("4_pkjk3")]

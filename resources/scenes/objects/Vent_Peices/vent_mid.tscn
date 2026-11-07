@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://b6o4egbccpgoc"]
+
+[ext_resource type="Texture2D" uid="uid://cs7hu4yhwbak8" path="res://resources/sprites/cutscenes/placeholder.png" id="1_2tel3"]
+[ext_resource type="ArrayMesh" uid="uid://dxh31baq0dwgv" path="res://resources/models/vent_mid.obj" id="2_ilvky"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_gjr71"]
+vertices = PackedVector3Array(-2.275329, -0.506464, 0.46222198, 2.474671, -0.506464, 0.21222198, 2.224671, -0.506464, -0.28777802, -2.525329, -0.506464, -0.03777802)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_06ld2"]
+albedo_texture = ExtResource("1_2tel3")
+uv1_triplanar = true
+
+[node name="vent_mid" type="Node3D" unique_id=35004018]
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1960227463]
+navigation_mesh = SubResource("NavigationMesh_gjr71")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D" unique_id=687104595]
+material_override = SubResource("StandardMaterial3D_06ld2")
+mesh = ExtResource("2_ilvky")
+skeleton = NodePath("../../..")
+
+[node name="movement_points" type="Node3D" parent="." unique_id=262645357]
+
+[node name="Marker3D4" type="Marker3D" parent="movement_points" unique_id=495275996]
